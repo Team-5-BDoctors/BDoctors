@@ -71,7 +71,6 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-
         $user = User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -81,8 +80,7 @@ class RegisterController extends Controller
             'slug' => $data['name'] . '-' . $data['surname'],
         ]);
 
-        $user->specializations()->attach($data['specialization_id']);
-
+        $user->specializations()->attach($data["specialization"]);
 
         return $user;
     }

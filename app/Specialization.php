@@ -8,6 +8,6 @@ class Specialization extends Model
 {
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User', 'user_specialization', 'specialization_id', 'user_id');
     }
 }
