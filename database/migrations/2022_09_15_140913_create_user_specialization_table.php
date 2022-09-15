@@ -17,6 +17,7 @@ class CreateUserSpecializationTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('specialization_id')->constrained();
+            $table->timestamps();
         });
     }
 
