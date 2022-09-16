@@ -84,15 +84,12 @@ class UserController extends Controller
         $validateData = $request->validate([
             'name' => "required|min:3",
             'surname' => "required|min:3",
-            'email' => "required|min:7",
             'address' => "required",
             'curriculum' => "nullable|mimes:pdf|max:2048",
             "image" => "nullable|mimes:jpeg,png,jpg,gif,svg|max:2048",
             "phone" => "nullable",
             "services" => "nullable"
         ]);
-
-        dd($validateData);
 
         $user->update($validateData);
 
