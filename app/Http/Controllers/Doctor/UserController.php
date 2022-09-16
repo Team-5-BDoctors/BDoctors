@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Specialization;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -88,9 +89,31 @@ class UserController extends Controller
             'address' => "required",
             'curriculum' => "nullable|mimes:pdf|max:2048",
             "image" => "nullable|mimes:jpeg,png,jpg,gif,svg|max:2048",
-            "phone" => "nullable",
-            "services" => "nullable"
+            "phone" => "nullable|min:10|numeric",
+            "services" => "nullable",
+            "specializations" => "nullable|exists:specializations,id",
         ]);
+
+
+        if (array_key_exists("image", $validateData)) {
+            if ($user->image) {
+                Storage::delete($user->image);
+            }
+            $imagePath = Storage::put("avatars", $validateData["image"]);
+            $validateData["image"] = $imagePath;
+        }
+
+        if (array_key_exists("curriculum", $validateData)) {
+            if ($user->curriculum) {
+                Storage::delete($user->curriculum);
+            }
+            $cvPath = Storage::put("doctors_cv", $validateData["curriculum"]);
+            $validateData["image"] = $cvPath;
+        }
+
+        $user->specializations()->detach();
+
+        $user->specializations()->attach($validateData["specializations"]);
 
         $user->update($validateData);
 
