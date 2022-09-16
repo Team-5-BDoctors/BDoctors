@@ -8,6 +8,7 @@ class Sponsorship extends Model
 {
     public function users()
     {
+        // many to many
         return $this->belongsToMany('App\User');
     }
 }

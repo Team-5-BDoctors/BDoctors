@@ -37,6 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // relations
+
     public function specializations()
     {
         return $this->belongsToMany('App\Specialization', 'user_specialization', 'user_id', 'specialization_id');

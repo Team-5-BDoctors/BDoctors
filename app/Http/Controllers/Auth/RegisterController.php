@@ -82,6 +82,8 @@ class RegisterController extends Controller
 
         $user->specializations()->attach($data["specialization"]);
 
+        // prova push
+
         return $user;
     }
 }
