@@ -20,6 +20,9 @@
                             <input type="text" class="form-control" id="surname" name="surname" value="{{$user->surname}}">
                         </div>
                         <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}">
+                        <div class="form-group">
                             <label for="address">Indirizzo</label>
                             <input type="text" class="form-control" id="address" name="address" value="{{$user->address}}">
                         </div>
@@ -27,15 +30,15 @@
                             <label for="phone">Telefono</label>
                             <input type="text" class="form-control" id="phone" name="phone" value="{{$user->phone}}">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pb-3">
                             <label for="specialization">Specializzazione</label>
                             <input type="text" class="form-control" id="specialization" name="specialization" value="{{$user->specialization}}">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pb-3">
                             <label for="image">Immagine</label>
                             <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pb-3">
                             <label for="curriculum">Curriculum</label>
                             <input type="file" class="form-control-file" id="curriculum" name="curriculum" accept="application/pdf">
                         </div>
