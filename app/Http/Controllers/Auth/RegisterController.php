@@ -9,7 +9,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -66,7 +66,22 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-
+    
+     
+    //  create a unique slug for each user with name and surname
+    protected function createSlug($name, $surname)
+    {
+        $slug = Str::slug($name . ' ' . $surname);
+        $slugBase = $slug;
+        $counter = 1;
+        $userWithSlug = User::where('slug', $slug)->first();
+        while($userWithSlug) {
+            $slug = $slugBase . '-' . $counter;
+            $counter++;
+            $userWithSlug = User::where('slug', $slug)->first();
+        }
+        return $slug;
+    }
 
 
     protected function create(array $data)
@@ -77,7 +92,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'address' => $data['address'],
-            'slug' => $data['name'] . '-' . $data['surname'],
+            'slug' => $this->createSlug($data['name'], $data['surname']),
         ]);
 
         $user->specializations()->attach($data["specialization"]);

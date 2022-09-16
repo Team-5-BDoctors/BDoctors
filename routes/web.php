@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware("auth")->namespace("Doctor")->name('doctor.')->prefix('doctor')
+->group(function(){
+    Route::get("/","UserController@index")->name("index");
+    Route::get("/{id}","UserController@show")->name("show");
+    Route::get("/edit/{id}","UserController@edit")->name("edit");
+    Route::put("/update/{id}","UserController@update")->name("update");
+});
