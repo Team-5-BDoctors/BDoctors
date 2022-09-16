@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <div>{{ __('You are logged in!') }}</div>
+                    
+                    <a href="{{route("doctor.show", Auth::user()->slug)}}" class="btn btn-primary">Vedi profilo</a>
+                    <a href="{{route("doctor.edit", Auth::user()->slug)}}" class="btn btn-secondary">Aggiunge o Modifica Informazioni profilo</a>
+                    
                 </div>
             </div>
         </div>

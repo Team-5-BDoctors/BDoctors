@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
+use App\Specialization;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('doctor.index');
+        
+
+        return view('doctor.index',);
     }
 
     /**
@@ -58,9 +61,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $user = User::where('slug', $slug)->first();
+        $specializations = Specialization::all();
+
+        return view("doctor.edit", compact("user", "specializations"));
     }
 
     /**
@@ -70,9 +76,27 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+
+        $user = User::where('slug', $slug)->first(); 
+
+        $validateData = $request->validate([
+            'name' => "required|min:3",
+            'surname' => "required|min:3",
+            'email' => "required|min:7",
+            'address' => "required",
+            'curriculum' => "nullable|mimes:pdf|max:2048",
+            "image" => "nullable|mimes:jpeg,png,jpg,gif,svg|max:2048",
+            "phone" => "nullable",
+            "services" => "nullable"
+        ]);
+
+        dd($validateData);
+
+        $user->update($validateData);
+
+        return redirect()->route("doctor.show", $user->slug);
     }
 
     /**
