@@ -108,7 +108,7 @@ class UserController extends Controller
                 Storage::delete($user->curriculum);
             }
             $cvPath = Storage::put("doctors_cv", $validateData["curriculum"]);
-            $validateData["image"] = $cvPath;
+            $validateData["curriculum"] = $cvPath;
         }
 
         $user->specializations()->detach();
