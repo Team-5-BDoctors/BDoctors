@@ -13,7 +13,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
@@ -31,7 +31,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="surname"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Cognome *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
@@ -48,7 +48,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo e-mail *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -65,7 +65,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -82,7 +82,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -93,7 +93,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo *') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
@@ -110,7 +110,7 @@
 
                             <div class="form-group row pb-3">
                                 <label for="specialization"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Specialization') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Specializzazione *') }}</label>
 
                                 <div class="col-md-6">
                                     <select name="specialization" id="specialization"
@@ -132,7 +132,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>

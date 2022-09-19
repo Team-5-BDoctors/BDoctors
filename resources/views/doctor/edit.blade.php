@@ -11,7 +11,7 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="name">Nome</label>
+                                <label for="name">Nome *</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
                                     id="name" name="name" value="{{ $user->name }}">
                                 @error('name')
@@ -21,7 +21,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="surname">Cognome</label>
+                                <label for="surname">Cognome *</label>
                                 <input type="text" class="form-control @error('surname') is-invalid @enderror"
                                     id="surname" name="surname" value="{{ $user->surname }}">
                                 @error('surname')
@@ -31,7 +31,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror"
                                     id="email" name="email" value="{{ $user->email }}">
                                 @error('email')
@@ -40,7 +40,7 @@
                                     </span>
                                 @enderror
                                 <div class="form-group">
-                                    <label for="address">Indirizzo</label>
+                                    <label for="address">Indirizzo *</label>
                                     <input type="text" class="form-control @error('address') is-invalid @enderror"
                                         id="address" name="address" value="{{ $user->address }}">
                                     @error('address')
@@ -62,7 +62,7 @@
 
                                 <div class="form-group row pb-3">
                                     <label for="specializations"
-                                        class="col-md-4 col-form-label text-md-right">{{ __('Specializzazione') }}</label>
+                                        class="col-md-4 col-form-label text-md-right">{{ __('Specializzazione * (minimo 1)') }}</label>
 
                                     <div class="col-md-6">
                                         <select name="specializations[]" id="specializations" multiple
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group pb-3">
                                     <label for="services">Prestazioni offerte</label>
                                     <textarea rows="5" type="text" class="form-control @error('services') is-invalid @enderror" id="services"
                                         name="services">{{ $user->services }}</textarea>
