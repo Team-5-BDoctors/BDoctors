@@ -17,8 +17,11 @@ class StatsController extends Controller
      */
     public function index()
     {
-        $reviews = Review::where('user_id', Auth::user()->id)->get();
-        $messages = Message::where('user_id', Auth::user()->id)->get();
+        
+        $reviews = Review::where('user_id', '=', Auth::user()->id)->count();
+        $messages = Message::where('user_id', '=', Auth::user()->id)->count();
+
+        return view("doctor.stats.index", compact('reviews', 'messages'));
     }
 
     /**

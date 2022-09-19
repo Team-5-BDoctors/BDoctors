@@ -19,6 +19,7 @@
                     <a href="{{route("doctor.edit")}}" class="btn btn-secondary">Aggiunge o Modifica Informazioni profilo</a>
                     <a href="{{route("doctor.messages.index")}}" class="btn btn-secondary">Messaggi ricevuti</a>
                     <a href="{{route("doctor.reviews.index")}}" class="btn btn-secondary">Recensioni Ricevute</a>
+                    <a href="{{route("doctor.stats.index")}}" class="btn btn-secondary">Statistiche</a>
                     
                 </div>
             </div>
