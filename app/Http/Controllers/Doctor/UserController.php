@@ -67,7 +67,8 @@ class UserController extends Controller
     public function edit()
     {
         $user = auth()->user();
-        return view('doctor.edit', compact('user'));
+        $specializations = Specialization::all();
+        return view('doctor.edit', compact('user', 'specializations'));
     }
 
     /**
@@ -77,10 +78,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request)
     {
 
-        $user = User::where('slug', $slug)->first(); 
+        $user = auth()->user();
 
         $validateData = $request->validate([
             'name' => "required|min:3",
@@ -117,7 +118,7 @@ class UserController extends Controller
 
         $user->update($validateData);
 
-        return redirect()->route("doctor.show", $user->slug);
+        return redirect()->route("doctor.show");
     }
 
     /**

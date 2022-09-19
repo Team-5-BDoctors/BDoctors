@@ -23,7 +23,7 @@ Auth::routes();
 Route::middleware("auth")->namespace("Doctor")->name('doctor.')->prefix('doctor')
 ->group(function(){
     Route::get("/","UserController@index")->name("index");
-    Route::get("/{id}","UserController@show")->name("show");
-    Route::get("/edit/{id}","UserController@edit")->name("edit");
-    Route::put("/update/{id}","UserController@update")->name("update");
+    Route::get("/profile","UserController@show")->name("show");
+    Route::get("/edit","UserController@edit")->name("edit");
+    Route::put("/update","UserController@update")->name("update");
 });
