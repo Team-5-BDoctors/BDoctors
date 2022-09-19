@@ -34,7 +34,8 @@
         </div>
       </div>
       <div>
-        <a href="#"><i class="fas fa-user"></i></a>
+        <!-- user icon with href to laravel index -->
+        <a href="/doctor"><i class="fas fa-user"></i></a>
       </div>
     </div>
   </div>
