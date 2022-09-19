@@ -40214,10 +40214,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/backend/backend.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/backend/backend.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/frontend/frontend.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/frontend/frontend.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -40226,14 +40237,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************!*\
-  !*** multi ./resources/js/backend.js ./resources/sass/app.scss ***!
-  \*****************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** multi ./resources/js/backend.js ./resources/sass/frontend/frontend.scss ./resources/sass/backend/backend.scss ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
-module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Boolean\bdoctors\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! D:\Boolean\bdoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
 
 
 /***/ })
