@@ -13,6 +13,12 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
+
+    public function showRegistrationForm()
+{
+    $specializations = Specialization::all();
+    return view("auth.register", compact("specializations"));
+}
     /*
     |--------------------------------------------------------------------------
     | Register Controller
