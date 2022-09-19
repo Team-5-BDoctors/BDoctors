@@ -16,7 +16,8 @@
                                                 <th scope="col">Nome</th>
                                                 <th scope="col">Cognome</th>
                                                 <th scope="col">Email</th>
-                                                <th scope="col">Messaggio</th>
+                                                <th scope="col">Titolo</th>
+                                                <th scope="col">Contenuto</th>
                                                 <th scope="col">Data</th>
                                             </tr>
                                         </thead>
@@ -26,7 +27,8 @@
                                                     <td>{{ $message->name }}</td>
                                                     <td>{{ $message->surname }}</td>
                                                     <td>{{ $message->email }}</td>
-                                                    <td>{{ $message->message }}</td>
+                                                    <td>{{ $message->title }}</td>
+                                                    <td>{{ $message->content }}</td>
                                                     <td>{{ $message->created_at }}</td>
                                                 </tr>
                                             @endforeach
