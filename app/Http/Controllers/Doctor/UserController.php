@@ -50,9 +50,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+
+    public function show()
     {
-        $user = User::where('slug', $slug)->first();
+        $user = auth()->user();
         return view('doctor.show', compact('user'));
     }
 
@@ -62,12 +63,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
-    {
-        $user = User::where('slug', $slug)->first();
-        $specializations = Specialization::all();
 
-        return view("doctor.edit", compact("user", "specializations"));
+    public function edit()
+    {
+        $user = auth()->user();
+        return view('doctor.edit', compact('user'));
     }
 
     /**
