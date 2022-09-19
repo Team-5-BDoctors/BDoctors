@@ -17,6 +17,7 @@
                     
                     <a href="{{route("doctor.show")}}" class="btn btn-primary">Vedi profilo</a>
                     <a href="{{route("doctor.edit")}}" class="btn btn-secondary">Aggiunge o Modifica Informazioni profilo</a>
+                    <a href="{{route("doctor.messages.index")}}" class="btn btn-secondary">Messaggi ricevuti</a>
                     
                 </div>
             </div>

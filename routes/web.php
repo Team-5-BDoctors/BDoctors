@@ -26,4 +26,5 @@ Route::middleware("auth")->namespace("Doctor")->name('doctor.')->prefix('doctor'
     Route::get("/profile","UserController@show")->name("show");
     Route::get("/edit","UserController@edit")->name("edit");
     Route::put("/update","UserController@update")->name("update");
+    Route::get("/messages", "MessageController@index")->name("messages.index");
 });
