@@ -17,11 +17,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $user = Auth::User();
-        
-        $messages = Message::where("user_id", $user->id);
-
-        return view("doctor.messages.index", compact("user", "messages"));
+        $messages = Message::where('user_id', Auth::user()->id)->get();
+        return view('doctor.messages.index', compact('messages'));
     }
 
     /**
