@@ -1,14 +1,15 @@
 <template>
     <div id="app">
         <NavBar class="thenavbar"></NavBar>
-        <TheJumbo/>
+        
+        <router-view></router-view>
         <TheFooter/>
     </div>
 </template>
 
 <script>
 import NavBar from './frontend/components/NavBar.vue'
-import TheJumbo from './frontend/components/TheJumbo.vue';
+
 import TheFooter from './frontend/components/TheFooter.vue';
 export default {
     data() {
@@ -16,7 +17,7 @@ export default {
         };
         
     },
-    components: { NavBar, TheJumbo, TheFooter }
+    components: { NavBar, TheFooter }
 }
 </script>
 
