@@ -96,6 +96,7 @@ class UserController extends Controller
         ]);
 
 
+
         if (array_key_exists("image", $validateData)) {
             if ($user->image) {
                 Storage::delete($user->image);
@@ -103,6 +104,7 @@ class UserController extends Controller
             $imagePath = Storage::put("avatars", $validateData["image"]);
             $validateData["image"] = $imagePath;
         }
+        
 
         if (array_key_exists("curriculum", $validateData)) {
             if ($user->curriculum) {
