@@ -408,8 +408,30 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container-fluid footersection py-5"
+    staticClass: "container-fluid footersection"
   }, [_c("div", {
+    staticClass: "prefooter container mb-5"
+  }, [_c("div", {
+    staticClass: "row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center"
+  }, [_c("div", {
+    staticClass: "col girlout"
+  }, [_c("img", {
+    staticClass: "w-75",
+    attrs: {
+      src: "images/pre_footer_doctor.png",
+      alt: "",
+      srcset: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col px-4"
+  }, [_c("h2", [_vm._v("Sei un Dottore?")]), _vm._v(" "), _c("p", [_vm._v("\n                    Clicca il pulsante sulla destra per inziare a ricevere\n                    migliaia di pazienti da tutta Italia!\n                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "col px-4"
+  }, [_c("a", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      href: "/register"
+    }
+  }, [_vm._v("Registrati")])])])]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row footercontainer pb-5 gap-5"
@@ -425,7 +447,7 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("p", {
     staticClass: "big-paragraph pb-5"
-  }, [_vm._v("“La medicina cura le malattie, ma solo i medici possono curare i pazienti.”")]), _vm._v(" "), _c("div", [_vm._v("Made with ❤️ by Booleaners")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                    “La medicina cura le malattie, ma solo i medici possono\n                    curare i pazienti.”\n                ")])]), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-md-6 col-lg-3"
   }, [_c("h2", {
     staticClass: "footer-headings pb-4"
@@ -455,7 +477,9 @@ var staticRenderFns = [function () {
     staticClass: "footerlink"
   }, [_vm._v("footerlink")]), _vm._v(" "), _c("div", {
     staticClass: "footerlink"
-  }, [_vm._v("footerlink")])])])])]);
+  }, [_vm._v("footerlink")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container py-4"
+  }, [_c("div", [_vm._v("Made with ❤️ by Booleaners")])])]);
 }];
 render._withStripped = true;
 
@@ -621,7 +645,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".footersection[data-v-5569203c] {\n  background-color: #151e66;\n  color: #d8eeff;\n}\n.footerlink[data-v-5569203c] {\n  color: #d8eeff;\n  opacity: 0.5;\n}\n.footercontainer[data-v-5569203c] {\n  border-bottom: 1px solid rgba(216, 238, 255, 0.2470588235);\n}\n.big-paragraph[data-v-5569203c] {\n  color: #2ea4ff;\n  font-size: 24px;\n  line-height: 34px;\n  font-style: normal;\n  font-weight: 700;\n}\n.footer-headings[data-v-5569203c] {\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  font-weight: 700;\n  letter-spacing: 0px;\n}", ""]);
+exports.push([module.i, ".girlout[data-v-5569203c] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.prefooter[data-v-5569203c] {\n  height: 200px;\n  background-color: #4157ff;\n  border-radius: 0 0 25px 25px;\n  position: relative;\n}\n.prefooter h2[data-v-5569203c] {\n  font-size: 2rem;\n  font-weight: 700;\n}\n.prefooter p[data-v-5569203c] {\n  font-size: 0.8rem;\n  font-weight: 500;\n}\n.footersection[data-v-5569203c] {\n  background-color: #151e66;\n  color: #d8eeff;\n}\n.footerlink[data-v-5569203c] {\n  color: #d8eeff;\n  opacity: 0.5;\n}\n.footercontainer[data-v-5569203c] {\n  border-bottom: 1px solid rgba(216, 238, 255, 0.2470588235);\n}\n.big-paragraph[data-v-5569203c] {\n  color: #2ea4ff;\n  font-size: 24px;\n  line-height: 34px;\n  font-style: normal;\n  font-weight: 700;\n}\n.footer-headings[data-v-5569203c] {\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  font-weight: 700;\n  letter-spacing: 0px;\n}", ""]);
 
 // exports
 
@@ -17438,7 +17462,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
