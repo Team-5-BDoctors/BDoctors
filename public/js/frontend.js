@@ -2285,15 +2285,6 @@ var staticRenderFns = [function () {
 
   return _c("div", [_c("a", {
     attrs: {
-<<<<<<< HEAD
-      href: "#"
-    }
-  }, [_vm._v("Link"), _c("i", {
-    staticClass: "ps-2 fas fa-chevron-right freccia_link"
-  })])])]), _vm._v(" "), _c("div", [_c("a", {
-    attrs: {
-=======
->>>>>>> edoardo
       href: "/doctor"
     }
   }, [_c("i", {
@@ -20100,11 +20091,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
->>>>>>> edoardo
 
 
 /***/ })

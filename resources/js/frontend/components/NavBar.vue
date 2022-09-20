@@ -59,11 +59,8 @@ export default {
     width: 100%;
     line-height: 100%;
     height: 100%;
-<<<<<<< HEAD
     overflow: hidden;
-=======
 
->>>>>>> edoardo
     &:hover {
       .freccia_link {
         transform: translateX(50%);
