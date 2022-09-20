@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="container d-flex justify-content-between navbar py-3 align-items-center">
       <div class="h-100">
-        <img class="h-100" src="/images/logo.png" alt="logo" />
+        <a href="/"><img class="h-100" src="/images/logo.png" alt="logo" /></a>
       </div>
       <div class="d-flex justify-content-center gap-5 flex-grow-1">
         <div class="p-2 navitem">

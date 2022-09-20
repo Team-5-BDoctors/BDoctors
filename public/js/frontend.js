@@ -2220,13 +2220,17 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "h-100"
+  }, [_c("a", {
+    attrs: {
+      href: "/"
+    }
   }, [_c("img", {
     staticClass: "h-100",
     attrs: {
       src: "/images/logo.png",
       alt: "logo"
     }
-  })]);
+  })])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
