@@ -1,0 +1,31 @@
+.sidebar{
+    width: 225px;
+    background-color:#338DFF;
+
+    & .dropdown{
+
+        & img{
+            width: 5rem;
+            height: 5rem;
+            border: 3px solid #E9F6FF;;
+            
+            
+        }
+    }
+
+    & .nav-pills{
+
+        & .nav-link{
+            padding-left: .5rem;
+            padding-right: .5rem;
+            font-size: 1rem;
+
+        }
+
+        & .nav-link.my-active{
+            background-color: #E9F6FF;
+            color: black !important;
+        }
+    }
+
+}

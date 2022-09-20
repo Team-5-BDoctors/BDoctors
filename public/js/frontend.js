@@ -374,7 +374,7 @@ var staticRenderFns = [function () {
     staticClass: "ps-2 fas fa-chevron-right freccia_link"
   })])])]), _vm._v(" "), _c("div", [_c("a", {
     attrs: {
-      href: "#"
+      href: "/doctor"
     }
   }, [_c("i", {
     staticClass: "fas fa-user"

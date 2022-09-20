@@ -1,0 +1,10 @@
+#app{
+    font-family: 'Open Sans', sans-serif;
+}
+.dashboard {
+    height: 100vh;
+
+    & .content-container{
+        overflow: auto;
+    }
+}
