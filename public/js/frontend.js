@@ -591,36 +591,106 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", [_c("div", {
-    staticClass: "container-fluid jumbo-bg d-flex justify-content-center"
+    staticClass: "container-fluid jumbo-bg d-flex justify-content-center pt-5"
   }, [_c("div", {
-    staticClass: "pt-5"
+    staticClass: "pt-5 searchbar-container"
   }, [_c("form", {
     attrs: {
       onsubmit: "event.preventDefault();",
       role: "search"
     }
-  }, [_c("label", {
+  }, [_c("input", {
     attrs: {
-      "for": "search"
-    }
-  }, [_vm._v("Search for stuff")]), _vm._v(" "), _c("input", {
-    attrs: {
-      id: "search",
+      id: "search search-bar",
       type: "search",
-      placeholder: "Search...",
+      placeholder: "Cerca un dottore...",
       autofocus: "",
       required: ""
     }
   }), _vm._v(" "), _c("button", {
+    staticClass: "text-white",
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Go")])])]), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-danger",
+  }, [_vm._v("Cerca")])]), _vm._v(" "), _c("div", {
+    staticClass: "text-white pt-3 py-2"
+  }, [_vm._v("Cerca per Specializzazione:")]), _vm._v(" "), _c("div", {
+    staticClass: "btn-group d-flex justify-content-around",
     attrs: {
-      type: "button"
+      role: "group",
+      "aria-label": "Basic checkbox toggle button group"
     }
-  }, [_vm._v("premi")])])]), _vm._v(" "), _c("div", {
+  }, [_c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "checkbox",
+      id: "btncheck1",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btncheck1"
+    }
+  }, [_vm._v("Neurologia")]), _vm._v(" "), _c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "checkbox",
+      id: "btncheck2",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btncheck2"
+    }
+  }, [_vm._v("Cardiologia")]), _vm._v(" "), _c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "checkbox",
+      id: "btncheck3",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btncheck3"
+    }
+  }, [_vm._v("Pediatria")])]), _vm._v(" "), _c("div", {
+    staticClass: "text-white pt-3"
+  }, [_vm._v("Filtra per:")]), _vm._v(" "), _c("div", {
+    staticClass: "btn-group d-flex justify-content-around pt-2",
+    attrs: {
+      role: "group",
+      "aria-label": "Basic radio toggle button group "
+    }
+  }, [_c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "radio",
+      name: "btnradio",
+      id: "btnradio1",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btnradio1"
+    }
+  }, [_vm._v("Media voti")]), _vm._v(" "), _c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "radio",
+      name: "btnradio",
+      id: "btnradio2",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btnradio2"
+    }
+  }, [_vm._v("Numero\n                    recensioni")])])])]), _vm._v(" "), _c("div", {
     staticClass: "bg-lightblue py-5"
   }, [_c("div", {
     staticClass: "container d-flex justify-content-center text-center flex-wrap"
@@ -788,7 +858,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}\nform[data-v-0312e533] {\n  position: relative;\n  width: 30rem;\n  background: #54abf3;\n  border-radius: 0.7rem;\n}\ninput[data-v-0312e533],\nbutton[data-v-0312e533] {\n  height: 4rem;\n  font-family: \"Lato\", sans-serif;\n  border: 0;\n  color: #2f2f2f;\n  font-size: 1.8rem;\n}\ninput[type=search][data-v-0312e533] {\n  width: 100%;\n  background: #fff;\n  padding: 0 1.6rem;\n  border-radius: 0.7rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);\n  transition-property: width, border-radius;\n  z-index: 1;\n  position: relative;\n}\nbutton[data-v-0312e533] {\n  display: none;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 6rem;\n  font-weight: bold;\n  background: #54abf3;\n  border-radius: 0 0.7rem 0.7rem 0;\n}\ninput[data-v-0312e533]:not(:-moz-placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\ninput[data-v-0312e533]:not(:placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\nbutton[data-v-0312e533] {\n  display: block;\n}\nlabel[data-v-0312e533] {\n  position: absolute;\n  clip: rect(1px, 1px, 1px, 1px);\n  padding: 0;\n  border: 0;\n  height: 1px;\n  width: 1px;\n  overflow: hidden;\n}", ""]);
+exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}\nform[data-v-0312e533] {\n  position: relative;\n  width: 30rem;\n  background: rgb(13, 110, 253);\n  border-radius: 0.7rem;\n}\ninput[data-v-0312e533],\nbutton[data-v-0312e533] {\n  height: 4rem;\n  font-family: \"Lato\", sans-serif;\n  border: 0;\n  color: #2f2f2f;\n}\ninput[type=search][data-v-0312e533] {\n  width: 100%;\n  background: #fff;\n  padding: 0 1.6rem;\n  border-radius: 0.7rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);\n  transition-property: width, border-radius;\n  z-index: 1;\n  position: relative;\n}\nbutton[data-v-0312e533] {\n  display: none;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 6rem;\n  font-weight: bold;\n  background: rgb(13, 110, 253);\n  border-radius: 0 0.7rem 0.7rem 0;\n}\ninput[data-v-0312e533]:not(:-moz-placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\ninput[data-v-0312e533]:not(:placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\nbutton[data-v-0312e533] {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -17524,15 +17594,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./resources/js/pages/AdvancedSearch.vue ***!
   \***********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AdvancedSearch_vue_vue_type_template_id_0312e533_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdvancedSearch.vue?vue&type=template&id=0312e533&scoped=true& */ "./resources/js/pages/AdvancedSearch.vue?vue&type=template&id=0312e533&scoped=true&");
 /* harmony import */ var _AdvancedSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdvancedSearch.vue?vue&type=script&lang=js& */ "./resources/js/pages/AdvancedSearch.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _AdvancedSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _AdvancedSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _AdvancedSearch_vue_vue_type_style_index_0_id_0312e533_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AdvancedSearch.vue?vue&type=style&index=0&id=0312e533&lang=scss&scoped=true& */ "./resources/js/pages/AdvancedSearch.vue?vue&type=style&index=0&id=0312e533&lang=scss&scoped=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _AdvancedSearch_vue_vue_type_style_index_0_id_0312e533_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AdvancedSearch.vue?vue&type=style&index=0&id=0312e533&lang=scss&scoped=true& */ "./resources/js/pages/AdvancedSearch.vue?vue&type=style&index=0&id=0312e533&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -17564,7 +17633,7 @@ component.options.__file = "resources/js/pages/AdvancedSearch.vue"
 /*!************************************************************************!*\
   !*** ./resources/js/pages/AdvancedSearch.vue?vue&type=script&lang=js& ***!
   \************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

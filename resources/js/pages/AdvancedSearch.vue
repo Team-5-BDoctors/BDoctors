@@ -1,16 +1,44 @@
 <template>
     <div>
-        <div class="container-fluid jumbo-bg d-flex justify-content-center">
-            <div class="pt-5">
+        <div class="container-fluid jumbo-bg d-flex justify-content-center pt-5">
+            <div class="pt-5 searchbar-container">
                 <form onsubmit="event.preventDefault();" role="search">
-                    <label for="search">Search for stuff</label>
-                    <input id="search" class="" type="search" placeholder="Search..." autofocus required />
-                    <button type="submit">Go</button>
+
+                    <input id="search search-bar" class="" type="search" placeholder="Cerca un dottore..." autofocus
+                        required />
+                    <button class="text-white" type="submit">Cerca</button>
                 </form>
+                <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
+                <div class="btn-group d-flex justify-content-around" role="group"
+                    aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary text-white" for="btncheck1">Neurologia</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-primary text-white" for="btncheck2">Cardiologia</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-primary text-white" for="btncheck3">Pediatria</label>
+                </div>
+                <div class="text-white pt-3">Filtra per:</div>
+                <div class="btn-group d-flex justify-content-around pt-2 " role="group"
+                    aria-label="Basic radio toggle button group ">
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                    <label class="btn btn-outline-primary text-white" for="btnradio1">Media voti</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
+                        recensioni</label>
+
+
+                </div>
+
+
             </div>
-            <div>
-                <button type="button" class="btn btn-danger">premi</button>
-            </div>
+
+
+
         </div>
         <div class="bg-lightblue py-5">
             <div class="container d-flex justify-content-center text-center flex-wrap">
@@ -50,6 +78,14 @@ export default {
     height: 400px;
 }
 
+.search-bar {
+    height: 70px;
+}
+
+.searchbar-container {
+    height: fit-content;
+}
+
 .bg-lightblue {
     background-color: rgb(233, 246, 255);
 }
@@ -63,7 +99,7 @@ $rad: .7rem;
 $dur: .3s;
 $color-dark: #2f2f2f;
 $color-light: #fff;
-$color-brand: #54abf3;
+$color-brand: rgb(13, 110, 253);
 $font-fam: 'Lato', sans-serif;
 $height: 4rem;
 $btn-width: 6rem;
@@ -83,7 +119,7 @@ button {
     font-family: $font-fam;
     border: 0;
     color: $color-dark;
-    font-size: 1.8rem;
+
 }
 
 input[type="search"] {
@@ -116,15 +152,5 @@ input:not(:placeholder-shown) {
 
 button {
     display: block;
-}
-
-label {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0;
-    border: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
 }
 </style>
