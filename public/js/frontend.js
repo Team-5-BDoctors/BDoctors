@@ -2276,7 +2276,7 @@ var render = function render() {
   }, [_c("h3", {
     staticClass: "text-center py-5 text-white"
   }, [_vm._v("Potresti cercare:")]), _vm._v(" "), _c("div", {
-    staticClass: "tags-container d-flex gap-5"
+    staticClass: "tags-container d-flex gap-4"
   }, _vm._l(_vm.specializations, function (specialization) {
     return _c("a", {
       staticClass: "tags-label",
