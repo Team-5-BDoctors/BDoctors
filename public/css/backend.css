@@ -12637,6 +12637,30 @@ fieldset:disabled .btn {
 
 .dashboard .content-container {
   overflow: auto;
+  background-color: #E9F6FF;
+}
+
+.dashboard .content-container .edit-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.dashboard .content-container .edit-card .bg-img {
+  background-image: url("/images/jumbo_right_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.dashboard .content-container .edit-card .form-group {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.dashboard .content-container .edit-card .form-group .form-control {
+  background-color: #E9F6FF;
+  padding: 0.5rem;
 }
 
 .sidebar {

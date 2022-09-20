@@ -6,5 +6,30 @@
 
     & .content-container{
         overflow: auto;
+        background-color:  #E9F6FF;
+
+        & .edit-card{
+            background-color: white;
+            padding: 2rem;
+            border-radius: .5rem;
+
+            & .bg-img{
+                background-image: url('/images/jumbo_right_bg.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+            }
+
+            & .form-group{
+                padding-top: .6rem;
+                padding-bottom: .6rem;
+
+                & .form-control{
+                    background-color: #E9F6FF;
+                    padding: .5rem;
+                }
+
+            }
+        }
     }
 }
