@@ -31,6 +31,10 @@ export default {
       z-index: 99;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+    }
+
     #app {
  font-family: 'Satoshi', sans-serif;
  -webkit-font-smoothing: antialiased;

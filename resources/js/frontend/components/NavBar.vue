@@ -69,9 +69,10 @@ export default {
     width: 100%;
     line-height: 100%;
     height: 100%;
+    overflow: hidden;
     &:hover {
       .freccia_link {
-        transform: rotate(90deg);
+        transform: translateX(50%);
       }
     }
   }
