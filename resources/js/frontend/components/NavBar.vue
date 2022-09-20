@@ -1,36 +1,26 @@
 <template>
   <div class="container-fluid">
-    <div
-      class="container d-flex justify-content-between navbar py-3 align-items-center"
-    >
+    <div class="container d-flex justify-content-between navbar py-3 align-items-center">
       <div class="h-100">
         <img class="h-100" src="/images/logo.png" alt="logo" />
       </div>
       <div class="d-flex justify-content-center gap-5 flex-grow-1">
         <div class="p-2 navitem">
-          <a href="#"
-            >Link<i class="ps-2 fas fa-chevron-right freccia_link"></i
-          ></a>
+          <router-link :to="{ name: 'AdvancedSearch' }">search
+            <i class="ps-2 fas fa-chevron-right freccia_link"></i>
+          </router-link>
         </div>
         <div class="p-2 navitem">
-          <a href="#"
-            >Link<i class="ps-2 fas fa-chevron-right freccia_link"></i
-          ></a>
+          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
         </div>
         <div class="p-2 navitem">
-          <a href="#"
-            >Link<i class="ps-2 fas fa-chevron-right freccia_link"></i
-          ></a>
+          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
         </div>
         <div class="p-2 navitem">
-          <a href="#"
-            >Link<i class="ps-2 fas fa-chevron-right freccia_link"></i
-          ></a>
+          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
         </div>
         <div class="p-2 navitem">
-          <a href="#"
-            >Link<i class="ps-2 fas fa-chevron-right freccia_link"></i
-          ></a>
+          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
         </div>
       </div>
       <div>
@@ -49,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container-fluid{
+.container-fluid {
   background-color: white;
 }
 
@@ -69,6 +59,7 @@ export default {
     width: 100%;
     line-height: 100%;
     height: 100%;
+
     &:hover {
       .freccia_link {
         transform: rotate(90deg);
@@ -84,6 +75,7 @@ export default {
   .navitem {
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
+
     &:hover {
       background-color: #d8eeff;
     }

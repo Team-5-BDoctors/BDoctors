@@ -21,12 +21,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware("auth")->namespace("Doctor")->name('doctor.')->prefix('doctor')
-->group(function(){
-    Route::get("/","UserController@index")->name("index");
-    Route::get("/profile","UserController@show")->name("show");
-    Route::get("/edit","UserController@edit")->name("edit");
-    Route::put("/update","UserController@update")->name("update");
-    Route::get("/messages", "MessageController@index")->name("messages.index");
-    Route::get("/reviews", "ReviewsController@index")->name("reviews.index");
-    Route::get("/stats", "StatsController@index")->name("stats.index");
-});
+    ->group(function () {
+        Route::get("/", "UserController@index")->name("index");
+        Route::get("/profile", "UserController@show")->name("show");
+        Route::get("/edit", "UserController@edit")->name("edit");
+        Route::put("/update", "UserController@update")->name("update");
+        Route::get("/messages", "MessageController@index")->name("messages.index");
+        Route::get("/reviews", "ReviewsController@index")->name("reviews.index");
+        Route::get("/stats", "StatsController@index")->name("stats.index");
+    });
+
+Route::get('{any}', function () {
+    return view('welcome');
+})->where('any', '.*');
