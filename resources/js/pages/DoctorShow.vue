@@ -33,8 +33,8 @@
         </div>
 
         <!-- Recensioni -->
-        <div class="container text-center py-5 my-5">
-            <div class="row">
+        <div class="container py-5 my-5">
+            <div class="row text-center">
                 <div class="col">
                     user 1
                 </div>
@@ -46,12 +46,11 @@
                 </div>
             </div>
             <form class="form-msg">
-                <div class="form-group">
+                <div class="form-group py-2">
                     <label for="exampleFormControlInput1">Nome e cognome:</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Nome e cognome">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nome e cognome">
                 </div>
-                <div class="form-group">
+                <div class="form-group py-2">
                     <label for="exampleFormControlSelect2">Il tuo voto, da 1 a 5:</label>
                     <select multiple class="form-control" id="exampleFormControlSelect2">
                         <option>1</option>
@@ -61,9 +60,14 @@
                         <option>5</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group py-2">
                     <label for="exampleFormControlTextarea1">Se vuoi aggiungere altro:</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="text-center py-2">
+                    <button type="button" class="btn btn-primary text-center">
+                        Invia recensione
+                    </button>
                 </div>
             </form>
         </div>

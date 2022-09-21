@@ -2874,9 +2874,9 @@ var staticRenderFns = [function () {
       alt: ""
     }
   })])]), _vm._v(" "), _c("div", {
-    staticClass: "container text-center py-5 my-5"
+    staticClass: "container py-5 my-5"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row text-center"
   }, [_c("div", {
     staticClass: "col"
   }, [_vm._v("\n                user 1\n            ")]), _vm._v(" "), _c("div", {
@@ -2886,7 +2886,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("\n                user 3\n            ")])]), _vm._v(" "), _c("form", {
     staticClass: "form-msg"
   }, [_c("div", {
-    staticClass: "form-group"
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "exampleFormControlInput1"
@@ -2899,7 +2899,7 @@ var staticRenderFns = [function () {
       placeholder: "Nome e cognome"
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group"
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "exampleFormControlSelect2"
@@ -2911,7 +2911,7 @@ var staticRenderFns = [function () {
       id: "exampleFormControlSelect2"
     }
   }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group"
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "exampleFormControlTextarea1"
@@ -2922,7 +2922,14 @@ var staticRenderFns = [function () {
       id: "exampleFormControlTextarea1",
       rows: "3"
     }
-  })])])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "text-center py-2"
+  }, [_c("button", {
+    staticClass: "btn btn-primary text-center",
+    attrs: {
+      type: "button"
+    }
+  }, [_vm._v("\n                    Invia recensione\n                ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "container-blue pb-5"
   }, [_c("div", {
     staticClass: "container"
