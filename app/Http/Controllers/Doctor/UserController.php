@@ -135,6 +135,6 @@ class UserController extends Controller
         $user = auth()->user();
         $user->specializations()->detach();
         $user->delete();
-        return redirect()->route("doctor.index");
+        return redirect()->route("welcome");
     }
 }

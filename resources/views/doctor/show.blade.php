@@ -26,7 +26,7 @@
                                 @csrf
                                 @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger">cancella account</button>
+                            <button onclick="return confirm('Sei sicuro di voler cancellare il tuo account?')" type="submit" class="btn btn-danger">cancella account</button>
                             </form>
 
                         </div>
