@@ -5,7 +5,7 @@
         <div class="tiny-rule mx-auto mb-5"></div>
 
         <div>
-            <div class="my-row">
+            <div class="row row-cols-1 row-cols-lg-3">
                 <div class="col">
                     <div class="my-card p-5">
                         <div class="d-flex gap-4 pb-4">
