@@ -34,15 +34,79 @@
 
         <!-- Recensioni -->
         <div class="container py-5 my-5">
-            <div class="row text-center">
-                <div class="col">
-                    user 1
-                </div>
-                <div class="col">
-                    user 2
-                </div>
-                <div class="col">
-                    user 3
+            <div>
+                <div class="my-row">
+                    <div class="col">
+                        <div class="my-card p-5">
+                            <div class="d-flex gap-4 pb-4">
+                                <img class="card-img" src="/images/jumbo_doctor.png" alt="">
+                                <div>
+                                    <h4>Name Surname</h4>
+                                    <span class="subtitle">Happy Patient</span>
+                                </div>
+                            </div>
+                            <p class="p-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem
+                                distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero
+                                facere quod. Molestiae, nostrum! Saepe, minus iure!</p>
+                            <div class="rating-bar py-2 px-4 d-flex justify-content-between">
+                                <h5>rated 4.3/5</h5>
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="my-card middle p-5">
+                            <div class="d-flex gap-4 pb-4">
+                                <img class="card-img" src="/images/jumbo_doctor.png" alt="">
+                                <div>
+                                    <h4>Name Surname</h4>
+                                    <span class="subtitle">Happy Patient</span>
+                                </div>
+                            </div>
+                            <p class="p-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem
+                                distinctio, dolorum a laboriosam et tempora optio.</p>
+                            <div class="rating-bar py-2 px-4 d-flex justify-content-between">
+                                <h5>rated 4.5/5</h5>
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="my-card p-5">
+                            <div class="d-flex gap-4 pb-4">
+                                <img class="card-img" src="/images/jumbo_doctor.png" alt="">
+                                <div>
+                                    <h4>Name Surname</h4>
+                                    <span class="subtitle">Happy Patient</span>
+                                </div>
+                            </div>
+                            <p class="p-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem
+                                distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero
+                                facere quod. Molestiae, nostrum! Saepe, minus iure!</p>
+                            <div class="rating-bar py-2 px-4 d-flex justify-content-between">
+                                <h5>rated 4.7/5</h5>
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                    <i class="fa-solid fa-star gold-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <form class="form-msg">
