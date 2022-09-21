@@ -3113,192 +3113,7 @@ var staticRenderFns = [function () {
       alt: ""
     }
   })])]), _vm._v(" "), _c("div", {
-    staticClass: "container py-5 my-5"
-  }, [_c("h2", {
-    staticClass: "text-center"
-  }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
-    staticClass: "my-row"
-  }, [_c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "my-card p-5"
-  }, [_c("div", {
-    staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
-    staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
-    staticClass: "p-style"
-  }, [_vm._v("\n                            Lorem ipsum dolor sit amet consectetur\n                            adipisicing elit. Quia nam autem distinctio,\n                            dolorum a laboriosam et tempora optio, tenetur\n                            porro debitis reiciendis vero facere quod.\n                            Molestiae, nostrum! Saepe, minus iure!\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "my-card middle p-5"
-  }, [_c("div", {
-    staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
-    staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
-    staticClass: "p-style"
-  }, [_vm._v("\n                            Lorem ipsum dolor sit amet consectetur\n                            adipisicing elit. Quia nam autem distinctio,\n                            dolorum a laboriosam et tempora optio.\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "my-card p-5"
-  }, [_c("div", {
-    staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
-    staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
-    staticClass: "p-style"
-  }, [_vm._v("\n                            Lorem ipsum dolor sit amet consectetur\n                            adipisicing elit. Quia nam autem distinctio,\n                            dolorum a laboriosam et tempora optio, tenetur\n                            porro debitis reiciendis vero facere quod.\n                            Molestiae, nostrum! Saepe, minus iure!\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "pt-5"
-  }, [_c("h3", {
-    staticClass: "text-center"
-  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
-    staticClass: "form-msg"
-  }, [_c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "name",
-      id: "nameFormControlInput1",
-      placeholder: "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo cognome:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "surname",
-      id: "surnameFormControlInput1",
-      placeholder: "Cognome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci la tua mail:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "email",
-      id: "emailFormControlInput1",
-      placeholder: "Email"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
-    staticClass: "form-control",
-    attrs: {
-      multiple: "",
-      id: "exampleFormControlSelect2"
-    }
-  }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "title",
-      id: "titleFormControlInput1",
-      placeholder: "Titolo"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlTextarea1"
-    }
-  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
-    staticClass: "form-control",
-    attrs: {
-      id: "exampleFormControlTextarea1",
-      rows: "3"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center py-2"
-  }, [_c("button", {
-    staticClass: "btn btn-primary text-center",
-    attrs: {
-      type: "button"
-    }
-  }, [_vm._v("\n                        Invia recensione\n                    ")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "container-blue"
+    staticClass: "container-white"
   }, [_c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -3367,7 +3182,168 @@ var staticRenderFns = [function () {
     attrs: {
       type: "button"
     }
-  }, [_vm._v("\n                                Invia messaggio\n                            ")])])])])])])])]);
+  }, [_vm._v("\n                                Invia messaggio\n                            ")])])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container-blue"
+  }, [_c("div", {
+    staticClass: "container py-5 my-5"
+  }, [_c("h2", {
+    staticClass: "text-center"
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "my-row"
+  }, [_c("div", {
+    staticClass: "col"
+  }, [_c("div", {
+    staticClass: "my-card p-5"
+  }, [_c("div", {
+    staticClass: "d-flex gap-4 pb-4"
+  }, [_c("img", {
+    staticClass: "card-img",
+    attrs: {
+      src: "/images/jumbo_doctor.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+    staticClass: "subtitle"
+  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+    staticClass: "p-style"
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+  }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-stars"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  })])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("div", {
+    staticClass: "my-card middle p-5"
+  }, [_c("div", {
+    staticClass: "d-flex gap-4 pb-4"
+  }, [_c("img", {
+    staticClass: "card-img",
+    attrs: {
+      src: "/images/jumbo_doctor.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+    staticClass: "subtitle"
+  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+    staticClass: "p-style"
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio.\n                            ")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+  }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-stars"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  })])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("div", {
+    staticClass: "my-card p-5"
+  }, [_c("div", {
+    staticClass: "d-flex gap-4 pb-4"
+  }, [_c("img", {
+    staticClass: "card-img",
+    attrs: {
+      src: "/images/jumbo_doctor.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+    staticClass: "subtitle"
+  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+    staticClass: "p-style"
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+  }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-stars"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  })])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "pt-5"
+  }, [_c("h3", {
+    staticClass: "text-center"
+  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
+    staticClass: "form-msg"
+  }, [_c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "name",
+      id: "nameFormControlInput1",
+      placeholder: "Nome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
+    staticClass: "form-control",
+    attrs: {
+      multiple: "",
+      id: "exampleFormControlSelect2"
+    }
+  }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "title",
+      id: "titleFormControlInput1",
+      placeholder: "Titolo"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlTextarea1"
+    }
+  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
+    staticClass: "form-control",
+    attrs: {
+      id: "exampleFormControlTextarea1",
+      rows: "3"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "text-center py-2"
+  }, [_c("button", {
+    staticClass: "btn btn-primary text-center",
+    attrs: {
+      type: "button"
+    }
+  }, [_vm._v("\n                            Invia recensione\n                        ")])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3583,7 +3559,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
+exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
 
 // exports
 

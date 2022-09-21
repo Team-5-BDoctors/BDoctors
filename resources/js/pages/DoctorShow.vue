@@ -38,200 +38,7 @@
             </div>
         </div>
 
-        <!-- Recensioni -->
-        <div class="container py-5 my-5">
-            <h2 class="text-center">Recensioni</h2>
-            <div>
-                <div class="my-row">
-                    <div class="col">
-                        <div class="my-card p-5">
-                            <div class="d-flex gap-4 pb-4">
-                                <img
-                                    class="card-img"
-                                    src="/images/jumbo_doctor.png"
-                                    alt=""
-                                />
-                                <div>
-                                    <h4>Name Surname</h4>
-                                    <span class="subtitle">Happy Patient</span>
-                                </div>
-                            </div>
-                            <p class="p-style">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quia nam autem distinctio,
-                                dolorum a laboriosam et tempora optio, tenetur
-                                porro debitis reiciendis vero facere quod.
-                                Molestiae, nostrum! Saepe, minus iure!
-                            </p>
-                            <div
-                                class="rating-bar py-2 px-4 d-flex justify-content-between"
-                            >
-                                <h5>rated 4.3/5</h5>
-                                <div class="rating-stars">
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="my-card middle p-5">
-                            <div class="d-flex gap-4 pb-4">
-                                <img
-                                    class="card-img"
-                                    src="/images/jumbo_doctor.png"
-                                    alt=""
-                                />
-                                <div>
-                                    <h4>Name Surname</h4>
-                                    <span class="subtitle">Happy Patient</span>
-                                </div>
-                            </div>
-                            <p class="p-style">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quia nam autem distinctio,
-                                dolorum a laboriosam et tempora optio.
-                            </p>
-                            <div
-                                class="rating-bar py-2 px-4 d-flex justify-content-between"
-                            >
-                                <h5>rated 4.5/5</h5>
-                                <div class="rating-stars">
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="my-card p-5">
-                            <div class="d-flex gap-4 pb-4">
-                                <img
-                                    class="card-img"
-                                    src="/images/jumbo_doctor.png"
-                                    alt=""
-                                />
-                                <div>
-                                    <h4>Name Surname</h4>
-                                    <span class="subtitle">Happy Patient</span>
-                                </div>
-                            </div>
-                            <p class="p-style">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quia nam autem distinctio,
-                                dolorum a laboriosam et tempora optio, tenetur
-                                porro debitis reiciendis vero facere quod.
-                                Molestiae, nostrum! Saepe, minus iure!
-                            </p>
-                            <div
-                                class="rating-bar py-2 px-4 d-flex justify-content-between"
-                            >
-                                <h5>rated 4.7/5</h5>
-                                <div class="rating-stars">
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                    <i class="fa-solid fa-star gold-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-5">
-                <h3 class="text-center">La tua recensione</h3>
-                <form class="form-msg">
-                    <div class="form-group p-2">
-                        <label for="exampleFormControlInput1"
-                            >Inserisci il tuo nome:</label
-                        >
-                        <input
-                            type="name"
-                            class="form-control"
-                            id="nameFormControlInput1"
-                            placeholder="Nome"
-                        />
-                    </div>
-                    <div class="form-group p-2">
-                        <label for="exampleFormControlInput1"
-                            >Inserisci il tuo cognome:</label
-                        >
-                        <input
-                            type="surname"
-                            class="form-control"
-                            id="surnameFormControlInput1"
-                            placeholder="Cognome"
-                        />
-                    </div>
-                    <div class="form-group p-2">
-                        <label for="exampleFormControlInput1"
-                            >Inserisci la tua mail:</label
-                        >
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="emailFormControlInput1"
-                            placeholder="Email"
-                        />
-                    </div>
-                    <div class="form-group py-2">
-                        <label for="exampleFormControlInput1"
-                            >Inserisci il tuo voto, da 1 a 5:</label
-                        >
-                        <select
-                            multiple
-                            class="form-control"
-                            id="exampleFormControlSelect2"
-                        >
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group p-2">
-                        <label for="exampleFormControlInput1"
-                            >Titolo recensione:</label
-                        >
-                        <input
-                            type="title"
-                            class="form-control"
-                            id="titleFormControlInput1"
-                            placeholder="Titolo"
-                        />
-                    </div>
-                    <div class="form-group py-2">
-                        <label for="exampleFormControlTextarea1"
-                            >Dai il tuo parere:</label
-                        >
-                        <textarea
-                            class="form-control"
-                            id="exampleFormControlTextarea1"
-                            rows="3"
-                        ></textarea>
-                    </div>
-                    <div class="text-center py-2">
-                        <button
-                            type="button"
-                            class="btn btn-primary text-center"
-                        >
-                            Invia recensione
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Messaggi -->
-        <div class="container-blue">
+        <div class="container-white">
             <div class="container">
                 <div class="contact">
                     <div class="form-title">
@@ -299,6 +106,214 @@
                 </div>
             </div>
         </div>
+
+        <!-- Recensioni -->
+        <div class="container-blue">
+            <div class="container py-5 my-5">
+                <h2 class="text-center">Recensioni</h2>
+                <div>
+                    <div class="my-row">
+                        <div class="col">
+                            <div class="my-card p-5">
+                                <div class="d-flex gap-4 pb-4">
+                                    <img
+                                        class="card-img"
+                                        src="/images/jumbo_doctor.png"
+                                        alt=""
+                                    />
+                                    <div>
+                                        <h4>Name Surname</h4>
+                                        <span class="subtitle"
+                                            >Happy Patient</span
+                                        >
+                                    </div>
+                                </div>
+                                <p class="p-style">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quia nam autem distinctio,
+                                    dolorum a laboriosam et tempora optio,
+                                    tenetur porro debitis reiciendis vero facere
+                                    quod. Molestiae, nostrum! Saepe, minus iure!
+                                </p>
+                                <div
+                                    class="rating-bar py-2 px-4 d-flex justify-content-between"
+                                >
+                                    <h5>rated 4.3/5</h5>
+                                    <div class="rating-stars">
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="my-card middle p-5">
+                                <div class="d-flex gap-4 pb-4">
+                                    <img
+                                        class="card-img"
+                                        src="/images/jumbo_doctor.png"
+                                        alt=""
+                                    />
+                                    <div>
+                                        <h4>Name Surname</h4>
+                                        <span class="subtitle"
+                                            >Happy Patient</span
+                                        >
+                                    </div>
+                                </div>
+                                <p class="p-style">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quia nam autem distinctio,
+                                    dolorum a laboriosam et tempora optio.
+                                </p>
+                                <div
+                                    class="rating-bar py-2 px-4 d-flex justify-content-between"
+                                >
+                                    <h5>rated 4.5/5</h5>
+                                    <div class="rating-stars">
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="my-card p-5">
+                                <div class="d-flex gap-4 pb-4">
+                                    <img
+                                        class="card-img"
+                                        src="/images/jumbo_doctor.png"
+                                        alt=""
+                                    />
+                                    <div>
+                                        <h4>Name Surname</h4>
+                                        <span class="subtitle"
+                                            >Happy Patient</span
+                                        >
+                                    </div>
+                                </div>
+                                <p class="p-style">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quia nam autem distinctio,
+                                    dolorum a laboriosam et tempora optio,
+                                    tenetur porro debitis reiciendis vero facere
+                                    quod. Molestiae, nostrum! Saepe, minus iure!
+                                </p>
+                                <div
+                                    class="rating-bar py-2 px-4 d-flex justify-content-between"
+                                >
+                                    <h5>rated 4.7/5</h5>
+                                    <div class="rating-stars">
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                        <i
+                                            class="fa-solid fa-star gold-star"
+                                        ></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-5">
+                    <h3 class="text-center">La tua recensione</h3>
+                    <form class="form-msg">
+                        <div class="form-group p-2">
+                            <label for="exampleFormControlInput1"
+                                >Inserisci il tuo nome:</label
+                            >
+                            <input
+                                type="name"
+                                class="form-control"
+                                id="nameFormControlInput1"
+                                placeholder="Nome"
+                            />
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="exampleFormControlInput1"
+                                >Inserisci il tuo voto, da 1 a 5:</label
+                            >
+                            <select
+                                multiple
+                                class="form-control"
+                                id="exampleFormControlSelect2"
+                            >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group p-2">
+                            <label for="exampleFormControlInput1"
+                                >Titolo recensione:</label
+                            >
+                            <input
+                                type="title"
+                                class="form-control"
+                                id="titleFormControlInput1"
+                                placeholder="Titolo"
+                            />
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="exampleFormControlTextarea1"
+                                >Dai il tuo parere:</label
+                            >
+                            <textarea
+                                class="form-control"
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                            ></textarea>
+                        </div>
+                        <div class="text-center py-2">
+                            <button
+                                type="button"
+                                class="btn btn-primary text-center"
+                            >
+                                Invia recensione
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -329,6 +344,7 @@ export default {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.5s ease-in-out;
+    background-color: #ffffff;
 
     &.appear {
         opacity: 1;
@@ -419,6 +435,13 @@ p {
     padding-top: 20px;
     padding-bottom: 6rem;
 }
+
+.container-white {
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 6rem;
+}
+
 
 .contact {
     width: 90%;
