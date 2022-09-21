@@ -8,7 +8,7 @@ class Sponsorship extends Model
 {
     public function users()
     {
-        // many to many
-        return $this->belongsToMany('App\User', 'user_sponsorship', 'sponsorship_id', 'user_id');
+        return $this->belongsToMany('App\User', 'user_sponsorship', 'sponsorship_id', 'user_id')
+        ->using('App\UserSponsorship');
     }
 }

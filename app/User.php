@@ -46,7 +46,8 @@ class User extends Authenticatable
 
     public function sponsorships()
     {
-        return $this->belongsToMany('App\Sponsorship', 'user_sponsorship', 'user_id', 'sponsorship_id');
+        return $this->belongsToMany('App\Sponsorship', 'user_sponsorship', 'user_id', 'sponsorship_id')
+        ->using('App\UserSponsorship');
     }
 
     public function messages()
