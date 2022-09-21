@@ -20157,11 +20157,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
->>>>>>> Luca
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

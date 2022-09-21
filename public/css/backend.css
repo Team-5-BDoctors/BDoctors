@@ -12644,6 +12644,8 @@ fieldset:disabled .btn {
   background-color: white;
   padding: 2rem;
   border-radius: 0.5rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .dashboard .content-container .edit-card .bg-img {
@@ -12651,6 +12653,8 @@ fieldset:disabled .btn {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .dashboard .content-container .edit-card .form-group {
