@@ -2752,34 +2752,79 @@ var staticRenderFns = [function () {
       "for": "btnradio2"
     }
   }, [_vm._v("Numero\n                    recensioni")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "bg-lightblue py-5"
+    staticClass: "bg-lightblue py-5 justify-content-center d-flex"
   }, [_c("div", {
-    staticClass: "container d-flex justify-content-center text-center flex-wrap"
+    staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
+  }, [_c("div", {
+    staticClass: "col"
   }, [_c("div", {
     staticClass: "card m-3 border-0",
     staticStyle: {
       width: "22rem"
     }
-  }, [_c("div", [_c("img", {
-    staticClass: "card-img-top rounded-circle w-50 drelative",
+  }, [_c("div", {
+    staticClass: "avatarbg mx-auto"
+  }, [_c("img", {
+    staticClass: "card-img-top",
     attrs: {
-      src: "https://picsum.photos/200/200",
+      src: "images/baffo.png",
       alt: "..."
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "card-body"
   }, [_c("h5", {
-    staticClass: "card-title"
-  }, [_vm._v("Card title")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2"
-  }, [_vm._v("Cardiac Surgery")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text"
-  }, [_vm._v("Some quick example text to build on the card title and make up the bulk of\n                        the card's content.")]), _vm._v(" "), _c("a", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      href: "#"
+    staticClass: "card-title text-center"
+  }, [_vm._v("\n                            Card title\n                        ")]), _vm._v(" "), _c("div", {
+    staticClass: "text-primary pb-2 text-center"
+  }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
+    staticClass: "card-text text-center"
+  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("div", {
+    staticClass: "card m-3 border-0",
+    staticStyle: {
+      width: "22rem"
     }
-  }, [_vm._v("Go somewhere")])])])])])]);
+  }, [_c("div", {
+    staticClass: "avatarbg mx-auto"
+  }, [_c("img", {
+    staticClass: "card-img-top",
+    attrs: {
+      src: "images/cioccolata.png",
+      alt: "..."
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title text-center"
+  }, [_vm._v("\n                            Card title\n                        ")]), _vm._v(" "), _c("div", {
+    staticClass: "text-primary pb-2 text-center"
+  }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
+    staticClass: "card-text text-center"
+  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col"
+  }, [_c("div", {
+    staticClass: "card m-3 border-0",
+    staticStyle: {
+      width: "22rem"
+    }
+  }, [_c("div", {
+    staticClass: "avatarbg mx-auto"
+  }, [_c("img", {
+    staticClass: "card-img-top",
+    attrs: {
+      src: "images/covid.png",
+      alt: "..."
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title text-center"
+  }, [_vm._v("\n                            Card title\n                        ")]), _vm._v(" "), _c("div", {
+    staticClass: "text-primary pb-2 text-center"
+  }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
+    staticClass: "card-text text-center"
+  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2957,7 +3002,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}\nform[data-v-0312e533] {\n  position: relative;\n  width: 30rem;\n  background: rgb(13, 110, 253);\n  border-radius: 0.7rem;\n}\ninput[data-v-0312e533],\nbutton[data-v-0312e533] {\n  height: 4rem;\n  font-family: \"Lato\", sans-serif;\n  border: 0;\n  color: #2f2f2f;\n}\ninput[type=search][data-v-0312e533] {\n  width: 100%;\n  background: #fff;\n  padding: 0 1.6rem;\n  border-radius: 0.7rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);\n  transition-property: width, border-radius;\n  z-index: 1;\n  position: relative;\n}\nbutton[data-v-0312e533] {\n  display: none;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 6rem;\n  font-weight: bold;\n  background: rgb(13, 110, 253);\n  border-radius: 0 0.7rem 0.7rem 0;\n}\ninput[data-v-0312e533]:not(:-moz-placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\ninput[data-v-0312e533]:not(:placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\nbutton[data-v-0312e533] {\n  display: block;\n}", ""]);
+exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}\nform[data-v-0312e533] {\n  position: relative;\n  width: 30rem;\n  background: rgb(13, 110, 253);\n  border-radius: 0.7rem;\n}\ninput[data-v-0312e533],\nbutton[data-v-0312e533] {\n  height: 4rem;\n  font-family: \"Lato\", sans-serif;\n  border: 0;\n  color: #2f2f2f;\n}\ninput[type=search][data-v-0312e533] {\n  width: 100%;\n  background: #fff;\n  padding: 0 1.6rem;\n  border-radius: 0.7rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);\n  transition-property: width, border-radius;\n  z-index: 1;\n  position: relative;\n}\nbutton[data-v-0312e533] {\n  display: none;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 6rem;\n  font-weight: bold;\n  background: rgb(13, 110, 253);\n  border-radius: 0 0.7rem 0.7rem 0;\n}\ninput[data-v-0312e533]:not(:-moz-placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\ninput[data-v-0312e533]:not(:placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\nbutton[data-v-0312e533] {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -20112,7 +20157,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
