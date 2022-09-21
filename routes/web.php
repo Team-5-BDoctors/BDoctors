@@ -32,6 +32,8 @@ Route::middleware("auth")->namespace("Doctor")->name('doctor.')->prefix('doctor'
         Route::get("/messages", "MessageController@index")->name("messages.index");
         Route::get("/reviews", "ReviewsController@index")->name("reviews.index");
         Route::get("/stats", "StatsController@index")->name("stats.index");
+        Route::get("/sponsorships", "SponsorshipController@index")->name("sponsorships.index");
+        Route::post("/sponsorships", "SponsorshipController@store")->name("sponsorships.store");
     });
 
 Route::get('{any}', function () {

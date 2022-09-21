@@ -65,6 +65,11 @@
                 Statistiche Account
             </a>
         </li>
+        <li>
+            <a href="{{route("doctor.sponsorships.index")}}" class="nav-link text-white {{ Request::route()->getName() === 'doctor.sponsorships.index' ? 'my-active' : '' }}" aria-current="page">
+                <i class="fa-solid fa-star"></i>
+                Sponsorizzazioni
+            </a>
     </ul>
     
     
