@@ -1,13 +1,18 @@
 .sidebar{
     width: 225px;
     background-color:#338DFF;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
 
     & .dropdown{
 
         & img{
             width: 5rem;
             height: 5rem;
-            border: 3px solid #E9F6FF;;
+            border: 3px solid #E9F6FF;
+            object-fit: cover;
+            object-position: center;
             
             
         }
@@ -19,6 +24,8 @@
             padding-left: .5rem;
             padding-right: .5rem;
             font-size: 1rem;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
 
         }
 

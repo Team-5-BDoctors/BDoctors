@@ -1,4 +1,4 @@
-<div class="sidebar p-2 d-flex flex-column flex-shrink-0">
+<div class="sidebar d-flex flex-column flex-shrink-0">
     <a href="/" class="mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img class="w-75" src="{{asset('images/logo_full_white.png')}}" alt="">
     </a>

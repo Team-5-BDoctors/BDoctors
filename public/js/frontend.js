@@ -20646,7 +20646,11 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+>>>>>>> bdd01d39d033e68fed44afbc3755a623c6052e2e
 
 
 /***/ })
