@@ -134,6 +134,16 @@ class UserController extends Controller
     {
         $user = auth()->user();
         $user->specializations()->detach();
+        $user->messages()->delete();
+
+        if ($user->image) {
+            Storage::delete($user->image);
+        }
+
+        if ($user->curriculum) {
+            Storage::delete($user->curriculum);
+        }
+        
         $user->delete();
         return redirect()->route("welcome");
     }

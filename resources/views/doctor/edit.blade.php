@@ -4,6 +4,7 @@
 
 <div class="container">
     <div class="edit-card">
+        <h1 class="edit-card-title">Modifica profilo</h1>
         <div class="row">
             <div class="col-8">
                 <form action="{{ route('doctor.update', $user->slug) }}" method="post" enctype="multipart/form-data">
@@ -126,7 +127,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <button type="submit" class="btn btn-primary w-75 mt-5">Salva</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-5">Salva</button>
                         </div>
                         
                     </div>
