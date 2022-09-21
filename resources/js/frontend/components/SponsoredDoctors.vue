@@ -91,11 +91,35 @@ export default {
     data() {
         return {};
     },
-    mounted() {},
+    // make elements appear when scrolling
+    mounted() {
+        window.addEventListener("scroll", this.scrollFunction);
+    },
+    methods: {
+        scrollFunction() {
+            var elements = document.getElementsByClassName("card");
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    element.classList.add("appear");
+                }
+            }
+        },
+    },
 };
 </script>
 
 <style lang="scss" scoped>
+.card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+    &.appear {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .secondarybg {
     background-color: #e9f6ff;
 }
@@ -123,7 +147,4 @@ export default {
     transform: translateY(-20%);
 }
 
-.card {
-    border: none;
-}
 </style>

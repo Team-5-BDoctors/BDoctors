@@ -2073,7 +2073,24 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  mounted: function mounted() {}
+  // make elements appear when scrolling
+  mounted: function mounted() {
+    window.addEventListener("scroll", this.scrollFunction);
+  },
+  methods: {
+    scrollFunction: function scrollFunction() {
+      var elements = document.getElementsByClassName("card");
+
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var rect = element.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight) {
+          element.classList.add("appear");
+        }
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2883,7 +2900,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".secondarybg[data-v-a7b53596] {\n  background-color: #e9f6ff;\n}\n.bluespacer[data-v-a7b53596] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 100px;\n  margin-left: auto;\n  margin-right: auto;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.avatarbg[data-v-a7b53596] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.card[data-v-a7b53596] {\n  border: none;\n}", ""]);
+exports.push([module.i, ".card[data-v-a7b53596] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-a7b53596] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.secondarybg[data-v-a7b53596] {\n  background-color: #e9f6ff;\n}\n.bluespacer[data-v-a7b53596] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 100px;\n  margin-left: auto;\n  margin-right: auto;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.avatarbg[data-v-a7b53596] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}", ""]);
 
 // exports
 

@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 h1 {
   font-size: 65px;
   font-weight: 700;
