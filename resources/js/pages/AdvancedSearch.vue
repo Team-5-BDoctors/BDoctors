@@ -40,7 +40,7 @@
 
 
         </div>
-        <div class="bg-lightblue py-5 justify-content-center d-flex">
+        <div class="bg-lightblue justify-content-center d-flex">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
 
                 <div class="col">
@@ -113,7 +113,21 @@
 
 
 export default {
-    components: {}
+    mounted() {
+        window.addEventListener("scroll", this.scrollFunction);
+    },
+    methods: {
+        scrollFunction() {
+            var elements = document.getElementsByClassName("card");
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    element.classList.add("appear");
+                }
+            }
+        },
+    },
 }
 </script>
 
@@ -125,7 +139,16 @@ export default {
     background-repeat: no-repeat;
     height: 400px;
 }
+.card {
+    opacity: 0.5;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
 
+    &.appear {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .card {
     border: none;
 }
@@ -150,6 +173,8 @@ export default {
 
 .bg-lightblue {
     background-color: rgb(233, 246, 255);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .drelative {

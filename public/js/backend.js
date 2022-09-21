@@ -40243,15 +40243,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
-__webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
-module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
-=======
-__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
-__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
-module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
->>>>>>> bdd01d39d033e68fed44afbc3755a623c6052e2e
+__webpack_require__(/*! D:\Boolean\bdoctors\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! D:\Boolean\bdoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
 
 
 /***/ })

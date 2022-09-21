@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container py-5 px-0">
+    <div class="container aboutus px-0">
         <h1 class="text-center pb-3">Customers About Us</h1>
         <div class="tiny-rule mx-auto mb-5"></div>
 
@@ -81,12 +81,40 @@
 
 <script>
 export default {
-    
-
+    mounted() {
+        window.addEventListener("scroll", this.scrollFunction);
+    },
+    methods: {
+        scrollFunction() {
+            var elements = document.getElementsByClassName("my-card");
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    element.classList.add("appear");
+                }
+            }
+        },
+    },
 }
 </script>
 
 <style scoped lang="scss">
+
+.my-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+
+    &.appear {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+    .aboutus {
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+    }
     .tiny-rule {
         width: 80px;
         height: 2px;
