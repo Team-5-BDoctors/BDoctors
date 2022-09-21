@@ -1,9 +1,10 @@
 <template>
     <div>
+        <!-- Dottore -->
         <div class="container-fluid">
             <div class="container d-flex justify-content-between align-items-center h-100">
                 <div class="left-jumbo">
-                    <h2 class="pb-3">Name Surname</h2>
+                    <h1 class="pb-3">Name Surname</h1>
                     <p class="pb-3 spec">
                         Neurology
                     </p>
@@ -16,6 +17,11 @@
                     <p class="pb-3">
                         Adress
                     </p>
+                    <p class="pb-3">
+                        <span>Prestazioni offerte:</span>
+                        <br>
+                        Visite specialistiche, impegnative, chirurgia ambulatoriale
+                    </p>
                 </div>
                 <div class="h-75 right-jumbo">
                     <img class="h-100 floating-elements" src="/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png"
@@ -26,7 +32,8 @@
             </div>
         </div>
 
-        <div class="container text-center p-5">
+        <!-- Recensioni -->
+        <div class="container text-center py-5 my-5">
             <div class="row">
                 <div class="col">
                     user 1
@@ -38,13 +45,62 @@
                     user 3
                 </div>
             </div>
-            <button type="button" class="btn btn-primary m-2">
-                Lascia una recensione
-            </button>
+            <form class="form-msg">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nome e cognome:</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Nome e cognome">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">Il tuo voto, da 1 a 5:</label>
+                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Se vuoi aggiungere altro:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
         </div>
 
-        <div class="container-fluid">
+        <!-- Messaggi -->
+        <div class="container-blue pb-5">
+            <div class="container">
+                <div class="contact">
 
+                    <div class="form-title">
+                        <h2>Invia un messaggio al dottore</h2>
+                        <br>
+                        <div class="divider"></div>
+                    </div>
+
+                    <div>
+                        <form class="form-msg">
+                            <div class="form-group p-2">
+                                <label for="exampleFormControlInput1">Inserisci il tuo nome e il tuo cognome:</label>
+                                <input type="name" class="form-control" id="nameFormControlInput1"
+                                    placeholder="Nome e cognome">
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="exampleFormControlTextarea1">Inserisci il tuo messaggio con la
+                                    richiesta:</label>
+                                <textarea class="form-control pb-5" id="exampleFormControlTextarea1"
+                                    rows="3"></textarea>
+                            </div>
+                            <div class="text-center py-2">
+                                <button type="button" class="btn btn-primary text-center">
+                                    Invia messaggio
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -59,14 +115,24 @@ export default {
 
 
 <style scoped lang="scss">
+h1 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
 h2 {
     font-size: 45px;
     font-weight: 500;
 }
 
-.spec {
-    font-weight: 400;
+span {
     font-size: 20px;
+    font-weight: 500;
+}
+
+.spec {
+    font-weight: 500;
+    font-size: 30px;
     color: #4056ff;
 }
 
@@ -126,5 +192,76 @@ p {
 .container-fluid {
     height: calc(100vh - 80px);
     background-color: #e9f6ff;
+}
+
+.container-blue {
+    background-color: #e9f6ff;
+    padding-top: 20px;
+}
+
+.contact {
+    width: 90%;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d8eeff;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.form-title {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+}
+
+.divider {
+    width: 80px;
+    height: 2px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border-color: transparent;
+    background-color: #2ea4ff;
+}
+
+.form-msg {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+
+.flex-img {
+    display: flex;
+    justify-content: center;
+}
+
+.form-img {
+    height: 60%;
+    border-radius: 8px;
 }
 </style>

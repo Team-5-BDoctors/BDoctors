@@ -2841,7 +2841,7 @@ var staticRenderFns = [function () {
     staticClass: "container d-flex justify-content-between align-items-center h-100"
   }, [_c("div", {
     staticClass: "left-jumbo"
-  }, [_c("h2", {
+  }, [_c("h1", {
     staticClass: "pb-3"
   }, [_vm._v("Name Surname")]), _vm._v(" "), _c("p", {
     staticClass: "pb-3 spec"
@@ -2851,7 +2851,9 @@ var staticRenderFns = [function () {
     staticClass: "pb-3"
   }, [_vm._v("\n                    Phone\n                ")]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_vm._v("\n                    Adress\n                ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                    Adress\n                ")]), _vm._v(" "), _c("p", {
+    staticClass: "pb-3"
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    Visite specialistiche, impegnative, chirurgia ambulatoriale\n                ")])]), _vm._v(" "), _c("div", {
     staticClass: "h-75 right-jumbo"
   }, [_c("img", {
     staticClass: "h-100 floating-elements",
@@ -2872,7 +2874,7 @@ var staticRenderFns = [function () {
       alt: ""
     }
   })])]), _vm._v(" "), _c("div", {
-    staticClass: "container text-center p-5"
+    staticClass: "container text-center py-5 my-5"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
@@ -2881,14 +2883,90 @@ var staticRenderFns = [function () {
     staticClass: "col"
   }, [_vm._v("\n                user 2\n            ")]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_vm._v("\n                user 3\n            ")])]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary m-2",
+  }, [_vm._v("\n                user 3\n            ")])]), _vm._v(" "), _c("form", {
+    staticClass: "form-msg"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Nome e cognome:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      id: "exampleFormControlInput1",
+      placeholder: "Nome e cognome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlSelect2"
+    }
+  }, [_vm._v("Il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
+    staticClass: "form-control",
+    attrs: {
+      multiple: "",
+      id: "exampleFormControlSelect2"
+    }
+  }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlTextarea1"
+    }
+  }, [_vm._v("Se vuoi aggiungere altro:")]), _vm._v(" "), _c("textarea", {
+    staticClass: "form-control",
+    attrs: {
+      id: "exampleFormControlTextarea1",
+      rows: "3"
+    }
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "container-blue pb-5"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "contact"
+  }, [_c("div", {
+    staticClass: "form-title"
+  }, [_c("h2", [_vm._v("Invia un messaggio al dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
+    staticClass: "divider"
+  })]), _vm._v(" "), _c("div", [_c("form", {
+    staticClass: "form-msg"
+  }, [_c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci il tuo nome e il tuo cognome:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "name",
+      id: "nameFormControlInput1",
+      placeholder: "Nome e cognome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlTextarea1"
+    }
+  }, [_vm._v("Inserisci il tuo messaggio con la\n                                richiesta:")]), _vm._v(" "), _c("textarea", {
+    staticClass: "form-control pb-5",
+    attrs: {
+      id: "exampleFormControlTextarea1",
+      rows: "3"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "text-center py-2"
+  }, [_c("button", {
+    staticClass: "btn btn-primary text-center",
     attrs: {
       type: "button"
     }
-  }, [_vm._v("\n            Lascia una recensione\n        ")])]), _vm._v(" "), _c("div", {
-    staticClass: "container-fluid"
-  })]);
+  }, [_vm._v("\n                                Invia messaggio\n                            ")])])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3085,7 +3163,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 400;\n  font-size: 20px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}", ""]);
+exports.push([module.i, "h1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}", ""]);
 
 // exports
 
