@@ -21,6 +21,14 @@
                             <p>{{ $user->email }}</p>
                             <p>{{ $user->phone }}</p>
                             <p>{{ $user->address }}</p>
+
+                            <form action="{{ route('doctor.destroy') }}" method="post">
+                                @csrf
+                                @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger">cancella account</button>
+                            </form>
+
                         </div>
                     </div>
                 </div>

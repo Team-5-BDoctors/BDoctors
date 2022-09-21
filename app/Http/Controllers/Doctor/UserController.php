@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        
+
 
         return view('doctor.index',);
     }
@@ -104,7 +104,7 @@ class UserController extends Controller
             $imagePath = Storage::put("avatars", $validateData["image"]);
             $validateData["image"] = $imagePath;
         }
-        
+
 
         if (array_key_exists("curriculum", $validateData)) {
             if ($user->curriculum) {
@@ -129,8 +129,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    public function destroy()
     {
-        //
+        $user = auth()->user();
+        $user->specializations()->detach();
+        $user->delete();
+        return redirect()->route("doctor.index");
     }
 }
