@@ -12,12 +12,16 @@
             background-color: white;
             padding: 2rem;
             border-radius: .5rem;
+            width: 90%;
+            margin: 0 auto;
 
             & .bg-img{
                 background-image: url('/images/jumbo_right_bg.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 height: 100%;
+                display: flex;
+                align-items: center;
             }
 
             & .form-group{
