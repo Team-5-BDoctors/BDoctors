@@ -40,19 +40,67 @@
 
 
         </div>
-        <div class="bg-lightblue py-5">
-            <div class="container d-flex justify-content-center text-center flex-wrap">
-                <div class="card m-3 border-0" style="width: 22rem;">
-                    <div>
-                        <img src="https://picsum.photos/200/200" class="card-img-top rounded-circle w-50 drelative"
-                            alt="...">
+        <div class="bg-lightblue py-5 justify-content-center d-flex">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
+
+                <div class="col">
+                    <div class="card m-3 border-0" style="width: 22rem">
+                        <div class="avatarbg mx-auto">
+                            <img src="images/baffo.png" class="card-img-top" alt="..." />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                Card title
+                            </h5>
+                            <div class="text-primary pb-2 text-center">
+                                Cardiac Surgery
+                            </div>
+                            <p class="card-text text-center">
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's
+                                content.
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <div class="text-primary pb-2">Cardiac Surgery</div>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <div class="col">
+                    <div class="card m-3 border-0" style="width: 22rem">
+                        <div class="avatarbg mx-auto">
+                            <img src="images/cioccolata.png" class="card-img-top" alt="..." />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                Card title
+                            </h5>
+                            <div class="text-primary pb-2 text-center">
+                                Cardiac Surgery
+                            </div>
+                            <p class="card-text text-center">
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's
+                                content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card m-3 border-0" style="width: 22rem">
+                        <div class="avatarbg mx-auto">
+                            <img src="images/covid.png" class="card-img-top" alt="..." />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                Card title
+                            </h5>
+                            <div class="text-primary pb-2 text-center">
+                                Cardiac Surgery
+                            </div>
+                            <p class="card-text text-center">
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's
+                                content.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,6 +124,20 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     height: 400px;
+}
+
+.card {
+    border: none;
+}
+
+.avatarbg {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);
+    transform: translateY(-20%);
 }
 
 .search-bar {
