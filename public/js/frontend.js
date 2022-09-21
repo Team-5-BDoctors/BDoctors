@@ -2875,15 +2875,103 @@ var staticRenderFns = [function () {
     }
   })])]), _vm._v(" "), _c("div", {
     staticClass: "container py-5 my-5"
+  }, [_c("h2", {
+    staticClass: "text-center"
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "my-row"
   }, [_c("div", {
-    staticClass: "row text-center"
+    staticClass: "col"
   }, [_c("div", {
+    staticClass: "my-card p-5"
+  }, [_c("div", {
+    staticClass: "d-flex gap-4 pb-4"
+  }, [_c("img", {
+    staticClass: "card-img",
+    attrs: {
+      src: "/images/jumbo_doctor.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+    staticClass: "subtitle"
+  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+    staticClass: "p-style"
+  }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem\n                            distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero\n                            facere quod. Molestiae, nostrum! Saepe, minus iure!")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+  }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-stars"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  })])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_vm._v("\n                user 1\n            ")]), _vm._v(" "), _c("div", {
+  }, [_c("div", {
+    staticClass: "my-card middle p-5"
+  }, [_c("div", {
+    staticClass: "d-flex gap-4 pb-4"
+  }, [_c("img", {
+    staticClass: "card-img",
+    attrs: {
+      src: "/images/jumbo_doctor.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+    staticClass: "subtitle"
+  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+    staticClass: "p-style"
+  }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem\n                            distinctio, dolorum a laboriosam et tempora optio.")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+  }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-stars"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  })])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
-  }, [_vm._v("\n                user 2\n            ")]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_vm._v("\n                user 3\n            ")])]), _vm._v(" "), _c("form", {
+  }, [_c("div", {
+    staticClass: "my-card p-5"
+  }, [_c("div", {
+    staticClass: "d-flex gap-4 pb-4"
+  }, [_c("img", {
+    staticClass: "card-img",
+    attrs: {
+      src: "/images/jumbo_doctor.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+    staticClass: "subtitle"
+  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+    staticClass: "p-style"
+  }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem\n                            distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero\n                            facere quod. Molestiae, nostrum! Saepe, minus iure!")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+  }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-stars"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fa-solid fa-star gold-star"
+  })])])])])])]), _vm._v(" "), _c("h3", {
+    staticClass: "text-center"
+  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
     staticClass: "form-msg"
   }, [_c("div", {
     staticClass: "form-group p-2"
@@ -3235,7 +3323,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}", ""]);
+exports.push([module.i, "h1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #E9F6FF;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #E9F6FF;\n  border-right: 1px solid #E9F6FF;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #EEFCFF;\n  border-color: #2EA4FF;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2EA4FF;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #E9F6FF;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
 
 // exports
 

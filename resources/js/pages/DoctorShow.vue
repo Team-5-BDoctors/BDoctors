@@ -34,6 +34,7 @@
 
         <!-- Recensioni -->
         <div class="container py-5 my-5">
+            <h2 class="text-center">Recensioni</h2>
             <div>
                 <div class="my-row">
                     <div class="col">
@@ -109,6 +110,7 @@
                     </div>
                 </div>
             </div>
+            <h3 class="text-center">La tua recensione</h3>
             <form class="form-msg">
                 <div class="form-group p-2">
                     <label for="exampleFormControlInput1">Inserisci il tuo nome:</label>
@@ -352,5 +354,46 @@ p {
 .form-img {
     height: 60%;
     border-radius: 8px;
+}
+
+.my-row {
+    display: flex;
+    border: 1px solid #E9F6FF;
+    border-radius: 5px;
+}
+
+.my-card.middle {
+    border-left: 1px solid #E9F6FF;
+    ;
+    border-right: 1px solid #E9F6FF;
+    ;
+}
+
+.card-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #EEFCFF;
+    border-color: #2EA4FF;
+}
+
+.subtitle {
+    color: #2EA4FF;
+}
+
+.p-style {
+    height: 120px;
+    color: #8c92c2;
+    overflow: hidden;
+}
+
+.rating-bar {
+    background-color: #E9F6FF;
+    border-radius: 10px;
+}
+
+.gold-star {
+    color: gold;
 }
 </style>
