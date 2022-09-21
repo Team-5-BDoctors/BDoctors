@@ -2886,37 +2886,76 @@ var staticRenderFns = [function () {
   }, [_vm._v("\n                user 3\n            ")])]), _vm._v(" "), _c("form", {
     staticClass: "form-msg"
   }, [_c("div", {
-    staticClass: "form-group py-2"
+    staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
       "for": "exampleFormControlInput1"
     }
-  }, [_vm._v("Nome e cognome:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "name",
+      id: "nameFormControlInput1",
+      placeholder: "Nome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci il tuo cognome:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "surname",
+      id: "surnameFormControlInput1",
+      placeholder: "Cognome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci la tua mail:")]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "email",
-      id: "exampleFormControlInput1",
-      placeholder: "Nome e cognome"
+      id: "emailFormControlInput1",
+      placeholder: "Email"
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
-      "for": "exampleFormControlSelect2"
+      "for": "exampleFormControlInput1"
     }
-  }, [_vm._v("Il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
+  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
     staticClass: "form-control",
     attrs: {
       multiple: "",
       id: "exampleFormControlSelect2"
     }
   }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "title",
+      id: "titleFormControlInput1",
+      placeholder: "Titolo"
+    }
+  })]), _vm._v(" "), _c("div", {
     staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "exampleFormControlTextarea1"
     }
-  }, [_vm._v("Se vuoi aggiungere altro:")]), _vm._v(" "), _c("textarea", {
+  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
     staticClass: "form-control",
     attrs: {
       id: "exampleFormControlTextarea1",
@@ -2947,12 +2986,38 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "exampleFormControlInput1"
     }
-  }, [_vm._v("Inserisci il tuo nome e il tuo cognome:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "name",
       id: "nameFormControlInput1",
-      placeholder: "Nome e cognome"
+      placeholder: "Nome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci il tuo cognome:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "surname",
+      id: "surnameFormControlInput1",
+      placeholder: "Cognome"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Inserisci la tua mail:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      id: "emailFormControlInput1",
+      placeholder: "Email"
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"

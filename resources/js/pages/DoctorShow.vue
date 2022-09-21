@@ -46,12 +46,20 @@
                 </div>
             </div>
             <form class="form-msg">
-                <div class="form-group py-2">
-                    <label for="exampleFormControlInput1">Nome e cognome:</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nome e cognome">
+                <div class="form-group p-2">
+                    <label for="exampleFormControlInput1">Inserisci il tuo nome:</label>
+                    <input type="name" class="form-control" id="nameFormControlInput1" placeholder="Nome">
+                </div>
+                <div class="form-group p-2">
+                    <label for="exampleFormControlInput1">Inserisci il tuo cognome:</label>
+                    <input type="surname" class="form-control" id="surnameFormControlInput1" placeholder="Cognome">
+                </div>
+                <div class="form-group p-2">
+                    <label for="exampleFormControlInput1">Inserisci la tua mail:</label>
+                    <input type="email" class="form-control" id="emailFormControlInput1" placeholder="Email">
                 </div>
                 <div class="form-group py-2">
-                    <label for="exampleFormControlSelect2">Il tuo voto, da 1 a 5:</label>
+                    <label for="exampleFormControlInput1">Inserisci il tuo voto, da 1 a 5:</label>
                     <select multiple class="form-control" id="exampleFormControlSelect2">
                         <option>1</option>
                         <option>2</option>
@@ -60,8 +68,12 @@
                         <option>5</option>
                     </select>
                 </div>
+                <div class="form-group p-2">
+                    <label for="exampleFormControlInput1">Titolo recensione:</label>
+                    <input type="title" class="form-control" id="titleFormControlInput1" placeholder="Titolo">
+                </div>
                 <div class="form-group py-2">
-                    <label for="exampleFormControlTextarea1">Se vuoi aggiungere altro:</label>
+                    <label for="exampleFormControlTextarea1">Dai il tuo parere:</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="text-center py-2">
@@ -86,9 +98,18 @@
                     <div>
                         <form class="form-msg">
                             <div class="form-group p-2">
-                                <label for="exampleFormControlInput1">Inserisci il tuo nome e il tuo cognome:</label>
-                                <input type="name" class="form-control" id="nameFormControlInput1"
-                                    placeholder="Nome e cognome">
+                                <label for="exampleFormControlInput1">Inserisci il tuo nome:</label>
+                                <input type="name" class="form-control" id="nameFormControlInput1" placeholder="Nome">
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="exampleFormControlInput1">Inserisci il tuo cognome:</label>
+                                <input type="surname" class="form-control" id="surnameFormControlInput1"
+                                    placeholder="Cognome">
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="exampleFormControlInput1">Inserisci la tua mail:</label>
+                                <input type="email" class="form-control" id="emailFormControlInput1"
+                                    placeholder="Email">
                             </div>
                             <div class="form-group p-2">
                                 <label for="exampleFormControlTextarea1">Inserisci il tuo messaggio con la
