@@ -42,7 +42,6 @@
         </div>
         <div class="bg-lightblue justify-content-center d-flex">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
-
                 <div class="col">
                     <div class="card m-3 border-0" style="width: 22rem">
                         <div class="avatarbg mx-auto">
@@ -109,12 +108,18 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 
 
 export default {
+    data(){
+        return{
+            doctors:[]
+        }
+    },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
+        this.fetchDoctors();
     },
     methods: {
         scrollFunction() {
@@ -127,6 +132,12 @@ export default {
                 }
             }
         },
+        fetchDoctors(){
+            axios.get("/api/doctor")
+        .then((resp) =>{
+            this.doctors = resp.data;
+        })
+        }
     },
 }
 </script>

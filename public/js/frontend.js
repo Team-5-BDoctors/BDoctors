@@ -2167,9 +2167,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      doctors: []
+    };
+  },
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
+    this.fetchDoctors();
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2183,6 +2192,13 @@ __webpack_require__.r(__webpack_exports__);
           element.classList.add("appear");
         }
       }
+    },
+    fetchDoctors: function fetchDoctors() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor").then(function (resp) {
+        _this.doctors = resp.data;
+      });
     }
   }
 });
@@ -2552,10 +2568,8 @@ var render = function render() {
     staticClass: "tags-container d-flex gap-4"
   }, _vm._l(_vm.specializations, function (specialization) {
     return _c("a", {
-      staticClass: "tags-label",
-      attrs: {
-        href: "#"
-      }
+      key: specialization.id,
+      staticClass: "tags-label"
     }, [_vm._v(_vm._s(specialization.name))]);
   }), 0)])]);
 };
@@ -20954,7 +20968,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

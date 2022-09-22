@@ -3,7 +3,7 @@
         <div class="container specselect w-50">
             <h3 class="text-center py-5 text-white">Potresti cercare:</h3>
             <div class="tags-container d-flex gap-4">
-             <a v-for="specialization in specializations" href="#" class="tags-label">{{specialization.name}}</a>
+             <a v-for="specialization in specializations" :key="specialization.id" class="tags-label">{{specialization.name}}</a>
             </div>
         </div>
     </div>
