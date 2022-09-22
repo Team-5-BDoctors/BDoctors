@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Doctor;
 use App\Http\Controllers\Controller;
 use App\Specialization;
 use App\User;
+use App\UserSponsorship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -142,6 +143,14 @@ class UserController extends Controller
 
         if ($user->curriculum) {
             Storage::delete($user->curriculum);
+        }
+
+        $userSponsorships = UserSponsorship::where('user_id', $user->id)->get();
+
+        if ($userSponsorships) {
+            foreach ($userSponsorships as $userSponsorship) {
+                $userSponsorship->delete();
+            }
         }
         
         $user->delete();
