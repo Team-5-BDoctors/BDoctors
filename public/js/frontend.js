@@ -2714,7 +2714,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center"
   }, [_c("div", {
-    staticClass: "col girlout"
+    staticClass: "col col-md-6 col-sm-6 girlout"
   }, [_c("img", {
     staticClass: "w-75",
     attrs: {
@@ -2723,9 +2723,9 @@ var staticRenderFns = [function () {
       srcset: ""
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col px-4"
+    staticClass: "col px-4 col-md-5 col-sm-5"
   }, [_c("h2", [_vm._v("Sei un Dottore?")]), _vm._v(" "), _c("p", [_vm._v("\n                    Clicca il pulsante sulla destra per inziare a ricevere\n                    migliaia di pazienti da tutta Italia!\n                ")])]), _vm._v(" "), _c("div", {
-    staticClass: "col px-4"
+    staticClass: "col px-4 col-md-3 col-sm-3"
   }, [_c("a", {
     staticClass: "btn btn-primary",
     attrs: {
@@ -2736,7 +2736,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row footercontainer pb-5 gap-5"
   }, [_c("div", {
-    staticClass: "col-12 col-md-6 col-lg-3 flex-grow-1"
+    staticClass: "col-12 col-md-12 col-lg-3 flex-grow-1"
   }, [_c("div", {
     staticClass: "w-100 pb-5"
   }, [_c("img", {
@@ -2748,7 +2748,7 @@ var staticRenderFns = [function () {
   })]), _vm._v(" "), _c("p", {
     staticClass: "big-paragraph pb-5"
   }, [_vm._v("\n                    “La medicina cura le malattie, ma solo i medici possono\n                    curare i pazienti.”\n                ")])]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 col-md-6 col-lg-3"
+    staticClass: "col-5 col-md-5 col-lg-3"
   }, [_c("h2", {
     staticClass: "footer-headings pb-4"
   }, [_vm._v("Specializzazioni")]), _vm._v(" "), _c("div", {
@@ -2762,7 +2762,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("footerlink")]), _vm._v(" "), _c("div", {
     staticClass: "footerlink"
   }, [_vm._v("footerlink")])]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 col-md-6 col-lg-3"
+    staticClass: "col-5 col-md-5 col-lg-3"
   }, [_c("h2", {
     staticClass: "footer-headings pb-4"
   }, [_vm._v("Pagine")]), _vm._v(" "), _c("div", {
@@ -2973,13 +2973,13 @@ var staticRenderFns = [function () {
       "for": "btnradio2"
     }
   }, [_vm._v("Numero\n                    recensioni")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "bg-lightblue justify-content-center d-flex"
+    staticClass: "bg-lightblue justify-content-center d-flex container-fluid"
   }, [_c("div", {
-    staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
+    staticClass: "row row-cols-auto pb-5 justify-content-center g-5 container-fluid"
   }, [_c("div", {
     staticClass: "col"
   }, [_c("div", {
-    staticClass: "card m-3 border-0",
+    staticClass: "card border-0",
     staticStyle: {
       width: "22rem"
     }
@@ -3002,7 +3002,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
   }, [_c("div", {
-    staticClass: "card m-3 border-0",
+    staticClass: "card border-0",
     staticStyle: {
       width: "22rem"
     }
@@ -3025,7 +3025,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
   }, [_c("div", {
-    staticClass: "card m-3 border-0",
+    staticClass: "card border-0",
     staticStyle: {
       width: "22rem"
     }
@@ -20954,7 +20954,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
