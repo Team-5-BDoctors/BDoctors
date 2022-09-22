@@ -109,12 +109,19 @@
 </template>
 
 <script>
-
-
-
+import axios from "axios";
 export default {
+    name: "AdvancedSearch",
+    data() {
+        return {
+            doctors: [],
+            specializations: [],
+        };
+    },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
+        this.fetchDoctors();
+        this.fetchSpecializations();
     },
     methods: {
         scrollFunction() {
@@ -126,6 +133,28 @@ export default {
                     element.classList.add("appear");
                 }
             }
+        },
+        fetchDoctors() {
+            axios
+                .get("/api/doctors")
+                .then((response) => {
+                    this.doctors = response.data;
+                    console.log(this.doctors);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        fetchSpecializations() {
+            axios
+                .get("/api/specializations")
+                .then((response) => {
+                    this.specializations = response.data;
+                    console.log(this.specializations);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         },
     },
 }

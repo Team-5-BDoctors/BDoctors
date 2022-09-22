@@ -2167,9 +2167,21 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AdvancedSearch",
+  data: function data() {
+    return {
+      doctors: [],
+      specializations: []
+    };
+  },
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
+    this.fetchDoctors();
+    this.fetchSpecializations();
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2183,6 +2195,26 @@ __webpack_require__.r(__webpack_exports__);
           element.classList.add("appear");
         }
       }
+    },
+    fetchDoctors: function fetchDoctors() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctors").then(function (response) {
+        _this.doctors = response.data;
+        console.log(_this.doctors);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    fetchSpecializations: function fetchSpecializations() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specializations").then(function (response) {
+        _this2.specializations = response.data;
+        console.log(_this2.specializations);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });
