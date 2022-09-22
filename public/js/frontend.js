@@ -3167,6 +3167,19 @@ var staticRenderFns = [function () {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Il titolo del tuo messaggio:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "msg-title",
+      id: "msgTitleFormControlInput1",
+      placeholder: "Titolo messaggio"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
       "for": "exampleFormControlTextarea1"
     }
   }, [_vm._v("Inserisci il tuo messaggio con la\n                                richiesta:")]), _vm._v(" "), _c("textarea", {
@@ -20954,7 +20967,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
