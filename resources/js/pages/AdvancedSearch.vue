@@ -42,7 +42,6 @@
         </div>
         <div class="bg-lightblue justify-content-center d-flex">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
-
                 <div class="col">
                     <div class="card m-3 border-0" style="width: 22rem">
                         <div class="avatarbg mx-auto">
@@ -109,6 +108,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import axios from "axios";
 export default {
     name: "AdvancedSearch",
@@ -122,6 +122,20 @@ export default {
         window.addEventListener("scroll", this.scrollFunction);
         this.fetchDoctors();
         this.fetchSpecializations();
+=======
+import axios from 'axios';
+
+
+export default {
+    data(){
+        return{
+            doctors:[]
+        }
+    },
+    mounted() {
+        window.addEventListener("scroll", this.scrollFunction);
+        this.fetchDoctorsSpecialization();
+>>>>>>> github/main
     },
     methods: {
         scrollFunction() {
@@ -134,6 +148,7 @@ export default {
                 }
             }
         },
+<<<<<<< HEAD
         fetchDoctors() {
             axios
                 .get("/api/doctors")
@@ -156,6 +171,14 @@ export default {
                     console.log(error);
                 });
         },
+=======
+        fetchDoctorsSpecialization(){
+            axios.get("/api/doctor?name="+ this.$route.params.specialization_name)
+        .then((resp) =>{
+            this.doctors = resp.data;
+        })
+        }
+>>>>>>> github/main
     },
 }
 </script>
