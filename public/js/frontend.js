@@ -2179,7 +2179,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
     this.fetchDoctorsSpecialization();
-    console.log(this.$route.params.specialization_name);
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -20954,27 +20953,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-function getSearchUri() {
-  var spec = "/:specialization_name";
-  var startPath = "/doctors";
-  var completePath = '';
-
-  if (spec) {
-    completePath = startPath + spec;
-  } else if (spec === undefined) {
-    completePath = startPath;
-  }
-
-  return completePath;
-}
-
 var routes = [{
   path: "/",
   component: _pages_home_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "home"
 }, {
-  path: getSearchUri(),
+  path: "/doctors/:specialization_name",
   component: _pages_AdvancedSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "AdvancedSearch"
 }, {

@@ -120,7 +120,6 @@ export default {
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
         this.fetchDoctorsSpecialization();
-        console.log(this.$route.params.specialization_name)
     },
     methods: {
         scrollFunction() {
