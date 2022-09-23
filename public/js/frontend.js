@@ -2214,7 +2214,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      name: "",
+      surname: "",
+      email: "",
+      title: "",
+      content: "",
+      doctor_id: this.$route.params.doctor_id
+    };
+  },
   name: "DoctorShow",
   props: {},
   mounted: function mounted() {
@@ -2232,6 +2245,16 @@ __webpack_require__.r(__webpack_exports__);
           element.classList.add("appear");
         }
       }
+    },
+    onFormSubmit: function onFormSubmit() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/contacts", {
+        name: this.name,
+        surname: this.surname,
+        email: this.email,
+        title: this.title,
+        content: this.content,
+        user_id: this.doctor_id
+      });
     }
   }
 });
@@ -2887,13 +2910,6 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("div", [_c("div", {
     staticClass: "container-fluid jumbo-bg d-flex justify-content-center pt-5"
   }, [_c("div", {
@@ -2910,6 +2926,9 @@ var staticRenderFns = [function () {
       placeholder: "Cerca un dottore...",
       autofocus: "",
       required: ""
+    },
+    domProps: {
+      value: this.$route.params.specialization_name
     }
   }), _vm._v(" "), _c("button", {
     staticClass: "text-white",
@@ -2918,7 +2937,28 @@ var staticRenderFns = [function () {
     }
   }, [_vm._v("Cerca")])]), _vm._v(" "), _c("div", {
     staticClass: "text-white pt-3 py-2"
-  }, [_vm._v("Cerca per Specializzazione:")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Cerca per Specializzazione:")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "text-white pt-3"
+  }, [_vm._v("Filtra per:")]), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _vm._l(_vm.doctors, function (doctor) {
+    return _c("router-link", {
+      key: doctor.id,
+      attrs: {
+        to: {
+          name: "DoctorShow",
+          params: {
+            doctor_id: doctor.id
+          }
+        }
+      }
+    }, [_vm._v(_vm._s(doctor.id) + "\n    "), _c("br")]);
+  }), _vm._v(" "), _vm._m(2)], 2);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "btn-group d-flex justify-content-around",
     attrs: {
       role: "group",
@@ -2960,9 +3000,12 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "btncheck3"
     }
-  }, [_vm._v("Pediatria")])]), _vm._v(" "), _c("div", {
-    staticClass: "text-white pt-3"
-  }, [_vm._v("Filtra per:")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Pediatria")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "btn-group d-flex justify-content-around pt-2",
     attrs: {
       role: "group",
@@ -2994,7 +3037,12 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "btnradio2"
     }
-  }, [_vm._v("Numero\n                    recensioni")])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Numero\n                    recensioni")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "bg-lightblue justify-content-center d-flex"
   }, [_c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
@@ -3067,7 +3115,7 @@ var staticRenderFns = [function () {
     staticClass: "text-primary pb-2 text-center"
   }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
     staticClass: "card-text text-center"
-  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])])])])]);
+  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3089,14 +3137,175 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "container-white"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "contact"
+  }, [_vm._m(1), _vm._v(" "), _c("div", [_c("form", {
+    staticClass: "form-msg",
+    attrs: {
+      action: ""
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.onFormSubmit();
+      }
+    }
+  }, [_c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.name,
+      expression: "name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "name",
+      id: "name",
+      placeholder: "Nome",
+      name: "name"
+    },
+    domProps: {
+      value: _vm.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.name = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "surname"
+    }
+  }, [_vm._v("Inserisci il tuo cognome:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.surname,
+      expression: "surname"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "surname",
+      id: "surname",
+      placeholder: "Cognome",
+      name: "surname"
+    },
+    domProps: {
+      value: _vm.surname
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.surname = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "email"
+    }
+  }, [_vm._v("Inserisci la tua mail:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.email,
+      expression: "email"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      id: "email",
+      placeholder: "Email",
+      name: "email"
+    },
+    domProps: {
+      value: _vm.email
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.email = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "title"
+    }
+  }, [_vm._v("Inserisci titolo messagio:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.title,
+      expression: "title"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "title",
+      placeholder: "Inserisci titolo messaggio",
+      name: "title"
+    },
+    domProps: {
+      value: _vm.title
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.title = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "content"
+    }
+  }, [_vm._v("Inserisci il tuo messaggio con la richiesta:")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.content,
+      expression: "content"
+    }],
+    staticClass: "form-control pb-5",
+    attrs: {
+      id: "content",
+      rows: "3",
+      name: "content"
+    },
+    domProps: {
+      value: _vm.content
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.content = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _vm._m(2)])])])])]), _vm._v(" "), _vm._m(3)]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
+  return _c("div", {
     staticClass: "container-fluid"
   }, [_c("div", {
     staticClass: "container d-flex justify-content-between align-items-center h-100"
@@ -3134,77 +3343,33 @@ var staticRenderFns = [function () {
       src: "/images/jumbo_right_bg.jpg",
       alt: ""
     }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "container-white"
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "contact"
-  }, [_c("div", {
+  })])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "form-title"
   }, [_c("h2", [_vm._v("Invia un messaggio al dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
     staticClass: "divider"
-  })]), _vm._v(" "), _c("div", [_c("form", {
-    staticClass: "form-msg"
-  }, [_c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "name",
-      id: "nameFormControlInput1",
-      placeholder: "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo cognome:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "surname",
-      id: "surnameFormControlInput1",
-      placeholder: "Cognome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci la tua mail:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "email",
-      id: "emailFormControlInput1",
-      placeholder: "Email"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlTextarea1"
-    }
-  }, [_vm._v("Inserisci il tuo messaggio con la\n                                richiesta:")]), _vm._v(" "), _c("textarea", {
-    staticClass: "form-control pb-5",
-    attrs: {
-      id: "exampleFormControlTextarea1",
-      rows: "3"
-    }
-  })]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "text-center py-2"
   }, [_c("button", {
     staticClass: "btn btn-primary text-center",
     attrs: {
-      type: "button"
+      type: "submit"
     }
-  }, [_vm._v("\n                                Invia messaggio\n                            ")])])])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Invia messaggio\n                            ")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "container-blue"
   }, [_c("div", {
     staticClass: "container py-5 my-5"
@@ -3365,7 +3530,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "button"
     }
-  }, [_vm._v("\n                            Invia recensione\n                        ")])])])])])])]);
+  }, [_vm._v("\n                            Invia recensione\n                        ")])])])])])]);
 }];
 render._withStripped = true;
 
@@ -20962,7 +21127,7 @@ var routes = [{
   component: _pages_AdvancedSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "AdvancedSearch"
 }, {
-  path: "/doctor-slug",
+  path: "/doctor/:doctor_id",
   component: _pages_DoctorShow_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   name: "DoctorShow"
 }];

@@ -3,8 +3,7 @@
         <div class="container-fluid jumbo-bg d-flex justify-content-center pt-5">
             <div class="pt-5 searchbar-container">
                 <form onsubmit="event.preventDefault();" role="search">
-
-                    <input id="search search-bar" class="" type="search" placeholder="Cerca un dottore..." autofocus
+                    <input id="search search-bar" :value="this.$route.params.specialization_name" class="" type="search" placeholder="Cerca un dottore..." autofocus
                         required />
                     <button class="text-white" type="submit">Cerca</button>
                 </form>
@@ -40,6 +39,9 @@
 
 
         </div>
+    <router-link v-for="doctor in doctors" :key="doctor.id" :to="{name: 'DoctorShow', params: {'doctor_id': doctor.id}}">{{doctor.id}}
+        <br>
+    </router-link>
         <div class="bg-lightblue justify-content-center d-flex">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
                 <div class="col">

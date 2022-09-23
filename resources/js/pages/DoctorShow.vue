@@ -48,56 +48,51 @@
                     </div>
 
                     <div>
-                        <form class="form-msg">
+                        <form class="form-msg" action="" @submit.prevent="onFormSubmit()">
                             <div class="form-group p-2">
-                                <label for="exampleFormControlInput1"
-                                    >Inserisci il tuo nome:</label
-                                >
-                                <input
-                                    type="name"
-                                    class="form-control"
-                                    id="nameFormControlInput1"
-                                    placeholder="Nome"
-                                />
+                                <label for="name">Inserisci il tuo nome:</label>
+                                <input type="name" class="form-control" id="name" placeholder="Nome" name="name" v-model="name"/>
                             </div>
                             <div class="form-group p-2">
-                                <label for="exampleFormControlInput1"
-                                    >Inserisci il tuo cognome:</label
-                                >
+                                <label for="surname" >Inserisci il tuo cognome:</label>
                                 <input
                                     type="surname"
                                     class="form-control"
-                                    id="surnameFormControlInput1"
+                                    id="surname"
                                     placeholder="Cognome"
+                                    name="surname"
+                                    v-model="surname"
                                 />
                             </div>
                             <div class="form-group p-2">
-                                <label for="exampleFormControlInput1"
+                                <label for="email"
                                     >Inserisci la tua mail:</label
                                 >
                                 <input
                                     type="email"
                                     class="form-control"
-                                    id="emailFormControlInput1"
+                                    id="email"
                                     placeholder="Email"
+                                    name="email"
+                                    v-model="email"
                                 />
                             </div>
                             <div class="form-group p-2">
-                                <label for="exampleFormControlTextarea1"
-                                    >Inserisci il tuo messaggio con la
-                                    richiesta:</label
-                                >
+                                <label for="title">Inserisci titolo messagio:</label>
+                                <input type="text" class="form-control" id="title" placeholder="Inserisci titolo messaggio" name="title" v-model="title"/>
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="content" >Inserisci il tuo messaggio con la richiesta:</label>
                                 <textarea
                                     class="form-control pb-5"
-                                    id="exampleFormControlTextarea1"
+                                    id="content"
                                     rows="3"
+                                    name="content"
+                                    v-model="content"
                                 ></textarea>
                             </div>
                             <div class="text-center py-2">
-                                <button
-                                    type="button"
-                                    class="btn btn-primary text-center"
-                                >
+                                <button type="submit" class="btn btn-primary text-center">
                                     Invia messaggio
                                 </button>
                             </div>
@@ -318,7 +313,18 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+    data(){
+        return{
+            name : "",
+            surname : "",
+            email : "",
+            title : "",
+            content : "",
+            doctor_id : this.$route.params.doctor_id
+        };
+    },
     name: "DoctorShow",
     props: {},
     mounted() {
@@ -335,6 +341,16 @@ export default {
                 }
             }
         },
+        onFormSubmit(){
+            axios.post("/api/contacts", {
+                name : this.name,
+                surname : this.surname,
+                email : this.email,
+                title : this.title,
+                content : this.content,
+                user_id : this.doctor_id
+            })
+        }
     },
 };
 </script>
