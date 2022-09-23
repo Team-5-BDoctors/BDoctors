@@ -7,6 +7,6 @@ import DoctorShow from "./pages/DoctorShow.vue"
 export const routes = [
     { path: "/", component: Home, name: "home" },
     { path: "/doctors/:specialization_name", component: AdvancedSearch, name: "AdvancedSearch" },
-    
-    { path: "/doctor/:doctor_id", component: DoctorShow, name: "DoctorShow" }
+
+    { path: "/doctor/:doctor_slug", component: DoctorShow, name: "DoctorShow" }
 ]

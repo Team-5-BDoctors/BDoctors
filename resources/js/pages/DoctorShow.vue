@@ -4,16 +4,18 @@
         <div class="container-fluid">
             <div class="container d-flex justify-content-between align-items-center h-100">
                 <div class="left-jumbo">
-                    <h1 class="pb-3">Name Surname</h1>
-                    <p class="pb-3 spec">Neurology</p>
-                    <p class="pb-3">Email</p>
-                    <p class="pb-3">Phone</p>
-                    <p class="pb-3">Adress</p>
+                    <h1 class="pb-3">{{doctor.name}} {{doctor.surname}}</h1>
+                    <span v-for="specialization in doctor.specializations" :key="specialization.id">
+                        {{specialization.name}}
+                    </span>
+
+                    <p class="pb-3">{{doctor.email}}</p>
+                    <p class="pb-3">{{doctor.phone}}</p>
+                    <p class="pb-3">{{doctor.addres}}</p>
                     <p class="pb-3">
                         <span>Prestazioni offerte:</span>
                         <br />
-                        Visite specialistiche, impegnative, chirurgia
-                        ambulatoriale
+                        {{doctor.services}}
                     </p>
                 </div>
                 <div class="h-75 right-jumbo">
@@ -209,13 +211,18 @@ export default {
             email: "",
             title: "",
             content: "",
-            doctor_id: this.$route.params.doctor_id
+            doctor_id: this.$route.params.doctor.id,
+            doctor: this.$route.params.doctor
         };
     },
     name: "DoctorShow",
-    props: {},
+    props: {
+
+    },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
+        console.log(this.doctor.name)
+        console.log(this.doctor.id)
     },
     methods: {
         scrollFunction() {
@@ -235,7 +242,7 @@ export default {
                 email: this.email,
                 title: this.title,
                 content: this.content,
-                user_id: this.doctor_id
+                user_id: this.doctor.id
             })
         }
     },
