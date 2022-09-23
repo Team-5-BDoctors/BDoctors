@@ -30,82 +30,20 @@
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                     <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
                         recensioni</label>
-
-
                 </div>
-
-
             </div>
 
-
-
         </div>
-<<<<<<< HEAD
         <div class="bg-lightblue justify-content-center d-flex container-fluid">
             <div class="row row-cols-auto pb-5 justify-content-center g-5 container-fluid ">
 
-=======
-        <div class="bg-lightblue justify-content-center d-flex">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
->>>>>>> main
-                <div class="col">
-                    <div class="card  border-0" style="width: 22rem">
-                        <div class="avatarbg mx-auto">
-                            <img src="images/baffo.png" class="card-img-top" alt="..." />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Card title
-                            </h5>
-                            <div class="text-primary pb-2 text-center">
-                                Cardiac Surgery
-                            </div>
-                            <p class="card-text text-center">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card  border-0" style="width: 22rem">
-                        <div class="avatarbg mx-auto">
-                            <img src="images/cioccolata.png" class="card-img-top" alt="..." />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Card title
-                            </h5>
-                            <div class="text-primary pb-2 text-center">
-                                Cardiac Surgery
-                            </div>
-                            <p class="card-text text-center">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card  border-0" style="width: 22rem">
-                        <div class="avatarbg mx-auto">
-                            <img src="images/covid.png" class="card-img-top" alt="..." />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Card title
-                            </h5>
-                            <div class="text-primary pb-2 text-center">
-                                Cardiac Surgery
-                            </div>
-                            <p class="card-text text-center">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
+
+                <div class="bg-lightblue justify-content-center d-flex">
+                    <div
+                        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
+
+                        <DoctorCard v-for="doctor in doctors" :key="doctor.id" :doctor="doctor" />
+
                     </div>
                 </div>
             </div>
@@ -115,12 +53,15 @@
 
 <script>
 import axios from 'axios';
+import DoctorCard from '../frontend/components/DoctorCard.vue';
 
 
 export default {
-    data(){
-        return{
-            doctors:[]
+    components: { DoctorCard },
+    data() {
+        return {
+
+            doctors: [],
         }
     },
     mounted() {
@@ -138,11 +79,12 @@ export default {
                 }
             }
         },
-        fetchDoctorsSpecialization(){
-            axios.get("/api/doctor?name="+ this.$route.params.specialization_name)
-        .then((resp) =>{
-            this.doctors = resp.data;
-        })
+        fetchDoctorsSpecialization() {
+            axios.get("/api/doctor?name=" + this.$route.params.specialization_name)
+                .then((resp) => {
+                    console.log(resp.data);
+                    this.doctors = resp.data;
+                })
         }
     },
 }
