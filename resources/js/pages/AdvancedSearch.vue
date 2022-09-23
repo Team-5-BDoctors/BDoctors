@@ -3,9 +3,8 @@
         <div class="container-fluid jumbo-bg d-flex justify-content-center pt-5">
             <div class="pt-5 searchbar-container">
                 <form onsubmit="event.preventDefault();" role="search">
-
-                    <input id="search search-bar" class="" type="search" placeholder="Cerca un dottore..." autofocus
-                        required />
+                    <input id="search search-bar" :value="this.$route.params.specialization_name" class="" type="search"
+                        placeholder="Cerca un dottore..." autofocus required />
                     <button class="text-white" type="submit">Cerca</button>
                 </form>
                 <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
