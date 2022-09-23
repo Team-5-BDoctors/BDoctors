@@ -3,7 +3,9 @@
         <div class="container specselect w-50">
             <h3 class="text-center py-5 text-white">Potresti cercare:</h3>
             <div class="tags-container d-flex gap-4">
-             <a v-for="specialization in specializations" :key="specialization.id" class="tags-label">{{specialization.name}}</a>
+             <router-link v-for="specialization in specializations" :to="{name:'AdvancedSearch', params:{specialization_name : specialization.name}}" :key="specialization.id" class="tags-label">
+                {{specialization.name}}
+            </router-link>
             </div>
         </div>
     </div>

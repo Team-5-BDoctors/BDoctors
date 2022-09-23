@@ -2178,7 +2178,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
-    this.fetchDoctors();
+    this.fetchDoctorsSpecialization();
+    console.log(this.$route.params.specialization_name);
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2193,10 +2194,10 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    fetchDoctors: function fetchDoctors() {
+    fetchDoctorsSpecialization: function fetchDoctorsSpecialization() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor").then(function (resp) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?name=" + this.$route.params.specialization_name).then(function (resp) {
         _this.doctors = resp.data;
       });
     }
@@ -2567,11 +2568,19 @@ var render = function render() {
   }, [_vm._v("Potresti cercare:")]), _vm._v(" "), _c("div", {
     staticClass: "tags-container d-flex gap-4"
   }, _vm._l(_vm.specializations, function (specialization) {
-    return _c("a", {
+    return _c("router-link", {
       key: specialization.id,
-      staticClass: "tags-label"
-    }, [_vm._v(_vm._s(specialization.name))]);
-  }), 0)])]);
+      staticClass: "tags-label",
+      attrs: {
+        to: {
+          name: "AdvancedSearch",
+          params: {
+            specialization_name: specialization.name
+          }
+        }
+      }
+    }, [_vm._v("\n            " + _vm._s(specialization.name) + "\n        ")]);
+  }), 1)])]);
 };
 
 var staticRenderFns = [];
@@ -20945,12 +20954,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+function getSearchUri() {
+  var spec = "/:specialization_name";
+  var startPath = "/doctors";
+  var completePath = '';
+
+  if (spec) {
+    completePath = startPath + spec;
+  } else if (spec === undefined) {
+    completePath = startPath;
+  }
+
+  return completePath;
+}
+
 var routes = [{
   path: "/",
   component: _pages_home_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "home"
 }, {
-  path: "/search",
+  path: getSearchUri(),
   component: _pages_AdvancedSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "AdvancedSearch"
 }, {

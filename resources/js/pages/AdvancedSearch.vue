@@ -119,7 +119,8 @@ export default {
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
-        this.fetchDoctors();
+        this.fetchDoctorsSpecialization();
+        console.log(this.$route.params.specialization_name)
     },
     methods: {
         scrollFunction() {
@@ -132,8 +133,8 @@ export default {
                 }
             }
         },
-        fetchDoctors(){
-            axios.get("/api/doctor")
+        fetchDoctorsSpecialization(){
+            axios.get("/api/doctor?name="+ this.$route.params.specialization_name)
         .then((resp) =>{
             this.doctors = resp.data;
         })
