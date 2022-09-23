@@ -2167,9 +2167,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      doctors: []
+    };
+  },
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
+    this.fetchDoctorsSpecialization();
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2183,6 +2192,13 @@ __webpack_require__.r(__webpack_exports__);
           element.classList.add("appear");
         }
       }
+    },
+    fetchDoctorsSpecialization: function fetchDoctorsSpecialization() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?name=" + this.$route.params.specialization_name).then(function (resp) {
+        _this.doctors = resp.data;
+      });
     }
   }
 });
@@ -2551,13 +2567,19 @@ var render = function render() {
   }, [_vm._v("Potresti cercare:")]), _vm._v(" "), _c("div", {
     staticClass: "tags-container d-flex gap-4"
   }, _vm._l(_vm.specializations, function (specialization) {
-    return _c("a", {
+    return _c("router-link", {
+      key: specialization.id,
       staticClass: "tags-label",
       attrs: {
-        href: "#"
+        to: {
+          name: "AdvancedSearch",
+          params: {
+            specialization_name: specialization.name
+          }
+        }
       }
-    }, [_vm._v(_vm._s(specialization.name))]);
-  }), 0)])]);
+    }, [_vm._v("\n            " + _vm._s(specialization.name) + "\n        ")]);
+  }), 1)])]);
 };
 
 var staticRenderFns = [];
@@ -3162,6 +3184,19 @@ var staticRenderFns = [function () {
       type: "email",
       id: "emailFormControlInput1",
       placeholder: "Email"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlInput1"
+    }
+  }, [_vm._v("Il titolo del tuo messaggio:")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "msg-title",
+      id: "msgTitleFormControlInput1",
+      placeholder: "Titolo messaggio"
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
@@ -20936,7 +20971,7 @@ var routes = [{
   component: _pages_home_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "home"
 }, {
-  path: "/search",
+  path: "/doctors/:specialization_name",
   component: _pages_AdvancedSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "AdvancedSearch"
 }, {
@@ -20954,7 +20989,11 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+>>>>>>> main
 
 
 /***/ })

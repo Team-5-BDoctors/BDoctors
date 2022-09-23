@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('specializations', 'Api\SpecializationController@index');
+Route::get('doctor', 'Api\UserController@index');

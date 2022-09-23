@@ -40,9 +40,14 @@
 
 
         </div>
+<<<<<<< HEAD
         <div class="bg-lightblue justify-content-center d-flex container-fluid">
             <div class="row row-cols-auto pb-5 justify-content-center g-5 container-fluid ">
 
+=======
+        <div class="bg-lightblue justify-content-center d-flex">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
+>>>>>>> main
                 <div class="col">
                     <div class="card  border-0" style="width: 22rem">
                         <div class="avatarbg mx-auto">
@@ -109,12 +114,18 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 
 
 export default {
+    data(){
+        return{
+            doctors:[]
+        }
+    },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
+        this.fetchDoctorsSpecialization();
     },
     methods: {
         scrollFunction() {
@@ -127,6 +138,12 @@ export default {
                 }
             }
         },
+        fetchDoctorsSpecialization(){
+            axios.get("/api/doctor?name="+ this.$route.params.specialization_name)
+        .then((resp) =>{
+            this.doctors = resp.data;
+        })
+        }
     },
 }
 </script>
