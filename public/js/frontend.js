@@ -3104,7 +3104,7 @@ var render = function render() {
     }, [_c("img", {
       staticClass: "card-img-top",
       attrs: {
-        src: "storage/".concat(doctor.image),
+        src: "/storage/" + doctor.image,
         alt: "..."
       }
     })]), _vm._v(" "), _c("div", {
