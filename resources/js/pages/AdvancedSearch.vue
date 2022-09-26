@@ -58,8 +58,6 @@
 
 <script>
 import axios from 'axios';
-import DoctorCard from '../frontend/components/DoctorCard.vue';
-
 
 export default {
     data() {
