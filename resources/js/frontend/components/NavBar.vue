@@ -6,7 +6,7 @@
       </div>
       <div class="d-flex justify-content-center gap-5 flex-grow-1">
         <div class="p-2 navitem">
-          <router-link :to="{ name: 'AdvancedSearch' }">search
+          <router-link :to="{ name: 'AdvancedSearch' }">CERCA UN DOTTORE
             <i class="ps-2 fas fa-chevron-right freccia_link"></i>
           </router-link>
         </div>

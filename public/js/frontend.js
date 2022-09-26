@@ -2171,27 +2171,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-<<<<<<< HEAD
-  name: "AdvancedSearch",
   data: function data() {
     return {
       doctors: [],
-      specializations: []
-=======
-  data: function data() {
-    return {
-      doctors: []
->>>>>>> github/main
+      specializations: [],
+      selectedSpecialization: ""
     };
   },
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
-<<<<<<< HEAD
-    this.fetchDoctors();
-    this.fetchSpecializations();
-=======
     this.fetchDoctorsSpecialization();
->>>>>>> github/main
+    this.fetchSpecializations();
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2206,32 +2196,25 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-<<<<<<< HEAD
-    fetchDoctors: function fetchDoctors() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctors").then(function (response) {
-        _this.doctors = response.data;
-        console.log(_this.doctors);
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    },
-    fetchSpecializations: function fetchSpecializations() {
-      var _this2 = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specializations").then(function (response) {
-        _this2.specializations = response.data;
-        console.log(_this2.specializations);
-      })["catch"](function (error) {
-        console.log(error);
-=======
     fetchDoctorsSpecialization: function fetchDoctorsSpecialization() {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?name=" + this.$route.params.specialization_name).then(function (resp) {
         _this.doctors = resp.data;
->>>>>>> github/main
+      });
+    },
+    fetchSpecializations: function fetchSpecializations() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specializations").then(function (resp) {
+        _this2.specializations = resp.data;
+      });
+    },
+    fetchDoctorsInPage: function fetchDoctorsInPage() {
+      var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?name=" + this.selectedSpecialization).then(function (resp) {
+        _this3.doctors = resp.data;
       });
     }
   }
@@ -2359,7 +2342,7 @@ var render = function render() {
         name: "AdvancedSearch"
       }
     }
-  }, [_vm._v("search\n          "), _c("i", {
+  }, [_vm._v("CERCA UN DOTTORE\n          "), _c("i", {
     staticClass: "ps-2 fas fa-chevron-right freccia_link"
   })])], 1), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _vm._m(5)])]);
 };
@@ -2921,82 +2904,78 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_c("div", [_c("div", {
+    staticClass: "container-fluid jumbo-bg pt-5"
+  }, [_c("div", {
+    staticClass: "container px-5 d-flex flex-column justify-content-center"
+  }, [_c("div", {
+    staticClass: "pt-5 searchbar-container"
+  }, [_c("div", {
+    staticClass: "text-white pt-3 py-2"
+  }, [_vm._v("Cerca per Specializzazione:")]), _vm._v(" "), _c("select", {
+    staticClass: "form-select form-select-lg mb-3",
+    attrs: {
+      "aria-label": ".form-select-lg example"
+    },
+    on: {
+      change: function change($event) {
+        ;
+        _vm.selectedSpecialization = $event.target.value, _vm.fetchDoctorsInPage();
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "",
+      value: ""
+    }
+  }, [_vm._v("Seleziona una specializzazione")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
+    return _c("option", {
+      domProps: {
+        value: specialization.name
+      }
+    }, [_vm._v(_vm._s(specialization.name))]);
+  })], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "text-white pt-3"
+  }, [_vm._v("Ordina per:")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
+    staticClass: "bg-lightblue justify-content-center d-flex"
+  }, [_c("div", {
+    staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
+  }, _vm._l(_vm.doctors, function (doctor) {
+    return _c("div", {
+      key: doctor.name,
+      staticClass: "col"
+    }, [_c("div", {
+      staticClass: "card m-3 border-0",
+      staticStyle: {
+        width: "22rem"
+      }
+    }, [_c("div", {
+      staticClass: "avatarbg mx-auto"
+    }, [_c("img", {
+      staticClass: "card-img-top",
+      attrs: {
+        src: "storage/".concat(doctor.image),
+        alt: "..."
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card-body"
+    }, [_c("h5", {
+      staticClass: "card-title text-center"
+    }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                            ")]), _vm._v(" "), _vm._l(doctor.specializations, function (specialization) {
+      return _c("div", {
+        staticClass: "text-primary pb-2 text-center"
+      }, [_vm._v("\n                                " + _vm._s(specialization.name) + "\n                            ")]);
+    }), _vm._v(" "), _c("p", {
+      staticClass: "card-text text-center"
+    }, [_vm._v("\n                                " + _vm._s(doctor.services) + "\n                            ")])], 2)])]);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
-    staticClass: "container-fluid jumbo-bg d-flex justify-content-center pt-5"
-  }, [_c("div", {
-    staticClass: "pt-5 searchbar-container"
-  }, [_c("form", {
-    attrs: {
-      onsubmit: "event.preventDefault();",
-      role: "search"
-    }
-  }, [_c("input", {
-    attrs: {
-      id: "search search-bar",
-      type: "search",
-      placeholder: "Cerca un dottore...",
-      autofocus: "",
-      required: ""
-    }
-  }), _vm._v(" "), _c("button", {
-    staticClass: "text-white",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Cerca")])]), _vm._v(" "), _c("div", {
-    staticClass: "text-white pt-3 py-2"
-  }, [_vm._v("Cerca per Specializzazione:")]), _vm._v(" "), _c("div", {
-    staticClass: "btn-group d-flex justify-content-around",
-    attrs: {
-      role: "group",
-      "aria-label": "Basic checkbox toggle button group"
-    }
-  }, [_c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "checkbox",
-      id: "btncheck1",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btncheck1"
-    }
-  }, [_vm._v("Neurologia")]), _vm._v(" "), _c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "checkbox",
-      id: "btncheck2",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btncheck2"
-    }
-  }, [_vm._v("Cardiologia")]), _vm._v(" "), _c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "checkbox",
-      id: "btncheck3",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btncheck3"
-    }
-  }, [_vm._v("Pediatria")])]), _vm._v(" "), _c("div", {
-    staticClass: "text-white pt-3"
-  }, [_vm._v("Filtra per:")]), _vm._v(" "), _c("div", {
+  return _c("div", {
     staticClass: "btn-group d-flex justify-content-around pt-2",
     attrs: {
       role: "group",
@@ -3028,80 +3007,7 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "btnradio2"
     }
-  }, [_vm._v("Numero\n                    recensioni")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "bg-lightblue justify-content-center d-flex"
-  }, [_c("div", {
-    staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
-  }, [_c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "card m-3 border-0",
-    staticStyle: {
-      width: "22rem"
-    }
-  }, [_c("div", {
-    staticClass: "avatarbg mx-auto"
-  }, [_c("img", {
-    staticClass: "card-img-top",
-    attrs: {
-      src: "images/baffo.png",
-      alt: "..."
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                            Card title\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2 text-center"
-  }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text text-center"
-  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "card m-3 border-0",
-    staticStyle: {
-      width: "22rem"
-    }
-  }, [_c("div", {
-    staticClass: "avatarbg mx-auto"
-  }, [_c("img", {
-    staticClass: "card-img-top",
-    attrs: {
-      src: "images/cioccolata.png",
-      alt: "..."
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                            Card title\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2 text-center"
-  }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text text-center"
-  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "card m-3 border-0",
-    staticStyle: {
-      width: "22rem"
-    }
-  }, [_c("div", {
-    staticClass: "avatarbg mx-auto"
-  }, [_c("img", {
-    staticClass: "card-img-top",
-    attrs: {
-      src: "images/covid.png",
-      alt: "..."
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                            Card title\n                        ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2 text-center"
-  }, [_vm._v("\n                            Cardiac Surgery\n                        ")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text text-center"
-  }, [_vm._v("\n                            Some quick example text to build on the card\n                            title and make up the bulk of the card's\n                            content.\n                        ")])])])])])])]);
+  }, [_vm._v("Numero\n                        recensioni")])]);
 }];
 render._withStripped = true;
 
@@ -20212,8 +20118,12 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   // il valore di questa chiava deve essere un istanza di vuerouter
   router: new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
     routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
-    mode: "history" // per levare il cancelletto nell' url 
-
+    mode: "history",
+    scrollBehavior: function scrollBehavior() {
+      document.getElementById('app').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   })
 });
 
@@ -21023,7 +20933,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

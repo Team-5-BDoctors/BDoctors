@@ -1,26 +1,16 @@
 <template>
     <div>
-        <div class="container-fluid jumbo-bg d-flex justify-content-center pt-5">
+    <div>
+        <div class="container-fluid jumbo-bg pt-5">
+            <div class="container px-5 d-flex flex-column justify-content-center">
             <div class="pt-5 searchbar-container">
-                <form onsubmit="event.preventDefault();" role="search">
-
-                    <input id="search search-bar" class="" type="search" placeholder="Cerca un dottore..." autofocus
-                        required />
-                    <button class="text-white" type="submit">Cerca</button>
-                </form>
                 <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
-                <div class="btn-group d-flex justify-content-around" role="group"
-                    aria-label="Basic checkbox toggle button group">
-                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btncheck1">Neurologia</label>
-
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btncheck2">Cardiologia</label>
-
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btncheck3">Pediatria</label>
-                </div>
-                <div class="text-white pt-3">Filtra per:</div>
+                <select @change="selectedSpecialization = $event.target.value, fetchDoctorsInPage()" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected value="">Seleziona una specializzazione</option>
+                    <option v-for="specialization in specializations" :value="specialization.name">{{ specialization.name }}</option>
+                </select>
+            </div>
+                <div class="text-white pt-3">Ordina per:</div>
                 <div class="btn-group d-flex justify-content-around pt-2 " role="group"
                     aria-label="Basic radio toggle button group ">
 
@@ -30,74 +20,27 @@
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                     <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
                         recensioni</label>
-
-
                 </div>
-
-
             </div>
-
 
 
         </div>
         <div class="bg-lightblue justify-content-center d-flex">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
-                <div class="col">
+                <div v-for="doctor in doctors" :key="doctor.name" class="col">
                     <div class="card m-3 border-0" style="width: 22rem">
                         <div class="avatarbg mx-auto">
-                            <img src="images/baffo.png" class="card-img-top" alt="..." />
+                            <img :src="`storage/${doctor.image}`" class="card-img-top" alt="..." />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">
-                                Card title
+                                {{doctor.name}}
                             </h5>
-                            <div class="text-primary pb-2 text-center">
-                                Cardiac Surgery
+                            <div v-for="specialization in doctor.specializations" class="text-primary pb-2 text-center">
+                                {{specialization.name}}
                             </div>
                             <p class="card-text text-center">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card m-3 border-0" style="width: 22rem">
-                        <div class="avatarbg mx-auto">
-                            <img src="images/cioccolata.png" class="card-img-top" alt="..." />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Card title
-                            </h5>
-                            <div class="text-primary pb-2 text-center">
-                                Cardiac Surgery
-                            </div>
-                            <p class="card-text text-center">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card m-3 border-0" style="width: 22rem">
-                        <div class="avatarbg mx-auto">
-                            <img src="images/covid.png" class="card-img-top" alt="..." />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Card title
-                            </h5>
-                            <div class="text-primary pb-2 text-center">
-                                Cardiac Surgery
-                            </div>
-                            <p class="card-text text-center">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
+                                {{doctor.services}}
                             </p>
                         </div>
                     </div>
@@ -105,37 +48,26 @@
             </div>
         </div>
     </div>
+</div>
+
 </template>
 
 <script>
-<<<<<<< HEAD
-import axios from "axios";
-export default {
-    name: "AdvancedSearch",
-    data() {
-        return {
-            doctors: [],
-            specializations: [],
-        };
-    },
-    mounted() {
-        window.addEventListener("scroll", this.scrollFunction);
-        this.fetchDoctors();
-        this.fetchSpecializations();
-=======
 import axios from 'axios';
 
 
 export default {
     data(){
         return{
-            doctors:[]
+            doctors:[],
+            specializations:[],
+            selectedSpecialization: "",
         }
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
         this.fetchDoctorsSpecialization();
->>>>>>> github/main
+        this.fetchSpecializations();
     },
     methods: {
         scrollFunction() {
@@ -148,37 +80,24 @@ export default {
                 }
             }
         },
-<<<<<<< HEAD
-        fetchDoctors() {
-            axios
-                .get("/api/doctors")
-                .then((response) => {
-                    this.doctors = response.data;
-                    console.log(this.doctors);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        },
-        fetchSpecializations() {
-            axios
-                .get("/api/specializations")
-                .then((response) => {
-                    this.specializations = response.data;
-                    console.log(this.specializations);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        },
-=======
         fetchDoctorsSpecialization(){
             axios.get("/api/doctor?name="+ this.$route.params.specialization_name)
         .then((resp) =>{
             this.doctors = resp.data;
         })
+        },
+        fetchSpecializations(){
+            axios.get("/api/specializations")
+        .then((resp) =>{
+            this.specializations = resp.data;
+        })
+        },
+        fetchDoctorsInPage(){
+            axios.get("/api/doctor?name="+ this.selectedSpecialization)
+        .then((resp) =>{
+            this.doctors = resp.data;
+        })
         }
->>>>>>> github/main
     },
 }
 </script>
@@ -200,6 +119,7 @@ export default {
         opacity: 1;
         transform: translateY(0px);
     }
+
 }
 .card {
     border: none;

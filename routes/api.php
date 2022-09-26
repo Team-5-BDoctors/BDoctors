@@ -19,9 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('specializations', 'Api\SpecializationController@index');
-<<<<<<< HEAD
-Route::get('doctors', 'Api\UserController@index');
-Route::get('reviews', 'Api\ReviewsController@index');
-=======
 Route::get('doctor', 'Api\UserController@index');
->>>>>>> github/main
