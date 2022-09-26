@@ -8,7 +8,7 @@
                         <select @change="selectedSpecialization = $event.target.value, fetchDoctorsInPage()"
                             class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                             <option selected value="">Seleziona una specializzazione</option>
-                            <option v-for="specialization in specializations" :value="specialization.name">{{
+                            <option v-for="specialization in specializations" :key="specialization.name" :value="specialization.name">{{
                             specialization.name }}</option>
                         </select>
                     </div>
