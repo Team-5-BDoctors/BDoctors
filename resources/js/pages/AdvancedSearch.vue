@@ -39,7 +39,7 @@
                                 <h5 class="card-title text-center">
                                     {{doctor.name}}
                                 </h5>
-                                <div v-for="specialization in doctor.specializations"
+                                <div v-for="specialization in doctor.specializations" :key="specialization.id"
                                     class="text-primary pb-2 text-center">
                                     {{specialization.name}}
                                 </div>

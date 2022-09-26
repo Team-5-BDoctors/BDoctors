@@ -40243,9 +40243,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
-__webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
-module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
 
 
 /***/ })

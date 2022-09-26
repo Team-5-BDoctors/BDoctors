@@ -5,9 +5,9 @@
             <div class="container d-flex justify-content-between align-items-center h-100">
                 <div class="left-jumbo">
                     <h1 class="pb-3">{{doctor.name}} {{doctor.surname}}</h1>
-                    <span v-for="specialization in doctor.specializations" :key="specialization.id">
+                    <!--  <span v-for="specialization in doctor.specializations" :key="specialization.id">
                         {{specialization.name}}
-                    </span>
+                    </span>-->
 
                     <p class="pb-3">{{doctor.email}}</p>
                     <p class="pb-3">{{doctor.phone}}</p>
@@ -37,7 +37,7 @@
                     </div>
 
                     <div>
-                        <form class="form-msg" action="" @submit.prevent="onFormSubmit()">
+                        <form class="form-msg" action="" @submit.prevent="onFormMessageSubmit()">
                             <div class="form-group p-2">
                                 <label for="name">Inserisci il tuo nome:</label>
                                 <input type="name" class="form-control" id="name" placeholder="Nome" name="name"
@@ -166,31 +166,31 @@
                 </div>
                 <div class="pt-5">
                     <h3 class="text-center">La tua recensione</h3>
-                    <form class="form-msg">
+                    <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
-                            <label for="exampleFormControlInput1">Inserisci il tuo nome:</label>
-                            <input type="name" class="form-control" id="nameFormControlInput1" placeholder="Nome" />
+                            <label for="reviewName">Inserisci il tuo nome:</label>
+                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome" v-model="reviewName" required/>
                         </div>
                         <div class="form-group py-2">
-                            <label for="exampleFormControlInput1">Inserisci il tuo voto, da 1 a 5:</label>
-                            <select multiple class="form-control" id="exampleFormControlSelect2">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <label for="reviewRating">Inserisci il tuo voto, da 1 a 5:</label>
+                            <select class="form-control" name="rating" id="reviewRating" v-model="reviewRating" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
                         <div class="form-group p-2">
-                            <label for="exampleFormControlInput1">Titolo recensione:</label>
-                            <input type="title" class="form-control" id="titleFormControlInput1" placeholder="Titolo" />
+                            <label for="reviewTitle">Titolo recensione:</label>
+                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo" v-model="reviewTitle" required/>
                         </div>
                         <div class="form-group py-2">
-                            <label for="exampleFormControlTextarea1">Dai il tuo parere:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="reviewContent">Dai il tuo parere:</label>
+                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent" rows="3"></textarea>
                         </div>
                         <div class="text-center py-2">
-                            <button type="button" class="btn btn-primary text-center">
+                            <button type="submit" class="btn btn-primary text-center">
                                 Invia recensione
                             </button>
                         </div>
@@ -211,8 +211,12 @@ export default {
             email: "",
             title: "",
             content: "",
-            doctor_id: this.$route.params.doctor.id,
-            doctor: this.$route.params.doctor
+            doctor: {},
+            reviewName: "",
+            reviewTitle : "",
+            reviewRating : null,
+            reviewContent: "",
+            pest: 'test'
         };
     },
     name: "DoctorShow",
@@ -221,8 +225,8 @@ export default {
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
-        console.log(this.doctor.name)
-        console.log(this.doctor.id)
+        this.getDoctorData()
+        
     },
     methods: {
         scrollFunction() {
@@ -235,7 +239,7 @@ export default {
                 }
             }
         },
-        onFormSubmit() {
+        onFormMessageSubmit() {
             axios.post("/api/contacts", {
                 name: this.name,
                 surname: this.surname,
@@ -244,6 +248,23 @@ export default {
                 content: this.content,
                 user_id: this.doctor.id
             })
+        },
+        onFormReviewSubmit() {
+            axios.post("/api/reviews", {
+                name: this.reviewName,
+                title: this.reviewTitle,
+                rating: this.reviewRating,
+                content: this.reviewContent,
+                user_id: this.doctor.id
+            })
+        },
+        getDoctorData(){
+            axios.get("/api/doctor/" + this.$route.params.doctor_slug)
+                .then((resp) => {
+                    this.doctor = resp.data;
+                    console.log(this.doctor)
+
+                })
         }
     },
 };
@@ -379,18 +400,11 @@ p {
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
+    
     flex-direction: column;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
+    
     justify-content: flex-start;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
+    
     align-items: center;
     text-align: center;
 }

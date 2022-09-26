@@ -2276,16 +2276,19 @@ __webpack_require__.r(__webpack_exports__);
       email: "",
       title: "",
       content: "",
-      doctor_id: this.$route.params.doctor.id,
-      doctor: this.$route.params.doctor
+      doctor: {},
+      reviewName: "",
+      reviewTitle: "",
+      reviewRating: null,
+      reviewContent: "",
+      pest: 'test'
     };
   },
   name: "DoctorShow",
   props: {},
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
-    console.log(this.doctor.name);
-    console.log(this.doctor.id);
+    this.getDoctorData();
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2300,7 +2303,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    onFormSubmit: function onFormSubmit() {
+    onFormMessageSubmit: function onFormMessageSubmit() {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/contacts", {
         name: this.name,
         surname: this.surname,
@@ -2308,6 +2311,23 @@ __webpack_require__.r(__webpack_exports__);
         title: this.title,
         content: this.content,
         user_id: this.doctor.id
+      });
+    },
+    onFormReviewSubmit: function onFormReviewSubmit() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/reviews", {
+        name: this.reviewName,
+        title: this.reviewTitle,
+        rating: this.reviewRating,
+        content: this.reviewContent,
+        user_id: this.doctor.id
+      });
+    },
+    getDoctorData: function getDoctorData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor/" + this.$route.params.doctor_slug).then(function (resp) {
+        _this.doctor = resp.data;
+        console.log(_this.doctor);
       });
     }
   }
@@ -2442,7 +2462,6 @@ var render = function render() {
       to: {
         name: "DoctorShow",
         params: {
-          doctor: _vm.doctor,
           doctor_slug: _vm.doctor.slug
         }
       }
@@ -3114,6 +3133,7 @@ var render = function render() {
       staticClass: "card-title text-center"
     }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                            ")]), _vm._v(" "), _vm._l(doctor.specializations, function (specialization) {
       return _c("div", {
+        key: specialization.id,
         staticClass: "text-primary pb-2 text-center"
       }, [_vm._v("\n                                " + _vm._s(specialization.name) + "\n                            ")]);
     }), _vm._v(" "), _c("p", {
@@ -3188,11 +3208,7 @@ var render = function render() {
     staticClass: "left-jumbo"
   }, [_c("h1", {
     staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _vm._l(_vm.doctor.specializations, function (specialization) {
-    return _c("span", {
-      key: specialization.id
-    }, [_vm._v("\n                    " + _vm._s(specialization.name) + "\n                ")]);
-  }), _vm._v(" "), _c("p", {
+  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.email))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
@@ -3200,7 +3216,7 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])], 2), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("img", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("img", {
     staticClass: "h-100 right-bg-jumbo",
     attrs: {
       src: "/images/jumbo_right_bg.jpg",
@@ -3220,7 +3236,7 @@ var render = function render() {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.onFormSubmit();
+        return _vm.onFormMessageSubmit();
       }
     }
   }, [_c("div", {
@@ -3367,7 +3383,166 @@ var render = function render() {
         _vm.content = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(2)])])])])]), _vm._v(" "), _vm._m(3)]);
+  })]), _vm._v(" "), _vm._m(2)])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container-blue"
+  }, [_c("div", {
+    staticClass: "container py-5 my-5"
+  }, [_c("h2", {
+    staticClass: "text-center"
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("div", {
+    staticClass: "pt-5"
+  }, [_c("h3", {
+    staticClass: "text-center"
+  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
+    staticClass: "form-msg",
+    attrs: {
+      action: ""
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.onFormReviewSubmit();
+      }
+    }
+  }, [_c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewName"
+    }
+  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewName,
+      expression: "reviewName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "reviewName",
+      name: "name",
+      placeholder: "Nome",
+      required: ""
+    },
+    domProps: {
+      value: _vm.reviewName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.reviewName = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewRating"
+    }
+  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewRating,
+      expression: "reviewRating"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      name: "rating",
+      id: "reviewRating",
+      required: ""
+    },
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.reviewRating = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("1")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("2")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "3"
+    }
+  }, [_vm._v("3")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "4"
+    }
+  }, [_vm._v("4")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("5")])])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewTitle"
+    }
+  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewTitle,
+      expression: "reviewTitle"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "title",
+      name: "title",
+      id: "reviewTitle",
+      placeholder: "Titolo",
+      required: ""
+    },
+    domProps: {
+      value: _vm.reviewTitle
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.reviewTitle = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewContent"
+    }
+  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewContent,
+      expression: "reviewContent"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      id: "reviewContent",
+      name: "content",
+      rows: "3"
+    },
+    domProps: {
+      value: _vm.reviewContent
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.reviewContent = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _vm._m(4)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3414,13 +3589,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "container-blue"
-  }, [_c("div", {
-    staticClass: "container py-5 my-5"
-  }, [_c("h2", {
-    staticClass: "text-center"
-  }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
+  return _c("div", [_c("div", {
     staticClass: "my-row"
   }, [_c("div", {
     staticClass: "col"
@@ -3512,70 +3681,19 @@ var staticRenderFns = [function () {
     staticClass: "fa-solid fa-star gold-star"
   }), _vm._v(" "), _c("i", {
     staticClass: "fa-solid fa-star gold-star"
-  })])])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "pt-5"
-  }, [_c("h3", {
-    staticClass: "text-center"
-  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
-    staticClass: "form-msg"
-  }, [_c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "name",
-      id: "nameFormControlInput1",
-      placeholder: "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
-    staticClass: "form-control",
-    attrs: {
-      multiple: "",
-      id: "exampleFormControlSelect2"
-    }
-  }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "title",
-      id: "titleFormControlInput1",
-      placeholder: "Titolo"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlTextarea1"
-    }
-  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
-    staticClass: "form-control",
-    attrs: {
-      id: "exampleFormControlTextarea1",
-      rows: "3"
-    }
-  })]), _vm._v(" "), _c("div", {
+  })])])])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "text-center py-2"
   }, [_c("button", {
     staticClass: "btn btn-primary text-center",
     attrs: {
-      type: "button"
+      type: "submit"
     }
-  }, [_vm._v("\n                            Invia recensione\n                        ")])])])])])]);
+  }, [_vm._v("\n                            Invia recensione\n                        ")])]);
 }];
 render._withStripped = true;
 
@@ -21330,7 +21448,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

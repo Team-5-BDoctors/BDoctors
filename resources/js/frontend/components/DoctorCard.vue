@@ -19,7 +19,7 @@
                 </div>
                 <div class="text-center pt-2">
                     <router-link class="btn btn-primary" :key="doctor.id"
-                        :to="{name: 'DoctorShow', params: {'doctor': doctor, 'doctor_slug': doctor.slug}}">
+                        :to="{name: 'DoctorShow', params: {'doctor_slug': doctor.slug}}">
                         Dettagli
                     </router-link>
                 </div>

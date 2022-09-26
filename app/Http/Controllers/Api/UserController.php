@@ -25,6 +25,14 @@ class UserController extends Controller
             return response()->json($doctors);
         }
     }
+
+    public function show($slug)
+    {
+        $doctor = User::where('slug', $slug)->with('specializations')->first();
+
+        return response()->json($doctor);
+
+    }
 }
 
 
