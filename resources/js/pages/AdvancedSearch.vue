@@ -1,53 +1,59 @@
 <template>
     <div>
-        <div class="container-fluid jumbo-bg d-flex justify-content-center pt-5">
-            <div class="pt-5 searchbar-container">
-                <form onsubmit="event.preventDefault();" role="search">
-                    <input id="search search-bar" :value="this.$route.params.specialization_name" class="" type="search"
-                        placeholder="Cerca un dottore..." autofocus required />
-                    <button class="text-white" type="submit">Cerca</button>
-                </form>
-                <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
-                <div class="btn-group d-flex justify-content-around" role="group"
-                    aria-label="Basic checkbox toggle button group">
-                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btncheck1">Neurologia</label>
+        <div>
+            <div class="container-fluid jumbo-bg pt-5">
+                <div class="container px-5 d-flex flex-column justify-content-center">
+                    <div class="pt-5 searchbar-container">
+                        <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
+                        <select @change="selectedSpecialization = $event.target.value, fetchDoctorsInPage()"
+                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected value="">Seleziona una specializzazione</option>
+                            <option v-for="specialization in specializations" :value="specialization.name">{{
+                            specialization.name }}</option>
+                        </select>
+                    </div>
+                    <div class="text-white pt-3">Ordina per:</div>
+                    <div class="btn-group d-flex justify-content-around pt-2 " role="group"
+                        aria-label="Basic radio toggle button group ">
 
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btncheck2">Cardiologia</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                        <label class="btn btn-outline-primary text-white" for="btnradio1">Media voti</label>
 
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btncheck3">Pediatria</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
+                            recensioni</label>
+                    </div>
                 </div>
-                <div class="text-white pt-3">Filtra per:</div>
-                <div class="btn-group d-flex justify-content-around pt-2 " role="group"
-                    aria-label="Basic radio toggle button group ">
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btnradio1">Media voti</label>
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
-                        recensioni</label>
-                </div>
             </div>
-
-        </div>
-        <div class="bg-lightblue justify-content-center d-flex container-fluid">
-            <div class="row row-cols-auto pb-5 justify-content-center g-5 container-fluid ">
-
-
-                <div class="bg-lightblue justify-content-center d-flex">
-                    <div
-                        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
-
-                        <DoctorCard v-for="doctor in doctors" :key="doctor.id" :doctor="doctor" />
-
+            <div class="bg-lightblue justify-content-center d-flex">
+                <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
+                    <div v-for="doctor in doctors" :key="doctor.name" class="col">
+                        <div class="card m-3 border-0" style="width: 22rem">
+                            <div class="avatarbg mx-auto">
+                                <img :src="`storage/${doctor.image}`" class="card-img-top" alt="..." />
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    {{doctor.name}}
+                                </h5>
+                                <div v-for="specialization in doctor.specializations"
+                                    class="text-primary pb-2 text-center">
+                                    {{specialization.name}}
+                                </div>
+                                <p class="card-text text-center">
+                                    {{doctor.services}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -56,16 +62,17 @@ import DoctorCard from '../frontend/components/DoctorCard.vue';
 
 
 export default {
-    components: { DoctorCard },
     data() {
         return {
-
             doctors: [],
+            specializations: [],
+            selectedSpecialization: "",
         }
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
         this.fetchDoctorsSpecialization();
+        this.fetchSpecializations();
     },
     methods: {
         scrollFunction() {
@@ -81,7 +88,18 @@ export default {
         fetchDoctorsSpecialization() {
             axios.get("/api/doctor?name=" + this.$route.params.specialization_name)
                 .then((resp) => {
-                    console.log(resp.data);
+                    this.doctors = resp.data;
+                })
+        },
+        fetchSpecializations() {
+            axios.get("/api/specializations")
+                .then((resp) => {
+                    this.specializations = resp.data;
+                })
+        },
+        fetchDoctorsInPage() {
+            axios.get("/api/doctor?name=" + this.selectedSpecialization)
+                .then((resp) => {
                     this.doctors = resp.data;
                 })
         }
@@ -107,6 +125,7 @@ export default {
         opacity: 1;
         transform: translateY(0px);
     }
+
 }
 
 .card {

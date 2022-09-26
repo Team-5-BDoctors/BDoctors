@@ -11,6 +11,9 @@ new Vue({
     // il valore di questa chiava deve essere un istanza di vuerouter
     router: new VueRouter({
         routes,
-        mode: "history" // per levare il cancelletto nell' url 
+        mode: "history",
+        scrollBehavior() {
+            document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+        }
     })
 })
