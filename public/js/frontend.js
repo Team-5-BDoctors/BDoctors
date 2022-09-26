@@ -2954,14 +2954,14 @@ var render = function render() {
     }, [_c("img", {
       staticClass: "card-img-top",
       attrs: {
-        src: "storage/".concat(doctor.image),
+        src: "/storage/" + doctor.image,
         alt: "..."
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card-body"
     }, [_c("h5", {
       staticClass: "card-title text-center"
-    }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                            ")]), _vm._v(" "), _vm._l(doctor.specializations, function (specialization) {
+    }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                                " + _vm._s(doctor.surname) + "\n                            ")]), _vm._v(" "), _vm._l(doctor.specializations, function (specialization) {
       return _c("div", {
         staticClass: "text-primary pb-2 text-center"
       }, [_vm._v("\n                                " + _vm._s(specialization.name) + "\n                            ")]);

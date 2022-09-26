@@ -30,11 +30,12 @@
                 <div v-for="doctor in doctors" :key="doctor.name" class="col">
                     <div class="card m-3 border-0" style="width: 22rem">
                         <div class="avatarbg mx-auto">
-                            <img :src="`storage/${doctor.image}`" class="card-img-top" alt="..." />
+                            <img :src="'/storage/'+doctor.image" class="card-img-top" alt="..." />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">
                                 {{doctor.name}}
+                                {{doctor.surname}}
                             </h5>
                             <div v-for="specialization in doctor.specializations" class="text-primary pb-2 text-center">
                                 {{specialization.name}}
