@@ -2201,8 +2201,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _frontend_components_DoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../frontend/components/DoctorCard.vue */ "./resources/js/frontend/components/DoctorCard.vue");
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3080,6 +3078,7 @@ var render = function render() {
     }
   }, [_vm._v("Seleziona una specializzazione")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
     return _c("option", {
+      key: specialization.name,
       domProps: {
         value: specialization.name
       }
@@ -21311,7 +21310,7 @@ var routes = [{
   component: _pages_home_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "home"
 }, {
-  path: "/doctors/:specialization_name",
+  path: "/doctors",
   component: _pages_AdvancedSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "AdvancedSearch"
 }, {
@@ -21329,7 +21328,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
