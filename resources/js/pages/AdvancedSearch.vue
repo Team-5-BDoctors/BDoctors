@@ -1,27 +1,33 @@
 <template>
     <div>
-    <div>
-        <div class="container-fluid jumbo-bg pt-5">
-            <div class="container px-5 d-flex flex-column justify-content-center">
-            <div class="pt-5 searchbar-container">
-                <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
-                <select @change="selectedSpecialization = $event.target.value, fetchDoctorsInPage()" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected value="">Seleziona una specializzazione</option>
-                    <option v-for="specialization in specializations" :value="specialization.name">{{ specialization.name }}</option>
-                </select>
-            </div>
-                <div class="text-white pt-3">Ordina per:</div>
-                <div class="btn-group d-flex justify-content-around pt-2 " role="group"
-                    aria-label="Basic radio toggle button group ">
+        <div>
+            <div class="container-fluid jumbo-bg pt-5">
+                <div class="container px-5 d-flex flex-column justify-content-center">
+                    <div class="pt-5 searchbar-container">
+                        <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
+                        <select @change="selectedSpecialization = $event.target.value, fetchDoctorsInPage()"
+                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option selected value="">Seleziona una specializzazione</option>
+                            <option v-for="specialization in specializations" :key="specialization.name" :value="specialization.name">{{
+                            specialization.name }}</option>
+                        </select>
+                    </div>
+                    <div class="text-white pt-3">Ordina per:</div>
+                    <div class="btn-group d-flex justify-content-around pt-2 " role="group"
+                        aria-label="Basic radio toggle button group ">
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btnradio1">Media voti</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                        <label class="btn btn-outline-primary text-white" for="btnradio1">Media voti</label>
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                    <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
-                        recensioni</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
+                            recensioni</label>
+                    </div>
                 </div>
+
+
             </div>
+<<<<<<< HEAD
 
 
         </div>
@@ -39,29 +45,45 @@
                             </h5>
                             <div v-for="specialization in doctor.specializations" class="text-primary pb-2 text-center">
                                 {{specialization.name}}
+=======
+            <div class="bg-lightblue justify-content-center d-flex">
+                <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
+                    <div v-for="doctor in doctors" :key="doctor.name" class="col">
+                        <div class="card m-3 border-0" style="width: 22rem">
+                            <div class="avatarbg mx-auto">
+                                <img :src="'/storage/'+doctor.image" class="card-img-top" alt="..." />
                             </div>
-                            <p class="card-text text-center">
-                                {{doctor.services}}
-                            </p>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    {{doctor.name}}
+                                </h5>
+                                <div v-for="specialization in doctor.specializations"
+                                    class="text-primary pb-2 text-center">
+                                    {{specialization.name}}
+                                </div>
+                                <p class="card-text text-center">
+                                    {{doctor.services}}
+                                </p>
+>>>>>>> main
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 </template>
 
 <script>
 import axios from 'axios';
 
-
 export default {
-    data(){
-        return{
-            doctors:[],
-            specializations:[],
+    data() {
+        return {
+            doctors: [],
+            specializations: [],
             selectedSpecialization: "",
         }
     },
@@ -81,23 +103,23 @@ export default {
                 }
             }
         },
-        fetchDoctorsSpecialization(){
-            axios.get("/api/doctor?name="+ this.$route.params.specialization_name)
-        .then((resp) =>{
-            this.doctors = resp.data;
-        })
+        fetchDoctorsSpecialization() {
+            axios.get("/api/doctor?name=" + this.$route.params.specialization_name)
+                .then((resp) => {
+                    this.doctors = resp.data;
+                })
         },
-        fetchSpecializations(){
+        fetchSpecializations() {
             axios.get("/api/specializations")
-        .then((resp) =>{
-            this.specializations = resp.data;
-        })
+                .then((resp) => {
+                    this.specializations = resp.data;
+                })
         },
-        fetchDoctorsInPage(){
-            axios.get("/api/doctor?name="+ this.selectedSpecialization)
-        .then((resp) =>{
-            this.doctors = resp.data;
-        })
+        fetchDoctorsInPage() {
+            axios.get("/api/doctor?name=" + this.selectedSpecialization)
+                .then((resp) => {
+                    this.doctors = resp.data;
+                })
         }
     },
 }
@@ -111,6 +133,7 @@ export default {
     background-repeat: no-repeat;
     height: 400px;
 }
+
 .card {
     opacity: 0.5;
     transform: translateY(50px);
@@ -122,6 +145,7 @@ export default {
     }
 
 }
+
 .card {
     border: none;
 }

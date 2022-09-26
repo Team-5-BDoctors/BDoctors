@@ -91,7 +91,7 @@ class UserController extends Controller
             'address' => "required",
             'curriculum' => "nullable|mimes:pdf|max:2048",
             "image" => "nullable|mimes:jpeg,png,jpg,gif,svg|max:2048",
-            'phone' => "required|regex:/^[0-9]{10}$/",
+            'phone' => "nullable|regex:/^[0-9]{10}$/",
             "services" => "nullable",
             "specializations" => "nullable|exists:specializations,id",
         ]);
