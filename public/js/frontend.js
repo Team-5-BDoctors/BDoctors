@@ -2201,8 +2201,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _frontend_components_DoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../frontend/components/DoctorCard.vue */ "./resources/js/frontend/components/DoctorCard.vue");
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2924,7 +2922,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col col-md-6 col-sm-6 girlout"
   }, [_c("img", {
-    staticClass: "w-75",
+    staticClass: "w-75 footerimg",
     attrs: {
       src: "images/pre_footer_doctor.png",
       alt: "",
@@ -3216,7 +3214,21 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("img", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "h-75 right-jumbo"
+  }, [_c("img", {
+    staticClass: "h-100 floating-elements",
+    attrs: {
+      src: "/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("img", {
+    staticClass: "h-100 doctor-jumbo",
+    attrs: {
+      src: "/storage/" + _vm.doctor.image,
+      alt: "..."
+    }
+  })]), _vm._v(" "), _c("img", {
     staticClass: "h-100 right-bg-jumbo",
     attrs: {
       src: "/images/jumbo_right_bg.jpg",
@@ -3228,7 +3240,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "contact"
-  }, [_vm._m(1), _vm._v(" "), _c("div", [_c("form", {
+  }, [_vm._m(0), _vm._v(" "), _c("div", [_c("form", {
     staticClass: "form-msg",
     attrs: {
       action: ""
@@ -3383,13 +3395,13 @@ var render = function render() {
         _vm.content = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(2)])])])])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
     staticClass: "container-blue"
   }, [_c("div", {
     staticClass: "container py-5 my-5"
   }, [_c("h2", {
     staticClass: "text-center"
-  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("div", {
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "pt-5"
   }, [_c("h3", {
     staticClass: "text-center"
@@ -3542,7 +3554,7 @@ var render = function render() {
         _vm.reviewContent = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(4)])])])])]);
+  })]), _vm._v(" "), _vm._m(3)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3550,26 +3562,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "h-75 right-jumbo"
-  }, [_c("img", {
-    staticClass: "h-100 floating-elements",
-    attrs: {
-      src: "/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("img", {
-    staticClass: "h-100 doctor-jumbo",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-title"
+    staticClass: "text-center"
   }, [_c("h2", [_vm._v("Invia un messaggio al dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
     staticClass: "divider"
   })]);
@@ -3875,7 +3868,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".girlout[data-v-5569203c] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.prefooter[data-v-5569203c] {\n  height: 200px;\n  background-color: #4157ff;\n  border-radius: 0 0 25px 25px;\n  position: relative;\n}\n.prefooter h2[data-v-5569203c] {\n  font-size: 2rem;\n  font-weight: 700;\n}\n.prefooter p[data-v-5569203c] {\n  font-size: 0.8rem;\n  font-weight: 500;\n}\n.footersection[data-v-5569203c] {\n  background-color: #151e66;\n  color: #d8eeff;\n}\n.footerlink[data-v-5569203c] {\n  color: #d8eeff;\n  opacity: 0.5;\n}\n.footercontainer[data-v-5569203c] {\n  border-bottom: 1px solid rgba(216, 238, 255, 0.2470588235);\n}\n.big-paragraph[data-v-5569203c] {\n  color: #2ea4ff;\n  font-size: 24px;\n  line-height: 34px;\n  font-style: normal;\n  font-weight: 700;\n}\n.footer-headings[data-v-5569203c] {\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  font-weight: 700;\n  letter-spacing: 0px;\n}", ""]);
+exports.push([module.i, ".girlout[data-v-5569203c] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.prefooter[data-v-5569203c] {\n  height: 200px;\n  background-color: #4157ff;\n  border-radius: 0 0 25px 25px;\n  position: relative;\n}\n.prefooter h2[data-v-5569203c] {\n  font-size: 2rem;\n  font-weight: 700;\n}\n.prefooter p[data-v-5569203c] {\n  font-size: 0.8rem;\n  font-weight: 500;\n}\n.footersection[data-v-5569203c] {\n  background-color: #151e66;\n  color: #d8eeff;\n}\n.footerlink[data-v-5569203c] {\n  color: #d8eeff;\n  opacity: 0.5;\n}\n.footercontainer[data-v-5569203c] {\n  border-bottom: 1px solid rgba(216, 238, 255, 0.2470588235);\n}\n.big-paragraph[data-v-5569203c] {\n  color: #2ea4ff;\n  font-size: 24px;\n  line-height: 34px;\n  font-style: normal;\n  font-weight: 700;\n}\n.footer-headings[data-v-5569203c] {\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  font-weight: 700;\n  letter-spacing: 0px;\n}\n@media screen and (max-width: 575px) {\n.footerimg[data-v-5569203c] {\n    display: none;\n}\n}", ""]);
 
 // exports
 
@@ -3932,7 +3925,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
+exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
 
 // exports
 

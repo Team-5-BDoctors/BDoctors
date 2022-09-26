@@ -21,7 +21,7 @@
                 <div class="h-75 right-jumbo">
                     <img class="h-100 floating-elements" src="/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png"
                         alt="" />
-                    <img class="h-100 doctor-jumbo" src="/images/jumbo_doctor.png" alt="" />
+                    <img :src="'/storage/'+doctor.image" class="h-100 doctor-jumbo" alt="..." />
                 </div>
                 <img class="h-100 right-bg-jumbo" src="/images/jumbo_right_bg.jpg" alt="" />
             </div>
@@ -30,7 +30,7 @@
         <div class="container-white">
             <div class="container">
                 <div class="contact">
-                    <div class="form-title">
+                    <div class="text-center">
                         <h2>Invia un messaggio al dottore</h2>
                         <br />
                         <div class="divider"></div>
@@ -329,12 +329,12 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
-    -webkit-animation: rotating 15s linear infinite;
-    -moz-animation: rotating 15s linear infinite;
-    -ms-animation: rotating 15s linear infinite;
-    -o-animation: rotating 15s linear infinite;
-    animation: rotating 15s linear infinite;
+    // z-index: 2;
+    // -webkit-animation: rotating 15s linear infinite;
+    // -moz-animation: rotating 15s linear infinite;
+    // -ms-animation: rotating 15s linear infinite;
+    // -o-animation: rotating 15s linear infinite;
+    // animation: rotating 15s linear infinite;
 }
 
 .left-jumbo {
@@ -349,6 +349,10 @@ p {
 .doctor-jumbo {
     position: relative;
     z-index: 3;
+    border-radius: 50%;
+    bottom: 80px;
+    height: 200px;
+    width: 500px;
 }
 
 .btn-primary {
@@ -386,27 +390,6 @@ p {
     border-color: #d8eeff;
     border-radius: 10px;
     background-color: #fff;
-}
-
-.form-title {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    
-    flex-direction: column;
-    
-    justify-content: flex-start;
-    
-    align-items: center;
-    text-align: center;
 }
 
 .divider {
