@@ -308,12 +308,12 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
-    -webkit-animation: rotating 15s linear infinite;
-    -moz-animation: rotating 15s linear infinite;
-    -ms-animation: rotating 15s linear infinite;
-    -o-animation: rotating 15s linear infinite;
-    animation: rotating 15s linear infinite;
+    // z-index: 2;
+    // -webkit-animation: rotating 15s linear infinite;
+    // -moz-animation: rotating 15s linear infinite;
+    // -ms-animation: rotating 15s linear infinite;
+    // -o-animation: rotating 15s linear infinite;
+    // animation: rotating 15s linear infinite;
 }
 
 .left-jumbo {
@@ -328,6 +328,10 @@ p {
 .doctor-jumbo {
     position: relative;
     z-index: 3;
+    border-radius: 50%;
+    bottom: 80px;
+    height: 200px;
+    width: 500px;
 }
 
 .btn-primary {
