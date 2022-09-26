@@ -30,7 +30,7 @@
         <div class="container-white">
             <div class="container">
                 <div class="contact">
-                    <div class="form-title">
+                    <div class="text-center">
                         <h2>Invia un messaggio al dottore</h2>
                         <br />
                         <div class="divider"></div>

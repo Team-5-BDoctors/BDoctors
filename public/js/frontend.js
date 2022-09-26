@@ -3387,7 +3387,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "form-title"
+    staticClass: "text-center"
   }, [_c("h2", [_vm._v("Invia un messaggio al dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
     staticClass: "divider"
   })]);
