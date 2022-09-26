@@ -21,7 +21,7 @@
                 <div class="h-75 right-jumbo">
                     <img class="h-100 floating-elements" src="/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png"
                         alt="" />
-                    <img class="h-100 doctor-jumbo" src="/images/jumbo_doctor.png" alt="" />
+                    <img :src="'/storage/'+doctor.image" class="h-100 doctor-jumbo" alt="..." />
                 </div>
                 <img class="h-100 right-bg-jumbo" src="/images/jumbo_right_bg.jpg" alt="" />
             </div>
