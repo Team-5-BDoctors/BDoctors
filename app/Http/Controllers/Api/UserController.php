@@ -38,6 +38,20 @@ class UserController extends Controller
         $doctor = User::where('slug', $slug)->with('specializations')->first();
         return response()->json($doctor);
     }
+
+    public function showDoctorsSponsored(){
+
+        $sponsoredDoctors = User::with('specializations', "reviews")
+        ->whereHas('sponsorships', function($query) {
+            $query->where('ends_at', '>', now());
+        })
+        ->get();
+        $sponsoredDoctors = $sponsoredDoctors->each(function ($doctor) {
+            $doctor->average = $doctor->reviews->avg('rating');
+        });
+        return response()->json($sponsoredDoctors);
+
+    }
 }
 
 

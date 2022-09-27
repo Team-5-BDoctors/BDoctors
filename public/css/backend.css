@@ -12693,8 +12693,8 @@ fieldset:disabled .btn {
   border: 3px solid #E9F6FF;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .sidebar .nav-pills .nav-link {
@@ -12708,5 +12708,42 @@ fieldset:disabled .btn {
 .sidebar .nav-pills .nav-link.my-active {
   background-color: #E9F6FF;
   color: black !important;
+}
+
+.table-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.table-container .my-table-title {
+  color: #338DFF;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.table-container .my-table {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.table-container .my-table .tb-head {
+  padding-bottom: 0.5rem;
+}
+
+.table-container .my-table .tb-body .row {
+  margin-bottom: 1rem;
+  background-color: white;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.table-container .my-table .tb-body .row .col {
+  flex-shrink: 0;
+}
+
+.table-container .my-table .tb-body .row .tb-surname {
+  font-size: 0.8rem;
 }
 

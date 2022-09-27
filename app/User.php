@@ -50,6 +50,7 @@ class User extends Authenticatable
         ->using('App\UserSponsorship');
     }
 
+
     public function messages()
     {
         return $this->hasMany('App\Message');
