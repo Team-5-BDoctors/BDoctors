@@ -27,6 +27,7 @@
             </div>
         </div>
 
+        <!-- Messaggi -->
         <div class="container-white">
             <div class="container">
                 <div class="contact">
@@ -417,11 +418,6 @@ p {
     justify-content: center;
 }
 
-.form-img {
-    height: 60%;
-    border-radius: 8px;
-}
-
 .my-row {
     display: flex;
     border: 1px solid #e9f6ff;
@@ -464,6 +460,9 @@ p {
 @media screen and (max-width: 991px) {
     .my-row {
         display: block;
+    }
+    .right-bg-jumbo {
+        display: none;
     }
 }
 </style>
