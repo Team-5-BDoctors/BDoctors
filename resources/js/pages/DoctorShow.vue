@@ -169,25 +169,37 @@
                     <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
                             <label for="reviewName">Inserisci il tuo nome:</label>
-                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome" v-model="reviewName" required/>
+                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome"
+                                v-model="reviewName" required />
                         </div>
                         <div class="form-group py-2">
-                            <label for="reviewRating">Inserisci il tuo voto, da 1 a 5:</label>
-                            <select class="form-control" name="rating" id="reviewRating" v-model="reviewRating" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                            <div>vota</div>
+
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+
                         </div>
+                        <br>
+                        <br>
                         <div class="form-group p-2">
                             <label for="reviewTitle">Titolo recensione:</label>
-                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo" v-model="reviewTitle" required/>
+                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo"
+                                v-model="reviewTitle" required />
                         </div>
                         <div class="form-group py-2">
                             <label for="reviewContent">Dai il tuo parere:</label>
-                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent" rows="3"></textarea>
+                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent"
+                                rows="3"></textarea>
                         </div>
                         <div class="text-center py-2">
                             <button type="submit" class="btn btn-primary text-center">
@@ -213,8 +225,8 @@ export default {
             content: "",
             doctor: {},
             reviewName: "",
-            reviewTitle : "",
-            reviewRating : null,
+            reviewTitle: "",
+            reviewRating: null,
             reviewContent: "",
             pest: 'test'
         };
@@ -226,7 +238,7 @@ export default {
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
         this.getDoctorData()
-        
+
     },
     methods: {
         scrollFunction() {
@@ -258,7 +270,7 @@ export default {
                 user_id: this.doctor.id
             })
         },
-        getDoctorData(){
+        getDoctorData() {
             axios.get("/api/doctor/" + this.$route.params.doctor_slug)
                 .then((resp) => {
                     this.doctor = resp.data;
@@ -271,6 +283,48 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
 .my-card {
     opacity: 0;
     transform: translateY(50px);

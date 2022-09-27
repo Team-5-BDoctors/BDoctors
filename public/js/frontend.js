@@ -2654,25 +2654,44 @@ var staticRenderFns = [function () {
       src: "/images/jumbo_doctor.png",
       alt: ""
     }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Dott.ssa Lucia Rossi")]), _vm._v(" "), _c("span", {
     staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Marco Bianchi:")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero facere quod. Molestiae, nostrum! Saepe, minus iure!")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Ottima: medico disponibile per chiarimenti sia per quanto riguarda\n                            l'intervento che per il processo post operatorio. Organizzazione ospedaliera buona con\n                            personale gentile e premuroso alle esigenze del paziente.")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar ps-2 d-flex justify-content-between"
+  }, [_c("h5", {
+    staticClass: "d-flex align-self-end"
+  }, [_vm._v("\n                                Valutato 4.3/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])]), _vm._v(" "), _c("div", {
+  }, [_c("div", {
+    staticClass: "rate d-flex justify-content-end"
+  }, [_c("label", {
+    attrs: {
+      "for": "star5",
+      title: "text"
+    }
+  }, [_vm._v("5 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star4",
+      title: "text"
+    }
+  }, [_vm._v("4 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star3",
+      title: "text"
+    }
+  }, [_vm._v("3 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star2",
+      title: "text"
+    }
+  }, [_vm._v("2 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star1",
+      title: "text"
+    }
+  }, [_vm._v("1 star")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
   }, [_c("div", {
     staticClass: "my-card middle p-5"
@@ -2684,25 +2703,42 @@ var staticRenderFns = [function () {
       src: "/images/jumbo_doctor.png",
       alt: ""
     }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Dott. Carlo Fidanza")]), _vm._v(" "), _c("span", {
     staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Chiara Brighi:")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem distinctio, dolorum a laboriosam et tempora optio.")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Il dott Carlo Fidanza mi ha asportato due basiolomi (sulla tempia e sul\n                            collo) e mi sono trovata molto bene. Il dott. Fidanza è un professionista competente e\n                            nello stesso tempo molto affabile: il centro e il personale sono ben organizzati.")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar ps-2 d-flex justify-content-between"
+  }, [_c("h5", {
+    staticClass: "d-flex align-self-end"
+  }, [_vm._v("Valutato 4.5/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rate d-flex justify-content-end"
+  }, [_c("label", {
+    attrs: {
+      "for": "star5",
+      title: "text"
+    }
+  }, [_vm._v("5 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star4",
+      title: "text"
+    }
+  }, [_vm._v("4 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star3",
+      title: "text"
+    }
+  }, [_vm._v("3 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star2",
+      title: "text"
+    }
+  }, [_vm._v("2 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star1",
+      title: "text"
+    }
+  }, [_vm._v("1 star")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col"
   }, [_c("div", {
     staticClass: "my-card p-5"
@@ -2714,25 +2750,42 @@ var staticRenderFns = [function () {
       src: "/images/jumbo_doctor.png",
       alt: ""
     }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
+  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Dott. Luigi Agostini")]), _vm._v(" "), _c("span", {
     staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
+  }, [_vm._v("Marco Verdi:")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero facere quod. Molestiae, nostrum! Saepe, minus iure!")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])])])])])]);
+  }, [_vm._v("Professionalità unita ad una ricerca di empatia con il paziente fanno del\n                            dottor Agostini un medico dotato. La simpatia che lo contraddistinge è una delle\n                            caratteristiche che rende l'incontro informale e rilassante. Lo consiglio vivamente.")]), _vm._v(" "), _c("div", {
+    staticClass: "rating-bar ps-2 d-flex justify-content-between"
+  }, [_c("h5", {
+    staticClass: "d-flex align-self-end"
+  }, [_vm._v("Valutato 4.7/5")]), _vm._v(" "), _c("div", {
+    staticClass: "rate d-flex justify-content-end"
+  }, [_c("label", {
+    attrs: {
+      "for": "star5",
+      title: "text"
+    }
+  }, [_vm._v("5 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star4",
+      title: "text"
+    }
+  }, [_vm._v("4 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star3",
+      title: "text"
+    }
+  }, [_vm._v("3 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star2",
+      title: "text"
+    }
+  }, [_vm._v("2 stars")]), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star1",
+      title: "text"
+    }
+  }, [_vm._v("1 star")])])])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3391,57 +3444,7 @@ var render = function render() {
         _vm.reviewName = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "reviewRating"
-    }
-  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.reviewRating,
-      expression: "reviewRating"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      name: "rating",
-      id: "reviewRating",
-      required: ""
-    },
-    on: {
-      change: function change($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
-          return o.selected;
-        }).map(function (o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val;
-        });
-        _vm.reviewRating = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
-      }
-    }
-  }, [_c("option", {
-    attrs: {
-      value: "1"
-    }
-  }, [_vm._v("1")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "2"
-    }
-  }, [_vm._v("2")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "3"
-    }
-  }, [_vm._v("3")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "4"
-    }
-  }, [_vm._v("4")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "5"
-    }
-  }, [_vm._v("5")])])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("br"), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3499,7 +3502,7 @@ var render = function render() {
         _vm.reviewContent = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(3)])])])])]);
+  })]), _vm._v(" "), _vm._m(4)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3620,6 +3623,75 @@ var staticRenderFns = [function () {
   }), _vm._v(" "), _c("i", {
     staticClass: "fa-solid fa-star gold-star"
   })])])])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("div", [_vm._v("vota")]), _vm._v(" "), _c("div", {
+    staticClass: "rate"
+  }, [_c("input", {
+    attrs: {
+      type: "radio",
+      id: "star5",
+      name: "rate",
+      value: "5"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star5",
+      title: "text"
+    }
+  }, [_vm._v("5 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "radio",
+      id: "star4",
+      name: "rate",
+      value: "4"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star4",
+      title: "text"
+    }
+  }, [_vm._v("4 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "radio",
+      id: "star3",
+      name: "rate",
+      value: "3"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star3",
+      title: "text"
+    }
+  }, [_vm._v("3 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "radio",
+      id: "star2",
+      name: "rate",
+      value: "2"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star2",
+      title: "text"
+    }
+  }, [_vm._v("2 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "radio",
+      id: "star1",
+      name: "rate",
+      value: "1"
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star1",
+      title: "text"
+    }
+  }, [_vm._v("1 star")])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3756,7 +3828,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".my-card[data-v-3727ca91] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.my-card.appear[data-v-3727ca91] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.aboutus[data-v-3727ca91] {\n  padding-top: 6rem;\n  padding-bottom: 8rem;\n}\n.tiny-rule[data-v-3727ca91] {\n  width: 80px;\n  height: 2px;\n  background-color: #2EA4FF;\n}\n.my-row[data-v-3727ca91] {\n  display: flex;\n  border: 1px solid #E9F6FF;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-3727ca91] {\n  border-left: 1px solid #E9F6FF;\n  border-right: 1px solid #E9F6FF;\n}\n.card-img[data-v-3727ca91] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #EEFCFF;\n  border-color: #2EA4FF;\n}\n.subtitle[data-v-3727ca91] {\n  color: #2EA4FF;\n}\n.p-style[data-v-3727ca91] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-3727ca91] {\n  background-color: #E9F6FF;\n  border-radius: 10px;\n}\n.gold-star[data-v-3727ca91] {\n  color: gold;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.rate[data-v-3727ca91] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n}\n.rate:not(:checked) > input[data-v-3727ca91] {\n  position: absolute;\n  top: -9999px;\n}\n.rate:not(:checked) > label[data-v-3727ca91] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  font-size: 30px;\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-3727ca91]:before {\n  content: \"\\2605   \";\n}\n.my-card[data-v-3727ca91] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.my-card.appear[data-v-3727ca91] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.aboutus[data-v-3727ca91] {\n  padding-top: 6rem;\n  padding-bottom: 8rem;\n}\n.tiny-rule[data-v-3727ca91] {\n  width: 80px;\n  height: 2px;\n  background-color: #2EA4FF;\n}\n.my-row[data-v-3727ca91] {\n  display: flex;\n  border: 1px solid #E9F6FF;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-3727ca91] {\n  border-left: 1px solid #E9F6FF;\n  border-right: 1px solid #E9F6FF;\n}\n.card-img[data-v-3727ca91] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #EEFCFF;\n  border-color: #2EA4FF;\n}\n.subtitle[data-v-3727ca91] {\n  color: #2EA4FF;\n}\n.p-style[data-v-3727ca91] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-3727ca91] {\n  background-color: #E9F6FF;\n  border-radius: 10px;\n}\n.gold-star[data-v-3727ca91] {\n  color: gold;\n}", ""]);
 
 // exports
 
@@ -3870,7 +3942,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.rate[data-v-20de4d05] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n}\n.rate:not(:checked) > input[data-v-20de4d05] {\n  position: absolute;\n  top: -9999px;\n}\n.rate:not(:checked) > label[data-v-20de4d05] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  cursor: pointer;\n  font-size: 30px;\n  color: #ccc;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:before {\n  content: \"\\2605   \";\n}\n.rate > input:checked ~ label[data-v-20de4d05] {\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:hover,\n.rate:not(:checked) > label:hover ~ label[data-v-20de4d05] {\n  color: #deb217;\n}\n.rate > input:checked + label[data-v-20de4d05]:hover,\n.rate > input:checked + label:hover ~ label[data-v-20de4d05],\n.rate > input:checked ~ label[data-v-20de4d05]:hover,\n.rate > input:checked ~ label:hover ~ label[data-v-20de4d05],\n.rate > label:hover ~ input:checked ~ label[data-v-20de4d05] {\n  color: #c59b08;\n}\n.my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
 
 // exports
 
@@ -21461,7 +21533,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\eddy8\Documents\rep-edoardo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
