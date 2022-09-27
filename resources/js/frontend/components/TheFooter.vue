@@ -1,16 +1,9 @@
 <template>
     <div class="container-fluid footersection">
         <div class="prefooter container mb-5">
-            <div
-                class="row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center"
-            >
-                <div class="col col-md-6 d-none d-md-block girlout">
-                    <img
-                        class="w-75"
-                        src="images/pre_footer_doctor.png"
-                        alt=""
-                        srcset=""
-                    />
+            <div class="row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center">
+                <div class="col col-md-6 col-sm-6  girlout">
+                    <img class="w-75 footerimg" src="images/pre_footer_doctor.png" alt="" srcset="" />
                 </div>
                 <div class="col px-4 col-md-5 col-sm-5">
                     <h2>Sei un Dottore?</h2>
@@ -125,5 +118,11 @@ export default {
     line-height: 28px;
     font-weight: 700;
     letter-spacing: 0px;
+}
+
+@media screen and (max-width: 575px) {
+    .footerimg {
+        display: none;
+    }
 }
 </style>

@@ -18,7 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('specializations', 'Api\SpecializationController@index');
-Route::get('doctor', 'Api\UserController@index');
+Route::get('/specializations', 'Api\SpecializationController@index');
+Route::get('/doctor', 'Api\UserController@index');
+Route::get('/doctor/{doctor}', 'Api\UserController@show');
+
 Route::get('/', 'Api\UserController@index');
-Route::post('contacts', 'Api\ContactController@store');
+Route::post('/contacts', 'Api\ContactController@store');
+Route::post('/reviews', 'Api\ReviewsController@store');

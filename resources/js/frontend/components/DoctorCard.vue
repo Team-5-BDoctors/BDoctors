@@ -15,19 +15,11 @@
                         alt="..."
                     />
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title text-center">
-                        {{ doctor.name }}
-                        {{ doctor.surname }}
-                    </h5>
-                    <div class="text-primary py-2 text-center">
-                        <span
-                            v-for="specialization in doctor.specializations"
-                            :key="specialization.id"
-                        >
-                            {{ specialization.name }}
-                        </span>
-                    </div>
+                <div class="text-center pt-2">
+                    <router-link class="btn btn-primary" :key="doctor.id"
+                        :to="{name: 'DoctorShow', params: {'doctor_slug': doctor.slug}}">
+                        Dettagli
+                    </router-link>
                 </div>
             </router-link>
         </div>

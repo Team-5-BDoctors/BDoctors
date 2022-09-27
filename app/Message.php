@@ -12,7 +12,6 @@ class Message extends Model
         'email',
         'title',
         'content',
-        'user_id'
     ];
 
     public function user()

@@ -2274,16 +2274,19 @@ __webpack_require__.r(__webpack_exports__);
       email: "",
       title: "",
       content: "",
-      doctor_id: this.$route.params.doctor.id,
-      doctor: this.$route.params.doctor
+      doctor: {},
+      reviewName: "",
+      reviewTitle: "",
+      reviewRating: null,
+      reviewContent: "",
+      pest: 'test'
     };
   },
   name: "DoctorShow",
   props: {},
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
-    console.log(this.doctor.name);
-    console.log(this.doctor.id);
+    this.getDoctorData();
   },
   methods: {
     scrollFunction: function scrollFunction() {
@@ -2298,7 +2301,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    onFormSubmit: function onFormSubmit() {
+    onFormMessageSubmit: function onFormMessageSubmit() {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/contacts", {
         name: this.name,
         surname: this.surname,
@@ -2306,6 +2309,23 @@ __webpack_require__.r(__webpack_exports__);
         title: this.title,
         content: this.content,
         user_id: this.doctor.id
+      });
+    },
+    onFormReviewSubmit: function onFormReviewSubmit() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/reviews", {
+        name: this.reviewName,
+        title: this.reviewTitle,
+        rating: this.reviewRating,
+        content: this.reviewContent,
+        user_id: this.doctor.id
+      });
+    },
+    getDoctorData: function getDoctorData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor/" + this.$route.params.doctor_slug).then(function (resp) {
+        _this.doctor = resp.data;
+        console.log(_this.doctor);
       });
     }
   }
@@ -2433,16 +2453,19 @@ var render = function render() {
       alt: "..."
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                    " + _vm._s(_vm.doctor.name) + "\n                    " + _vm._s(_vm.doctor.surname) + "\n                ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary py-2 text-center"
-  }, _vm._l(_vm.doctor.specializations, function (specialization) {
-    return _c("span", {
-      key: specialization.id
-    }, [_vm._v("\n                        " + _vm._s(specialization.name) + "\n                    ")]);
-  }), 0)])])], 1)]);
+    staticClass: "text-center pt-2"
+  }, [_c("router-link", {
+    key: _vm.doctor.id,
+    staticClass: "btn btn-primary",
+    attrs: {
+      to: {
+        name: "DoctorShow",
+        params: {
+          doctor_slug: _vm.doctor.slug
+        }
+      }
+    }
+  }, [_vm._v("\n                    Dettagli\n                ")])], 1)])], 1)]);
 };
 
 var staticRenderFns = [];
@@ -2813,9 +2836,9 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center"
   }, [_c("div", {
-    staticClass: "col col-md-6 d-none d-md-block girlout"
+    staticClass: "col col-md-6 col-sm-6 girlout"
   }, [_c("img", {
-    staticClass: "w-75",
+    staticClass: "w-75 footerimg",
     attrs: {
       src: "images/pre_footer_doctor.png",
       alt: "",
@@ -2960,120 +2983,9 @@ render._withStripped = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function render() {
-  var _vm = this,
-      _c = _vm._self._c;
+var render = function render() {};
 
-  return _c("div", [_c("div", [_c("div", {
-    staticClass: "container-fluid jumbo-bg pt-5"
-  }, [_c("div", {
-    staticClass: "container px-5 d-flex flex-column justify-content-center"
-  }, [_c("div", {
-    staticClass: "pt-5 searchbar-container"
-  }, [_c("div", {
-    staticClass: "text-white pt-3 py-2"
-  }, [_vm._v("\n                        Cerca per Specializzazione:\n                    ")]), _vm._v(" "), _c("select", {
-    staticClass: "form-select form-select-lg mb-3",
-    attrs: {
-      "aria-label": ".form-select-lg example"
-    },
-    on: {
-      change: function change($event) {
-        ;
-        _vm.selectedSpecialization = $event.target.value, _vm.fetchDoctorsInPage();
-      }
-    }
-  }, [_c("option", {
-    attrs: {
-      selected: "",
-      value: ""
-    }
-  }, [_vm._v("\n                            Seleziona una specializzazione\n                        ")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
-    return _c("option", {
-      key: specialization.name,
-      domProps: {
-        value: specialization.name
-      }
-    }, [_vm._v("\n                            " + _vm._s(specialization.name) + "\n                        ")]);
-  })], 2)]), _vm._v(" "), _c("div", {
-    staticClass: "text-white pt-3"
-  }, [_vm._v("Ordina per:")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
-    staticClass: "bg-lightblue justify-content-center d-flex"
-  }, [_c("div", {
-    staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
-  }, _vm._l(_vm.doctors, function (doctor) {
-    return _c("div", {
-      key: doctor.name,
-      staticClass: "col"
-    }, [_c("div", {
-      staticClass: "card m-3 border-0",
-      staticStyle: {
-        width: "22rem"
-      }
-    }, [_c("div", {
-      staticClass: "avatarbg mx-auto"
-    }, [_c("img", {
-      staticClass: "card-img-top",
-      attrs: {
-        src: "/storage/" + doctor.image,
-        alt: "..."
-      }
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "card-body"
-    }, [_c("h5", {
-      staticClass: "card-title text-center"
-    }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                                " + _vm._s(doctor.surname) + "\n                            ")]), _vm._v(" "), _c("div", {
-      staticClass: "card-text text-center py-3"
-    }, _vm._l(doctor.specializations, function (specialization, index) {
-      return _c("span", {
-        key: specialization.name,
-        staticClass: "text-primary"
-      }, [index != 0 ? _c("span", [_vm._v("-")]) : _vm._e(), _vm._v("\n                                    " + _vm._s(specialization.name) + "\n                                ")]);
-    }), 0), _vm._v(" "), _c("p", {
-      staticClass: "card-text text-center"
-    }, [_vm._v("\n                                " + _vm._s(doctor.services) + "\n                            ")])])])]);
-  }), 0)])])]);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "btn-group d-flex justify-content-around pt-2",
-    attrs: {
-      role: "group",
-      "aria-label": "Basic radio toggle button group "
-    }
-  }, [_c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "radio",
-      name: "btnradio",
-      id: "btnradio1",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btnradio1"
-    }
-  }, [_vm._v("Media voti")]), _vm._v(" "), _c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "radio",
-      name: "btnradio",
-      id: "btnradio2",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btnradio2"
-    }
-  }, [_vm._v("Numero recensioni")])]);
-}];
-render._withStripped = true;
+var staticRenderFns = [];
 
 
 /***/ }),
@@ -3101,11 +3013,7 @@ var render = function render() {
     staticClass: "left-jumbo"
   }, [_c("h1", {
     staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _vm._l(_vm.doctor.specializations, function (specialization) {
-    return _c("span", {
-      key: specialization.id
-    }, [_vm._v("\n                    " + _vm._s(specialization.name) + "\n                ")]);
-  }), _vm._v(" "), _c("p", {
+  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.email))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
@@ -3113,7 +3021,21 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])], 2), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("img", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _c("div", {
+    staticClass: "h-75 right-jumbo"
+  }, [_c("img", {
+    staticClass: "h-100 floating-elements",
+    attrs: {
+      src: "/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png",
+      alt: ""
+    }
+  }), _vm._v(" "), _c("img", {
+    staticClass: "h-100 doctor-jumbo",
+    attrs: {
+      src: "/storage/" + _vm.doctor.image,
+      alt: "..."
+    }
+  })]), _vm._v(" "), _c("img", {
     staticClass: "h-100 right-bg-jumbo",
     attrs: {
       src: "/images/jumbo_right_bg.jpg",
@@ -3125,7 +3047,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "contact"
-  }, [_vm._m(1), _vm._v(" "), _c("div", [_c("form", {
+  }, [_vm._m(0), _vm._v(" "), _c("div", [_c("form", {
     staticClass: "form-msg",
     attrs: {
       action: ""
@@ -3133,7 +3055,7 @@ var render = function render() {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.onFormSubmit();
+        return _vm.onFormMessageSubmit();
       }
     }
   }, [_c("div", {
@@ -3280,7 +3202,166 @@ var render = function render() {
         _vm.content = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(2)])])])])]), _vm._v(" "), _vm._m(3)]);
+  })]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container-blue"
+  }, [_c("div", {
+    staticClass: "container py-5 my-5"
+  }, [_c("h2", {
+    staticClass: "text-center"
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
+    staticClass: "pt-5"
+  }, [_c("h3", {
+    staticClass: "text-center"
+  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
+    staticClass: "form-msg",
+    attrs: {
+      action: ""
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.onFormReviewSubmit();
+      }
+    }
+  }, [_c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewName"
+    }
+  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewName,
+      expression: "reviewName"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "reviewName",
+      name: "name",
+      placeholder: "Nome",
+      required: ""
+    },
+    domProps: {
+      value: _vm.reviewName
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.reviewName = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewRating"
+    }
+  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewRating,
+      expression: "reviewRating"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      name: "rating",
+      id: "reviewRating",
+      required: ""
+    },
+    on: {
+      change: function change($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.reviewRating = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("1")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("2")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "3"
+    }
+  }, [_vm._v("3")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "4"
+    }
+  }, [_vm._v("4")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("5")])])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewTitle"
+    }
+  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewTitle,
+      expression: "reviewTitle"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "title",
+      name: "title",
+      id: "reviewTitle",
+      placeholder: "Titolo",
+      required: ""
+    },
+    domProps: {
+      value: _vm.reviewTitle
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.reviewTitle = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
+  }, [_c("label", {
+    attrs: {
+      "for": "reviewContent"
+    }
+  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewContent,
+      expression: "reviewContent"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      id: "reviewContent",
+      name: "content",
+      rows: "3"
+    },
+    domProps: {
+      value: _vm.reviewContent
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.reviewContent = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _vm._m(3)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3288,26 +3369,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "h-75 right-jumbo"
-  }, [_c("img", {
-    staticClass: "h-100 floating-elements",
-    attrs: {
-      src: "/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("img", {
-    staticClass: "h-100 doctor-jumbo",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-title"
+    staticClass: "text-center"
   }, [_c("h2", [_vm._v("Invia un messaggio al dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
     staticClass: "divider"
   })]);
@@ -3327,13 +3389,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "container-blue"
-  }, [_c("div", {
-    staticClass: "container py-5 my-5"
-  }, [_c("h2", {
-    staticClass: "text-center"
-  }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
+  return _c("div", [_c("div", {
     staticClass: "my-row"
   }, [_c("div", {
     staticClass: "col"
@@ -3425,70 +3481,19 @@ var staticRenderFns = [function () {
     staticClass: "fa-solid fa-star gold-star"
   }), _vm._v(" "), _c("i", {
     staticClass: "fa-solid fa-star gold-star"
-  })])])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "pt-5"
-  }, [_c("h3", {
-    staticClass: "text-center"
-  }, [_vm._v("La tua recensione")]), _vm._v(" "), _c("form", {
-    staticClass: "form-msg"
-  }, [_c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "name",
-      id: "nameFormControlInput1",
-      placeholder: "Nome"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
-    staticClass: "form-control",
-    attrs: {
-      multiple: "",
-      id: "exampleFormControlSelect2"
-    }
-  }, [_c("option", [_vm._v("1")]), _vm._v(" "), _c("option", [_vm._v("2")]), _vm._v(" "), _c("option", [_vm._v("3")]), _vm._v(" "), _c("option", [_vm._v("4")]), _vm._v(" "), _c("option", [_vm._v("5")])])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlInput1"
-    }
-  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "title",
-      id: "titleFormControlInput1",
-      placeholder: "Titolo"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlTextarea1"
-    }
-  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
-    staticClass: "form-control",
-    attrs: {
-      id: "exampleFormControlTextarea1",
-      rows: "3"
-    }
-  })]), _vm._v(" "), _c("div", {
+  })])])])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "text-center py-2"
   }, [_c("button", {
     staticClass: "btn btn-primary text-center",
     attrs: {
-      type: "button"
+      type: "submit"
     }
-  }, [_vm._v("\n                            Invia recensione\n                        ")])])])])])]);
+  }, [_vm._v("\n                            Invia recensione\n                        ")])]);
 }];
 render._withStripped = true;
 
@@ -3670,7 +3675,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".girlout[data-v-5569203c] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.prefooter[data-v-5569203c] {\n  height: 200px;\n  background-color: #4157ff;\n  border-radius: 0 0 25px 25px;\n  position: relative;\n}\n.prefooter h2[data-v-5569203c] {\n  font-size: 2rem;\n  font-weight: 700;\n}\n.prefooter p[data-v-5569203c] {\n  font-size: 0.8rem;\n  font-weight: 500;\n}\n.footersection[data-v-5569203c] {\n  background-color: #151e66;\n  color: #d8eeff;\n}\n.footerlink[data-v-5569203c] {\n  color: #d8eeff;\n  opacity: 0.5;\n}\n.footercontainer[data-v-5569203c] {\n  border-bottom: 1px solid rgba(216, 238, 255, 0.2470588235);\n}\n.big-paragraph[data-v-5569203c] {\n  color: #2ea4ff;\n  font-size: 24px;\n  line-height: 34px;\n  font-style: normal;\n  font-weight: 700;\n}\n.footer-headings[data-v-5569203c] {\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  font-weight: 700;\n  letter-spacing: 0px;\n}", ""]);
+exports.push([module.i, ".girlout[data-v-5569203c] {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n}\n.prefooter[data-v-5569203c] {\n  height: 200px;\n  background-color: #4157ff;\n  border-radius: 0 0 25px 25px;\n  position: relative;\n}\n.prefooter h2[data-v-5569203c] {\n  font-size: 2rem;\n  font-weight: 700;\n}\n.prefooter p[data-v-5569203c] {\n  font-size: 0.8rem;\n  font-weight: 500;\n}\n.footersection[data-v-5569203c] {\n  background-color: #151e66;\n  color: #d8eeff;\n}\n.footerlink[data-v-5569203c] {\n  color: #d8eeff;\n  opacity: 0.5;\n}\n.footercontainer[data-v-5569203c] {\n  border-bottom: 1px solid rgba(216, 238, 255, 0.2470588235);\n}\n.big-paragraph[data-v-5569203c] {\n  color: #2ea4ff;\n  font-size: 24px;\n  line-height: 34px;\n  font-style: normal;\n  font-weight: 700;\n}\n.footer-headings[data-v-5569203c] {\n  color: #fff;\n  font-size: 18px;\n  line-height: 28px;\n  font-weight: 700;\n  letter-spacing: 0px;\n}\n@media screen and (max-width: 575px) {\n.footerimg[data-v-5569203c] {\n    display: none;\n}\n}", ""]);
 
 // exports
 
@@ -3727,7 +3732,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  -webkit-animation: rotating-20de4d05 15s linear infinite;\n  animation: rotating-20de4d05 15s linear infinite;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.form-title[data-v-20de4d05] {\n  position: relative;\n  display: flex;\n  width: 100%;\n  height: auto;\n  max-width: 600px;\n  margin-right: auto;\n  margin-bottom: 0px;\n  margin-left: auto;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  text-align: center;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
+exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
 
 // exports
 

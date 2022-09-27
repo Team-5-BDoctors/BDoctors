@@ -85,6 +85,7 @@
                                     {{ doctor.name }}
                                     {{ doctor.surname }}
                                 </h5>
+<<<<<<< HEAD
                                 <div class="card-text text-center py-3">
 
                                     <span
@@ -95,6 +96,11 @@
                                     <span v-if="index != 0">-</span>
                                         {{ specialization.name }}
                                     </span>
+=======
+                                <div v-for="specialization in doctor.specializations" :key="specialization.id"
+                                    class="text-primary pb-2 text-center">
+                                    {{specialization.name}}
+>>>>>>> github/main
                                 </div>
                                 <p class="card-text text-center">
                                     {{ doctor.services }}
