@@ -72,47 +72,7 @@
                         :key="doctor.name"
                         class="col"
                     >
-                        <div class="card m-3 border-0" style="width: 22rem">
-                            <router-link
-                                :key="doctor.id"
-                                :to="{
-                                    name: 'DoctorShow',
-                                    params: {
-                                        doctor: doctor,
-                                        doctor_slug: doctor.slug,
-                                    },
-                                }"
-                            >
-                                <div class="avatarbg mx-auto">
-                                    <img
-                                        :src="'/storage/' + doctor.image"
-                                        class="card-img-top"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">
-                                        {{ doctor.name }}
-                                        {{ doctor.surname }}
-                                    </h5>
-                                    <div class="card-text text-center py-3">
-                                        <span
-                                            v-for="(
-                                                specialization, index
-                                            ) in doctor.specializations"
-                                            :key="specialization.name"
-                                            class="text-primary"
-                                        >
-                                            <span v-if="index != 0">-</span>
-                                            {{ specialization.name }}
-                                        </span>
-                                    </div>
-                                    <p class="card-text text-center">
-                                        {{ doctor.services }}
-                                    </p>
-                                </div>
-                            </router-link>
-                        </div>
+                    <DoctorCard :doctor="doctor"/>
                     </div>
                 </div>
             </div>
@@ -122,8 +82,10 @@
 
 <script>
 import axios from "axios";
+import DoctorCard from "../frontend/components/DoctorCard.vue";
 
 export default {
+    components:{DoctorCard},
     data() {
         return {
             doctors: [],

@@ -2201,8 +2201,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _frontend_components_DoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../frontend/components/DoctorCard.vue */ "./resources/js/frontend/components/DoctorCard.vue");
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    DoctorCard: _frontend_components_DoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       doctors: [],
@@ -2429,7 +2434,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "col"
   }, [_c("div", {
-    staticClass: "card h-100 border-0",
+    staticClass: "card m-3 border-0",
     staticStyle: {
       width: "22rem"
     }
@@ -2453,19 +2458,19 @@ var render = function render() {
       alt: "..."
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center pt-2"
-  }, [_c("router-link", {
-    key: _vm.doctor.id,
-    staticClass: "btn btn-primary",
-    attrs: {
-      to: {
-        name: "DoctorShow",
-        params: {
-          doctor_slug: _vm.doctor.slug
-        }
-      }
-    }
-  }, [_vm._v("\n                    Dettagli\n                ")])], 1)])], 1)]);
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title text-center"
+  }, [_vm._v("\n                    " + _vm._s(_vm.doctor.name) + "\n                    " + _vm._s(_vm.doctor.surname) + "\n                ")]), _vm._v(" "), _c("div", {
+    staticClass: "card-text text-center py-3"
+  }, _vm._l(_vm.doctor.specializations, function (specialization, index) {
+    return _c("span", {
+      key: specialization.name,
+      staticClass: "text-primary"
+    }, [index != 0 ? _c("span", [_vm._v("-")]) : _vm._e(), _vm._v("\n                        " + _vm._s(specialization.name) + "\n                    ")]);
+  }), 0), _vm._v(" "), _c("p", {
+    staticClass: "card-text text-center"
+  }, [_vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])])])], 1)]);
 };
 
 var staticRenderFns = [];
@@ -3028,44 +3033,11 @@ var render = function render() {
     return _c("div", {
       key: doctor.name,
       staticClass: "col"
-    }, [_c("div", {
-      staticClass: "card m-3 border-0",
-      staticStyle: {
-        width: "22rem"
-      }
-    }, [_c("router-link", {
-      key: doctor.id,
+    }, [_c("DoctorCard", {
       attrs: {
-        to: {
-          name: "DoctorShow",
-          params: {
-            doctor: doctor,
-            doctor_slug: doctor.slug
-          }
-        }
+        doctor: doctor
       }
-    }, [_c("div", {
-      staticClass: "avatarbg mx-auto"
-    }, [_c("img", {
-      staticClass: "card-img-top",
-      attrs: {
-        src: "/storage/" + doctor.image,
-        alt: "..."
-      }
-    })]), _vm._v(" "), _c("div", {
-      staticClass: "card-body"
-    }, [_c("h5", {
-      staticClass: "card-title text-center"
-    }, [_vm._v("\n                                    " + _vm._s(doctor.name) + "\n                                    " + _vm._s(doctor.surname) + "\n                                ")]), _vm._v(" "), _c("div", {
-      staticClass: "card-text text-center py-3"
-    }, _vm._l(doctor.specializations, function (specialization, index) {
-      return _c("span", {
-        key: specialization.name,
-        staticClass: "text-primary"
-      }, [index != 0 ? _c("span", [_vm._v("-")]) : _vm._e(), _vm._v("\n                                        " + _vm._s(specialization.name) + "\n                                    ")]);
-    }), 0), _vm._v(" "), _c("p", {
-      staticClass: "card-text text-center"
-    }, [_vm._v("\n                                    " + _vm._s(doctor.services) + "\n                                ")])])])], 1)]);
+    })], 1);
   }), 0)])])]);
 };
 
@@ -3702,7 +3674,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "router-link[data-v-10fa046e] {\n  text-decoration: none;\n}\na[data-v-10fa046e] {\n  text-decoration: none;\n}\n.card[data-v-10fa046e] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-10fa046e] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-10fa046e] {\n  border: none;\n}\n.card-title[data-v-10fa046e] {\n  color: black;\n}\n.avatarbg[data-v-10fa046e] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}", ""]);
+exports.push([module.i, "router-link[data-v-10fa046e] {\n  text-decoration: none;\n}\na[data-v-10fa046e] {\n  text-decoration: none;\n}\n.card[data-v-10fa046e] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-10fa046e] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-10fa046e]:hover {\n  transform: translateY(-15px);\n}\n.card[data-v-10fa046e] {\n  border: none;\n}\n.avatarbg[data-v-10fa046e] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\np[data-v-10fa046e] {\n  color: #555c96;\n  font-weight: 500;\n}\nh5[data-v-10fa046e] {\n  color: #151e66;\n  font-weight: 700;\n}", ""]);
 
 // exports
 

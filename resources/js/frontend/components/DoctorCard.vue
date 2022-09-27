@@ -1,11 +1,14 @@
 <template>
     <div class="col">
-        <div class="card h-100 border-0" style="width: 22rem">
+        <div class="card m-3 border-0" style="width: 22rem">
             <router-link
                 :key="doctor.id"
                 :to="{
                     name: 'DoctorShow',
-                    params: { doctor: doctor, doctor_slug: doctor.slug },
+                    params: {
+                        doctor: doctor,
+                        doctor_slug: doctor.slug,
+                    },
                 }"
             >
                 <div class="avatarbg mx-auto">
@@ -15,11 +18,26 @@
                         alt="..."
                     />
                 </div>
-                <div class="text-center pt-2">
-                    <router-link class="btn btn-primary" :key="doctor.id"
-                        :to="{name: 'DoctorShow', params: {'doctor_slug': doctor.slug}}">
-                        Dettagli
-                    </router-link>
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        {{ doctor.name }}
+                        {{ doctor.surname }}
+                    </h5>
+                    <div class="card-text text-center py-3">
+                        <span
+                            v-for="(
+                                specialization, index
+                            ) in doctor.specializations"
+                            :key="specialization.name"
+                            class="text-primary"
+                        >
+                            <span v-if="index != 0">-</span>
+                            {{ specialization.name }}
+                        </span>
+                    </div>
+                    <p class="card-text text-center">
+                        {{ doctor.services }}
+                    </p>
                 </div>
             </router-link>
         </div>
@@ -56,14 +74,14 @@ a {
         opacity: 1;
         transform: translateY(0px);
     }
+
+    &:hover{
+        transform: translateY(-15px);
+    }
 }
 
 .card {
     border: none;
-}
-
-.card-title {
-    color: black;
 }
 
 .avatarbg {
@@ -74,5 +92,15 @@ a {
     background-color: transparent;
     background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);
     transform: translateY(-20%);
+}
+
+p{
+    color: #555c96;
+    font-weight: 500;
+}
+
+h5{
+    color: #151e66;
+    font-weight: 700;
 }
 </style>
