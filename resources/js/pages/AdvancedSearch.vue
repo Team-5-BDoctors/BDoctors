@@ -73,39 +73,45 @@
                         class="col"
                     >
                         <div class="card m-3 border-0" style="width: 22rem">
-                            <div class="avatarbg mx-auto">
-                                <img
-                                    :src="'/storage/' + doctor.image"
-                                    class="card-img-top"
-                                    alt="..."
-                                />
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">
-                                    {{ doctor.name }}
-                                    {{ doctor.surname }}
-                                </h5>
-<<<<<<< HEAD
-                                <div class="card-text text-center py-3">
-
-                                    <span
-                                        v-for="(specialization, index) in doctor.specializations"
-                                        :key="specialization.name"
-                                        class="text-primary"
-                                    >
-                                    <span v-if="index != 0">-</span>
-                                        {{ specialization.name }}
-                                    </span>
-=======
-                                <div v-for="specialization in doctor.specializations" :key="specialization.id"
-                                    class="text-primary pb-2 text-center">
-                                    {{specialization.name}}
->>>>>>> github/main
+                            <router-link
+                                :key="doctor.id"
+                                :to="{
+                                    name: 'DoctorShow',
+                                    params: {
+                                        doctor: doctor,
+                                        doctor_slug: doctor.slug,
+                                    },
+                                }"
+                            >
+                                <div class="avatarbg mx-auto">
+                                    <img
+                                        :src="'/storage/' + doctor.image"
+                                        class="card-img-top"
+                                        alt="..."
+                                    />
                                 </div>
-                                <p class="card-text text-center">
-                                    {{ doctor.services }}
-                                </p>
-                            </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                        {{ doctor.name }}
+                                        {{ doctor.surname }}
+                                    </h5>
+                                    <div class="card-text text-center py-3">
+                                        <span
+                                            v-for="(
+                                                specialization, index
+                                            ) in doctor.specializations"
+                                            :key="specialization.name"
+                                            class="text-primary"
+                                        >
+                                            <span v-if="index != 0">-</span>
+                                            {{ specialization.name }}
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-center">
+                                        {{ doctor.services }}
+                                    </p>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -175,6 +181,14 @@ export default {
     height: 400px;
 }
 
+a {
+    text-decoration: none;
+}
+
+h5, p{
+    color: #151e66;
+}
+
 .card {
     opacity: 0.5;
     transform: translateY(50px);
@@ -218,5 +232,4 @@ export default {
     position: relative;
     top: -50px;
 }
-
 </style>

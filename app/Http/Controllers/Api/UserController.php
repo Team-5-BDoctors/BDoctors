@@ -15,24 +15,28 @@ class UserController extends Controller
     {
         $nome = $request->name ?? null;
         if ($nome && $nome != "undefined") {
-            $doctors = User::with('specializations', 'reviews')
+            $doctors = User::with('specializations', "reviews")
             ->whereHas('specializations', function($query) use ($nome) {
                 $query->where('name', $nome);
             })
             ->get();
+            $doctors = $doctors->each(function ($doctor) {
+            $doctor->average = $doctor->reviews->avg('rating');
+            });
             return response()->json($doctors);
         } else {
-            $doctors = User::with('specializations')->get();
+            $doctors = User::with('specializations', "reviews")->get();
+            $doctors = $doctors->each(function ($doctor) {
+            $doctor->average = $doctor->reviews->avg('rating');
+            });
             return response()->json($doctors);
         }
     }
-
+    
     public function show($slug)
     {
         $doctor = User::where('slug', $slug)->with('specializations')->first();
-
         return response()->json($doctor);
-
     }
 }
 

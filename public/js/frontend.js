@@ -2983,9 +2983,131 @@ render._withStripped = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function render() {};
+var render = function render() {
+  var _vm = this,
+      _c = _vm._self._c;
 
-var staticRenderFns = [];
+  return _c("div", [_c("div", [_c("div", {
+    staticClass: "container-fluid jumbo-bg pt-5"
+  }, [_c("div", {
+    staticClass: "container px-5 d-flex flex-column justify-content-center"
+  }, [_c("div", {
+    staticClass: "pt-5 searchbar-container"
+  }, [_c("div", {
+    staticClass: "text-white pt-3 py-2"
+  }, [_vm._v("\n                        Cerca per Specializzazione:\n                    ")]), _vm._v(" "), _c("select", {
+    staticClass: "form-select form-select-lg mb-3",
+    attrs: {
+      "aria-label": ".form-select-lg example"
+    },
+    on: {
+      change: function change($event) {
+        ;
+        _vm.selectedSpecialization = $event.target.value, _vm.fetchDoctorsInPage();
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "",
+      value: ""
+    }
+  }, [_vm._v("\n                            Seleziona una specializzazione\n                        ")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
+    return _c("option", {
+      key: specialization.name,
+      domProps: {
+        value: specialization.name
+      }
+    }, [_vm._v("\n                            " + _vm._s(specialization.name) + "\n                        ")]);
+  })], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "text-white pt-3"
+  }, [_vm._v("Ordina per:")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
+    staticClass: "bg-lightblue justify-content-center d-flex"
+  }, [_c("div", {
+    staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
+  }, _vm._l(_vm.doctors, function (doctor) {
+    return _c("div", {
+      key: doctor.name,
+      staticClass: "col"
+    }, [_c("div", {
+      staticClass: "card m-3 border-0",
+      staticStyle: {
+        width: "22rem"
+      }
+    }, [_c("router-link", {
+      key: doctor.id,
+      attrs: {
+        to: {
+          name: "DoctorShow",
+          params: {
+            doctor: doctor,
+            doctor_slug: doctor.slug
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "avatarbg mx-auto"
+    }, [_c("img", {
+      staticClass: "card-img-top",
+      attrs: {
+        src: "/storage/" + doctor.image,
+        alt: "..."
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card-body"
+    }, [_c("h5", {
+      staticClass: "card-title text-center"
+    }, [_vm._v("\n                                    " + _vm._s(doctor.name) + "\n                                    " + _vm._s(doctor.surname) + "\n                                ")]), _vm._v(" "), _c("div", {
+      staticClass: "card-text text-center py-3"
+    }, _vm._l(doctor.specializations, function (specialization, index) {
+      return _c("span", {
+        key: specialization.name,
+        staticClass: "text-primary"
+      }, [index != 0 ? _c("span", [_vm._v("-")]) : _vm._e(), _vm._v("\n                                        " + _vm._s(specialization.name) + "\n                                    ")]);
+    }), 0), _vm._v(" "), _c("p", {
+      staticClass: "card-text text-center"
+    }, [_vm._v("\n                                    " + _vm._s(doctor.services) + "\n                                ")])])])], 1)]);
+  }), 0)])])]);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "btn-group d-flex justify-content-around pt-2",
+    attrs: {
+      role: "group",
+      "aria-label": "Basic radio toggle button group "
+    }
+  }, [_c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "radio",
+      name: "btnradio",
+      id: "btnradio1",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btnradio1"
+    }
+  }, [_vm._v("Media voti")]), _vm._v(" "), _c("input", {
+    staticClass: "btn-check",
+    attrs: {
+      type: "radio",
+      name: "btnradio",
+      id: "btnradio2",
+      autocomplete: "off"
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "btn btn-outline-primary text-white",
+    attrs: {
+      "for": "btnradio2"
+    }
+  }, [_vm._v("Numero recensioni")])]);
+}];
+render._withStripped = true;
 
 
 /***/ }),
@@ -3713,7 +3835,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
+exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\na[data-v-0312e533] {\n  text-decoration: none;\n}\nh5[data-v-0312e533], p[data-v-0312e533] {\n  color: #151e66;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
 
 // exports
 
