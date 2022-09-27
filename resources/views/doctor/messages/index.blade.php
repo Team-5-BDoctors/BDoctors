@@ -26,7 +26,7 @@
                             <div class="col-3">{{ $message->content }}</div>
                             <div class="col">{{ $message->created_at }}</div> 
                             <div class="col">
-                                <a href="" class="btn btn-primary text-white">
+                                <a href="mailto:{{$message->email}}?subject=In risposta al suo messaggio '{{$message->title}}'" class="btn btn-primary text-white">
                                     <i class="fa-solid fa-reply"></i>
                                 </a>
                             </div>                    
