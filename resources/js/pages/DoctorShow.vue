@@ -169,11 +169,13 @@
                     <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
                             <label for="reviewName">Inserisci il tuo nome:</label>
-                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome" v-model="reviewName" required/>
+                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome"
+                                v-model="reviewName" required />
                         </div>
                         <div class="form-group py-2">
                             <label for="reviewRating">Inserisci il tuo voto, da 1 a 5:</label>
-                            <select class="form-control" name="rating" id="reviewRating" v-model="reviewRating" required>
+                            <select class="form-control" name="rating" id="reviewRating" v-model="reviewRating"
+                                required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -183,11 +185,13 @@
                         </div>
                         <div class="form-group p-2">
                             <label for="reviewTitle">Titolo recensione:</label>
-                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo" v-model="reviewTitle" required/>
+                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo"
+                                v-model="reviewTitle" required />
                         </div>
                         <div class="form-group py-2">
                             <label for="reviewContent">Dai il tuo parere:</label>
-                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent" rows="3"></textarea>
+                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent"
+                                rows="3"></textarea>
                         </div>
                         <div class="text-center py-2">
                             <button type="submit" class="btn btn-primary text-center">
@@ -213,8 +217,8 @@ export default {
             content: "",
             doctor: {},
             reviewName: "",
-            reviewTitle : "",
-            reviewRating : null,
+            reviewTitle: "",
+            reviewRating: null,
             reviewContent: "",
             pest: 'test'
         };
@@ -226,7 +230,7 @@ export default {
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
         this.getDoctorData()
-        
+
     },
     methods: {
         scrollFunction() {
@@ -258,7 +262,7 @@ export default {
                 user_id: this.doctor.id
             })
         },
-        getDoctorData(){
+        getDoctorData() {
             axios.get("/api/doctor/" + this.$route.params.doctor_slug)
                 .then((resp) => {
                     this.doctor = resp.data;
@@ -399,6 +403,7 @@ p {
     margin-bottom: 40px;
     border-color: transparent;
     background-color: #2ea4ff;
+    margin: auto;
 }
 
 .form-msg {
@@ -454,5 +459,11 @@ p {
 
 .gold-star {
     color: gold;
+}
+
+@media screen and (max-width: 991px) {
+    .my-row {
+        display: block;
+    }
 }
 </style>
