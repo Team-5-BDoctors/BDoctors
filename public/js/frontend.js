@@ -3159,7 +3159,7 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                        " + _vm._s(_vm.doctor.services) + "\n                    ")])]), _vm._v(" "), _c("div", {
     staticClass: "h-75 right-jumbo"
   }, [_c("img", {
     staticClass: "h-100 floating-elements",
@@ -3617,6 +3617,26 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
+<<<<<<< HEAD
+=======
+  return _c("div", {
+    staticClass: "text-center py-2"
+  }, [_c("div", {
+    attrs: {
+      id: "liveAlertPlaceholder"
+    }
+  }), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit",
+      id: "liveAlertBtn"
+    }
+  }, [_vm._v("Invia messaggio")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+>>>>>>> origin/pasquale
   return _c("div", [_c("div", {
     staticClass: "my-row"
   }, [_c("div", {
@@ -3635,7 +3655,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio,\n                                    tenetur porro debitis reiciendis vero facere\n                                    quod. Molestiae, nostrum! Saepe, minus iure!\n                                ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3665,7 +3685,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio.\n                            ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio.\n                                ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3695,7 +3715,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio,\n                                    tenetur porro debitis reiciendis vero facere\n                                    quod. Molestiae, nostrum! Saepe, minus iure!\n                                ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3721,7 +3741,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("\n                            Invia recensione\n                        ")])]);
+  }, [_vm._v("\n                                Invia recensione\n                            ")])]);
 }];
 render._withStripped = true;
 
