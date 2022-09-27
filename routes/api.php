@@ -22,6 +22,6 @@ Route::get('/specializations', 'Api\SpecializationController@index');
 Route::get('/doctor', 'Api\UserController@index');
 Route::get('/doctor/{doctor}', 'Api\UserController@show');
 
-Route::get('/', 'Api\UserController@index');
+Route::get('/sponsored-doctors', 'Api\UserController@showDoctorsSponsored');
 Route::post('/contacts', 'Api\ContactController@store');
 Route::post('/reviews', 'Api\ReviewsController@store');

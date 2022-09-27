@@ -26,14 +26,12 @@ export default {
     },
     methods: {
         fetchDoctors() {
-            axios.get("/api")
+            axios.get("/api/sponsored-doctors")
                 .then((resp) => {
-
                     this.doctors = resp.data;
                 })
         }
     },
-
 }
 
 

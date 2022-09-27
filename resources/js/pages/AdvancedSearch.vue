@@ -24,8 +24,6 @@
                             recensioni</label>
                     </div>
                 </div>
-
-
             </div>
             <div class="bg-lightblue justify-content-center d-flex">
                 <div

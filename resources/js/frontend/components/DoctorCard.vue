@@ -4,7 +4,6 @@
         <div class="card h-100 border-0" style="width: 22rem">
             <div class="avatarbg mx-auto">
                 <img :src="'/storage/'+doctor.image" class="card-img-top" alt="..." />
-
             </div>
             <div class="card-body">
                 <h5 class="card-title text-center">
@@ -15,7 +14,6 @@
                     <span v-for="specialization in doctor.specializations" :key="specialization.id">
                         {{specialization.name}}
                     </span>
-
                 </div>
                 <div class="text-center pt-2">
                     <router-link class="btn btn-primary" :key="doctor.id"

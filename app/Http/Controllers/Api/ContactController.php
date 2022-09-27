@@ -20,6 +20,8 @@ class ContactController extends Controller
 
         $message->save();
 
+        return redirect()->route("ConfirmSendMessage");
+
         
     }
 }

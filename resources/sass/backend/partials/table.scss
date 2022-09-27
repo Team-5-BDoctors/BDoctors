@@ -1,0 +1,58 @@
+.table-container{
+    width: 90%;
+    margin: 0 auto;
+    
+    
+    & .my-table-title{
+        color: #338DFF;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+
+    }
+
+    & .my-table{
+        padding-left: .5rem;
+        padding-right: .5rem;
+        
+        
+
+        & .tb-head{
+            padding-bottom: .5rem;
+
+            & .col{
+                   
+            }
+            
+        }
+
+        & .tb-body{
+            
+            
+            & .row{
+                margin-bottom: 1rem;
+                background-color: white;
+                padding-top: .7rem;
+                padding-bottom: .7rem;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+                & .col{
+                    flex-shrink: 0;
+
+                    
+                    
+                }
+
+                & .tb-surname{
+                    font-size: .8rem;
+                }
+            }
+    
+            
+        }
+    }
+
+    
+
+}
+
