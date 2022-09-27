@@ -2,70 +2,103 @@
     <div>
         <div>
             <div class="container-fluid jumbo-bg pt-5">
-                <div class="container px-5 d-flex flex-column justify-content-center">
+                <div
+                    class="container px-5 d-flex flex-column justify-content-center"
+                >
                     <div class="pt-5 searchbar-container">
-                        <div class="text-white pt-3 py-2">Cerca per Specializzazione:</div>
-                        <select @change="selectedSpecialization = $event.target.value, fetchDoctorsInPage()"
-                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                            <option selected value="">Seleziona una specializzazione</option>
-                            <option v-for="specialization in specializations" :key="specialization.name" :value="specialization.name">{{
-                            specialization.name }}</option>
+                        <div class="text-white pt-3 py-2">
+                            Cerca per Specializzazione:
+                        </div>
+                        <select
+                            @change="
+                                (selectedSpecialization = $event.target.value),
+                                    fetchDoctorsInPage()
+                            "
+                            class="form-select form-select-lg mb-3"
+                            aria-label=".form-select-lg example"
+                        >
+                            <option selected value="">
+                                Seleziona una specializzazione
+                            </option>
+                            <option
+                                v-for="specialization in specializations"
+                                :key="specialization.name"
+                                :value="specialization.name"
+                            >
+                                {{ specialization.name }}
+                            </option>
                         </select>
                     </div>
                     <div class="text-white pt-3">Ordina per:</div>
-                    <div class="btn-group d-flex justify-content-around pt-2 " role="group"
-                        aria-label="Basic radio toggle button group ">
+                    <div
+                        class="btn-group d-flex justify-content-around pt-2"
+                        role="group"
+                        aria-label="Basic radio toggle button group "
+                    >
+                        <input
+                            type="radio"
+                            class="btn-check"
+                            name="btnradio"
+                            id="btnradio1"
+                            autocomplete="off"
+                        />
+                        <label
+                            class="btn btn-outline-primary text-white"
+                            for="btnradio1"
+                            >Media voti</label
+                        >
 
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-primary text-white" for="btnradio1">Media voti</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-primary text-white" for="btnradio2">Numero
-                            recensioni</label>
+                        <input
+                            type="radio"
+                            class="btn-check"
+                            name="btnradio"
+                            id="btnradio2"
+                            autocomplete="off"
+                        />
+                        <label
+                            class="btn btn-outline-primary text-white"
+                            for="btnradio2"
+                            >Numero recensioni</label
+                        >
                     </div>
                 </div>
-
-
             </div>
-<<<<<<< HEAD
-
-
-        </div>
-        <div class="bg-lightblue justify-content-center d-flex">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
-                <div v-for="doctor in doctors" :key="doctor.name" class="col">
-                    <div class="card m-3 border-0" style="width: 22rem">
-                        <div class="avatarbg mx-auto">
-                            <img :src="'/storage/'+doctor.image" class="card-img-top" alt="..." />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                {{doctor.name}}
-                                {{doctor.surname}}
-                            </h5>
-                            <div v-for="specialization in doctor.specializations" class="text-primary pb-2 text-center">
-                                {{specialization.name}}
-=======
             <div class="bg-lightblue justify-content-center d-flex">
                 <div
-                    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container">
-                    <div v-for="doctor in doctors" :key="doctor.name" class="col">
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
+                >
+                    <div
+                        v-for="doctor in doctors"
+                        :key="doctor.name"
+                        class="col"
+                    >
                         <div class="card m-3 border-0" style="width: 22rem">
                             <div class="avatarbg mx-auto">
-                                <img :src="'/storage/'+doctor.image" class="card-img-top" alt="..." />
+                                <img
+                                    :src="'/storage/' + doctor.image"
+                                    class="card-img-top"
+                                    alt="..."
+                                />
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">
-                                    {{doctor.name}}
+                                    {{ doctor.name }}
+                                    {{ doctor.surname }}
                                 </h5>
-                                <div v-for="specialization in doctor.specializations"
-                                    class="text-primary pb-2 text-center">
-                                    {{specialization.name}}
+                                <div class="card-text text-center py-3">
+
+                                    <span
+                                        v-for="(specialization, index) in doctor.specializations"
+                                        :key="specialization.name"
+                                        class="text-primary"
+                                    >
+                                    <span v-if="index != 0">-</span>
+                                        {{ specialization.name }}
+                                    </span>
                                 </div>
                                 <p class="card-text text-center">
-                                    {{doctor.services}}
+                                    {{ doctor.services }}
                                 </p>
->>>>>>> main
                             </div>
                         </div>
                     </div>
@@ -73,11 +106,10 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
     data() {
@@ -85,7 +117,7 @@ export default {
             doctors: [],
             specializations: [],
             selectedSpecialization: "",
-        }
+        };
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
@@ -104,30 +136,33 @@ export default {
             }
         },
         fetchDoctorsSpecialization() {
-            axios.get("/api/doctor?name=" + this.$route.params.specialization_name)
+            axios
+                .get(
+                    "/api/doctor?name=" + this.$route.params.specialization_name
+                )
                 .then((resp) => {
                     this.doctors = resp.data;
-                })
+                });
         },
         fetchSpecializations() {
-            axios.get("/api/specializations")
-                .then((resp) => {
-                    this.specializations = resp.data;
-                })
+            axios.get("/api/specializations").then((resp) => {
+                this.specializations = resp.data;
+            });
         },
         fetchDoctorsInPage() {
-            axios.get("/api/doctor?name=" + this.selectedSpecialization)
+            axios
+                .get("/api/doctor?name=" + this.selectedSpecialization)
                 .then((resp) => {
                     this.doctors = resp.data;
-                })
-        }
+                });
+        },
     },
-}
+};
 </script>
 
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 .jumbo-bg {
-    background-image: url('/images/background.png');
+    background-image: url("/images/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,7 +178,6 @@ export default {
         opacity: 1;
         transform: translateY(0px);
     }
-
 }
 
 .card {
@@ -179,62 +213,4 @@ export default {
     top: -50px;
 }
 
-$rad: .7rem;
-$dur: .3s;
-$color-dark: #2f2f2f;
-$color-light: #fff;
-$color-brand: rgb(13, 110, 253);
-$font-fam: 'Lato', sans-serif;
-$height: 4rem;
-$btn-width: 6rem;
-$bez: cubic-bezier(0, 0, 0.43, 1.49);
-
-
-form {
-    position: relative;
-    width: 30rem;
-    background: $color-brand;
-    border-radius: $rad;
-}
-
-input,
-button {
-    height: $height;
-    font-family: $font-fam;
-    border: 0;
-    color: $color-dark;
-
-}
-
-input[type="search"] {
-    width: 100%;
-    background: $color-light;
-    padding: 0 1.6rem;
-    border-radius: $rad;
-    appearance: none;
-    transition: all $dur $bez;
-    transition-property: width, border-radius;
-    z-index: 1;
-    position: relative;
-}
-
-button {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: $btn-width;
-    font-weight: bold;
-    background: $color-brand;
-    border-radius: 0 $rad $rad 0;
-}
-
-input:not(:placeholder-shown) {
-    border-radius: $rad 0 0 $rad;
-    width: calc(100% - $btn-width);
-}
-
-button {
-    display: block;
-}
 </style>

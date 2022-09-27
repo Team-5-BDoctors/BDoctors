@@ -1,9 +1,16 @@
 <template>
     <div class="container-fluid footersection">
         <div class="prefooter container mb-5">
-            <div class="row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center">
-                <div class="col col-md-6 col-sm-6  girlout">
-                    <img class="w-75" src="images/pre_footer_doctor.png" alt="" srcset="" />
+            <div
+                class="row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center"
+            >
+                <div class="col col-md-6 d-none d-md-block girlout">
+                    <img
+                        class="w-75"
+                        src="images/pre_footer_doctor.png"
+                        alt=""
+                        srcset=""
+                    />
                 </div>
                 <div class="col px-4 col-md-5 col-sm-5">
                     <h2>Sei un Dottore?</h2>
@@ -21,7 +28,11 @@
             <div class="row footercontainer pb-5 gap-5">
                 <div class="col-12 col-md-12 col-lg-3 flex-grow-1">
                     <div class="w-100 pb-5">
-                        <img class="w-50" src="images/logo_bianco.png" alt="logo" />
+                        <img
+                            class="w-50"
+                            src="images/logo_bianco.png"
+                            alt="logo"
+                        />
                     </div>
                     <p class="big-paragraph pb-5">
                         “La medicina cura le malattie, ma solo i medici possono

@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
-        <div class="container specselect w-50">
-            <h3 class="text-center py-5 text-white">Potresti cercare:</h3>
+        <div class="container specselect pb-4">
+            <h3 class="text-center pt-5 text-white">Potresti cercare:</h3>
             <div class="tags-container d-flex gap-4">
                 <router-link v-for="specialization in specializations" :to="{name:'AdvancedSearch', params:{specialization_name : specialization.name}}" :key="specialization.id" class="tags-label">
                 {{specialization.name}}
@@ -36,7 +36,6 @@ export default {
     border: 20px solid white;
     background-image: url("/images/background.png");
     background-size: cover;
-    height: 250px;
     border-radius: 10px;
     transform: translateY(-20%);
     z-index: 5;
@@ -45,10 +44,9 @@ export default {
 }
 
 .tags-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
     padding: 15px 0;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 a {

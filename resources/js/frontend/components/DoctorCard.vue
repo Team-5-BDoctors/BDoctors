@@ -1,32 +1,37 @@
-
 <template>
     <div class="col">
         <div class="card h-100 border-0" style="width: 22rem">
-            <div class="avatarbg mx-auto">
-                <img :src="'/storage/'+doctor.image" class="card-img-top" alt="..." />
-
-            </div>
-            <div class="card-body">
-                <h5 class="card-title text-center">
-                    {{doctor.name}}
-                </h5>
-                <div class="text-primary py-2 text-center">
-
-                    <span v-for="specialization in doctor.specializations" :key="specialization.id">
-                        {{specialization.name}}
-                    </span>
-
+            <router-link
+                :key="doctor.id"
+                :to="{
+                    name: 'DoctorShow',
+                    params: { doctor: doctor, doctor_slug: doctor.slug },
+                }"
+            >
+                <div class="avatarbg mx-auto">
+                    <img
+                        :src="'/storage/' + doctor.image"
+                        class="card-img-top"
+                        alt="..."
+                    />
                 </div>
-                <div class="text-center pt-2">
-                    <router-link class="btn btn-primary" :key="doctor.id"
-                        :to="{name: 'DoctorShow', params: {'doctor': doctor, 'doctor_slug': doctor.slug}}">
-                        Dettagli
-                    </router-link>
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        {{ doctor.name }}
+                        {{ doctor.surname }}
+                    </h5>
+                    <div class="text-primary py-2 text-center">
+                        <span
+                            v-for="specialization in doctor.specializations"
+                            :key="specialization.id"
+                        >
+                            {{ specialization.name }}
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </router-link>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -37,13 +42,19 @@ export default {
             type: Object,
             required: true,
         },
-
-
     },
 };
 </script>
-    
+
 <style scoped lang="scss">
+router-link {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .card {
     opacity: 0.5;
     transform: translateY(50px);
@@ -59,6 +70,10 @@ export default {
     border: none;
 }
 
+.card-title {
+    color: black;
+}
+
 .avatarbg {
     width: 200px;
     height: 200px;
@@ -69,4 +84,3 @@ export default {
     transform: translateY(-20%);
 }
 </style>
-    

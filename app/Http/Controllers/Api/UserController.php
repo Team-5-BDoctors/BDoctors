@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Review;
 use App\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class UserController extends Controller
     {
         $nome = $request->name ?? null;
         if ($nome && $nome != "undefined") {
-            $doctors = User::with('specializations')
+            $doctors = User::with('specializations', 'reviews')
             ->whereHas('specializations', function($query) use ($nome) {
                 $query->where('name', $nome);
             })

@@ -6,68 +6,6 @@
                 <div class="bluespacer"></div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5">
                     <DoctorCard v-for="doctor in doctors" :key="doctor.id" :doctor="doctor" />
-                    <div class="col">
-                        <router-link :to="{ name: 'DoctorShow' }">
-                            <div class="card m-3 border-0" style="width: 22rem">
-                                <div class="avatarbg mx-auto">
-                                    <img src="images/baffo.png" class="card-img-top" alt="..." />
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">
-                                        Card title
-                                    </h5>
-                                    <div class="text-primary pb-2 text-center">
-                                        Cardiac Surgery
-                                    </div>
-                                    <p class="card-text text-center">
-                                        Some quick example text to build on the card
-                                        title and make up the bulk of the card's
-                                        content.
-                                    </p>
-                                </div>
-                            </div>
-                        </router-link>
-                    </div>
-                    <div class="col">
-                        <div class="card m-3 border-0" style="width: 22rem">
-                            <div class="avatarbg mx-auto">
-                                <img src="images/cioccolata.png" class="card-img-top" alt="..." />
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">
-                                    Card title
-                                </h5>
-                                <div class="text-primary pb-2 text-center">
-                                    Cardiac Surgery
-                                </div>
-                                <p class="card-text text-center">
-                                    Some quick example text to build on the card
-                                    title and make up the bulk of the card's
-                                    content.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card m-3 border-0" style="width: 22rem">
-                            <div class="avatarbg mx-auto">
-                                <img src="images/covid.png" class="card-img-top" alt="..." />
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">
-                                    Card title
-                                </h5>
-                                <div class="text-primary pb-2 text-center">
-                                    Cardiac Surgery
-                                </div>
-                                <p class="card-text text-center">
-                                    Some quick example text to build on the card
-                                    title and make up the bulk of the card's
-                                    content.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

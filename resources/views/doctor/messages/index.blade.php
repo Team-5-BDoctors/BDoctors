@@ -19,6 +19,7 @@
                                                 <th scope="col">Titolo</th>
                                                 <th scope="col">Contenuto</th>
                                                 <th scope="col">Data</th>
+                                                <th scope="col">Rispondi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -30,6 +31,7 @@
                                                     <td>{{ $message->title }}</td>
                                                     <td>{{ $message->content }}</td>
                                                     <td>{{ $message->created_at }}</td>
+                                                    <td><a href="mailto:{{ $message->email }}?subject=In risposta a '{{$message->title}}'"><i class="fas fa-reply"></i></a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

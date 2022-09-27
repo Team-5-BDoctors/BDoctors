@@ -2413,6 +2413,17 @@ var render = function render() {
     staticStyle: {
       width: "22rem"
     }
+  }, [_c("router-link", {
+    key: _vm.doctor.id,
+    attrs: {
+      to: {
+        name: "DoctorShow",
+        params: {
+          doctor: _vm.doctor,
+          doctor_slug: _vm.doctor.slug
+        }
+      }
+    }
   }, [_c("div", {
     staticClass: "avatarbg mx-auto"
   }, [_c("img", {
@@ -2425,27 +2436,13 @@ var render = function render() {
     staticClass: "card-body"
   }, [_c("h5", {
     staticClass: "card-title text-center"
-  }, [_vm._v("\n                " + _vm._s(_vm.doctor.name) + "\n            ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.doctor.name) + "\n                    " + _vm._s(_vm.doctor.surname) + "\n                ")]), _vm._v(" "), _c("div", {
     staticClass: "text-primary py-2 text-center"
   }, _vm._l(_vm.doctor.specializations, function (specialization) {
     return _c("span", {
       key: specialization.id
-    }, [_vm._v("\n                    " + _vm._s(specialization.name) + "\n                ")]);
-  }), 0), _vm._v(" "), _c("div", {
-    staticClass: "text-center pt-2"
-  }, [_c("router-link", {
-    key: _vm.doctor.id,
-    staticClass: "btn btn-primary",
-    attrs: {
-      to: {
-        name: "DoctorShow",
-        params: {
-          doctor: _vm.doctor,
-          doctor_slug: _vm.doctor.slug
-        }
-      }
-    }
-  }, [_vm._v("\n                    Dettagli\n                ")])], 1)])])]);
+    }, [_vm._v("\n                        " + _vm._s(specialization.name) + "\n                    ")]);
+  }), 0)])])], 1)]);
 };
 
 var staticRenderFns = [];
@@ -2719,9 +2716,9 @@ var render = function render() {
   return _c("div", {
     staticClass: "container-fluid"
   }, [_c("div", {
-    staticClass: "container specselect w-50"
+    staticClass: "container specselect pb-4"
   }, [_c("h3", {
-    staticClass: "text-center py-5 text-white"
+    staticClass: "text-center pt-5 text-white"
   }, [_vm._v("Potresti cercare:")]), _vm._v(" "), _c("div", {
     staticClass: "tags-container d-flex gap-4"
   }, _vm._l(_vm.specializations, function (specialization) {
@@ -2771,102 +2768,17 @@ var render = function render() {
     staticClass: "bluespacer"
   }), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5"
-  }, [_vm._l(_vm.doctors, function (doctor) {
+  }, _vm._l(_vm.doctors, function (doctor) {
     return _c("DoctorCard", {
       key: doctor.id,
       attrs: {
         doctor: doctor
       }
     });
-  }), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("router-link", {
-    attrs: {
-      to: {
-        name: "DoctorShow"
-      }
-    }
-  }, [_c("div", {
-    staticClass: "card m-3 border-0",
-    staticStyle: {
-      width: "22rem"
-    }
-  }, [_c("div", {
-    staticClass: "avatarbg mx-auto"
-  }, [_c("img", {
-    staticClass: "card-img-top",
-    attrs: {
-      src: "images/baffo.png",
-      alt: "..."
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                                    Card title\n                                ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2 text-center"
-  }, [_vm._v("\n                                    Cardiac Surgery\n                                ")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text text-center"
-  }, [_vm._v("\n                                    Some quick example text to build on the card\n                                    title and make up the bulk of the card's\n                                    content.\n                                ")])])])])], 1), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)], 2)])])]);
+  }), 1)])])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "card m-3 border-0",
-    staticStyle: {
-      width: "22rem"
-    }
-  }, [_c("div", {
-    staticClass: "avatarbg mx-auto"
-  }, [_c("img", {
-    staticClass: "card-img-top",
-    attrs: {
-      src: "images/cioccolata.png",
-      alt: "..."
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                                Card title\n                            ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2 text-center"
-  }, [_vm._v("\n                                Cardiac Surgery\n                            ")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text text-center"
-  }, [_vm._v("\n                                Some quick example text to build on the card\n                                title and make up the bulk of the card's\n                                content.\n                            ")])])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "card m-3 border-0",
-    staticStyle: {
-      width: "22rem"
-    }
-  }, [_c("div", {
-    staticClass: "avatarbg mx-auto"
-  }, [_c("img", {
-    staticClass: "card-img-top",
-    attrs: {
-      src: "images/covid.png",
-      alt: "..."
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title text-center"
-  }, [_vm._v("\n                                Card title\n                            ")]), _vm._v(" "), _c("div", {
-    staticClass: "text-primary pb-2 text-center"
-  }, [_vm._v("\n                                Cardiac Surgery\n                            ")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text text-center"
-  }, [_vm._v("\n                                Some quick example text to build on the card\n                                title and make up the bulk of the card's\n                                content.\n                            ")])])])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -2901,7 +2813,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row h-100 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-end align-items-center"
   }, [_c("div", {
-    staticClass: "col col-md-6 col-sm-6 girlout"
+    staticClass: "col col-md-6 d-none d-md-block girlout"
   }, [_c("img", {
     staticClass: "w-75",
     attrs: {
@@ -3060,7 +2972,7 @@ var render = function render() {
     staticClass: "pt-5 searchbar-container"
   }, [_c("div", {
     staticClass: "text-white pt-3 py-2"
-  }, [_vm._v("Cerca per Specializzazione:")]), _vm._v(" "), _c("select", {
+  }, [_vm._v("\n                        Cerca per Specializzazione:\n                    ")]), _vm._v(" "), _c("select", {
     staticClass: "form-select form-select-lg mb-3",
     attrs: {
       "aria-label": ".form-select-lg example"
@@ -3076,13 +2988,13 @@ var render = function render() {
       selected: "",
       value: ""
     }
-  }, [_vm._v("Seleziona una specializzazione")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
+  }, [_vm._v("\n                            Seleziona una specializzazione\n                        ")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
     return _c("option", {
       key: specialization.name,
       domProps: {
         value: specialization.name
       }
-    }, [_vm._v(_vm._s(specialization.name))]);
+    }, [_vm._v("\n                            " + _vm._s(specialization.name) + "\n                        ")]);
   })], 2)]), _vm._v(" "), _c("div", {
     staticClass: "text-white pt-3"
   }, [_vm._v("Ordina per:")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
@@ -3110,13 +3022,16 @@ var render = function render() {
       staticClass: "card-body"
     }, [_c("h5", {
       staticClass: "card-title text-center"
-    }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                                " + _vm._s(doctor.surname) + "\n                            ")]), _vm._v(" "), _vm._l(doctor.specializations, function (specialization) {
-      return _c("div", {
-        staticClass: "text-primary pb-2 text-center"
-      }, [_vm._v("\n                                " + _vm._s(specialization.name) + "\n                            ")]);
-    }), _vm._v(" "), _c("p", {
+    }, [_vm._v("\n                                " + _vm._s(doctor.name) + "\n                                " + _vm._s(doctor.surname) + "\n                            ")]), _vm._v(" "), _c("div", {
+      staticClass: "card-text text-center py-3"
+    }, _vm._l(doctor.specializations, function (specialization, index) {
+      return _c("span", {
+        key: specialization.name,
+        staticClass: "text-primary"
+      }, [index != 0 ? _c("span", [_vm._v("-")]) : _vm._e(), _vm._v("\n                                    " + _vm._s(specialization.name) + "\n                                ")]);
+    }), 0), _vm._v(" "), _c("p", {
       staticClass: "card-text text-center"
-    }, [_vm._v("\n                                " + _vm._s(doctor.services) + "\n                            ")])], 2)])]);
+    }, [_vm._v("\n                                " + _vm._s(doctor.services) + "\n                            ")])])])]);
   }), 0)])])]);
 };
 
@@ -3156,7 +3071,7 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "btnradio2"
     }
-  }, [_vm._v("Numero\n                        recensioni")])]);
+  }, [_vm._v("Numero recensioni")])]);
 }];
 render._withStripped = true;
 
@@ -3660,7 +3575,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-10fa046e] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-10fa046e] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-10fa046e] {\n  border: none;\n}\n.avatarbg[data-v-10fa046e] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}", ""]);
+exports.push([module.i, "router-link[data-v-10fa046e] {\n  text-decoration: none;\n}\na[data-v-10fa046e] {\n  text-decoration: none;\n}\n.card[data-v-10fa046e] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-10fa046e] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-10fa046e] {\n  border: none;\n}\n.card-title[data-v-10fa046e] {\n  color: black;\n}\n.avatarbg[data-v-10fa046e] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}", ""]);
 
 // exports
 
@@ -3717,7 +3632,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".specselect[data-v-e14ff892] {\n  border: 20px solid white;\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  height: 250px;\n  border-radius: 10px;\n  transform: translateY(-20%);\n  z-index: 5;\n  position: relative;\n  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);\n}\n.tags-container[data-v-e14ff892] {\n  overflow-x: auto;\n  overflow-y: hidden;\n  white-space: nowrap;\n  padding: 15px 0;\n}\na[data-v-e14ff892] {\n  text-decoration: none;\n}\n.container-fluid[data-v-e14ff892] {\n  background-color: white;\n  height: 300px;\n}\n.tags-label[data-v-e14ff892] {\n  display: block;\n  padding: 4px 10px;\n  border-radius: 4px;\n  background-color: #d8eeff;\n  font-family: Satoshi, sans-serif;\n  color: #151e66;\n  font-weight: 700;\n  text-align: center;\n  transition: all 0.2s ease-in-out;\n}\n.tags-label[data-v-e14ff892]:hover {\n  background-color: #fff;\n  box-shadow: 2px 2px 12px 4px rgba(21, 30, 102, 0.12);\n}", ""]);
+exports.push([module.i, ".specselect[data-v-e14ff892] {\n  border: 20px solid white;\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  border-radius: 10px;\n  transform: translateY(-20%);\n  z-index: 5;\n  position: relative;\n  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);\n}\n.tags-container[data-v-e14ff892] {\n  padding: 15px 0;\n  justify-content: center;\n  flex-wrap: wrap;\n}\na[data-v-e14ff892] {\n  text-decoration: none;\n}\n.container-fluid[data-v-e14ff892] {\n  background-color: white;\n  height: 300px;\n}\n.tags-label[data-v-e14ff892] {\n  display: block;\n  padding: 4px 10px;\n  border-radius: 4px;\n  background-color: #d8eeff;\n  font-family: Satoshi, sans-serif;\n  color: #151e66;\n  font-weight: 700;\n  text-align: center;\n  transition: all 0.2s ease-in-out;\n}\n.tags-label[data-v-e14ff892]:hover {\n  background-color: #fff;\n  box-shadow: 2px 2px 12px 4px rgba(21, 30, 102, 0.12);\n}", ""]);
 
 // exports
 
@@ -3793,7 +3708,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}\nform[data-v-0312e533] {\n  position: relative;\n  width: 30rem;\n  background: rgb(13, 110, 253);\n  border-radius: 0.7rem;\n}\ninput[data-v-0312e533],\nbutton[data-v-0312e533] {\n  height: 4rem;\n  font-family: \"Lato\", sans-serif;\n  border: 0;\n  color: #2f2f2f;\n}\ninput[type=search][data-v-0312e533] {\n  width: 100%;\n  background: #fff;\n  padding: 0 1.6rem;\n  border-radius: 0.7rem;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);\n  transition-property: width, border-radius;\n  z-index: 1;\n  position: relative;\n}\nbutton[data-v-0312e533] {\n  display: none;\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 6rem;\n  font-weight: bold;\n  background: rgb(13, 110, 253);\n  border-radius: 0 0.7rem 0.7rem 0;\n}\ninput[data-v-0312e533]:not(:-moz-placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\ninput[data-v-0312e533]:not(:placeholder-shown) {\n  border-radius: 0.7rem 0 0 0.7rem;\n  width: calc(100% - 6rem);\n}\nbutton[data-v-0312e533] {\n  display: block;\n}", ""]);
+exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
 
 // exports
 
