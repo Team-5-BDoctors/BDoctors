@@ -17,7 +17,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::where('user_id', Auth::user()->id)->get();
+        $messages = Message::where('user_id', Auth::user()->id)->paginate(8);
         return view('doctor.messages.index', compact('messages'));
     }
 

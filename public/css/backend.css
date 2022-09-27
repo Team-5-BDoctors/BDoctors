@@ -12747,3 +12747,7 @@ fieldset:disabled .btn {
   font-size: 0.8rem;
 }
 
+.table-container .my-table .pagination {
+  justify-content: center;
+}
+
