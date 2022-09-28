@@ -5,7 +5,13 @@
                 <h1 class="text-center pb-3">Meet Our Doctors</h1>
                 <div class="bluespacer"></div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5">
-                    <DoctorCard v-for="doctor in doctors" :key="doctor.id" :doctor="doctor" />
+                    <div
+                        v-for="doctor in doctors"
+                        :key="doctor.name"
+                        class="col"
+                    >
+                    <DoctorCard :doctor="doctor"/>
+                    </div>
                 </div>
             </div>
         </div>
