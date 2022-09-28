@@ -20,6 +20,8 @@ class ContactController extends Controller
         //--- IMPLEMENTARE IN FUTURIO ---//
 
         $message->save();
+
+        
         
     }
 }

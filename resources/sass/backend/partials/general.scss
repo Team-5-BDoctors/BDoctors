@@ -28,7 +28,14 @@
                 background-size: cover;
                 height: 100%;
                 display: flex;
-                align-items: center;
+                align-items: cemnter;
+                justify-content: center;
+
+                & img{
+                    padding: 2rem;
+                    object-fit: cover;
+                    object-position: center;
+                }
             }
 
             & .form-group{

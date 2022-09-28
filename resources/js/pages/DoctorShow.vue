@@ -65,14 +65,15 @@
                                 </textarea>
                             </div>
                             <div class="text-center py-2">
-                                <button type="submit" class="btn btn-primary text-center">
-                                    Invia
-                                    <router-link :to="{name: 'ConfirmSendMessage'}">
-                                        
-                                    </router-link>
-                                </button>
+                                
+                                    
+                                        <button type="submit" class="text-center btn btn-primary">Invia</button>
+                                    
+                                    
+                                
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
@@ -214,6 +215,7 @@
 
 <script>
 import axios from 'axios'
+import { RouterLink } from 'vue-router';
 export default {
     data() {
         return {
@@ -227,7 +229,6 @@ export default {
             reviewTitle : "",
             reviewRating : null,
             reviewContent: "",
-            pest: 'test'
         };
     },
     name: "DoctorShow",
@@ -259,6 +260,8 @@ export default {
                 content: this.content,
                 user_id: this.doctor.id
             })
+            
+            this.$router.push('/doctor/send-message')
         },
         onFormReviewSubmit() {
             axios.post("/api/reviews", {
@@ -268,12 +271,13 @@ export default {
                 content: this.reviewContent,
                 user_id: this.doctor.id
             })
+
+            
         },
         getDoctorData(){
             axios.get("/api/doctor/" + this.$route.params.doctor_slug)
                 .then((resp) => {
                     this.doctor = resp.data;
-                    console.log(this.doctor)
 
                 })
         }

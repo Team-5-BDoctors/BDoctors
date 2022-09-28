@@ -16,6 +16,17 @@
             
             
         }
+
+        & .avatar-placeholder{
+            width: 5rem;
+            height: 5rem;
+            border: 3px solid #E9F6FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
     }
 
     & .nav-pills{

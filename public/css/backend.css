@@ -12661,7 +12661,16 @@ fieldset:disabled .btn {
   background-size: cover;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: cemnter;
+  justify-content: center;
+}
+
+.dashboard .content-container .edit-card .bg-img img {
+  padding: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .dashboard .content-container .edit-card .form-group {
@@ -12695,6 +12704,15 @@ fieldset:disabled .btn {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+
+.sidebar .dropdown .avatar-placeholder {
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid #E9F6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar .nav-pills .nav-link {

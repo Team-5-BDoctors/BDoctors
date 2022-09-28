@@ -2283,6 +2283,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2296,8 +2298,7 @@ __webpack_require__.r(__webpack_exports__);
       reviewName: "",
       reviewTitle: "",
       reviewRating: null,
-      reviewContent: "",
-      pest: 'test'
+      reviewContent: ""
     };
   },
   name: "DoctorShow",
@@ -2328,6 +2329,7 @@ __webpack_require__.r(__webpack_exports__);
         content: this.content,
         user_id: this.doctor.id
       });
+      this.$router.push('/doctor/send-message');
     },
     onFormReviewSubmit: function onFormReviewSubmit() {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/reviews", {
@@ -2343,7 +2345,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor/" + this.$route.params.doctor_slug).then(function (resp) {
         _this.doctor = resp.data;
-        console.log(_this.doctor);
       });
     }
   }
@@ -3159,7 +3160,7 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                        " + _vm._s(_vm.doctor.services) + "\n                    ")])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _c("div", {
     staticClass: "h-75 right-jumbo"
   }, [_c("img", {
     staticClass: "h-100 floating-elements",
@@ -3345,26 +3346,13 @@ var render = function render() {
         _vm.content = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center py-2"
-  }, [_c("button", {
-    staticClass: "btn btn-primary text-center",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("\n                                Invia\n                                "), _c("router-link", {
-    attrs: {
-      to: {
-        name: "ConfirmSendMessage"
-      }
-    }
-  })], 1)])])])])])]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
     staticClass: "container-blue"
   }, [_c("div", {
     staticClass: "container py-5 my-5"
   }, [_c("h2", {
     staticClass: "text-center"
-  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "pt-5"
   }, [_c("h3", {
     staticClass: "text-center"
@@ -3601,7 +3589,7 @@ var render = function render() {
         _vm.reviewContent = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(2)])])])])]);
+  })]), _vm._v(" "), _vm._m(3)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3617,26 +3605,18 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-<<<<<<< HEAD
-=======
   return _c("div", {
     staticClass: "text-center py-2"
-  }, [_c("div", {
+  }, [_c("button", {
+    staticClass: "text-center btn btn-primary",
     attrs: {
-      id: "liveAlertPlaceholder"
+      type: "submit"
     }
-  }), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit",
-      id: "liveAlertBtn"
-    }
-  }, [_vm._v("Invia messaggio")])]);
+  }, [_vm._v("Invia")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
 
->>>>>>> origin/pasquale
   return _c("div", [_c("div", {
     staticClass: "my-row"
   }, [_c("div", {
@@ -3655,7 +3635,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio,\n                                    tenetur porro debitis reiciendis vero facere\n                                    quod. Molestiae, nostrum! Saepe, minus iure!\n                                ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3685,7 +3665,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio.\n                                ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio.\n                            ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3715,7 +3695,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio,\n                                    tenetur porro debitis reiciendis vero facere\n                                    quod. Molestiae, nostrum! Saepe, minus iure!\n                                ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3741,7 +3721,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("\n                                Invia recensione\n                            ")])]);
+  }, [_vm._v("\n                            Invia recensione\n                        ")])]);
 }];
 render._withStripped = true;
 
