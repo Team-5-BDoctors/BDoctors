@@ -10,5 +10,4 @@ export const routes = [
     { path: "/doctors", component: AdvancedSearch, name: "AdvancedSearch" },
     { path: "/doctor/send-message", component: ConfirmSendMessage, name: "ConfirmSendMessage"},
     { path: "/doctor/:doctor_slug", component: DoctorShow, name: "DoctorShow" },
-    
 ]

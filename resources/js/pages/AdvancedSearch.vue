@@ -17,7 +17,7 @@
                             class="form-select form-select-lg mb-3"
                             aria-label=".form-select-lg example"
                         >
-                            <option selected value="">
+                            <option value="">
                                 Seleziona una specializzazione
                             </option>
                             <option
@@ -29,37 +29,48 @@
                             </option>
                         </select>
                     </div>
-                    <div class="text-white pt-3">Ordina per:</div>
-                    <div
-                        class="btn-group d-flex justify-content-around pt-2"
-                        role="group"
-                        aria-label="Basic radio toggle button group "
-                    >
-                        <input
-                            type="radio"
-                            class="btn-check"
-                            name="btnradio"
-                            id="btnradio1"
-                            autocomplete="off"
-                        />
-                        <label
-                            class="btn btn-outline-primary text-white"
-                            for="btnradio1"
-                            >Media voti</label
-                        >
-
-                        <input
-                            type="radio"
-                            class="btn-check"
-                            name="btnradio"
-                            id="btnradio2"
-                            autocomplete="off"
-                        />
-                        <label
-                            class="btn btn-outline-primary text-white"
-                            for="btnradio2"
-                            >Numero recensioni</label
-                        >
+                    <div class="text-white pt-3">Filtra per:</div>
+                    <div class="d-flex">
+                        <div>
+                            <select
+                            @change="
+                                (selectedStars = $event.target.value),
+                                    fetchDoctorsInPage()
+                            "
+                                name="reviews"
+                                id="reviews"
+                                class="form-select form-select mb-3"
+                            >
+                                <option selected value="">
+                                    Seleziona la valutazione preferita
+                                </option>
+                                <option value="1">⭐+</option>
+                                <option value="2">⭐⭐+</option>
+                                <option value="3">⭐⭐⭐+</option>
+                                <option value="4">⭐⭐⭐⭐+</option>
+                                <option value="5">⭐⭐⭐⭐⭐</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select
+                            @change="
+                                (selectedNumberReviews = $event.target.value),
+                                    fetchDoctorsInPage()
+                            "
+                                name="reviewsNumber"
+                                id="reviewsNumber"
+                                class="form-select form-select mb-3"
+                            >
+                                <option selected value="">
+                                    Seleziona la quantità di recensioni
+                                </option>
+                                <option value="5">5+</option>
+                                <option value="10">10+</option>
+                                <option value="20">20+</option>
+                                <option value="30">30+</option>
+                                <option value="50">50+</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,7 +83,7 @@
                         :key="doctor.name"
                         class="col"
                     >
-                    <DoctorCard :doctor="doctor"/>
+                        <DoctorCard :doctor="doctor" />
                     </div>
                 </div>
             </div>
@@ -85,17 +96,19 @@ import axios from "axios";
 import DoctorCard from "../frontend/components/DoctorCard.vue";
 
 export default {
-    components:{DoctorCard},
+    components: { DoctorCard },
     data() {
         return {
             doctors: [],
             specializations: [],
-            selectedSpecialization: "",
+            selectedSpecialization: this.$route.params.specialization_name,
+            selectedStars:"",
+            selectedNumberReviews:"",
         };
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
-        this.fetchDoctorsSpecialization();
+        this.fetchDoctorsInPage()
         this.fetchSpecializations();
     },
     methods: {
@@ -109,15 +122,6 @@ export default {
                 }
             }
         },
-        fetchDoctorsSpecialization() {
-            axios
-                .get(
-                    "/api/doctor?name=" + this.$route.params.specialization_name
-                )
-                .then((resp) => {
-                    this.doctors = resp.data;
-                });
-        },
         fetchSpecializations() {
             axios.get("/api/specializations").then((resp) => {
                 this.specializations = resp.data;
@@ -125,7 +129,13 @@ export default {
         },
         fetchDoctorsInPage() {
             axios
-                .get("/api/doctor?name=" + this.selectedSpecialization)
+                .get("/api/doctor", {
+                    params:{
+                        name:this.selectedSpecialization,
+                        rating:this.selectedStars,
+                        interactions:this.selectedNumberReviews
+                    }
+                })
                 .then((resp) => {
                     this.doctors = resp.data;
                 });
@@ -147,7 +157,8 @@ a {
     text-decoration: none;
 }
 
-h5, p{
+h5,
+p {
     color: #151e66;
 }
 

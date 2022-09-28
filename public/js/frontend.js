@@ -2212,12 +2212,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       doctors: [],
       specializations: [],
-      selectedSpecialization: ""
+      selectedSpecialization: this.$route.params.specialization_name,
+      selectedStars: "",
+      selectedNumberReviews: ""
     };
   },
   mounted: function mounted() {
     window.addEventListener("scroll", this.scrollFunction);
-    this.fetchDoctorsSpecialization();
+    this.fetchDoctorsInPage();
     this.fetchSpecializations();
   },
   methods: {
@@ -2233,25 +2235,24 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    fetchDoctorsSpecialization: function fetchDoctorsSpecialization() {
+    fetchSpecializations: function fetchSpecializations() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?name=" + this.$route.params.specialization_name).then(function (resp) {
-        _this.doctors = resp.data;
-      });
-    },
-    fetchSpecializations: function fetchSpecializations() {
-      var _this2 = this;
-
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specializations").then(function (resp) {
-        _this2.specializations = resp.data;
+        _this.specializations = resp.data;
       });
     },
     fetchDoctorsInPage: function fetchDoctorsInPage() {
-      var _this3 = this;
+      var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?name=" + this.selectedSpecialization).then(function (resp) {
-        _this3.doctors = resp.data;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor", {
+        params: {
+          name: this.selectedSpecialization,
+          rating: this.selectedStars,
+          interactions: this.selectedNumberReviews
+        }
+      }).then(function (resp) {
+        _this2.doctors = resp.data;
       });
     }
   }
@@ -2445,9 +2446,9 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "col"
+    staticClass: "col h-100"
   }, [_c("div", {
-    staticClass: "card m-3 border-0",
+    staticClass: "card h-100 m-3 border-0",
     staticStyle: {
       width: "22rem"
     }
@@ -2483,7 +2484,21 @@ var render = function render() {
     }, [index != 0 ? _c("span", [_vm._v("-")]) : _vm._e(), _vm._v("\n                        " + _vm._s(specialization.name) + "\n                    ")]);
   }), 0), _vm._v(" "), _c("p", {
     staticClass: "card-text text-center"
-  }, [_vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])])])], 1)]);
+  }, [_vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")]), _vm._v(" "), _c("div", {
+    staticClass: "text-center"
+  }, [_c("div", {
+    staticClass: "stars"
+  }, _vm._l(5, function (n) {
+    return _c("i", {
+      key: n,
+      staticClass: "fa-regular fa-star",
+      "class": {
+        "fa-solid": n <= _vm.doctor.average
+      }
+    });
+  }), 0), _vm._v(" "), _c("p", {
+    staticClass: "text-center"
+  }, [_vm._v("\n                        " + _vm._s(_vm.doctor.numberReviews) + "+ clienti soddisfatti\n                    ")])])])])], 1)]);
 };
 
 var staticRenderFns = [];
@@ -2810,13 +2825,15 @@ var render = function render() {
   }), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5"
   }, _vm._l(_vm.doctors, function (doctor) {
-    return _c("DoctorCard", {
-      key: doctor.id,
+    return _c("div", {
+      key: doctor.name,
+      staticClass: "col"
+    }, [_c("DoctorCard", {
       attrs: {
         doctor: doctor
       }
-    });
-  }), 1)])])]);
+    })], 1);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [];
@@ -3026,7 +3043,6 @@ var render = function render() {
     }
   }, [_c("option", {
     attrs: {
-      selected: "",
       value: ""
     }
   }, [_vm._v("\n                            Seleziona una specializzazione\n                        ")]), _vm._v(" "), _vm._l(_vm.specializations, function (specialization) {
@@ -3038,7 +3054,83 @@ var render = function render() {
     }, [_vm._v("\n                            " + _vm._s(specialization.name) + "\n                        ")]);
   })], 2)]), _vm._v(" "), _c("div", {
     staticClass: "text-white pt-3"
-  }, [_vm._v("Ordina per:")]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Filtra per:")]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex"
+  }, [_c("div", [_c("select", {
+    staticClass: "form-select form-select mb-3",
+    attrs: {
+      name: "reviews",
+      id: "reviews"
+    },
+    on: {
+      change: function change($event) {
+        ;
+        _vm.selectedStars = $event.target.value, _vm.fetchDoctorsInPage();
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "",
+      value: ""
+    }
+  }, [_vm._v("\n                                Seleziona la valutazione preferita\n                            ")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "1"
+    }
+  }, [_vm._v("⭐+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "2"
+    }
+  }, [_vm._v("⭐⭐+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "3"
+    }
+  }, [_vm._v("⭐⭐⭐+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "4"
+    }
+  }, [_vm._v("⭐⭐⭐⭐+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("⭐⭐⭐⭐⭐")])])]), _vm._v(" "), _c("div", [_c("select", {
+    staticClass: "form-select form-select mb-3",
+    attrs: {
+      name: "reviewsNumber",
+      id: "reviewsNumber"
+    },
+    on: {
+      change: function change($event) {
+        ;
+        _vm.selectedNumberReviews = $event.target.value, _vm.fetchDoctorsInPage();
+      }
+    }
+  }, [_c("option", {
+    attrs: {
+      selected: "",
+      value: ""
+    }
+  }, [_vm._v("\n                                Seleziona la quantità di recensioni\n                            ")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "5"
+    }
+  }, [_vm._v("5+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "10"
+    }
+  }, [_vm._v("10+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "20"
+    }
+  }, [_vm._v("20+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "30"
+    }
+  }, [_vm._v("30+")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "50"
+    }
+  }, [_vm._v("50+")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "bg-lightblue justify-content-center d-flex"
   }, [_c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
@@ -3054,44 +3146,7 @@ var render = function render() {
   }), 0)])])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "btn-group d-flex justify-content-around pt-2",
-    attrs: {
-      role: "group",
-      "aria-label": "Basic radio toggle button group "
-    }
-  }, [_c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "radio",
-      name: "btnradio",
-      id: "btnradio1",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btnradio1"
-    }
-  }, [_vm._v("Media voti")]), _vm._v(" "), _c("input", {
-    staticClass: "btn-check",
-    attrs: {
-      type: "radio",
-      name: "btnradio",
-      id: "btnradio2",
-      autocomplete: "off"
-    }
-  }), _vm._v(" "), _c("label", {
-    staticClass: "btn btn-outline-primary text-white",
-    attrs: {
-      "for": "btnradio2"
-    }
-  }, [_vm._v("Numero recensioni")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -3159,7 +3214,7 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                        " + _vm._s(_vm.doctor.services) + "\n                    ")])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _c("div", {
     staticClass: "h-75 right-jumbo"
   }, [_c("img", {
     staticClass: "h-100 floating-elements",
@@ -3517,17 +3572,12 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "text-center py-2"
-  }, [_c("div", {
+  }, [_c("button", {
+    staticClass: "btn btn-primary text-center",
     attrs: {
-      id: "liveAlertPlaceholder"
+      type: "submit"
     }
-  }), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit",
-      id: "liveAlertBtn"
-    }
-  }, [_vm._v("Invia messaggio")])]);
+  }, [_vm._v("\n                                Invia messaggio\n                            ")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3550,7 +3600,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio,\n                                    tenetur porro debitis reiciendis vero facere\n                                    quod. Molestiae, nostrum! Saepe, minus iure!\n                                ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3580,7 +3630,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio.\n                                ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio.\n                            ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3610,7 +3660,7 @@ var staticRenderFns = [function () {
     staticClass: "subtitle"
   }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
-  }, [_vm._v("\n                                    Lorem ipsum dolor sit amet consectetur\n                                    adipisicing elit. Quia nam autem distinctio,\n                                    dolorum a laboriosam et tempora optio,\n                                    tenetur porro debitis reiciendis vero facere\n                                    quod. Molestiae, nostrum! Saepe, minus iure!\n                                ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
   }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
@@ -3636,7 +3686,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("\n                                Invia recensione\n                            ")])]);
+  }, [_vm._v("\n                            Invia recensione\n                        ")])]);
 }];
 render._withStripped = true;
 
@@ -3856,7 +3906,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\na[data-v-0312e533] {\n  text-decoration: none;\n}\nh5[data-v-0312e533], p[data-v-0312e533] {\n  color: #151e66;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
+exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\na[data-v-0312e533] {\n  text-decoration: none;\n}\nh5[data-v-0312e533],\np[data-v-0312e533] {\n  color: #151e66;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
 
 // exports
 

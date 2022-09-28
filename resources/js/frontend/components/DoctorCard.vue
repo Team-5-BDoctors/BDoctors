@@ -1,6 +1,6 @@
 <template>
-    <div class="col">
-        <div class="card m-3 border-0" style="width: 22rem">
+    <div class="col h-100">
+        <div class="card h-100 m-3 border-0" style="width: 22rem">
             <router-link
                 :key="doctor.id"
                 :to="{
@@ -38,6 +38,19 @@
                     <p class="card-text text-center">
                         {{ doctor.services }}
                     </p>
+                    <div class="text-center">
+                        <div class="stars">
+                            <i
+                                v-for="n in 5"
+                                :key="n"
+                                class="fa-regular fa-star"
+                                :class="{ 'fa-solid': n <= doctor.average }"
+                            ></i>
+                        </div>
+                        <p class="text-center">
+                            {{ doctor.numberReviews }}+ clienti soddisfatti
+                        </p>
+                    </div>
                 </div>
             </router-link>
         </div>
