@@ -79,7 +79,7 @@ a {
 }
 
 .goldenborder{
-    border: 10px solid #f9b115 !important;
+    border: 2px solid #f9b115 !important;
 }
 
 .card {
