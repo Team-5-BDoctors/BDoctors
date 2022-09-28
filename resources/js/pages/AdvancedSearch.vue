@@ -108,7 +108,7 @@ export default {
     },
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
-        this.fetchDoctorsInPage()
+        this.fetchDoctorsInPage();
         this.fetchSpecializations();
     },
     methods: {
@@ -138,6 +138,15 @@ export default {
                 })
                 .then((resp) => {
                     this.doctors = resp.data;
+                    this.doctors.sort((a, b) => {
+                        if (a.sponsorship && !b.sponsorship) {
+                            return -1;
+                        } else if (!a.sponsorship && b.sponsorship) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    });
                 });
         },
     },
@@ -160,6 +169,10 @@ a {
 h5,
 p {
     color: #151e66;
+}
+
+.g-5 {
+    row-gap: 5rem !important;
 }
 
 .card {

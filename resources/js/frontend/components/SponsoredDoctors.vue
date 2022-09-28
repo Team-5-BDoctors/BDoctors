@@ -59,6 +59,10 @@ a {
     text-decoration: none;
 }
 
+.g-5 {
+    row-gap: 5rem !important;
+}
+
 .card {
     opacity: 0;
     transform: translateY(50px);

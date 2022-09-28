@@ -1,6 +1,6 @@
 <template>
     <div class="col h-100">
-        <div class="card h-100 m-3 border-0" style="width: 22rem">
+        <div class="card h-100 m-3 border-0" :class="{'goldenborder' : doctor.sponsorship}" style="width: 22rem">
             <router-link
                 :key="doctor.id"
                 :to="{
@@ -76,6 +76,10 @@ router-link {
 
 a {
     text-decoration: none;
+}
+
+.goldenborder{
+    border: 10px solid #f9b115 !important;
 }
 
 .card {

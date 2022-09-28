@@ -11,9 +11,9 @@
           servizio, a portata di click.
         </p>
         <div>
-          <button type="button" class="btn btn-primary">
-            Prenota un appuntamento
-          </button>
+          <router-link to="doctors"  type="button" class="btn btn-primary">
+            Cerca uno specialista
+          </router-link>
         </div>
       </div>
       <div class="h-75 right-jumbo">
@@ -38,9 +38,11 @@
 </template>
 
 <script>
+import Reviews from './Reviews.vue';
 export default {
-  name: "TheJumbo",
-  props: {},
+    name: "TheJumbo",
+    props: {},
+    components: { Reviews }
 };
 </script>
 

@@ -4,29 +4,15 @@
       <div class="h-100">
         <a href="/"><img class="h-100" src="/images/logo.png" alt="logo" /></a>
       </div>
-      <div class="d-flex justify-content-center gap-5 flex-grow-1">
+      <div class="d-flex align-items-center flex-row-reverse gap-5 flex-grow-1">
         <div class="p-2 navitem">
-          <router-link :to="{ name: 'AdvancedSearch' }">CERCA UN DOTTORE
-            <i class="ps-2 fas fa-chevron-right freccia_link"></i>
-          </router-link>
-        </div>
-        <div class="p-2 navitem">
-          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
-        </div>
-        <div class="p-2 navitem">
-          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
-        </div>
-        <div class="p-2 navitem">
-          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
-        </div>
-        <div class="p-2 navitem">
-          <a href="#">Link<i class="ps-2 fas fa-chevron-right freccia_link"></i></a>
-        </div>
+          <div>
+        <a href="/doctor"><i class="fs-5 fas fa-user"></i></a>
       </div>
-      <div>
-        <!-- user icon with href to laravel index -->
-        <a href="/doctor"><i class="fas fa-user"></i></a>
+        </div>
+
       </div>
+
     </div>
   </div>
 </template>
@@ -41,6 +27,7 @@ export default {
 <style scoped lang="scss">
 .container-fluid {
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.452) 0px 0px 10px;
 }
 
 

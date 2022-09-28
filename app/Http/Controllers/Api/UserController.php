@@ -25,6 +25,7 @@ class UserController extends Controller
             $doctors = $doctors->each(function ($doctor) {
                 $doctor->average = round($doctor->reviews->avg('rating'));
                 $doctor->numberReviews = count($doctor->reviews);
+                $doctor->sponsorship = $doctor->sponsorships()->where('ends_at', '>', now())->first();
             });
             $doctors = $doctors->filter(function ($doctor) use ($rating) {
                 return $doctor->average >= $rating;
@@ -38,6 +39,7 @@ class UserController extends Controller
             $doctors = $doctors->each(function ($doctor) {
                 $doctor->average = round($doctor->reviews->avg('rating'));
                 $doctor->numberReviews = count($doctor->reviews);
+                $doctor->sponsorship = $doctor->sponsorships()->where('ends_at', '>', now())->first();
             });
             $doctors = $doctors->filter(function ($doctor) use ($rating) {
                 return $doctor->average >= $rating;
@@ -64,7 +66,8 @@ class UserController extends Controller
             })
             ->get();
         $sponsoredDoctors = $sponsoredDoctors->each(function ($doctor) {
-            $doctor->average = $doctor->reviews->avg('rating');
+            $doctor->average = round($doctor->reviews->avg('rating'));
+            $doctor->numberReviews = count($doctor->reviews);
         });
         return response()->json($sponsoredDoctors);
     }

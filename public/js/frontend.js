@@ -2183,9 +2183,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Reviews_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reviews.vue */ "./resources/js/frontend/components/Reviews.vue");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TheJumbo",
-  props: {}
+  props: {},
+  components: {
+    Reviews: _Reviews_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),
@@ -2253,6 +2258,16 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (resp) {
         _this2.doctors = resp.data;
+
+        _this2.doctors.sort(function (a, b) {
+          if (a.sponsorship && !b.sponsorship) {
+            return -1;
+          } else if (!a.sponsorship && b.sponsorship) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
       });
     }
   }
@@ -2449,6 +2464,9 @@ var render = function render() {
     staticClass: "col h-100"
   }, [_c("div", {
     staticClass: "card h-100 m-3 border-0",
+    "class": {
+      goldenborder: _vm.doctor.sponsorship
+    },
     staticStyle: {
       width: "22rem"
     }
@@ -2522,23 +2540,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "container-fluid"
-  }, [_c("div", {
-    staticClass: "container d-flex justify-content-between navbar py-3 align-items-center"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-center gap-5 flex-grow-1"
-  }, [_c("div", {
-    staticClass: "p-2 navitem"
-  }, [_c("router-link", {
-    attrs: {
-      to: {
-        name: "AdvancedSearch"
-      }
-    }
-  }, [_vm._v("CERCA UN DOTTORE\n          "), _c("i", {
-    staticClass: "ps-2 fas fa-chevron-right freccia_link"
-  })])], 1), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _vm._m(5)])]);
+  return _vm._m(0);
 };
 
 var staticRenderFns = [function () {
@@ -2546,6 +2548,10 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
+    staticClass: "container-fluid"
+  }, [_c("div", {
+    staticClass: "container d-flex justify-content-between navbar py-3 align-items-center"
+  }, [_c("div", {
     staticClass: "h-100"
   }, [_c("a", {
     attrs: {
@@ -2557,70 +2563,17 @@ var staticRenderFns = [function () {
       src: "/images/logo.png",
       alt: "logo"
     }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex align-items-center flex-row-reverse gap-5 flex-grow-1"
+  }, [_c("div", {
     staticClass: "p-2 navitem"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Link"), _c("i", {
-    staticClass: "ps-2 fas fa-chevron-right freccia_link"
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "p-2 navitem"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Link"), _c("i", {
-    staticClass: "ps-2 fas fa-chevron-right freccia_link"
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "p-2 navitem"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Link"), _c("i", {
-    staticClass: "ps-2 fas fa-chevron-right freccia_link"
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "p-2 navitem"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Link"), _c("i", {
-    staticClass: "ps-2 fas fa-chevron-right freccia_link"
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("a", {
+  }, [_c("div", [_c("a", {
     attrs: {
       href: "/doctor"
     }
   }, [_c("i", {
-    staticClass: "fas fa-user"
-  })])]);
+    staticClass: "fs-5 fas fa-user"
+  })])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2958,13 +2911,6 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("div", {
     staticClass: "container-fluid"
   }, [_c("div", {
@@ -2975,12 +2921,26 @@ var staticRenderFns = [function () {
     staticClass: "pb-3"
   }, [_vm._v("Prenotare una visita non è mai stato così semplice")]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_vm._v("\n        Ci siamo occupati di tutta la parte noiosa per te, ora puoi\n        concentrarti su ciò che conta. Centinaia di specialisti al tuo\n        servizio, a portata di click.\n      ")]), _vm._v(" "), _c("div", [_c("button", {
+  }, [_vm._v("\n        Ci siamo occupati di tutta la parte noiosa per te, ora puoi\n        concentrarti su ciò che conta. Centinaia di specialisti al tuo\n        servizio, a portata di click.\n      ")]), _vm._v(" "), _c("div", [_c("router-link", {
     staticClass: "btn btn-primary",
     attrs: {
+      to: "doctors",
       type: "button"
     }
-  }, [_vm._v("\n          Prenota un appuntamento\n        ")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n          Cerca uno specialista\n        ")])], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("img", {
+    staticClass: "h-100 right-bg-jumbo",
+    attrs: {
+      src: "/images/jumbo_right_bg.jpg",
+      alt: ""
+    }
+  })])]);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "h-75 right-jumbo"
   }, [_c("img", {
     staticClass: "h-100 floating-elements",
@@ -2994,13 +2954,7 @@ var staticRenderFns = [function () {
       src: "/images/jumbo_doctor.png",
       alt: ""
     }
-  })]), _vm._v(" "), _c("img", {
-    staticClass: "h-100 right-bg-jumbo",
-    attrs: {
-      src: "/images/jumbo_right_bg.jpg",
-      alt: ""
-    }
-  })])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -3773,7 +3727,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "router-link[data-v-10fa046e] {\n  text-decoration: none;\n}\na[data-v-10fa046e] {\n  text-decoration: none;\n}\n.card[data-v-10fa046e] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-10fa046e] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-10fa046e]:hover {\n  transform: translateY(-15px);\n}\n.card[data-v-10fa046e] {\n  border: none;\n}\n.avatarbg[data-v-10fa046e] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\np[data-v-10fa046e] {\n  color: #555c96;\n  font-weight: 500;\n}\nh5[data-v-10fa046e] {\n  color: #151e66;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, "router-link[data-v-10fa046e] {\n  text-decoration: none;\n}\na[data-v-10fa046e] {\n  text-decoration: none;\n}\n.goldenborder[data-v-10fa046e] {\n  border: 10px solid #f9b115 !important;\n}\n.card[data-v-10fa046e] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-10fa046e] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-10fa046e]:hover {\n  transform: translateY(-15px);\n}\n.card[data-v-10fa046e] {\n  border: none;\n}\n.avatarbg[data-v-10fa046e] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\np[data-v-10fa046e] {\n  color: #555c96;\n  font-weight: 500;\n}\nh5[data-v-10fa046e] {\n  color: #151e66;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -3792,7 +3746,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container-fluid[data-v-2c5d916a] {\n  background-color: white;\n}\n.navbar[data-v-2c5d916a] {\n  height: 80px;\n  background-color: #fff;\n  z-index: 1;\n}\n.navbar a[data-v-2c5d916a] {\n  text-decoration: none;\n  color: #151e66;\n  font-size: 0.9rem;\n  text-align: center;\n  font-weight: 700;\n  transition: all 0.3s ease-in-out;\n  width: 100%;\n  line-height: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.navbar a:hover .freccia_link[data-v-2c5d916a] {\n  transform: translateX(50%);\n}\n.navbar .freccia_link[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  font-size: 0.8rem;\n}\n.navbar .navitem[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  border-radius: 5px;\n}\n.navbar .navitem[data-v-2c5d916a]:hover {\n  background-color: #d8eeff;\n}", ""]);
+exports.push([module.i, ".container-fluid[data-v-2c5d916a] {\n  background-color: white;\n  box-shadow: rgba(0, 0, 0, 0.452) 0px 0px 10px;\n}\n.navbar[data-v-2c5d916a] {\n  height: 80px;\n  background-color: #fff;\n  z-index: 1;\n}\n.navbar a[data-v-2c5d916a] {\n  text-decoration: none;\n  color: #151e66;\n  font-size: 0.9rem;\n  text-align: center;\n  font-weight: 700;\n  transition: all 0.3s ease-in-out;\n  width: 100%;\n  line-height: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.navbar a:hover .freccia_link[data-v-2c5d916a] {\n  transform: translateX(50%);\n}\n.navbar .freccia_link[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  font-size: 0.8rem;\n}\n.navbar .navitem[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  border-radius: 5px;\n}\n.navbar .navitem[data-v-2c5d916a]:hover {\n  background-color: #d8eeff;\n}", ""]);
 
 // exports
 
@@ -3849,7 +3803,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "a[data-v-a7b53596] {\n  text-decoration: none;\n}\n.card[data-v-a7b53596] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-a7b53596] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.secondarybg[data-v-a7b53596] {\n  background-color: #e9f6ff;\n}\n.bluespacer[data-v-a7b53596] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 100px;\n  margin-left: auto;\n  margin-right: auto;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.avatarbg[data-v-a7b53596] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}", ""]);
+exports.push([module.i, "a[data-v-a7b53596] {\n  text-decoration: none;\n}\n.g-5[data-v-a7b53596] {\n  row-gap: 5rem !important;\n}\n.card[data-v-a7b53596] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-a7b53596] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.secondarybg[data-v-a7b53596] {\n  background-color: #e9f6ff;\n}\n.bluespacer[data-v-a7b53596] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 100px;\n  margin-left: auto;\n  margin-right: auto;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.avatarbg[data-v-a7b53596] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}", ""]);
 
 // exports
 
@@ -3906,7 +3860,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\na[data-v-0312e533] {\n  text-decoration: none;\n}\nh5[data-v-0312e533],\np[data-v-0312e533] {\n  color: #151e66;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
+exports.push([module.i, ".jumbo-bg[data-v-0312e533] {\n  background-image: url(\"/images/background.png\");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  height: 400px;\n}\na[data-v-0312e533] {\n  text-decoration: none;\n}\nh5[data-v-0312e533],\np[data-v-0312e533] {\n  color: #151e66;\n}\n.g-5[data-v-0312e533] {\n  row-gap: 5rem !important;\n}\n.card[data-v-0312e533] {\n  opacity: 0.5;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n}\n.card.appear[data-v-0312e533] {\n  opacity: 1;\n  transform: translateY(0px);\n}\n.card[data-v-0312e533] {\n  border: none;\n}\n.avatarbg[data-v-0312e533] {\n  width: 200px;\n  height: 200px;\n  overflow: hidden;\n  border-radius: 100%;\n  background-color: transparent;\n  background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);\n  transform: translateY(-20%);\n}\n.search-bar[data-v-0312e533] {\n  height: 70px;\n}\n.searchbar-container[data-v-0312e533] {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.bg-lightblue[data-v-0312e533] {\n  background-color: rgb(233, 246, 255);\n  padding-top: 6rem;\n  padding-bottom: 6rem;\n}\n.drelative[data-v-0312e533] {\n  position: relative;\n  top: -50px;\n}", ""]);
 
 // exports
 
