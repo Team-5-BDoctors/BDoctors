@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .container{
     height: calc(100vh - 607.317px - 80px);
 }
