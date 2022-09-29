@@ -2299,6 +2299,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2312,8 +2314,7 @@ __webpack_require__.r(__webpack_exports__);
       reviewName: "",
       reviewTitle: "",
       reviewRating: null,
-      reviewContent: "",
-      pest: 'test'
+      reviewContent: ""
     };
   },
   name: "DoctorShow",
@@ -2344,6 +2345,7 @@ __webpack_require__.r(__webpack_exports__);
         content: this.content,
         user_id: this.doctor.id
       });
+      this.$router.push('/doctor/send-message');
     },
     onFormReviewSubmit: function onFormReviewSubmit() {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/reviews", {
@@ -2359,7 +2361,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor/" + this.$route.params.doctor_slug).then(function (resp) {
         _this.doctor = resp.data;
-        console.log(_this.doctor);
       });
     }
   }
@@ -3195,7 +3196,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "contact"
   }, [_vm._m(0), _vm._v(" "), _c("div", [_c("form", {
-    staticClass: "form-msg",
+    staticClass: "form-msg needs-validation",
     attrs: {
       action: ""
     },
@@ -3223,7 +3224,8 @@ var render = function render() {
       type: "name",
       id: "name",
       placeholder: "Nome",
-      name: "name"
+      name: "name",
+      required: ""
     },
     domProps: {
       value: _vm.name
@@ -3234,7 +3236,9 @@ var render = function render() {
         _vm.name = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci un Nome\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3252,7 +3256,8 @@ var render = function render() {
       type: "surname",
       id: "surname",
       placeholder: "Cognome",
-      name: "surname"
+      name: "surname",
+      required: ""
     },
     domProps: {
       value: _vm.surname
@@ -3263,7 +3268,9 @@ var render = function render() {
         _vm.surname = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci un Cognome\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3281,7 +3288,8 @@ var render = function render() {
       type: "email",
       id: "email",
       placeholder: "Email",
-      name: "email"
+      name: "email",
+      required: ""
     },
     domProps: {
       value: _vm.email
@@ -3292,7 +3300,9 @@ var render = function render() {
         _vm.email = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci la tua Email\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3310,7 +3320,8 @@ var render = function render() {
       type: "text",
       id: "title",
       placeholder: "Inserisci titolo messaggio",
-      name: "title"
+      name: "title",
+      required: ""
     },
     domProps: {
       value: _vm.title
@@ -3321,7 +3332,9 @@ var render = function render() {
         _vm.title = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci titolo messaggio\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3338,7 +3351,8 @@ var render = function render() {
     attrs: {
       id: "content",
       rows: "3",
-      name: "content"
+      name: "content",
+      required: ""
     },
     domProps: {
       value: _vm.content
@@ -3349,7 +3363,9 @@ var render = function render() {
         _vm.content = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci contenuto messaggio\n                            ")])]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
     staticClass: "container-blue"
   }, [_c("div", {
     staticClass: "container py-5 my-5"
@@ -3402,56 +3418,140 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "reviewRating"
-    }
-  }, [_vm._v("Inserisci il tuo voto, da 1 a 5:")]), _vm._v(" "), _c("select", {
+  }, [_c("div", [_vm._v("Valutazione complessiva")]), _vm._v(" "), _c("div", {
+    staticClass: "rate mb-4"
+  }, [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.reviewRating,
       expression: "reviewRating"
     }],
-    staticClass: "form-control",
     attrs: {
+      type: "radio",
+      id: "star5",
       name: "rating",
-      id: "reviewRating",
-      required: ""
+      value: "5"
+    },
+    domProps: {
+      checked: _vm._q(_vm.reviewRating, "5")
     },
     on: {
       change: function change($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
-          return o.selected;
-        }).map(function (o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val;
-        });
-        _vm.reviewRating = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+        _vm.reviewRating = "5";
       }
     }
-  }, [_c("option", {
+  }), _vm._v(" "), _c("label", {
     attrs: {
-      value: "1"
+      "for": "star5",
+      title: "text"
     }
-  }, [_vm._v("1")]), _vm._v(" "), _c("option", {
+  }, [_vm._v("5 stars")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewRating,
+      expression: "reviewRating"
+    }],
     attrs: {
-      value: "2"
-    }
-  }, [_vm._v("2")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "3"
-    }
-  }, [_vm._v("3")]), _vm._v(" "), _c("option", {
-    attrs: {
+      type: "radio",
+      id: "star4",
+      name: "rating",
       value: "4"
+    },
+    domProps: {
+      checked: _vm._q(_vm.reviewRating, "4")
+    },
+    on: {
+      change: function change($event) {
+        _vm.reviewRating = "4";
+      }
     }
-  }, [_vm._v("4")]), _vm._v(" "), _c("option", {
+  }), _vm._v(" "), _c("label", {
     attrs: {
-      value: "5"
+      "for": "star4",
+      title: "text"
     }
-  }, [_vm._v("5")])])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
+  }, [_vm._v("4 stars")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewRating,
+      expression: "reviewRating"
+    }],
+    attrs: {
+      type: "radio",
+      id: "star3",
+      name: "rating",
+      value: "3"
+    },
+    domProps: {
+      checked: _vm._q(_vm.reviewRating, "3")
+    },
+    on: {
+      change: function change($event) {
+        _vm.reviewRating = "3";
+      }
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star3",
+      title: "text"
+    }
+  }, [_vm._v("3 stars")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewRating,
+      expression: "reviewRating"
+    }],
+    attrs: {
+      type: "radio",
+      id: "star2",
+      name: "rating",
+      value: "2"
+    },
+    domProps: {
+      checked: _vm._q(_vm.reviewRating, "2")
+    },
+    on: {
+      change: function change($event) {
+        _vm.reviewRating = "2";
+      }
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star2",
+      title: "text"
+    }
+  }, [_vm._v("2 stars")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.reviewRating,
+      expression: "reviewRating"
+    }],
+    attrs: {
+      type: "radio",
+      id: "star1",
+      name: "rating",
+      value: "1"
+    },
+    domProps: {
+      checked: _vm._q(_vm.reviewRating, "1")
+    },
+    on: {
+      change: function change($event) {
+        _vm.reviewRating = "1";
+      }
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "star1",
+      title: "text"
+    }
+  }, [_vm._v("1 star")])])]), _vm._v(" "), _c("br"), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
+    staticClass: "form-group p-2 w-100 mt-2"
   }, [_c("label", {
     attrs: {
       "for": "reviewTitle"
@@ -3527,11 +3627,11 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "text-center py-2"
   }, [_c("button", {
-    staticClass: "btn btn-primary text-center",
+    staticClass: "text-center btn btn-primary",
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("\n                                Invia messaggio\n                            ")])]);
+  }, [_vm._v("Invia")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3879,7 +3979,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.rate[data-v-20de4d05] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n}\n.rate:not(:checked) > input[data-v-20de4d05] {\n  display: none;\n}\n.rate:not(:checked) > label[data-v-20de4d05] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  cursor: pointer;\n  font-size: 30px;\n  color: #ccc;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:before {\n  content: \"\\2605   \";\n}\n.rate > input:checked ~ label[data-v-20de4d05] {\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:hover,\n.rate:not(:checked) > label:hover ~ label[data-v-20de4d05] {\n  color: #deb217;\n}\n.rate > input:checked + label[data-v-20de4d05]:hover,\n.rate > input:checked + label:hover ~ label[data-v-20de4d05],\n.rate > input:checked ~ label[data-v-20de4d05]:hover,\n.rate > input:checked ~ label:hover ~ label[data-v-20de4d05],\n.rate > label:hover ~ input:checked ~ label[data-v-20de4d05] {\n  color: #c59b08;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.form-img[data-v-20de4d05] {\n  height: 60%;\n  border-radius: 8px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}", ""]);
 
 // exports
 
@@ -21470,7 +21570,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

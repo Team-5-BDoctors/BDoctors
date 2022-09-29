@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function store(Request $request){
+
         $data = $request->all();
 
         $message = new Message();
@@ -20,8 +21,7 @@ class ContactController extends Controller
 
         $message->save();
 
-        return redirect()->route("ConfirmSendMessage");
-
+        
         
     }
 }

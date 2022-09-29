@@ -134,8 +134,8 @@
                 </form>
             </div>
             <div class="col-4">
-                <div class="bg-img text-center">
-                    <img class="w-100" src="{{asset('images/jumbo_doctor.png')}}" alt="">
+                <div class="bg-img">
+                    <img class=" w-100 text-center" src="{{ asset('storage/' . Auth::user()->image) }}" alt="">
                 </div>
             </div>
         </div>

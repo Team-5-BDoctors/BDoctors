@@ -2,42 +2,32 @@
 
 @section("content")
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __("Recensioni") }}</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Nome</th>
-                                                <th scope="col">Titolo</th>
-                                                <th scope="col">Contenuto</th>
-                                                <th scope="col">Valutazione</th>
-                                                <th scope="col">Data</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($reviews as $review)
-                                                <tr>
-                                                    <td>{{ $review->name }}</td>
-                                                    <td>{{ $review->title }}</td>
-                                                    <td>{{ $review->content }}</td>
-                                                    <td>{{ $review->rating }}</td>
-                                                    <td>{{ $review->created_at }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+        <div class="table-container">
+            <h1 class="my-table-title">Recensioni</h1>
+            <div class="my-table">
+                <div class="tb-head">
+                    <div class="row .flex-nowrap fw-bold fs-5">
+                        <div class="col">Nome</div>
+                        <div class="col">Titolo</div>
+                        <div class="col col-lg-3">Contenuto</div>
+                        <div class="col">Voto</div>
+                        <div class="col">Data</div>   
+                         
                     </div>
                 </div>
+                <div class="tb-body">
+                    @foreach ($reviews as $review)
+                        <div class="row .flex-nowrap">
+                            <div class="col fw-bold">{{ $review->name }}</div>
+                            <div class="col">{{ $review->title }}</div>
+                            <div class="col col-lg-3">{{ $review->content }}</div>
+                            <div class="col">{{ $review->rating }}</div>
+                            <div class="col">{{ $review->created_at }}</div>               
+                        </div>
+                    @endforeach
+                </div>
+                {{ $reviews->links() }}
             </div>
-        </div>
+        </div>  
     </div>
 @endsection

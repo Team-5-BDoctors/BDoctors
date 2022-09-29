@@ -37,36 +37,50 @@
                     </div>
 
                     <div>
-                        <form class="form-msg" action="" @submit.prevent="onFormMessageSubmit()">
+                        <form class="form-msg needs-validation" action="" @submit.prevent="onFormMessageSubmit()">
                             <div class="form-group p-2">
                                 <label for="name">Inserisci il tuo nome:</label>
                                 <input type="name" class="form-control" id="name" placeholder="Nome" name="name"
-                                    v-model="name" />
+                                    v-model="name" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci un Nome
+                                </div>    
                             </div>
                             <div class="form-group p-2">
                                 <label for="surname">Inserisci il tuo cognome:</label>
                                 <input type="surname" class="form-control" id="surname" placeholder="Cognome"
-                                    name="surname" v-model="surname" />
+                                    name="surname" v-model="surname" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci un Cognome
+                                </div>     
                             </div>
                             <div class="form-group p-2">
                                 <label for="email">Inserisci la tua mail:</label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" name="email"
-                                    v-model="email" />
+                                    v-model="email" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci la tua Email
+                                </div>     
                             </div>
                             <div class="form-group p-2">
                                 <label for="title">Inserisci titolo messagio:</label>
                                 <input type="text" class="form-control" id="title"
-                                    placeholder="Inserisci titolo messaggio" name="title" v-model="title" />
+                                    placeholder="Inserisci titolo messaggio" name="title" v-model="title" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci titolo messaggio
+                                </div>    
                             </div>
                             <div class="form-group p-2">
                                 <label for="content">Inserisci il tuo messaggio con la richiesta:</label>
                                 <textarea class="form-control pb-5" id="content" rows="3" name="content"
-                                    v-model="content"></textarea>
+                                    v-model="content" required>
+                                </textarea>
+                                <div class="invalid-feedback">
+                                    Inserisci contenuto messaggio
+                                </div>
                             </div>
-                            <div class="text-center py-2">
-                                <button type="submit" class="btn btn-primary text-center">
-                                    Invia messaggio
-                                </button>
+                            <div class="text-center py-2"> 
+                                <button type="submit" class="text-center btn btn-primary">Invia</button>
                             </div>
                         </form>
                     </div>
@@ -172,16 +186,23 @@
                             <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome" v-model="reviewName" required/>
                         </div>
                         <div class="form-group py-2">
-                            <label for="reviewRating">Inserisci il tuo voto, da 1 a 5:</label>
-                            <select class="form-control" name="rating" id="reviewRating" v-model="reviewRating" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                            <div>Valutazione complessiva</div>
+                            <div class="rate mb-4">
+                                <input type="radio" id="star5" name="rating" value="5" v-model="reviewRating"/>
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rating" value="4" v-model="reviewRating"/>
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rating" value="3" v-model="reviewRating"/>
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rating" value="2" v-model="reviewRating"/>
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rating" value="1" v-model="reviewRating"/>
+                                <label for="star1" title="text">1 star</label>
+                            </div>
                         </div>
-                        <div class="form-group p-2">
+                        <br>
+                        <br>
+                        <div class="form-group p-2 w-100 mt-2">
                             <label for="reviewTitle">Titolo recensione:</label>
                             <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo" v-model="reviewTitle" required/>
                         </div>
@@ -203,6 +224,7 @@
 
 <script>
 import axios from 'axios'
+import { RouterLink } from 'vue-router';
 export default {
     data() {
         return {
@@ -216,7 +238,6 @@ export default {
             reviewTitle : "",
             reviewRating : null,
             reviewContent: "",
-            pest: 'test'
         };
     },
     name: "DoctorShow",
@@ -248,6 +269,8 @@ export default {
                 content: this.content,
                 user_id: this.doctor.id
             })
+            
+            this.$router.push('/doctor/send-message')
         },
         onFormReviewSubmit() {
             axios.post("/api/reviews", {
@@ -257,12 +280,13 @@ export default {
                 content: this.reviewContent,
                 user_id: this.doctor.id
             })
+
+            
         },
         getDoctorData(){
             axios.get("/api/doctor/" + this.$route.params.doctor_slug)
                 .then((resp) => {
                     this.doctor = resp.data;
-                    console.log(this.doctor)
 
                 })
         }
@@ -405,6 +429,42 @@ p {
     margin-left: 25%;
     margin-right: 25%;
     width: 50%;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked) > input {
+    display: none;
+}
+.rate:not(:checked) > label {
+    float: right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }
 
 .flex-img {

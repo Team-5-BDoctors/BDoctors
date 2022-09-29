@@ -5,7 +5,14 @@
     <hr class="text-white">
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="" class="rounded-circle me-2">
+            @if (Auth::user()->image)
+            <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="" class="rounded-circle me-2">   
+            @else
+            <div class="avatar-placeholder rounded-circle me-2">
+                <div class="initial-letters">{{ $firstLetterName = Str::substr(Auth::user()->name, 0, 1) }} {{$firstLetterSurname = Str::substr(Auth::user()->surname, 0, 1)  }}</div>
+            </div>
+            
+            @endif
             <div>
                 <div class="name fw-bold fs-5">
                     {{ Auth::user()->name }}

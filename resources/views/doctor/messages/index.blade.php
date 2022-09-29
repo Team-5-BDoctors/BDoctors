@@ -33,6 +33,7 @@
                         </div>
                     @endforeach
                 </div>
+                {{ $messages->links() }}
             </div>
         </div>  
         
