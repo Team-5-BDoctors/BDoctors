@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\SponsorshipResource;
 use App\Sponsorship;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,6 +19,11 @@ public function index()
     $user = Auth::user();
     $userSponsorships = UserSponsorship::where('user_id', $user->id)->get();
     return view('doctor.sponsorships.index', compact('sponsorships', 'user', 'userSponsorships'));
+}
+
+public function payment(){
+    $sponsorships = Sponsorship::all();
+    return SponsorshipResource::collection($sponsorships);
 }
 
 protected $dates = [

@@ -25,3 +25,8 @@ Route::get('/doctor/{doctor}', 'Api\UserController@show');
 Route::get('/sponsored-doctors', 'Api\UserController@showDoctorsSponsored');
 Route::post('/contacts', 'Api\ContactController@store');
 Route::post('/reviews', 'Api\ReviewsController@store');
+
+Route::get('sponsorship','Doctor\SponsorshipController@payment');
+
+Route::get('payment/generate', 'Api\PaymentController@generate');
+Route::post('payment/makePayment', 'Api\PaymentController@makePayment');
