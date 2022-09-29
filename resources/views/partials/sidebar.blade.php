@@ -9,7 +9,7 @@
             <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="" class="rounded-circle me-2">   
             @else
             <div class="avatar-placeholder rounded-circle me-2">
-                <div class="initial-letters">{{ $firstLetterName = Str::substr(Auth::user()->name, 0, 1) }} {{$firstLetterSurnamem = Str::substr(Auth::user()->surname, 0, 1)  }}</div>
+                <div class="initial-letters">{{ $firstLetterName = Str::substr(Auth::user()->name, 0, 1) }} {{$firstLetterSurname = Str::substr(Auth::user()->surname, 0, 1)  }}</div>
             </div>
             
             @endif

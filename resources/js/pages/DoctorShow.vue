@@ -37,43 +37,52 @@
                     </div>
 
                     <div>
-                        <form class="form-msg" action="" @submit.prevent="onFormMessageSubmit()">
+                        <form class="form-msg needs-validation" action="" @submit.prevent="onFormMessageSubmit()">
                             <div class="form-group p-2">
                                 <label for="name">Inserisci il tuo nome:</label>
                                 <input type="name" class="form-control" id="name" placeholder="Nome" name="name"
                                     v-model="name" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci un Nome
+                                </div>    
                             </div>
                             <div class="form-group p-2">
                                 <label for="surname">Inserisci il tuo cognome:</label>
                                 <input type="surname" class="form-control" id="surname" placeholder="Cognome"
                                     name="surname" v-model="surname" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci un Cognome
+                                </div>     
                             </div>
                             <div class="form-group p-2">
                                 <label for="email">Inserisci la tua mail:</label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" name="email"
                                     v-model="email" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci la tua Email
+                                </div>     
                             </div>
                             <div class="form-group p-2">
                                 <label for="title">Inserisci titolo messagio:</label>
                                 <input type="text" class="form-control" id="title"
                                     placeholder="Inserisci titolo messaggio" name="title" v-model="title" required/>
+                                <div class="invalid-feedback">
+                                    Inserisci titolo messaggio
+                                </div>    
                             </div>
                             <div class="form-group p-2">
                                 <label for="content">Inserisci il tuo messaggio con la richiesta:</label>
                                 <textarea class="form-control pb-5" id="content" rows="3" name="content"
                                     v-model="content" required>
                                 </textarea>
+                                <div class="invalid-feedback">
+                                    Inserisci contenuto messaggio
+                                </div>
                             </div>
-                            <div class="text-center py-2">
-                                
-                                    
-                                        <button type="submit" class="text-center btn btn-primary">Invia</button>
-                                    
-                                    
-                                
+                            <div class="text-center py-2"> 
+                                <button type="submit" class="text-center btn btn-primary">Invia</button>
                             </div>
                         </form>
-                        
                     </div>
                 </div>
             </div>

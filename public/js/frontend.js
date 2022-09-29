@@ -3242,7 +3242,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "contact"
   }, [_vm._m(0), _vm._v(" "), _c("div", [_c("form", {
-    staticClass: "form-msg",
+    staticClass: "form-msg needs-validation",
     attrs: {
       action: ""
     },
@@ -3282,7 +3282,9 @@ var render = function render() {
         _vm.name = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci un Nome\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3312,7 +3314,9 @@ var render = function render() {
         _vm.surname = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci un Cognome\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3342,7 +3346,9 @@ var render = function render() {
         _vm.email = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci la tua Email\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3372,7 +3378,9 @@ var render = function render() {
         _vm.title = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci titolo messaggio\n                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
   }, [_c("label", {
     attrs: {
@@ -3401,7 +3409,9 @@ var render = function render() {
         _vm.content = $event.target.value;
       }
     }
-  })]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "invalid-feedback"
+  }, [_vm._v("\n                                Inserisci contenuto messaggio\n                            ")])]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
     staticClass: "container-blue"
   }, [_c("div", {
     staticClass: "container py-5 my-5"
