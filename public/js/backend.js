@@ -40017,9 +40017,15 @@ throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
 __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
 module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+=======
+__webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+>>>>>>> c16e08dc7b6da09358d5cb1dcb959ab65850752f
 
 
 /***/ })

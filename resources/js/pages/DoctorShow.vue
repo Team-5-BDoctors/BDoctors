@@ -27,6 +27,7 @@
             </div>
         </div>
 
+        <!-- Messaggi -->
         <div class="container-white">
             <div class="container">
                 <div class="contact">
@@ -183,7 +184,8 @@
                     <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
                             <label for="reviewName">Inserisci il tuo nome:</label>
-                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome" v-model="reviewName" required/>
+                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome"
+                                v-model="reviewName" required />
                         </div>
                         <div class="form-group py-2">
                             <div>Valutazione complessiva</div>
@@ -204,11 +206,13 @@
                         <br>
                         <div class="form-group p-2 w-100 mt-2">
                             <label for="reviewTitle">Titolo recensione:</label>
-                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo" v-model="reviewTitle" required/>
+                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo"
+                                v-model="reviewTitle" required />
                         </div>
                         <div class="form-group py-2">
                             <label for="reviewContent">Dai il tuo parere:</label>
-                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent" rows="3"></textarea>
+                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent"
+                                rows="3"></textarea>
                         </div>
                         <div class="text-center py-2">
                             <button type="submit" class="btn btn-primary text-center">
@@ -235,8 +239,8 @@ export default {
             content: "",
             doctor: {},
             reviewName: "",
-            reviewTitle : "",
-            reviewRating : null,
+            reviewTitle: "",
+            reviewRating: null,
             reviewContent: "",
         };
     },
@@ -247,7 +251,7 @@ export default {
     mounted() {
         window.addEventListener("scroll", this.scrollFunction);
         this.getDoctorData()
-        
+
     },
     methods: {
         scrollFunction() {
@@ -283,7 +287,7 @@ export default {
 
             
         },
-        getDoctorData(){
+        getDoctorData() {
             axios.get("/api/doctor/" + this.$route.params.doctor_slug)
                 .then((resp) => {
                     this.doctor = resp.data;
@@ -423,6 +427,7 @@ p {
     margin-bottom: 40px;
     border-color: transparent;
     background-color: #2ea4ff;
+    margin: auto;
 }
 
 .form-msg {
@@ -472,11 +477,6 @@ p {
     justify-content: center;
 }
 
-.form-img {
-    height: 60%;
-    border-radius: 8px;
-}
-
 .my-row {
     display: flex;
     border: 1px solid #e9f6ff;
@@ -514,5 +514,14 @@ p {
 
 .gold-star {
     color: gold;
+}
+
+@media screen and (max-width: 991px) {
+    .my-row {
+        display: block;
+    }
+    .right-bg-jumbo {
+        display: none;
+    }
 }
 </style>
