@@ -284,9 +284,7 @@ export default {
                 content: this.reviewContent,
                 user_id: this.doctor.id
             })
-
             this.$router.push('/doctor/send-message')
-
             
         },
         getDoctorData() {

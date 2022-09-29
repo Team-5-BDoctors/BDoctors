@@ -3142,8 +3142,12 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", [_c("div", {
-    staticClass: "container py-5"
-  }, [_c("h1", [_vm._v("messaggio inviato correttamente")])])]);
+    staticClass: "container d-flex justify-content-center align-content-center py-5"
+  }, [_c("h1", {
+    staticClass: "text-center py-5"
+  }, [_vm._v("INVIATO CORRETTAMENTE\n            "), _c("i", {
+    staticClass: "fa-solid fa-circle-check"
+  })])])]);
 }];
 render._withStripped = true;
 
@@ -3992,7 +3996,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container[data-v-64bdfb70] {\n  height: calc(100vh - 607.317px - 80px);\n}", ""]);
+exports.push([module.i, ".container[data-v-64bdfb70] {\n  height: 100vh;\n}", ""]);
 
 // exports
 
