@@ -212,7 +212,7 @@
                         <div class="form-group py-2">
                             <label for="reviewContent">Dai il tuo parere:</label>
                             <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent"
-                                rows="3"></textarea>
+                                rows="3" required></textarea>
                         </div>
                         <div class="text-center py-2">
                             <button type="submit" class="btn btn-primary text-center">
@@ -284,6 +284,8 @@ export default {
                 content: this.reviewContent,
                 user_id: this.doctor.id
             })
+
+            this.$router.push('/doctor/send-message')
 
             
         },

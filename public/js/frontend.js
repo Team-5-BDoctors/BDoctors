@@ -2355,6 +2355,7 @@ __webpack_require__.r(__webpack_exports__);
         content: this.reviewContent,
         user_id: this.doctor.id
       });
+      this.$router.push('/doctor/send-message');
     },
     getDoctorData: function getDoctorData() {
       var _this = this;
@@ -3597,7 +3598,8 @@ var render = function render() {
     attrs: {
       id: "reviewContent",
       name: "content",
-      rows: "3"
+      rows: "3",
+      required: ""
     },
     domProps: {
       value: _vm.reviewContent
@@ -21570,7 +21572,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
