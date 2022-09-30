@@ -7,7 +7,9 @@
 
                     <!-- col dati dottore -->
                     <div class="col flex">
-                        <img :src="'/storage/'+doctor.image" class="doctor-photo py-2" alt="..." />
+                        <div class="img-cover">
+                            <img :src="'/storage/'+doctor.image" class="doctor-photo w-100 h-100" alt="..." />
+                        </div>
                         <div class="py-3">
                             <h1>{{doctor.name}} {{doctor.surname}}</h1>
                             <span class="spec" v-for="specialization in doctor.specializations"
@@ -61,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group py-2">
-                                        <label for="title">Inserisci titolo messagio:</label>
+                                        <label for="title">Inserisci il titolo del messaggio:</label>
                                         <input type="text" class="form-control" id="title"
                                             placeholder="Inserisci titolo messaggio" name="title" v-model="title"
                                             required />
@@ -95,8 +97,8 @@
 
         <!-- Recensioni -->
         <div class="container-blue">
-            <div class="container py-5 my-5">
-                <h2 class="text-center">Recensioni</h2>
+            <div class="container py-5">
+                <h2 class="text-center py-2">Recensioni</h2>
                 <div>
                     <div class="my-row">
                         <div class="col">
@@ -188,12 +190,22 @@
                     <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
                             <label for="reviewName">Inserisci il tuo nome:</label>
-                            <input type="text" class="form-control white-bg" id="reviewName" name="name" placeholder="Nome"
-                                v-model="reviewName" required />
+                            <input type="text" class="form-control white-bg" id="reviewName" name="name"
+                                placeholder="Nome" v-model="reviewName" required />
                         </div>
-                        <div class="form-group py-2">
-                            <div>Valutazione complessiva</div>
-                            <div class="rate mb-4">
+                        <div class="form-group p-2">
+                            <label for="reviewTitle">Titolo recensione:</label>
+                            <input type="text" class="form-control white-bg" id="reviewTitle" name="title"
+                                placeholder="Titolo" v-model="reviewTitle" required />
+                        </div>
+                        <div class="form-group p-2">
+                            <label for="reviewContent">Dai il tuo parere:</label>
+                            <textarea class="form-control white-bg" id="reviewContent" name="content"
+                                v-model="reviewContent" rows="3"></textarea>
+                        </div>
+                        <div class="form-group p-2">
+                            <div>Valutazione complessiva:</div>
+                            <div class="rate">
                                 <input type="radio" id="star5" name="rating" value="5" v-model="reviewRating" />
                                 <label for="star5" title="text">5 stars</label>
                                 <input type="radio" id="star4" name="rating" value="4" v-model="reviewRating" />
@@ -208,16 +220,6 @@
                         </div>
                         <br>
                         <br>
-                        <div class="form-group p-2 w-100 mt-2">
-                            <label for="reviewTitle">Titolo recensione:</label>
-                            <input type="title" class="form-control white-bg" name="title" id="reviewTitle" placeholder="Titolo"
-                                v-model="reviewTitle" required />
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="reviewContent">Dai il tuo parere:</label>
-                            <textarea class="form-control white-bg" id="reviewContent" name="content" v-model="reviewContent"
-                                rows="3"></textarea>
-                        </div>
                         <div class="text-center py-2">
                             <button type="submit" class="btn btn-primary text-center">
                                 Invia recensione
@@ -340,10 +342,16 @@ p {
     font-weight: 200;
 }
 
-.doctor-photo {
-    border-radius: 50%;
+.img-cover {
     width: 300px;
     height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.doctor-photo {
+    object-fit: cover;
 }
 
 .doctor-info {
@@ -411,6 +419,12 @@ p {
     float: left;
     height: 46px;
     padding: 0 10px;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #d7d7d7a8;
+    border-radius: 10px;
+    margin: 0 auto;
 }
 
 .rate:not(:checked)>input {
