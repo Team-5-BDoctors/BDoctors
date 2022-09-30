@@ -5,9 +5,9 @@
             <div class="container d-flex justify-content-between align-items-center h-100">
                 <div class="left-jumbo">
                     <h1 class="pb-3">{{doctor.name}} {{doctor.surname}}</h1>
-                    <!--  <span v-for="specialization in doctor.specializations" :key="specialization.id">
+                    <span v-for="specialization in doctor.specializations" :key="specialization.id">
                         {{specialization.name}}
-                    </span>-->
+                    </span>
 
                     <p class="pb-3">{{doctor.email}}</p>
                     <p class="pb-3">{{doctor.phone}}</p>
