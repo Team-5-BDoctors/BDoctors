@@ -3170,51 +3170,44 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", [_c("div", {
-    staticClass: "container-fluid"
+    staticClass: "colored-section"
   }, [_c("div", {
-    staticClass: "container d-flex justify-content-between align-items-center h-100"
+    staticClass: "container"
   }, [_c("div", {
-    staticClass: "left-jumbo"
-  }, [_c("h1", {
-    staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _vm._l(_vm.doctor.specializations, function (specialization) {
-    return _c("span", {
-      key: specialization.id
-    }, [_vm._v("\n                    " + _vm._s(specialization.name) + "\n                ")]);
-  }), _vm._v(" "), _c("p", {
-    staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.email))]), _vm._v(" "), _c("p", {
-    staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.phone))]), _vm._v(" "), _c("p", {
-    staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
-    staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])], 2), _vm._v(" "), _c("div", {
-    staticClass: "h-75 right-jumbo"
+    staticClass: "row align-items-center py-3"
+  }, [_c("div", {
+    staticClass: "col flex"
   }, [_c("img", {
-    staticClass: "h-100 floating-elements",
-    attrs: {
-      src: "/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("img", {
-    staticClass: "h-100 doctor-jumbo",
+    staticClass: "doctor-photo py-2",
     attrs: {
       src: "/storage/" + _vm.doctor.image,
       alt: "..."
     }
-  })]), _vm._v(" "), _c("img", {
-    staticClass: "h-100 right-bg-jumbo",
-    attrs: {
-      src: "/images/jumbo_right_bg.jpg",
-      alt: ""
-    }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "container-white"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "py-3"
+  }, [_c("h1", [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _vm._l(_vm.doctor.specializations, function (specialization) {
+    return _c("span", {
+      key: specialization.id,
+      staticClass: "spec"
+    }, [_vm._v("\n                            " + _vm._s(specialization.name) + "\n                        ")]);
+  })], 2), _vm._v(" "), _c("p", {
+    staticClass: "pb-2"
+  }, [_c("span", {
+    staticClass: "doctor-info"
+  }, [_vm._v("Email: ")]), _vm._v(_vm._s(_vm.doctor.email))]), _vm._v(" "), _c("p", {
+    staticClass: "pb-2"
+  }, [_c("span", {
+    staticClass: "doctor-info"
+  }, [_vm._v("Telefono: ")]), _vm._v(_vm._s(_vm.doctor.phone))]), _vm._v(" "), _c("p", {
+    staticClass: "pb-2"
+  }, [_c("span", {
+    staticClass: "doctor-info"
+  }, [_vm._v("Indirizzo: ")]), _vm._v(_vm._s(_vm.doctor.address))]), _vm._v(" "), _c("p", {
+    staticClass: "pb-3"
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                        " + _vm._s(_vm.doctor.services) + "\n                    ")])]), _vm._v(" "), _c("div", {
+    staticClass: "col"
   }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "contact"
+    staticClass: "contact py-3"
   }, [_vm._m(0), _vm._v(" "), _c("div", [_c("form", {
     staticClass: "form-msg needs-validation",
     attrs: {
@@ -3227,7 +3220,7 @@ var render = function render() {
       }
     }
   }, [_c("div", {
-    staticClass: "form-group p-2"
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "name"
@@ -3258,8 +3251,8 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                                Inserisci un Nome\n                            ")])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
+  }, [_vm._v("\n                                        Inserisci un Nome\n                                    ")])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "surname"
@@ -3290,8 +3283,8 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                                Inserisci un Cognome\n                            ")])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
+  }, [_vm._v("\n                                        Inserisci un Cognome\n                                    ")])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "email"
@@ -3322,8 +3315,8 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                                Inserisci la tua Email\n                            ")])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
+  }, [_vm._v("\n                                        Inserisci la tua Email\n                                    ")])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "title"
@@ -3354,8 +3347,8 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                                Inserisci titolo messaggio\n                            ")])]), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2"
+  }, [_vm._v("\n                                        Inserisci titolo messaggio\n                                    ")])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group py-2"
   }, [_c("label", {
     attrs: {
       "for": "content"
@@ -3385,7 +3378,9 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                                Inserisci contenuto messaggio\n                            ")])]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                        Inserisci contenuto messaggio\n                                    ")])]), _vm._v(" "), _vm._m(1)])])])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "white-space"
+  }), _vm._v(" "), _c("div", {
     staticClass: "container-blue"
   }, [_c("div", {
     staticClass: "container py-5 my-5"
@@ -3419,7 +3414,7 @@ var render = function render() {
       value: _vm.reviewName,
       expression: "reviewName"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control white-bg",
     attrs: {
       type: "text",
       id: "reviewName",
@@ -3583,7 +3578,7 @@ var render = function render() {
       value: _vm.reviewTitle,
       expression: "reviewTitle"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control white-bg",
     attrs: {
       type: "title",
       name: "title",
@@ -3613,7 +3608,7 @@ var render = function render() {
       value: _vm.reviewContent,
       expression: "reviewContent"
     }],
-    staticClass: "form-control",
+    staticClass: "form-control white-bg",
     attrs: {
       id: "reviewContent",
       name: "content",
@@ -3637,7 +3632,7 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "text-center"
-  }, [_c("h2", [_vm._v("Invia un messaggio al dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
+  }, [_c("h3", [_vm._v("Contatta il dottore")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
     staticClass: "divider"
   })]);
 }, function () {
@@ -3645,7 +3640,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "text-center py-2"
+    staticClass: "text-center"
   }, [_c("button", {
     staticClass: "text-center btn btn-primary",
     attrs: {
@@ -4018,7 +4013,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n@-webkit-keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n@keyframes rotating-20de4d05 {\nfrom {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);\n}\nto {\n    -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);\n}\n}\n.right-bg-jumbo[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 0;\n}\n.floating-elements[data-v-20de4d05] {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n.left-jumbo[data-v-20de4d05] {\n  max-width: 500px;\n}\n.right-jumbo[data-v-20de4d05] {\n  align-self: flex-end;\n  position: relative;\n}\n.doctor-jumbo[data-v-20de4d05] {\n  position: relative;\n  z-index: 3;\n  border-radius: 50%;\n  bottom: 80px;\n  height: 200px;\n  width: 500px;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.container-fluid[data-v-20de4d05] {\n  height: calc(100vh - 80px);\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.container-white[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.contact[data-v-20de4d05] {\n  width: 90%;\n  margin-top: 40px;\n  margin-right: auto;\n  margin-left: auto;\n  padding: 20px;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n  margin: auto;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.rate[data-v-20de4d05] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n}\n.rate:not(:checked) > input[data-v-20de4d05] {\n  display: none;\n}\n.rate:not(:checked) > label[data-v-20de4d05] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  cursor: pointer;\n  font-size: 30px;\n  color: #ccc;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:before {\n  content: \"\\2605   \";\n}\n.rate > input:checked ~ label[data-v-20de4d05] {\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:hover,\n.rate:not(:checked) > label:hover ~ label[data-v-20de4d05] {\n  color: #deb217;\n}\n.rate > input:checked + label[data-v-20de4d05]:hover,\n.rate > input:checked + label:hover ~ label[data-v-20de4d05],\n.rate > input:checked ~ label[data-v-20de4d05]:hover,\n.rate > input:checked ~ label:hover ~ label[data-v-20de4d05],\n.rate > label:hover ~ input:checked ~ label[data-v-20de4d05] {\n  color: #c59b08;\n}\n.flex-img[data-v-20de4d05] {\n  display: flex;\n  justify-content: center;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}\n@media screen and (max-width: 991px) {\n.my-row[data-v-20de4d05] {\n    display: block;\n}\n.right-bg-jumbo[data-v-20de4d05] {\n    display: none;\n}\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n.doctor-photo[data-v-20de4d05] {\n  border-radius: 50%;\n  width: 300px;\n  height: 300px;\n}\n.doctor-info[data-v-20de4d05] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.colored-section[data-v-20de4d05] {\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.form-control[data-v-20de4d05] {\n  background-color: #e9f6ff;\n}\n.white-bg[data-v-20de4d05] {\n  background-color: white;\n}\n.white-space[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding: 80px 0;\n}\n.contact[data-v-20de4d05] {\n  margin-right: auto;\n  margin-left: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n  margin: auto;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.rate[data-v-20de4d05] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n}\n.rate:not(:checked) > input[data-v-20de4d05] {\n  display: none;\n}\n.rate:not(:checked) > label[data-v-20de4d05] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  cursor: pointer;\n  font-size: 30px;\n  color: #ccc;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:before {\n  content: \"\\2605   \";\n}\n.rate > input:checked ~ label[data-v-20de4d05] {\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:hover,\n.rate:not(:checked) > label:hover ~ label[data-v-20de4d05] {\n  color: #deb217;\n}\n.rate > input:checked + label[data-v-20de4d05]:hover,\n.rate > input:checked + label:hover ~ label[data-v-20de4d05],\n.rate > input:checked ~ label[data-v-20de4d05]:hover,\n.rate > input:checked ~ label:hover ~ label[data-v-20de4d05],\n.rate > label:hover ~ input:checked ~ label[data-v-20de4d05] {\n  color: #c59b08;\n}\n.flex[data-v-20de4d05] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding-left: 50px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}\n@media screen and (max-width: 991px) {\n.my-row[data-v-20de4d05] {\n    display: block;\n}\n.right-bg-jumbo[data-v-20de4d05] {\n    display: none;\n}\n}", ""]);
 
 // exports
 

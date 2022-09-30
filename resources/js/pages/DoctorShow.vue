@@ -1,92 +1,96 @@
 <template>
     <div>
         <!-- Dottore -->
-        <div class="container-fluid">
-            <div class="container d-flex justify-content-between align-items-center h-100">
-                <div class="left-jumbo">
-                    <h1 class="pb-3">{{doctor.name}} {{doctor.surname}}</h1>
-                    <span v-for="specialization in doctor.specializations" :key="specialization.id">
-                        {{specialization.name}}
-                    </span>
+        <div class="colored-section">
+            <div class="container">
+                <div class="row align-items-center py-3">
 
-                    <p class="pb-3">{{doctor.email}}</p>
-                    <p class="pb-3">{{doctor.phone}}</p>
-                    <p class="pb-3">{{doctor.addres}}</p>
-                    <p class="pb-3">
-                        <span>Prestazioni offerte:</span>
-                        <br />
-                        {{doctor.services}}
-                    </p>
+                    <!-- col dati dottore -->
+                    <div class="col flex">
+                        <img :src="'/storage/'+doctor.image" class="doctor-photo py-2" alt="..." />
+                        <div class="py-3">
+                            <h1>{{doctor.name}} {{doctor.surname}}</h1>
+                            <span class="spec" v-for="specialization in doctor.specializations"
+                                :key="specialization.id">
+                                {{specialization.name}}
+                            </span>
+                        </div>
+                        <p class="pb-2"><span class="doctor-info">Email: </span>{{doctor.email}}</p>
+                        <p class="pb-2"><span class="doctor-info">Telefono: </span>{{doctor.phone}}</p>
+                        <p class="pb-2"><span class="doctor-info">Indirizzo: </span>{{doctor.address}}</p>
+                        <p class="pb-3">
+                            <span>Prestazioni offerte:</span>
+                            <br />
+                            {{doctor.services}}
+                        </p>
+                    </div>
+
+                    <!-- col messaggi -->
+                    <div class="col">
+                        <div class="contact py-3">
+                            <div class="text-center">
+                                <h3>Contatta il dottore</h3>
+                                <br />
+                                <div class="divider"></div>
+                            </div>
+                            <div>
+                                <form class="form-msg needs-validation" action=""
+                                    @submit.prevent="onFormMessageSubmit()">
+                                    <div class="form-group py-2">
+                                        <label for="name">Inserisci il tuo nome:</label>
+                                        <input type="name" class="form-control" id="name" placeholder="Nome" name="name"
+                                            v-model="name" required />
+                                        <div class="invalid-feedback">
+                                            Inserisci un Nome
+                                        </div>
+                                    </div>
+                                    <div class="form-group py-2">
+                                        <label for="surname">Inserisci il tuo cognome:</label>
+                                        <input type="surname" class="form-control" id="surname" placeholder="Cognome"
+                                            name="surname" v-model="surname" required />
+                                        <div class="invalid-feedback">
+                                            Inserisci un Cognome
+                                        </div>
+                                    </div>
+                                    <div class="form-group py-2">
+                                        <label for="email">Inserisci la tua mail:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email"
+                                            name="email" v-model="email" required />
+                                        <div class="invalid-feedback">
+                                            Inserisci la tua Email
+                                        </div>
+                                    </div>
+                                    <div class="form-group py-2">
+                                        <label for="title">Inserisci titolo messagio:</label>
+                                        <input type="text" class="form-control" id="title"
+                                            placeholder="Inserisci titolo messaggio" name="title" v-model="title"
+                                            required />
+                                        <div class="invalid-feedback">
+                                            Inserisci titolo messaggio
+                                        </div>
+                                    </div>
+                                    <div class="form-group py-2">
+                                        <label for="content">Inserisci il tuo messaggio con la richiesta:</label>
+                                        <textarea class="form-control pb-5" id="content" rows="3" name="content"
+                                            v-model="content" required>
+                                </textarea>
+                                        <div class="invalid-feedback">
+                                            Inserisci contenuto messaggio
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="text-center btn btn-primary">Invia</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="h-75 right-jumbo">
-                    <img class="h-100 floating-elements" src="/images/615dd47b94487f5cd8df6c49_icons8-banned-129.png"
-                        alt="" />
-                    <img :src="'/storage/'+doctor.image" class="h-100 doctor-jumbo" alt="..." />
-                </div>
-                <img class="h-100 right-bg-jumbo" src="/images/jumbo_right_bg.jpg" alt="" />
             </div>
         </div>
 
-        <!-- Messaggi -->
-        <div class="container-white">
-            <div class="container">
-                <div class="contact">
-                    <div class="text-center">
-                        <h2>Invia un messaggio al dottore</h2>
-                        <br />
-                        <div class="divider"></div>
-                    </div>
-
-                    <div>
-                        <form class="form-msg needs-validation" action="" @submit.prevent="onFormMessageSubmit()">
-                            <div class="form-group p-2">
-                                <label for="name">Inserisci il tuo nome:</label>
-                                <input type="name" class="form-control" id="name" placeholder="Nome" name="name"
-                                    v-model="name" required/>
-                                <div class="invalid-feedback">
-                                    Inserisci un Nome
-                                </div>    
-                            </div>
-                            <div class="form-group p-2">
-                                <label for="surname">Inserisci il tuo cognome:</label>
-                                <input type="surname" class="form-control" id="surname" placeholder="Cognome"
-                                    name="surname" v-model="surname" required/>
-                                <div class="invalid-feedback">
-                                    Inserisci un Cognome
-                                </div>     
-                            </div>
-                            <div class="form-group p-2">
-                                <label for="email">Inserisci la tua mail:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email" name="email"
-                                    v-model="email" required/>
-                                <div class="invalid-feedback">
-                                    Inserisci la tua Email
-                                </div>     
-                            </div>
-                            <div class="form-group p-2">
-                                <label for="title">Inserisci titolo messagio:</label>
-                                <input type="text" class="form-control" id="title"
-                                    placeholder="Inserisci titolo messaggio" name="title" v-model="title" required/>
-                                <div class="invalid-feedback">
-                                    Inserisci titolo messaggio
-                                </div>    
-                            </div>
-                            <div class="form-group p-2">
-                                <label for="content">Inserisci il tuo messaggio con la richiesta:</label>
-                                <textarea class="form-control pb-5" id="content" rows="3" name="content"
-                                    v-model="content" required>
-                                </textarea>
-                                <div class="invalid-feedback">
-                                    Inserisci contenuto messaggio
-                                </div>
-                            </div>
-                            <div class="text-center py-2"> 
-                                <button type="submit" class="text-center btn btn-primary">Invia</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- divisore -->
+        <div class="white-space">
         </div>
 
         <!-- Recensioni -->
@@ -184,21 +188,21 @@
                     <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
                             <label for="reviewName">Inserisci il tuo nome:</label>
-                            <input type="text" class="form-control" id="reviewName" name="name" placeholder="Nome"
+                            <input type="text" class="form-control white-bg" id="reviewName" name="name" placeholder="Nome"
                                 v-model="reviewName" required />
                         </div>
                         <div class="form-group py-2">
                             <div>Valutazione complessiva</div>
                             <div class="rate mb-4">
-                                <input type="radio" id="star5" name="rating" value="5" v-model="reviewRating"/>
+                                <input type="radio" id="star5" name="rating" value="5" v-model="reviewRating" />
                                 <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rating" value="4" v-model="reviewRating"/>
+                                <input type="radio" id="star4" name="rating" value="4" v-model="reviewRating" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rating" value="3" v-model="reviewRating"/>
+                                <input type="radio" id="star3" name="rating" value="3" v-model="reviewRating" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rating" value="2" v-model="reviewRating"/>
+                                <input type="radio" id="star2" name="rating" value="2" v-model="reviewRating" />
                                 <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rating" value="1" v-model="reviewRating"/>
+                                <input type="radio" id="star1" name="rating" value="1" v-model="reviewRating" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
                         </div>
@@ -206,12 +210,12 @@
                         <br>
                         <div class="form-group p-2 w-100 mt-2">
                             <label for="reviewTitle">Titolo recensione:</label>
-                            <input type="title" class="form-control" name="title" id="reviewTitle" placeholder="Titolo"
+                            <input type="title" class="form-control white-bg" name="title" id="reviewTitle" placeholder="Titolo"
                                 v-model="reviewTitle" required />
                         </div>
                         <div class="form-group py-2">
                             <label for="reviewContent">Dai il tuo parere:</label>
-                            <textarea class="form-control" id="reviewContent" name="content" v-model="reviewContent"
+                            <textarea class="form-control white-bg" id="reviewContent" name="content" v-model="reviewContent"
                                 rows="3"></textarea>
                         </div>
                         <div class="text-center py-2">
@@ -273,7 +277,7 @@ export default {
                 content: this.content,
                 user_id: this.doctor.id
             })
-            
+
             this.$router.push('/doctor/send-message')
         },
         onFormReviewSubmit() {
@@ -285,7 +289,7 @@ export default {
                 user_id: this.doctor.id
             })
             this.$router.push('/doctor/send-message')
-            
+
         },
         getDoctorData() {
             axios.get("/api/doctor/" + this.$route.params.doctor_slug)
@@ -336,51 +340,15 @@ p {
     font-weight: 200;
 }
 
-@keyframes rotating {
-    from {
-        -webkit-transform: translateX(20%) translateY(-15%) rotate(0deg);
-    }
-
-    to {
-        -webkit-transform: translateX(20%) translateY(-15%) rotate(360deg);
-    }
-}
-
-.right-bg-jumbo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 0;
-}
-
-.floating-elements {
-    position: absolute;
-    top: 0;
-    right: 0;
-    // z-index: 2;
-    // -webkit-animation: rotating 15s linear infinite;
-    // -moz-animation: rotating 15s linear infinite;
-    // -ms-animation: rotating 15s linear infinite;
-    // -o-animation: rotating 15s linear infinite;
-    // animation: rotating 15s linear infinite;
-}
-
-.left-jumbo {
-    max-width: 500px;
-}
-
-.right-jumbo {
-    align-self: flex-end;
-    position: relative;
-}
-
-.doctor-jumbo {
-    position: relative;
-    z-index: 3;
+.doctor-photo {
     border-radius: 50%;
-    bottom: 80px;
-    height: 200px;
-    width: 500px;
+    width: 300px;
+    height: 300px;
+}
+
+.doctor-info {
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .btn-primary {
@@ -389,8 +357,7 @@ p {
     font-weight: 500;
 }
 
-.container-fluid {
-    height: calc(100vh - 80px);
+.colored-section {
     background-color: #e9f6ff;
 }
 
@@ -400,19 +367,23 @@ p {
     padding-bottom: 6rem;
 }
 
-.container-white {
+.form-control {
+    background-color: #e9f6ff;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.white-space {
     background-color: #ffffff;
-    padding-top: 20px;
-    padding-bottom: 6rem;
+    padding: 80px 0;
 }
 
 
 .contact {
-    width: 90%;
-    margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
-    padding: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: #d8eeff;
@@ -442,39 +413,46 @@ p {
     padding: 0 10px;
 }
 
-.rate:not(:checked) > input {
+.rate:not(:checked)>input {
     display: none;
 }
-.rate:not(:checked) > label {
+
+.rate:not(:checked)>label {
     float: right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
 }
-.rate:not(:checked) > label:before {
+
+.rate:not(:checked)>label:before {
     content: '★ ';
 }
-.rate > input:checked ~ label {
+
+.rate>input:checked~label {
     color: #ffc700;
 }
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
     color: #deb217;
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
     color: #c59b08;
 }
 
-.flex-img {
+.flex {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding-left: 50px;
 }
 
 .my-row {
@@ -520,6 +498,7 @@ p {
     .my-row {
         display: block;
     }
+
     .right-bg-jumbo {
         display: none;
     }
