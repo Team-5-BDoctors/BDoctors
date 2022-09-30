@@ -2,7 +2,7 @@
     <div>
         <div class="container-fluid secondarybg py-5">
             <div class="container py-5">
-                <h1 class="text-center pb-3">Meet Our Doctors</h1>
+                <h1 class="text-center pb-3">I nostri dottori</h1>
                 <div class="bluespacer"></div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5">
                     <div

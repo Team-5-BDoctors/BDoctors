@@ -2619,7 +2619,7 @@ var staticRenderFns = [function () {
     staticClass: "container aboutus px-0"
   }, [_c("h1", {
     staticClass: "text-center pb-3"
-  }, [_vm._v("Customers About Us")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Il parere dei nostri pazienti")]), _vm._v(" "), _c("div", {
     staticClass: "tiny-rule mx-auto mb-5"
   }), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "row row-cols-1 row-cols-lg-3"
@@ -2786,7 +2786,7 @@ var render = function render() {
     staticClass: "container py-5"
   }, [_c("h1", {
     staticClass: "text-center pb-3"
-  }, [_vm._v("Meet Our Doctors")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("I nostri dottori")]), _vm._v(" "), _c("div", {
     staticClass: "bluespacer"
   }), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5"
