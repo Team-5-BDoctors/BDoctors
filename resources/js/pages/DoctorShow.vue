@@ -6,7 +6,7 @@
                 <div class="row align-items-center py-3">
 
                     <!-- col dati dottore -->
-                    <div class="col flex">
+                    <div class="col-12 col-lg-6 flex">
                         <div class="img-cover">
                             <img :src="'/storage/'+doctor.image" class="doctor-photo w-100 h-100" alt="..." />
                         </div>
@@ -28,7 +28,7 @@
                     </div>
 
                     <!-- col messaggi -->
-                    <div class="col">
+                    <div class="col-12 col-lg-6">
                         <div class="contact py-3">
                             <div class="text-center">
                                 <h3>Contatta il dottore</h3>
@@ -89,10 +89,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- divisore -->
-        <div class="white-space">
         </div>
 
         <!-- Recensioni -->
@@ -511,10 +507,6 @@ p {
 @media screen and (max-width: 991px) {
     .my-row {
         display: block;
-    }
-
-    .right-bg-jumbo {
-        display: none;
     }
 }
 </style>
