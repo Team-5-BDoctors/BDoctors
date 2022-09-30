@@ -21653,7 +21653,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Giacomo\Documents\Boolean-Repo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
