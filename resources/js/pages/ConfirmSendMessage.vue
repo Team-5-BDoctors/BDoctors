@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div class="container py-5">
-            <h1>messaggio inviato correttamente</h1>
+        <div class="container d-flex justify-content-center align-content-center py-5">
+            <h1 class="text-center py-5">INVIATO CORRETTAMENTE
+                <i class="fa-solid fa-circle-check"></i></h1>
         </div>
     </div>
 </template>
@@ -20,7 +21,7 @@ export default {
 
 <style scoped lang="scss">
 .container{
-    height: calc(100vh - 607.317px - 80px);
+    height: 100vh;
 }
 
 
