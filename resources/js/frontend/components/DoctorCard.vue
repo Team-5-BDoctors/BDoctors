@@ -1,6 +1,6 @@
 <template>
     <div class="col h-100">
-        <div class="card h-100 m-3 border-0" :class="{'goldenborder' : doctor.sponsorship}" style="width: 22rem">
+        <div class="card h-100 m-3 border-0" :class="{'goldenborder' : doctor.sponsorship}">
             <router-link
                 :key="doctor.id"
                 :to="{
