@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container aboutus px-0">
-        <h1 class="text-center pb-3">Customers About Us</h1>
+        <h1 class="text-center pb-3">Il parere dei nostri pazienti</h1>
         <div class="tiny-rule mx-auto mb-5"></div>
 
         <div>

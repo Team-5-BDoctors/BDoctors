@@ -2616,7 +2616,7 @@ var staticRenderFns = [function () {
     staticClass: "container aboutus px-0"
   }, [_c("h1", {
     staticClass: "text-center pb-3"
-  }, [_vm._v("Customers About Us")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Il parere dei nostri pazienti")]), _vm._v(" "), _c("div", {
     staticClass: "tiny-rule mx-auto mb-5"
   }), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "row row-cols-1 row-cols-lg-3"
@@ -2783,7 +2783,7 @@ var render = function render() {
     staticClass: "container py-5"
   }, [_c("h1", {
     staticClass: "text-center pb-3"
-  }, [_vm._v("Meet Our Doctors")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("I nostri dottori")]), _vm._v(" "), _c("div", {
     staticClass: "bluespacer"
   }), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center g-5"
@@ -3204,7 +3204,11 @@ var render = function render() {
     staticClass: "left-jumbo"
   }, [_c("h1", {
     staticClass: "pb-3"
-  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _c("p", {
+  }, [_vm._v(_vm._s(_vm.doctor.name) + " " + _vm._s(_vm.doctor.surname))]), _vm._v(" "), _vm._l(_vm.doctor.specializations, function (specialization) {
+    return _c("span", {
+      key: specialization.id
+    }, [_vm._v("\n                    " + _vm._s(specialization.name) + "\n                ")]);
+  }), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.email))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
@@ -3212,7 +3216,7 @@ var render = function render() {
     staticClass: "pb-3"
   }, [_vm._v(_vm._s(_vm.doctor.addres))]), _vm._v(" "), _c("p", {
     staticClass: "pb-3"
-  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v("Prestazioni offerte:")]), _vm._v(" "), _c("br"), _vm._v("\n                    " + _vm._s(_vm.doctor.services) + "\n                ")])], 2), _vm._v(" "), _c("div", {
     staticClass: "h-75 right-jumbo"
   }, [_c("img", {
     staticClass: "h-100 floating-elements",
@@ -21680,7 +21684,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
