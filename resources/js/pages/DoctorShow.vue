@@ -97,10 +97,10 @@
                 <h2 class="text-center py-2">Recensioni</h2>
                 <div>
                     <div class="my-row">
-                        <div class="col" v-for="review, i in doctor.reviews, 2" :key="review.id">
+                        <div class="col" v-for="review in doctor.reviews.slice(0,3)" :key="review.id">
                             <div class="my-card p-5">
                                 <div class="d-flex gap-4 pb-4">
-                                    <img class="card-img" src="/images/jumbo_doctor.png" alt="" />
+                                    <img class="card-img" :src="'/storage/'+doctor.image" alt="" />
                                     <div>
                                         <h4>{{ review.name }}</h4>
                                         <span class="subtitle">{{ review.title }}</span>
@@ -110,12 +110,8 @@
                                     {{review.content}}
                                 </p>
                                 <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                                    <h5>rated {{revie.rating}}</h5>
-                                    <div class="rating-stars">
-                                        <i class="fa-solid fa-star gold-star"></i>
-                                        <i class="fa-solid fa-star gold-star"></i>
-                                        <i class="fa-solid fa-star gold-star"></i>
-                                        <i class="fa-solid fa-star gold-star"></i>
+                                    <h5>rated {{review.rating}}/5</h5>
+                                    <div class="rating-stars" v-for="stars in review.rating">
                                         <i class="fa-solid fa-star gold-star"></i>
                                     </div>
                                 </div>
@@ -248,6 +244,7 @@ export default {
     transform: translateY(50px);
     transition: all 0.5s ease-in-out;
     background-color: #ffffff;
+    border: 1px solid #E9F6FF;
 
     &.appear {
         opacity: 1;
@@ -411,6 +408,7 @@ p {
     display: flex;
     border: 1px solid #e9f6ff;
     border-radius: 5px;
+    justify-content: center;
 }
 
 .my-card.middle {

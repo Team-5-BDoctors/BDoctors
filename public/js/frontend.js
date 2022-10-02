@@ -3444,7 +3444,36 @@ var render = function render() {
     staticClass: "container py-5"
   }, [_c("h2", {
     staticClass: "text-center py-2"
-  }, [_vm._v("Recensioni")]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
+  }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "my-row"
+  }, _vm._l(_vm.doctor.reviews.slice(0, 3), function (review) {
+    return _c("div", {
+      key: review.id,
+      staticClass: "col"
+    }, [_c("div", {
+      staticClass: "my-card p-5"
+    }, [_c("div", {
+      staticClass: "d-flex gap-4 pb-4"
+    }, [_c("img", {
+      staticClass: "card-img",
+      attrs: {
+        src: "/storage/" + _vm.doctor.image,
+        alt: ""
+      }
+    }), _vm._v(" "), _c("div", [_c("h4", [_vm._v(_vm._s(review.name))]), _vm._v(" "), _c("span", {
+      staticClass: "subtitle"
+    }, [_vm._v(_vm._s(review.title))])])]), _vm._v(" "), _c("p", {
+      staticClass: "p-style"
+    }, [_vm._v("\n                                " + _vm._s(review.content) + "\n                            ")]), _vm._v(" "), _c("div", {
+      staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
+    }, [_c("h5", [_vm._v("rated " + _vm._s(review.rating) + "/5")]), _vm._v(" "), _vm._l(review.rating, function (stars) {
+      return _c("div", {
+        staticClass: "rating-stars"
+      }, [_c("i", {
+        staticClass: "fa-solid fa-star gold-star"
+      })]);
+    })], 2)])]);
+  }), 0)]), _vm._v(" "), _c("div", {
     staticClass: "pt-5"
   }, [_c("h3", {
     staticClass: "text-center"
@@ -3681,7 +3710,7 @@ var render = function render() {
       "for": "star1",
       title: "text"
     }
-  }, [_vm._v("1 star")])])]), _vm._v(" "), _c("br"), _vm._v(" "), _c("br"), _vm._v(" "), _vm._m(3)])])])])]);
+  }, [_vm._v("1 star")])])]), _vm._v(" "), _c("br"), _vm._v(" "), _c("br"), _vm._v(" "), _vm._m(2)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3705,103 +3734,6 @@ var staticRenderFns = [function () {
       type: "submit"
     }
   }, [_vm._v("Invia")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("div", {
-    staticClass: "my-row"
-  }, [_c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "my-card p-5"
-  }, [_c("div", {
-    staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
-    staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
-    staticClass: "p-style"
-  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.3/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "my-card middle p-5"
-  }, [_c("div", {
-    staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
-    staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
-    staticClass: "p-style"
-  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio.\n                            ")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col"
-  }, [_c("div", {
-    staticClass: "my-card p-5"
-  }, [_c("div", {
-    staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Name Surname")]), _vm._v(" "), _c("span", {
-    staticClass: "subtitle"
-  }, [_vm._v("Happy Patient")])])]), _vm._v(" "), _c("p", {
-    staticClass: "p-style"
-  }, [_vm._v("\n                                Lorem ipsum dolor sit amet consectetur\n                                adipisicing elit. Quia nam autem distinctio,\n                                dolorum a laboriosam et tempora optio,\n                                tenetur porro debitis reiciendis vero facere\n                                quod. Molestiae, nostrum! Saepe, minus iure!\n                            ")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
-    staticClass: "rating-stars"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  })])])])])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -4071,7 +4003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n.img-cover[data-v-20de4d05] {\n  width: 300px;\n  height: 300px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.doctor-photo[data-v-20de4d05] {\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.doctor-info[data-v-20de4d05] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.colored-section[data-v-20de4d05] {\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.form-control[data-v-20de4d05] {\n  background-color: #e9f6ff;\n}\n.white-bg[data-v-20de4d05] {\n  background-color: white;\n}\n.white-space[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding: 80px 0;\n}\n.contact[data-v-20de4d05] {\n  margin-right: auto;\n  margin-left: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n  margin: auto;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.rate[data-v-20de4d05] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n  background-color: white;\n  border-style: solid;\n  border-width: 2px;\n  border-color: rgba(215, 215, 215, 0.6588235294);\n  border-radius: 10px;\n  margin: 0 auto;\n}\n.rate:not(:checked) > input[data-v-20de4d05] {\n  display: none;\n}\n.rate:not(:checked) > label[data-v-20de4d05] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  cursor: pointer;\n  font-size: 30px;\n  color: #ccc;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:before {\n  content: \"\\2605   \";\n}\n.rate > input:checked ~ label[data-v-20de4d05] {\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:hover,\n.rate:not(:checked) > label:hover ~ label[data-v-20de4d05] {\n  color: #deb217;\n}\n.rate > input:checked + label[data-v-20de4d05]:hover,\n.rate > input:checked + label:hover ~ label[data-v-20de4d05],\n.rate > input:checked ~ label[data-v-20de4d05]:hover,\n.rate > input:checked ~ label:hover ~ label[data-v-20de4d05],\n.rate > label:hover ~ input:checked ~ label[data-v-20de4d05] {\n  color: #c59b08;\n}\n.flex[data-v-20de4d05] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding-left: 50px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}\n@media screen and (max-width: 991px) {\n.my-row[data-v-20de4d05] {\n    display: block;\n}\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.my-card[data-v-20de4d05] {\n  opacity: 0;\n  transform: translateY(50px);\n  transition: all 0.5s ease-in-out;\n  background-color: #ffffff;\n  border: 1px solid #E9F6FF;\n}\n.my-card.appear[data-v-20de4d05] {\n  opacity: 1;\n  transform: translateY(0px);\n}\nh1[data-v-20de4d05] {\n  font-size: 60px;\n  font-weight: 500;\n}\nh2[data-v-20de4d05] {\n  font-size: 45px;\n  font-weight: 500;\n}\nspan[data-v-20de4d05] {\n  font-size: 20px;\n  font-weight: 500;\n}\n.spec[data-v-20de4d05] {\n  font-weight: 500;\n  font-size: 30px;\n  color: #4056ff;\n}\np[data-v-20de4d05] {\n  font-weight: 200;\n}\n.img-cover[data-v-20de4d05] {\n  width: 300px;\n  height: 300px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.doctor-photo[data-v-20de4d05] {\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.doctor-info[data-v-20de4d05] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.btn-primary[data-v-20de4d05] {\n  background-color: #4056ff;\n  border-color: #4056ff;\n  font-weight: 500;\n}\n.colored-section[data-v-20de4d05] {\n  background-color: #e9f6ff;\n}\n.container-blue[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  padding-top: 20px;\n  padding-bottom: 6rem;\n}\n.form-control[data-v-20de4d05] {\n  background-color: #e9f6ff;\n}\n.white-bg[data-v-20de4d05] {\n  background-color: white;\n}\n.white-space[data-v-20de4d05] {\n  background-color: #ffffff;\n  padding: 80px 0;\n}\n.contact[data-v-20de4d05] {\n  margin-right: auto;\n  margin-left: auto;\n  border-style: solid;\n  border-width: 1px;\n  border-color: #d8eeff;\n  border-radius: 10px;\n  background-color: #fff;\n}\n.divider[data-v-20de4d05] {\n  width: 80px;\n  height: 2px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  border-color: transparent;\n  background-color: #2ea4ff;\n  margin: auto;\n}\n.form-msg[data-v-20de4d05] {\n  margin-left: 25%;\n  margin-right: 25%;\n  width: 50%;\n}\n.rate[data-v-20de4d05] {\n  float: left;\n  height: 46px;\n  padding: 0 10px;\n  background-color: white;\n  border-style: solid;\n  border-width: 2px;\n  border-color: rgba(215, 215, 215, 0.6588235294);\n  border-radius: 10px;\n  margin: 0 auto;\n}\n.rate:not(:checked) > input[data-v-20de4d05] {\n  display: none;\n}\n.rate:not(:checked) > label[data-v-20de4d05] {\n  float: right;\n  width: 1em;\n  overflow: hidden;\n  white-space: nowrap;\n  cursor: pointer;\n  font-size: 30px;\n  color: #ccc;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:before {\n  content: \"\\2605   \";\n}\n.rate > input:checked ~ label[data-v-20de4d05] {\n  color: #ffc700;\n}\n.rate:not(:checked) > label[data-v-20de4d05]:hover,\n.rate:not(:checked) > label:hover ~ label[data-v-20de4d05] {\n  color: #deb217;\n}\n.rate > input:checked + label[data-v-20de4d05]:hover,\n.rate > input:checked + label:hover ~ label[data-v-20de4d05],\n.rate > input:checked ~ label[data-v-20de4d05]:hover,\n.rate > input:checked ~ label:hover ~ label[data-v-20de4d05],\n.rate > label:hover ~ input:checked ~ label[data-v-20de4d05] {\n  color: #c59b08;\n}\n.flex[data-v-20de4d05] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding-left: 50px;\n}\n.my-row[data-v-20de4d05] {\n  display: flex;\n  border: 1px solid #e9f6ff;\n  border-radius: 5px;\n  justify-content: center;\n}\n.my-card.middle[data-v-20de4d05] {\n  border-left: 1px solid #e9f6ff;\n  border-right: 1px solid #e9f6ff;\n}\n.card-img[data-v-20de4d05] {\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  background-color: #eefcff;\n  border-color: #2ea4ff;\n}\n.subtitle[data-v-20de4d05] {\n  color: #2ea4ff;\n}\n.p-style[data-v-20de4d05] {\n  height: 120px;\n  color: #8c92c2;\n  overflow: hidden;\n}\n.rating-bar[data-v-20de4d05] {\n  background-color: #e9f6ff;\n  border-radius: 10px;\n}\n.gold-star[data-v-20de4d05] {\n  color: gold;\n}\n@media screen and (max-width: 991px) {\n.my-row[data-v-20de4d05] {\n    display: block;\n}\n}", ""]);
 
 // exports
 
@@ -21710,7 +21642,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giacomo\Documents\Boolean-Repo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })
