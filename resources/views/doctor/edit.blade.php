@@ -72,11 +72,11 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group spec-box">
                                     <label for="specializations" class="form-label">Specializzazioni *</label>
-                                    <div class="row row-cols-2 g-1">
+                                    <div class="row row-cols-1 row-cols-xl-2 g-1">
                                         @foreach ($specializations as $specialization)
-                                            <div class="btn-group" role="group"
+                                            <div class="col btn-group" role="group"
                                                 aria-label="Basic checkbox toggle button group">
                                                 <input type="checkbox" class="btn-check specializations"
                                                     name="specializations[]" value="{{ $specialization->id }}"

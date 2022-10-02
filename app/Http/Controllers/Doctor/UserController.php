@@ -93,7 +93,7 @@ class UserController extends Controller
             "image" => "nullable|mimes:jpeg,png,jpg,gif,svg,webp|max:2048",
             'phone' => "nullable|regex:/^[0-9]{10}$/",
             "services" => "nullable",
-            "specializations" => "nullable|exists:specializations,id",
+            "specializations" => "required|min:1|exists:specializations,id",
         ]);
 
 

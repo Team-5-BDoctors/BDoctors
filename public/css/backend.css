@@ -12688,6 +12688,12 @@ fieldset:disabled .btn {
   color: #E9F6FF;
 }
 
+.dashboard .content-container .edit-card .spec-box {
+  padding: 3px;
+  max-height: 260px;
+  overflow: auto;
+}
+
 .sidebar {
   width: 225px;
   background-color: #338DFF;
