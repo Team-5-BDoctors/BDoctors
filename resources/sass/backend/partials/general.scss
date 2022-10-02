@@ -2,6 +2,13 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.disabled{
+    pointer-events: none;
+    background-color: grey;
+    border-color: grey;
+
+}
+
 main{
     height: 100%;
     overflow: auto;

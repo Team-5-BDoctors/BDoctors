@@ -2541,7 +2541,7 @@ var render = function render() {
     });
   }), 0), _vm._v(" "), _c("p", {
     staticClass: "text-center"
-  }, [_vm._v("\n                        " + _vm._s(_vm.doctor.numberReviews) + "+ clienti soddisfatti\n                    ")])])])])], 1)]);
+  }, [_vm._v("\n                        " + _vm._s(_vm.doctor.numberReviews) + "+ interazioni dai clienti\n                    ")])])])])], 1)]);
 };
 
 var staticRenderFns = [];

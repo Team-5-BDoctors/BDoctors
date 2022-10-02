@@ -36,7 +36,7 @@
                                 :class="{ 'fa-solid': n <= doctor.average }"></i>
                         </div>
                         <p class="text-center">
-                            {{ doctor.numberReviews }}+ clienti soddisfatti
+                            {{ doctor.numberReviews }}+ interazioni dai clienti
                         </p>
                     </div>
                 </div>
