@@ -40099,6 +40099,38 @@ var app = new Vue({
   el: '#app'
 });
 
+(function () {
+  var form = document.querySelector('#form-submit');
+  var checkboxes = form.querySelectorAll('input[type=checkbox]');
+  var checkboxLength = checkboxes.length;
+  var firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+
+  function init() {
+    if (firstCheckbox) {
+      for (var i = 0; i < checkboxLength; i++) {
+        checkboxes[i].addEventListener('change', checkValidity);
+      }
+
+      checkValidity();
+    }
+  }
+
+  function isChecked() {
+    for (var i = 0; i < checkboxLength; i++) {
+      if (checkboxes[i].checked) return true;
+    }
+
+    return false;
+  }
+
+  function checkValidity() {
+    var errorMessage = !isChecked() ? 'Seleziona almeno una Specializzazione.' : '';
+    firstCheckbox.setCustomValidity(errorMessage);
+  }
+
+  init();
+})();
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -40243,9 +40275,15 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
 __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
 module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+=======
+__webpack_require__(/*! C:\Users\Giacomo\Documents\Boolean-Repo\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! C:\Users\Giacomo\Documents\Boolean-Repo\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+module.exports = __webpack_require__(/*! C:\Users\Giacomo\Documents\Boolean-Repo\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+>>>>>>> new-giacomo
 
 
 /***/ })
