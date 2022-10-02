@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section('content')
-<h1>pagina statistiche dottore</h1>
-<h2>Recensioni: {{$reviews}}</h2>
-<h2>Messaggi: {{$messages}}</h2>
+<div class="container h-100">
+    <charts-component></charts-component>
+</div>
 @endsection
 

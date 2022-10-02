@@ -129,7 +129,7 @@ export default {
         },
         fetchDoctorsInPage() {
             axios
-                .get("/api/doctor", {
+                .get("/api/doctors", {
                     params:{
                         name:this.selectedSpecialization,
                         rating:this.selectedStars,

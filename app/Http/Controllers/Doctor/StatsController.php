@@ -5,6 +5,7 @@ namespace App\Http\Controllers\doctor;
 use App\Http\Controllers\Controller;
 use App\Message;
 use App\Review;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,10 +19,19 @@ class StatsController extends Controller
     public function index()
     {
         
-        $reviews = Review::where('user_id', '=', Auth::user()->id)->count();
-        $messages = Message::where('user_id', '=', Auth::user()->id)->count();
+        $messages = Message::select('id', 'created_at')->get()->groupBy(function($message){
+            return Carbon::parse($message->created_at)->format('M');
+        });
 
-        return view("doctor.stats.index", compact('reviews', 'messages'));
+        $months = [];
+        $monthCount=[];
+
+        foreach ($messages as $month => $values) {
+            $months[]= $month;
+            $monthCount[]= count($values);
+        }
+
+        return view("doctor.stats.index", compact('messages', 'months', 'monthCount'));
     }
 
     /**

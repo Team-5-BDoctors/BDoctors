@@ -9,8 +9,8 @@
                     <div class="row .flex-nowrap fw-bold fs-5">
                         <div class="col">Nome</div>
                         <div class="col d-none d-xl-block col-lg-3">Email</div>
-                        <div class="col">Titolo</div>
-                        <div class="col col-lg-3">Messaggio</div>
+                        <div class="col d-none d-md-block">Titolo</div>
+                        <div class="col-4 ">Messaggio</div>
                         <div class="col">Data</div>   
                         <div class="col">Contatta</div>    
                     </div>
@@ -22,8 +22,8 @@
                                 <div class="tb-surname fw-light">{{$message->surname}}</div>
                             </div>
                             <div class="col d-none d-xl-block col-lg-3">{{ $message->email }}</div>
-                            <div class="col">{{ $message->title }}</div>
-                            <div class="col-3">{{ $message->content }}</div>
+                            <div class="col d-none d-md-block">{{ $message->title }}</div>
+                            <div class="col-4">{{ $message->content }}</div>
                             <div class="col">{{ $message->created_at }}</div> 
                             <div class="col">
                                 <a href="mailto:{{$message->email}}?subject=In risposta al suo messaggio '{{$message->title}}'" class="btn btn-primary text-white">

@@ -6,21 +6,39 @@
       </div>
       <div class="d-flex align-items-center flex-row-reverse gap-5 flex-grow-1">
         <div class="p-2 navitem">
-          <div>
-        <a href="/doctor"><i class="fs-5 fas fa-user"></i></a>
-      </div>
+          
+          <div v-if="!doctor">
+            <a class="p-3" href="/login">Login</a>
+            <a class="p-3" href="/register">Registrati</a>
+          </div>
+          <div v-else>
+            <a class="p-3" href="/doctor"><i class="fs-5 fas fa-user"></i></a>
+          </div>
         </div>
-
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+  mounted(){
+    axios.get("api/doctor")
+    .then(resp => {
+        this.doctor = resp.data
+      })
+  },
+  data(){
+    return{
+      doctor: null
+    }
+  },
   name: "NavBar",
-  props: {},
+  props: {
+    
+  },
+  
 };
 </script>
 
@@ -47,6 +65,7 @@ export default {
     line-height: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: 'Satoshi', sans-serif;
 
     &:hover {
       .freccia_link {
@@ -60,7 +79,7 @@ export default {
     font-size: 0.8rem;
   }
 
-  .navitem {
+  .navitem a {
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
 

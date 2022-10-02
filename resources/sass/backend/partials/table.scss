@@ -1,6 +1,7 @@
 .table-container{
     width: 90%;
     margin: 0 auto;
+    padding: 1rem;
     
     
     & .my-table-title{
@@ -60,3 +61,38 @@
 
 }
 
+
+
+// breackpoint
+//xs: 0,
+//sm: 576px,
+//md: 768px,
+//lg: 992px,
+//xl: 1200px,
+//xxl: 1400px
+
+
+
+
+//query
+
+@media screen and (max-width: 1199px) {
+    .table-container{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    
+    
+}
+
+
+@media screen and (max-width: 767px) {
+    
+}
+
+@media screen and (max-width: 575px) {
+    
+}
