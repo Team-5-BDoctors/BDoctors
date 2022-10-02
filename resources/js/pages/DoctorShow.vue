@@ -346,9 +346,9 @@ p {
 }
 
 .form-msg {
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 .rate {
