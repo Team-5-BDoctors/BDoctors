@@ -61,9 +61,8 @@
                         </div>
                         <p class="p-style">Per qualsiasi evenienza la dottoressa De Angelis è una garanzia. Visite accurate, rapidità ed affidabilità.</p>
                         <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                            <h5>rated 4.7/5</h5>
+                            <h5>rated 4/5</h5>
                             <div class="rating-stars">
-                                <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>

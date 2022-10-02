@@ -2738,11 +2738,9 @@ var staticRenderFns = [function () {
     staticClass: "p-style"
   }, [_vm._v("Per qualsiasi evenienza la dottoressa De Angelis è una garanzia. Visite accurate, rapidità ed affidabilità.")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.7/5")]), _vm._v(" "), _c("div", {
+  }, [_c("h5", [_vm._v("rated 4/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
   }, [_c("i", {
-    staticClass: "fa-solid fa-star gold-star"
-  }), _vm._v(" "), _c("i", {
     staticClass: "fa-solid fa-star gold-star"
   }), _vm._v(" "), _c("i", {
     staticClass: "fa-solid fa-star gold-star"
