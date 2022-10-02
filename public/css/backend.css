@@ -12694,8 +12694,8 @@ main {
 }
 
 .dashboard .content-container .edit-card .spec-box {
-  padding: 3px;
-  max-height: 260px;
+  padding: 15px;
+  max-height: 265px;
   overflow: auto;
 }
 
