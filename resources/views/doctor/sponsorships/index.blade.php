@@ -25,7 +25,7 @@
                             <div class="form-group">
                                 <div id="dropin-wrapper">
                                     <div id="dropin-container"></div>
-                                    <button type="submit" id="submit-button" class="btn btn-primary">Sponsorizza</button>
+                                    <button type="submit" id="submit-button" class="btn btn-primary @if ($userSponsorships->last() != '' && $userSponsorships->last()->ends_at > now()) disabled @endif">Sponsorizza</button>
                                 </div>
                             </div>
                             <script>

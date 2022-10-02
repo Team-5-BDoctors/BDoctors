@@ -12631,6 +12631,12 @@ fieldset:disabled .btn {
   font-family: "Open Sans", sans-serif;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: grey;
+  border-color: grey;
+}
+
 main {
   height: 100%;
   overflow: auto;
@@ -12694,7 +12700,7 @@ main {
 }
 
 .dashboard .content-container .edit-card .spec-box {
-  padding: 3px;
+  padding: 15px;
   max-height: 260px;
   overflow: auto;
 }
