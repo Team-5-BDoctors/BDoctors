@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <div class="row justify-content-evenly my-auto">
-            <div class="col-12 col-md-4 ">
+    <div class="h-100 d-flex flex-column justify-content-center">
+        <div class="row justify-content-evenly my-auto ">
+            <div class="col-10 col-md-5 ">
                 <BarChartMessages v-if="loaded" :chart-data="chartData" :label="label"></BarChartMessages>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-10 col-md-5">
                 <BarChartReviews v-if="loaded" :chart-data-reviews="chartDataReviews" :label-reviews="labelReviews"></BarChartReviews>
             </div>
         </div>

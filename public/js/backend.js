@@ -5438,17 +5438,19 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
+  return _c("div", {
+    staticClass: "h-100 d-flex flex-column justify-content-center"
+  }, [_c("div", {
     staticClass: "row justify-content-evenly my-auto"
   }, [_c("div", {
-    staticClass: "col-12 col-md-4"
+    staticClass: "col-10 col-md-5"
   }, [_vm.loaded ? _c("BarChartMessages", {
     attrs: {
       "chart-data": _vm.chartData,
       label: _vm.label
     }
   }) : _vm._e()], 1), _vm._v(" "), _c("div", {
-    staticClass: "col-12 col-md-4"
+    staticClass: "col-10 col-md-5"
   }, [_vm.loaded ? _c("BarChartReviews", {
     attrs: {
       "chart-data-reviews": _vm.chartDataReviews,

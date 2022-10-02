@@ -348,6 +348,7 @@ p {
 
 .doctor-photo {
     object-fit: cover;
+    object-position: top;
 }
 
 .doctor-info {
