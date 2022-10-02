@@ -98,7 +98,10 @@ a {
     background-image: linear-gradient(149deg, #2ea4ff, #e9f6ff);
     transform: translateY(-20%);
     border : 1px solid #309AFF
+    
 }
+
+
 
 p {
     color: #555c96;

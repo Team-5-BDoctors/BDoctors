@@ -5442,7 +5442,9 @@ var render = function render() {
     staticClass: "h-100 d-flex flex-column justify-content-center"
   }, [_c("div", {
     staticClass: "row justify-content-evenly my-auto"
-  }, [_c("div", {
+  }, [_c("h1", {
+    staticClass: "text-center mb-5"
+  }, [_vm._v("Anno 2022")]), _vm._v(" "), _c("div", {
     staticClass: "col-10 col-md-5"
   }, [_vm.loaded ? _c("BarChartMessages", {
     attrs: {
@@ -5525,7 +5527,7 @@ var staticRenderFns = [function () {
   return _c("a", {
     staticClass: "p-3",
     attrs: {
-      href: "/doctor"
+      href: "/doctor/profile"
     }
   }, [_c("i", {
     staticClass: "fs-5 fas fa-user"
@@ -55357,9 +55359,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
-__webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
-module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
+__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\backend.js */"./resources/js/backend.js");
+__webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\frontend\frontend.scss */"./resources/sass/frontend/frontend.scss");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\sass\backend\backend.scss */"./resources/sass/backend/backend.scss");
 
 
 /***/ })

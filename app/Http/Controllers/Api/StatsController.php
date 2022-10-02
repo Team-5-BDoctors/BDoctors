@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Message;
 use App\Review;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class StatsController extends Controller
 {
     public function index(){
 
-        $messages = Message::select('id', 'created_at')->get()->groupBy(function($message){
+        $messages = Message::select('id', 'created_at')->where('user_id', Auth::user()->id)->get()->groupBy(function($message){
             return Carbon::parse($message->created_at)->format('M');
         });
 
@@ -31,7 +32,7 @@ class StatsController extends Controller
 
     public function reviewsStats(){
 
-        $reviews = Review::select('id', 'created_at')->get()->groupBy(function($review){
+        $reviews = Review::select('id', 'created_at')->where('user_id', Auth::user()->id)->get()->groupBy(function($review){
             return Carbon::parse($review->created_at)->format('M');
         });
 

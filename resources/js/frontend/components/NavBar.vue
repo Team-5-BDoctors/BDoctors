@@ -12,7 +12,7 @@
             <a class="p-3" href="/register">Registrati</a>
           </div>
           <div v-else>
-            <a class="p-3" href="/doctor"><i class="fs-5 fas fa-user"></i></a>
+            <a class="p-3" href="/doctor/profile"><i class="fs-5 fas fa-user"></i></a>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@
         & .avatar-img{
             width: 5rem;
             height: 5rem;
-            border: 3px solid #E9F6FF;
+            border: 2px solid #E9F6FF;
             object-fit: cover;
             object-position: top;
             
@@ -112,7 +112,8 @@
             }
 
             & .nav-link{
-                padding-left: .9rem;
+                padding-left: 1.1rem;
+                font-size: 1.2rem;
                 
             }
         }

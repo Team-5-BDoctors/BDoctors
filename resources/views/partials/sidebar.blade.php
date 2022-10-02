@@ -3,7 +3,7 @@
 
 
 <div class="sidebar d-flex flex-column flex-shrink-0">
-    <a class="d-md-none" href="/">
+    <a class="d-md-none ms-2" href="/">
         <img class="" src="{{asset('images/bdoctors_small_logo_white.png')}}" width="40" height="40" alt="">
     </a>
     <div class="d-none d-md-block">
@@ -15,7 +15,7 @@
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             @if (Auth::user()->image)
-                <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="" class="avatar-img rounded-circle me-2">   
+                <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="" class="avatar-img rounded-circle me-1">   
             @else
                 <div class="avatar-placeholder rounded-circle me-2">
                     <div class="initial-letters">{{ $firstLetterName = Str::substr(Auth::user()->name, 0, 1) }} {{$firstLetterSurname = Str::substr(Auth::user()->surname, 0, 1)  }}</div>
@@ -43,14 +43,6 @@
     </div>
     <hr class="text-white">
     <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item {{ Request::route()->getName() === 'doctor.index' ? 'my-active' : '' }}">
-            <a href="{{route("doctor.index")}}" class="text-white nav-link {{ Request::route()->getName() === 'doctor.index' ? 'my-active' : '' }}">
-                <i class="fa-solid fa-house"></i>
-            </a>
-            <a href="{{route("doctor.index")}}" class="nav-link d-none d-md-block  {{ Request::route()->getName() === 'doctor.index' ? 'my-active' : '' }}" aria-current="page">
-                Home
-            </a>
-        </li>
         <li class="nav-item {{ Request::route()->getName() === 'doctor.show' ? 'my-active' : '' }}">
             <a href="{{route("doctor.show")}}" class="text-white nav-link {{ Request::route()->getName() === 'doctor.show' ? 'my-active' : '' }}">
                 <i class="fa-solid fa-eye"></i>

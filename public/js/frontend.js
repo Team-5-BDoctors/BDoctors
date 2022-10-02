@@ -2619,7 +2619,7 @@ var staticRenderFns = [function () {
   return _c("a", {
     staticClass: "p-3",
     attrs: {
-      href: "/doctor"
+      href: "/doctor/profile"
     }
   }, [_c("i", {
     staticClass: "fs-5 fas fa-user"
@@ -3312,7 +3312,7 @@ var render = function render() {
     attrs: {
       "for": "name"
     }
-  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci il tuo nome:*")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3344,7 +3344,7 @@ var render = function render() {
     attrs: {
       "for": "surname"
     }
-  }, [_vm._v("Inserisci il tuo cognome:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci il tuo cognome:*")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3376,7 +3376,7 @@ var render = function render() {
     attrs: {
       "for": "email"
     }
-  }, [_vm._v("Inserisci la tua mail:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci la tua mail:*")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3408,7 +3408,7 @@ var render = function render() {
     attrs: {
       "for": "title"
     }
-  }, [_vm._v("Inserisci il titolo del messaggio:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci il titolo del messaggio:*")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3440,7 +3440,7 @@ var render = function render() {
     attrs: {
       "for": "content"
     }
-  }, [_vm._v("Inserisci il tuo messaggio con la richiesta:")]), _vm._v(" "), _c("textarea", {
+  }, [_vm._v("Inserisci il tuo messaggio con la richiesta:*")]), _vm._v(" "), _c("textarea", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3476,9 +3476,9 @@ var render = function render() {
   }, _vm._l(_vm.doctor.reviews.slice(0, 3), function (review) {
     return _c("div", {
       key: review.id,
-      staticClass: "col"
+      staticClass: "col-12 col-lg-4"
     }, [_c("div", {
-      staticClass: "my-card p-5"
+      staticClass: "my-card h-100 p-5"
     }, [_c("div", {
       staticClass: "d-flex gap-4 pb-4"
     }, [_c("div", [_c("h4", [_vm._v(_vm._s(review.name))]), _vm._v(" "), _c("span", {
@@ -3486,11 +3486,13 @@ var render = function render() {
     }, [_vm._v(_vm._s(review.title))])])]), _vm._v(" "), _c("p", {
       staticClass: "p-style"
     }, [_vm._v("\n                                " + _vm._s(review.content) + "\n                            ")]), _vm._v(" "), _c("div", {
-      staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-    }, [_c("h5", [_vm._v("rated " + _vm._s(review.rating) + "/5")]), _vm._v(" "), _vm._l(review.rating, function (stars) {
+      staticClass: "rating-bar py-2 px-4 d-flex"
+    }, [_c("h5", {
+      staticClass: "me-2"
+    }, [_vm._v("rated " + _vm._s(review.rating) + "/5")]), _vm._v(" "), _vm._l(review.rating, function (stars) {
       return _c("div", {
         key: stars.id,
-        staticClass: "rating-stars"
+        staticClass: "rating-stars me-1"
       }, [_c("i", {
         staticClass: "fa-solid fa-star gold-star"
       })]);
@@ -3516,7 +3518,7 @@ var render = function render() {
     attrs: {
       "for": "reviewName"
     }
-  }, [_vm._v("Inserisci il tuo nome:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Inserisci il tuo nome:*")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3546,7 +3548,7 @@ var render = function render() {
     attrs: {
       "for": "reviewTitle"
     }
-  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Titolo recensione:*")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3600,7 +3602,7 @@ var render = function render() {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group p-2"
-  }, [_c("div", [_vm._v("Valutazione complessiva:")]), _vm._v(" "), _c("div", {
+  }, [_c("div", [_vm._v("Valutazione complessiva:*")]), _vm._v(" "), _c("div", {
     staticClass: "rate"
   }, [_c("input", {
     directives: [{
@@ -21664,7 +21666,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\bdoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

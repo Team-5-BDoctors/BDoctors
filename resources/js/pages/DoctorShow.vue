@@ -39,7 +39,7 @@
                                 <form class="form-msg needs-validation" action=""
                                     @submit.prevent="onFormMessageSubmit()">
                                     <div class="form-group py-2">
-                                        <label for="name">Inserisci il tuo nome:</label>
+                                        <label for="name">Inserisci il tuo nome:*</label>
                                         <input type="name" class="form-control" id="name" placeholder="Nome" name="name"
                                             v-model="name" required />
                                         <div class="invalid-feedback">
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group py-2">
-                                        <label for="surname">Inserisci il tuo cognome:</label>
+                                        <label for="surname">Inserisci il tuo cognome:*</label>
                                         <input type="surname" class="form-control" id="surname" placeholder="Cognome"
                                             name="surname" v-model="surname" required />
                                         <div class="invalid-feedback">
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group py-2">
-                                        <label for="email">Inserisci la tua mail:</label>
+                                        <label for="email">Inserisci la tua mail:*</label>
                                         <input type="email" class="form-control" id="email" placeholder="Email"
                                             name="email" v-model="email" required />
                                         <div class="invalid-feedback">
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group py-2">
-                                        <label for="title">Inserisci il titolo del messaggio:</label>
+                                        <label for="title">Inserisci il titolo del messaggio:*</label>
                                         <input type="text" class="form-control" id="title"
                                             placeholder="Inserisci titolo messaggio" name="title" v-model="title"
                                             required />
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group py-2">
-                                        <label for="content">Inserisci il tuo messaggio con la richiesta:</label>
+                                        <label for="content">Inserisci il tuo messaggio con la richiesta:*</label>
                                         <textarea class="form-control pb-5" id="content" rows="3" name="content"
                                             v-model="content" required>
                                 </textarea>
@@ -97,8 +97,8 @@
                 <h2 class="text-center py-2">Recensioni</h2>
                 <div>
                     <div class="my-row">
-                        <div class="col" v-for="review in doctor.reviews.slice(0,3)" :key="review.id">
-                            <div class="my-card p-5">
+                        <div class="col-12 col-lg-4" v-for="review in doctor.reviews.slice(0,3)" :key="review.id">
+                            <div class="my-card h-100 p-5">
                                 <div class="d-flex gap-4 pb-4">
                                     <div>
                                         <h4>{{ review.name }}</h4>
@@ -108,9 +108,9 @@
                                 <p class="p-style">
                                     {{review.content}}
                                 </p>
-                                <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                                    <h5>rated {{review.rating}}/5</h5>
-                                    <div class="rating-stars"  v-for="stars in review.rating" :key="stars.id">
+                                <div class="rating-bar py-2 px-4 d-flex">
+                                    <h5 class="me-2">rated {{review.rating}}/5</h5>
+                                    <div class="rating-stars me-1"  v-for="stars in review.rating" :key="stars.id">
                                         <i class="fa-solid fa-star gold-star"></i>
                                     </div>
                                 </div>
@@ -122,12 +122,12 @@
                     <h3 class="text-center">La tua recensione</h3>
                     <form class="form-msg" action="" @submit.prevent="onFormReviewSubmit()">
                         <div class="form-group p-2">
-                            <label for="reviewName">Inserisci il tuo nome:</label>
+                            <label for="reviewName">Inserisci il tuo nome:*</label>
                             <input type="text" class="form-control white-bg" id="reviewName" name="name"
                                 placeholder="Nome" v-model="reviewName" required />
                         </div>
                         <div class="form-group p-2">
-                            <label for="reviewTitle">Titolo recensione:</label>
+                            <label for="reviewTitle">Titolo recensione:*</label>
                             <input type="text" class="form-control white-bg" id="reviewTitle" name="title"
                                 placeholder="Titolo" v-model="reviewTitle" required />
                         </div>
@@ -137,7 +137,7 @@
                                 v-model="reviewContent" rows="3"></textarea>
                         </div>
                         <div class="form-group p-2">
-                            <div>Valutazione complessiva:</div>
+                            <div>Valutazione complessiva:*</div>
                             <div class="rate">
                                 <input type="radio" id="star5" name="rating" value="5" v-model="reviewRating" />
                                 <label for="star5" title="text">5 stars</label>
