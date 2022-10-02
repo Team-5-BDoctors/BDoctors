@@ -111,7 +111,7 @@
                                 </p>
                                 <div class="rating-bar py-2 px-4 d-flex justify-content-between">
                                     <h5>rated {{review.rating}}/5</h5>
-                                    <div class="rating-stars" v-for="stars in review.rating">
+                                    <div class="rating-stars"  v-for="stars in review.rating" :key="stars.id">
                                         <i class="fa-solid fa-star gold-star"></i>
                                     </div>
                                 </div>
@@ -346,9 +346,9 @@ p {
 }
 
 .form-msg {
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 .rate {

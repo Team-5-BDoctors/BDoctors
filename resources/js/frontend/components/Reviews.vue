@@ -9,15 +9,14 @@
                 <div class="col">
                     <div class="my-card p-5">
                         <div class="d-flex gap-4 pb-4">
-                            <img class="card-img" src="/images/jumbo_doctor.png" alt="">
                             <div>
-                                <h4>Name Surname</h4>
-                                <span class="subtitle">Happy Patient</span>
+                                <h4>Luigi Rossi</h4>
+                                <span class="subtitle">Ottima esperienza</span>
                             </div>
                         </div>
-                        <p class="p-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero facere quod. Molestiae, nostrum! Saepe, minus iure!</p>
+                        <p class="p-style">Il dottor Francesconi è una garanzia per assistenza, cura e premura verso i pazienti. Uno specialista che consiglio a tutti!</p>
                         <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                            <h5>rated 4.3/5</h5>
+                            <h5>rated 5/5</h5>
                             <div class="rating-stars">
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
@@ -31,15 +30,14 @@
                 <div class="col">
                     <div class="my-card middle p-5">
                         <div class="d-flex gap-4 pb-4">
-                            <img class="card-img" src="/images/jumbo_doctor.png" alt="">
                             <div>
-                                <h4>Name Surname</h4>
-                                <span class="subtitle">Happy Patient</span>
+                                <h4>Giovanna Colombo</h4>
+                                <span class="subtitle">Estremamente soddisfatta</span>
                             </div>
                         </div>
-                        <p class="p-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem distinctio, dolorum a laboriosam et tempora optio.</p>
+                        <p class="p-style">Tutti gli specialisti presenti su questo portale brillano per affidabilità ed esperienza. Qui si trova solo il meglio del meglio.</p>
                         <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                            <h5>rated 4.5/5</h5>
+                            <h5>rated 5/5</h5>
                             <div class="rating-stars">
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
@@ -53,17 +51,15 @@
                 <div class="col">
                     <div class="my-card p-5">
                         <div class="d-flex gap-4 pb-4">
-                            <img class="card-img" src="/images/jumbo_doctor.png" alt="">
                             <div>
-                                <h4>Name Surname</h4>
-                                <span class="subtitle">Happy Patient</span>
+                                <h4>Serena Testa</h4>
+                                <span class="subtitle">Una garanzia</span>
                             </div>
                         </div>
-                        <p class="p-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nam autem distinctio, dolorum a laboriosam et tempora optio, tenetur porro debitis reiciendis vero facere quod. Molestiae, nostrum! Saepe, minus iure!</p>
+                        <p class="p-style">Per qualsiasi evenienza la dottoressa De Angelis è una garanzia. Visite accurate, rapidità ed affidabilità.</p>
                         <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                            <h5>rated 4.7/5</h5>
+                            <h5>rated 4/5</h5>
                             <div class="rating-stars">
-                                <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
