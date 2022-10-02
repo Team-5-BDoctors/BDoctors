@@ -53,7 +53,7 @@ class UserController extends Controller
 
     public function show($slug)
     {
-        $doctor = User::where('slug', $slug)->with('specializations')->first();
+        $doctor = User::where('slug', $slug)->with('specializations', 'reviews')->first();
         return response()->json($doctor);
     }
 
