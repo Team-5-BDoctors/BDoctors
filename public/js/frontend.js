@@ -3225,14 +3225,14 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", [_c("div", {
-    staticClass: "container d-flex justify-content-center align-content-center py-5"
+    staticClass: "container d-flex justify-content-center flex-column align-content-center py-5"
   }, [_c("h1", {
     staticClass: "text-center py-5"
-  }, [_vm._v("INVIATO CORRETTAMENTE\n            "), _c("i", {
+  }, [_vm._v("\n            INVIATO CORRETTAMENTE "), _c("i", {
     staticClass: "fa-solid fa-circle-check"
-  })]), _vm._v(" "), _c("h1", {
+  })]), _vm._v(" "), _c("h3", {
     staticClass: "text-center py-5"
-  }, [_vm._v("Verrai automaticamente reindirizzato alla homepage in 3 secondi...")])])]);
+  }, [_vm._v("\n            Verrai automaticamente reindirizzato alla homepage in 3\n            secondi...\n        ")])])]);
 }];
 render._withStripped = true;
 
@@ -3473,9 +3473,9 @@ var render = function render() {
     staticClass: "text-center py-2"
   }, [_vm._v("Recensioni")]), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "my-row"
-  }, _vm._l(_vm.doctor.reviews.slice(0, 3), function (review) {
+  }, _vm._l(_vm.doctor.reviews.slice(_vm.doctor.reviews.length - 3, _vm.doctor.reviews.lenght), function (review, i) {
     return _c("div", {
-      key: review.id,
+      key: i,
       staticClass: "col-12 col-lg-4"
     }, [_c("div", {
       staticClass: "my-card h-100 p-5"
