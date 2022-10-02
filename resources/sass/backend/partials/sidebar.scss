@@ -1,13 +1,13 @@
 .sidebar{
     width: 225px;
     background-color:#338DFF;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding-top: .7rem;
+    padding-left: .7rem;
+    padding-bottom: .7rem;
 
     & .dropdown{
 
-        & img{
+        & .avatar-img{
             width: 5rem;
             height: 5rem;
             border: 3px solid #E9F6FF;
@@ -31,19 +31,99 @@
 
     & .nav-pills{
 
+        & .nav-item{
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            display: flex;
+            align-items: center;
+            
+            
+
+        }
+
         & .nav-link{
-            padding-left: .5rem;
-            padding-right: .5rem;
+            padding-left: .3rem;
+            padding-right: .3rem;
             font-size: 1rem;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-
+            color: white;
+            
         }
 
-        & .nav-link.my-active{
+        & .my-active{
             background-color: #E9F6FF;
             color: black !important;
+            
         }
+
+        
     }
 
 }
+
+
+// breackpoint
+//xs: 0,
+//sm: 576px,
+//md: 768px,
+//lg: 992px,
+//xl: 1200px,
+//xxl: 1400px
+
+
+
+
+//query
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+
+@media screen and (max-width: 992px) {
+    
+}
+
+
+@media screen and (max-width: 767px) {
+    .sidebar{
+
+        width: auto;
+        justify-content: center;
+
+        & .dropdown{
+        
+            & .dropdown-toggle{
+                padding-right: .7rem;
+            }
+
+            & .avatar-img{
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        & .nav-pills{
+
+            & .nav-item{
+                
+            
+            }
+
+            & .nav-link{
+                padding-left: .9rem;
+                
+            }
+        }
+
+
+    }
+    
+    
+}
+
+@media screen and (max-width: 576px) {
+    
+}
+

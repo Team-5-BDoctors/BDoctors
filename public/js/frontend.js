@@ -2042,7 +2042,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    var _this = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("api/doctor").then(function (resp) {
+      _this.doctor = resp.data;
+    });
+  },
+  data: function data() {
+    return {
+      doctor: null
+    };
+  },
   name: "NavBar",
   props: {}
 });
@@ -2250,7 +2265,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchDoctorsInPage: function fetchDoctorsInPage() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor", {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctors", {
         params: {
           name: this.selectedSpecialization,
           rating: this.selectedStars,
@@ -2553,7 +2568,25 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", {
+    staticClass: "container-fluid"
+  }, [_c("div", {
+    staticClass: "container d-flex justify-content-between navbar py-3 align-items-center"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "d-flex align-items-center flex-row-reverse gap-5 flex-grow-1"
+  }, [_c("div", {
+    staticClass: "p-2 navitem"
+  }, [!_vm.doctor ? _c("div", [_c("a", {
+    staticClass: "p-3",
+    attrs: {
+      href: "/login"
+    }
+  }, [_vm._v("Login")]), _vm._v(" "), _c("a", {
+    staticClass: "p-3",
+    attrs: {
+      href: "/register"
+    }
+  }, [_vm._v("Registrati")])]) : _c("div", [_vm._m(1)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2561,10 +2594,6 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container-fluid"
-  }, [_c("div", {
-    staticClass: "container d-flex justify-content-between navbar py-3 align-items-center"
-  }, [_c("div", {
     staticClass: "h-100"
   }, [_c("a", {
     attrs: {
@@ -2576,17 +2605,19 @@ var staticRenderFns = [function () {
       src: "/images/logo.png",
       alt: "logo"
     }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex align-items-center flex-row-reverse gap-5 flex-grow-1"
-  }, [_c("div", {
-    staticClass: "p-2 navitem"
-  }, [_c("div", [_c("a", {
+  })])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("a", {
+    staticClass: "p-3",
     attrs: {
       href: "/doctor"
     }
   }, [_c("i", {
     staticClass: "fs-5 fas fa-user"
-  })])])])])])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -3863,7 +3894,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container-fluid[data-v-2c5d916a] {\n  background-color: white;\n  box-shadow: rgba(0, 0, 0, 0.452) 0px 0px 10px;\n}\n.navbar[data-v-2c5d916a] {\n  height: 80px;\n  background-color: #fff;\n  z-index: 1;\n}\n.navbar a[data-v-2c5d916a] {\n  text-decoration: none;\n  color: #151e66;\n  font-size: 0.9rem;\n  text-align: center;\n  font-weight: 700;\n  transition: all 0.3s ease-in-out;\n  width: 100%;\n  line-height: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.navbar a:hover .freccia_link[data-v-2c5d916a] {\n  transform: translateX(50%);\n}\n.navbar .freccia_link[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  font-size: 0.8rem;\n}\n.navbar .navitem[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  border-radius: 5px;\n}\n.navbar .navitem[data-v-2c5d916a]:hover {\n  background-color: #d8eeff;\n}", ""]);
+exports.push([module.i, ".container-fluid[data-v-2c5d916a] {\n  background-color: white;\n  box-shadow: rgba(0, 0, 0, 0.452) 0px 0px 10px;\n}\n.navbar[data-v-2c5d916a] {\n  height: 80px;\n  background-color: #fff;\n  z-index: 1;\n}\n.navbar a[data-v-2c5d916a] {\n  text-decoration: none;\n  color: #151e66;\n  font-size: 0.9rem;\n  text-align: center;\n  font-weight: 700;\n  transition: all 0.3s ease-in-out;\n  width: 100%;\n  line-height: 100%;\n  height: 100%;\n  overflow: hidden;\n  font-family: \"Satoshi\", sans-serif;\n}\n.navbar a:hover .freccia_link[data-v-2c5d916a] {\n  transform: translateX(50%);\n}\n.navbar .freccia_link[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  font-size: 0.8rem;\n}\n.navbar .navitem a[data-v-2c5d916a] {\n  transition: all 0.3s ease-in-out;\n  border-radius: 5px;\n}\n.navbar .navitem a[data-v-2c5d916a]:hover {\n  background-color: #d8eeff;\n}", ""]);
 
 // exports
 

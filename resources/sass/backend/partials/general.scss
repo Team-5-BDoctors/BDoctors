@@ -1,6 +1,11 @@
 #app{
     font-family: 'Open Sans', sans-serif;
 }
+
+main{
+    height: 100%;
+    overflow: auto;
+}
 .dashboard {
     height: 100vh;
 
@@ -8,12 +13,16 @@
         overflow: auto;
         background-color:  #E9F6FF;
 
+        
+
         & .edit-card{
             background-color: white;
-            padding: 2rem;
             border-radius: .5rem;
+            padding: 2rem;
             width: 90%;
-            margin: 0 auto;
+            
+
+            
 
             & .edit-card-title{
                 color: #338DFF;
@@ -32,7 +41,7 @@
                 justify-content: center;
 
                 & img{
-                    padding: 2rem;
+                    padding: 1.5rem;
                     object-fit: cover;
                     object-position: center;
                 }
@@ -52,7 +61,90 @@
             & .btn-primary{
                 background-color: #338DFF;
                 color: #E9F6FF;
+                border-radius: 0;
             }
         }
     }
+}
+
+.doctor-informations{
+    display: flex;
+    width: 80%;
+
+    & .doctor-img-bg{
+
+        background-image: url('/images/jumbo_right_bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        display: flex;
+        align-items: cemnter;
+        justify-content: center;
+        padding: 1.5rem;
+
+         & .profile-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+         }
+        
+    }
+
+    & .btn-primary{
+        background-color: #338DFF;
+    }
+
+    
+    
+}
+
+
+// breackpoint
+//xs: 0,
+//sm: 576px,
+//md: 768px,
+//lg: 992px,
+//xl: 1200px,
+//xxl: 1400px
+
+
+
+
+//query
+
+@media screen and (max-width: 1199px) {
+    
+}
+
+
+@media screen and (max-width: 991px) {
+    
+    .doctor-informations{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .dashboard {
+        
+    
+        & .content-container{
+            
+    
+            & .edit-card{
+                
+                width: 100%;
+            }
+        }
+    }
+
+    .doctor-informations{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    
 }

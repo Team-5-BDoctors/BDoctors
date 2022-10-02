@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/backend.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,7 +29,8 @@
             @endauth
             <div class="main-container d-flex flex-column flex-grow-1">
                 @guest
-                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                <navbar></navbar>
+                <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                     <div class="container">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             {{ config('app.name', 'Laravel') }}
@@ -37,13 +39,13 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
+                            
                             <ul class="navbar-nav mr-auto">
             
                             </ul>
-                            <!-- Right Side Of Navbar -->
+                            
                             <ul class="navbar-nav ml-auto">
-                                <!-- Authentication Links -->
+                                
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
@@ -55,7 +57,7 @@
                             </ul>
                         </div>
                     </div>
-                </nav>
+                </nav>-->
                 @endguest
                 <div class="content-container flex-grow-1">
                     <main class="py-4">

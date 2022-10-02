@@ -14,14 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth')->get('/doctor', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/doctor/stats/messages', 'Api\StatsController@index');
+Route::get('/doctor/stats/reviews', 'Api\StatsController@reviewsStats');
 Route::get('/specializations', 'Api\SpecializationController@index');
-Route::get('/doctor', 'Api\UserController@index');
+Route::get('/doctors', 'Api\UserController@index');
 Route::get('/doctor/{doctor}', 'Api\UserController@show');
+
 
 Route::get('/sponsored-doctors', 'Api\UserController@showDoctorsSponsored');
 Route::post('/contacts', 'Api\ContactController@store');
 Route::post('/reviews', 'Api\ReviewsController@store');
+
