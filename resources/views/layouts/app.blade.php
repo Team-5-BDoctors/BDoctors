@@ -63,8 +63,8 @@
                                 </ul>
                             </div>
                         </div>
-                    </nav>
-                @endguest
+                    </nav>-->
+                @endguest 
                 <div class="content-container flex-grow-1">
                     <main class="py-4">
                         @yield('content')

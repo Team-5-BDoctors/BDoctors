@@ -6,7 +6,7 @@
     <div class="edit-card my-auto">
         <h1 class="edit-card-title">Modifica profilo</h1>
         <div class="row">
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-xl-7">
                 <form action="{{ route('doctor.update', $user->slug) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -57,41 +57,45 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div>
                             </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="surname" class="form-label">Cognome *</label>
-                                    <input type="text" class="form-control @error('surname') is-invalid @enderror"
-                                        id="surname" name="surname" value="{{ $user->surname }}" required="">
-                                    @error('surname')
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefono*</label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" 
+                                id="phone" name="phone" value="{{ $user->phone }}" required="">
+                                @error('phone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label for="specializations"
-                                    class="col-md-4 col-form-label text-md-right">Specializzazioni*</label>
-                                <select name="specializations[]" id="specializations" multiple
-                                    class="form-control @error('specializations') is-invalid @enderror" required>
+                        
+                        <div class="col-12 col-xl-6">
+                            <div class="form-group spec-box">
+                                <label for="specializations" class="form-label">Specializzazioni *</label>
+                                <div class="row row-cols-1 row-cols-xl-2 g-1">
                                     @foreach ($specializations as $specialization)
-                                        <option value="{{ $specialization->id }}"
-                                            {{ $user->specializations->contains($specialization) ? 'selected' : '' }}>
-                                            {{ $specialization->name }}</option>
+                                        <div class="col btn-group" role="group"
+                                            aria-label="Basic checkbox toggle button group">
+                                            <input type="checkbox" class="btn-check specializations"
+                                                name="specializations[]" value="{{ $specialization->id }}"
+                                                id={{ $specialization->id }} autocomplete="off"
+                                                {{ $user->specializations->contains($specialization) ? 'checked' : '' }}>
+                                            <label class="btn btn-outline-primary"
+                                                for={{ $specialization->id }}>{{ $specialization->name }}</label>
+                                        </div>
                                     @endforeach
-                                </select>
+                                </div>
                                 @error('specialization')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror    
-                            </div>           
+                                @enderror
+                            </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-xl-6">
                             <div class="form-group">
                                 <label for="services">Prestazioni offerte</label>
                                 <textarea rows="5" type="text" class="form-control @error('services') is-invalid @enderror" id="services"
@@ -126,88 +130,22 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-6">
-                                <div class="form-group spec-box">
-                                    <label for="specializations" class="form-label">Specializzazioni *</label>
-                                    <div class="row row-cols-1 row-cols-xl-2 g-1">
-                                        @foreach ($specializations as $specialization)
-                                            <div class="col btn-group" role="group"
-                                                aria-label="Basic checkbox toggle button group">
-                                                <input type="checkbox" class="btn-check specializations"
-                                                    name="specializations[]" value="{{ $specialization->id }}"
-                                                    id={{ $specialization->id }} autocomplete="off"
-                                                    {{ $user->specializations->contains($specialization) ? 'checked' : '' }}>
-                                                <label class="btn btn-outline-primary"
-                                                    for={{ $specialization->id }}>{{ $specialization->name }}</label>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                    @error('specialization')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="services">Prestazioni offerte</label>
-                                    <textarea rows="5" type="text" class="form-control @error('services') is-invalid @enderror" id="services"
-                                        name="services">{{ $user->services }}</textarea>
-                                    @error('services')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="image" class="form-label">Immagine Profilo</label>
-                                    <input class="form-control form-control-sm @error('image') is-invalid @enderror"
-                                        id="image" type="file" name="image" accept="image/*">
-                                    @error('image')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="curriculum" class="form-label">Curriculum</label>
-                                    <input class="form-control form-control-sm @error('curriculum') is-invalid @enderror"
-                                        id="curriculum" type="file" name="curriculum" accept="application/pdf">
-                                    @error('curriculum')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <button type="submit" class="btn btn-primary w-100 mt-5">Salva</button>
-                            </div>
 
 
                         </div>
-                    </form>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary w-100 mt-5">Salva</button>
+                        </div>
                 </div>
-                <div class="col-4">
-                    <div class="bg-img">
-                        <img class=" w-100 text-center" src="{{ asset('storage/' . Auth::user()->image) }}"
-                            alt="">
-                    </div>
-<<<<<<< HEAD
-=======
-                </form>
+                
             </div>
-            <div class="d-none d-lg-block col-lg-5">
+            <div class="d-none d-xl-block col-lg-5">
                 <div class="bg-img">
                     <img class=" w-100 text-center" src="{{ asset('storage/' . Auth::user()->image) }}" alt="">
->>>>>>> Luca
                 </div>
             </div>
+            </form>
         </div>
     </div>
+
 @endsection

@@ -3681,70 +3681,7 @@ var render = function render() {
       "for": "star1",
       title: "text"
     }
-<<<<<<< HEAD
   }, [_vm._v("1 star")])])]), _vm._v(" "), _c("br"), _vm._v(" "), _c("br"), _vm._v(" "), _vm._m(3)])])])])]);
-=======
-  }, [_vm._v("1 star")])])]), _vm._v(" "), _c("br"), _vm._v(" "), _c("br"), _vm._v(" "), _c("div", {
-    staticClass: "form-group p-2 w-100 mt-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "reviewTitle"
-    }
-  }, [_vm._v("Titolo recensione:")]), _vm._v(" "), _c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.reviewTitle,
-      expression: "reviewTitle"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "title",
-      name: "title",
-      id: "reviewTitle",
-      placeholder: "Titolo",
-      required: ""
-    },
-    domProps: {
-      value: _vm.reviewTitle
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.reviewTitle = $event.target.value;
-      }
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group py-2"
-  }, [_c("label", {
-    attrs: {
-      "for": "reviewContent"
-    }
-  }, [_vm._v("Dai il tuo parere:")]), _vm._v(" "), _c("textarea", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.reviewContent,
-      expression: "reviewContent"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      id: "reviewContent",
-      name: "content",
-      rows: "3",
-      required: ""
-    },
-    domProps: {
-      value: _vm.reviewContent
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.reviewContent = $event.target.value;
-      }
-    }
-  })]), _vm._v(" "), _vm._m(3)])])])])]);
->>>>>>> Luca
 };
 
 var staticRenderFns = [function () {
@@ -21773,15 +21710,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\Giacomo\Documents\Boolean-Repo\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
->>>>>>> new-giacomo
-=======
 module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
->>>>>>> Luca
 
 
 /***/ })
