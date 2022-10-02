@@ -2666,13 +2666,7 @@ var staticRenderFns = [function () {
     staticClass: "my-card p-5"
   }, [_c("div", {
     staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Luigi Rossi")]), _vm._v(" "), _c("span", {
+  }, [_c("div", [_c("h4", [_vm._v("Luigi Rossi")]), _vm._v(" "), _c("span", {
     staticClass: "subtitle"
   }, [_vm._v("Ottima esperienza")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
@@ -2696,19 +2690,13 @@ var staticRenderFns = [function () {
     staticClass: "my-card middle p-5"
   }, [_c("div", {
     staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Giovanna Colombo")]), _vm._v(" "), _c("span", {
+  }, [_c("div", [_c("h4", [_vm._v("Giovanna Colombo")]), _vm._v(" "), _c("span", {
     staticClass: "subtitle"
   }, [_vm._v("Estremamente soddisfatta")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
   }, [_vm._v("Tutti gli specialisti presenti su questo portale brillano per affidabilità ed esperienza. Qui si trova solo il meglio del meglio.")]), _vm._v(" "), _c("div", {
     staticClass: "rating-bar py-2 px-4 d-flex justify-content-between"
-  }, [_c("h5", [_vm._v("rated 4.5/5")]), _vm._v(" "), _c("div", {
+  }, [_c("h5", [_vm._v("rated 5/5")]), _vm._v(" "), _c("div", {
     staticClass: "rating-stars"
   }, [_c("i", {
     staticClass: "fa-solid fa-star gold-star"
@@ -2726,13 +2714,7 @@ var staticRenderFns = [function () {
     staticClass: "my-card p-5"
   }, [_c("div", {
     staticClass: "d-flex gap-4 pb-4"
-  }, [_c("img", {
-    staticClass: "card-img",
-    attrs: {
-      src: "/images/jumbo_doctor.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", [_c("h4", [_vm._v("Serena Testa")]), _vm._v(" "), _c("span", {
+  }, [_c("div", [_c("h4", [_vm._v("Serena Testa")]), _vm._v(" "), _c("span", {
     staticClass: "subtitle"
   }, [_vm._v("Una garanzia")])])]), _vm._v(" "), _c("p", {
     staticClass: "p-style"
@@ -21654,7 +21636,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Luca\boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
+module.exports = __webpack_require__(/*! C:\Users\Simone\Documents\Boolean\BDoctors\resources\js\frontend.js */"./resources/js/frontend.js");
 
 
 /***/ })

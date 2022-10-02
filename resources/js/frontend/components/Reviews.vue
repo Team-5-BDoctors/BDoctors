@@ -9,7 +9,6 @@
                 <div class="col">
                     <div class="my-card p-5">
                         <div class="d-flex gap-4 pb-4">
-                            <img class="card-img" src="/images/jumbo_doctor.png" alt="">
                             <div>
                                 <h4>Luigi Rossi</h4>
                                 <span class="subtitle">Ottima esperienza</span>
@@ -31,7 +30,6 @@
                 <div class="col">
                     <div class="my-card middle p-5">
                         <div class="d-flex gap-4 pb-4">
-                            <img class="card-img" src="/images/jumbo_doctor.png" alt="">
                             <div>
                                 <h4>Giovanna Colombo</h4>
                                 <span class="subtitle">Estremamente soddisfatta</span>
@@ -39,7 +37,7 @@
                         </div>
                         <p class="p-style">Tutti gli specialisti presenti su questo portale brillano per affidabilità ed esperienza. Qui si trova solo il meglio del meglio.</p>
                         <div class="rating-bar py-2 px-4 d-flex justify-content-between">
-                            <h5>rated 4.5/5</h5>
+                            <h5>rated 5/5</h5>
                             <div class="rating-stars">
                                 <i class="fa-solid fa-star gold-star"></i>
                                 <i class="fa-solid fa-star gold-star"></i>
@@ -53,7 +51,6 @@
                 <div class="col">
                     <div class="my-card p-5">
                         <div class="d-flex gap-4 pb-4">
-                            <img class="card-img" src="/images/jumbo_doctor.png" alt="">
                             <div>
                                 <h4>Serena Testa</h4>
                                 <span class="subtitle">Una garanzia</span>
