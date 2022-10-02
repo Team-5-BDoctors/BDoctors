@@ -33,10 +33,10 @@
                     <div class="d-flex">
                         <div>
                             <select
-                            @change="
-                                (selectedStars = $event.target.value),
-                                    fetchDoctorsInPage()
-                            "
+                                @change="
+                                    (selectedStars = $event.target.value),
+                                        fetchDoctorsInPage()
+                                "
                                 name="reviews"
                                 id="reviews"
                                 class="form-select form-select mb-3"
@@ -53,10 +53,11 @@
                         </div>
                         <div>
                             <select
-                            @change="
-                                (selectedNumberReviews = $event.target.value),
-                                    fetchDoctorsInPage()
-                            "
+                                @change="
+                                    (selectedNumberReviews =
+                                        $event.target.value),
+                                        fetchDoctorsInPage()
+                                "
                                 name="reviewsNumber"
                                 id="reviewsNumber"
                                 class="form-select form-select mb-3"
@@ -78,6 +79,13 @@
                 <div
                     class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
                 >
+                
+                <div v-if="noDoctors">
+                            <h2 class="text-center">
+                                Non ci sono medici che soddisfano i criteri di
+                                ricerca
+                            </h2>
+                        </div>
                     <div
                         v-for="doctor in doctors"
                         :key="doctor.name"
@@ -102,8 +110,8 @@ export default {
             doctors: [],
             specializations: [],
             selectedSpecialization: this.$route.params.specialization_name,
-            selectedStars:"",
-            selectedNumberReviews:"",
+            selectedStars: "",
+            selectedNumberReviews: "",
         };
     },
     mounted() {
@@ -130,11 +138,11 @@ export default {
         fetchDoctorsInPage() {
             axios
                 .get("/api/doctors", {
-                    params:{
-                        name:this.selectedSpecialization,
-                        rating:this.selectedStars,
-                        interactions:this.selectedNumberReviews
-                    }
+                    params: {
+                        name: this.selectedSpecialization,
+                        rating: this.selectedStars,
+                        interactions: this.selectedNumberReviews,
+                    },
                 })
                 .then((resp) => {
                     this.doctors = resp.data;
@@ -148,6 +156,15 @@ export default {
                         }
                     });
                 });
+        },
+    },
+    computed: {
+        noDoctors() {
+            if (this.doctors.length == 0) {
+                return true;
+            } else {
+                return false;
+            }
         },
     },
 };

@@ -2285,6 +2285,15 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     }
+  },
+  computed: {
+    noDoctors: function noDoctors() {
+      if (this.doctors.length == 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 });
 
@@ -3159,7 +3168,9 @@ var render = function render() {
     staticClass: "bg-lightblue justify-content-center d-flex"
   }, [_c("div", {
     staticClass: "row row-cols-1 row-cols-md-2 row-cols-lg-3 pb-5 justify-content-center d-flex g-5 container"
-  }, _vm._l(_vm.doctors, function (doctor) {
+  }, [_vm.noDoctors ? _c("div", [_c("h2", {
+    staticClass: "text-center"
+  }, [_vm._v("\n                            Non ci sono medici che soddisfano i criteri di\n                            ricerca\n                        ")])]) : _vm._e(), _vm._v(" "), _vm._l(_vm.doctors, function (doctor) {
     return _c("div", {
       key: doctor.name,
       staticClass: "col"
@@ -3168,7 +3179,7 @@ var render = function render() {
         doctor: doctor
       }
     })], 1);
-  }), 0)])])]);
+  })], 2)])])]);
 };
 
 var staticRenderFns = [];
@@ -3205,7 +3216,9 @@ var staticRenderFns = [function () {
     staticClass: "text-center py-5"
   }, [_vm._v("INVIATO CORRETTAMENTE\n            "), _c("i", {
     staticClass: "fa-solid fa-circle-check"
-  })])])]);
+  })]), _vm._v(" "), _c("h1", {
+    staticClass: "text-center py-5"
+  }, [_vm._v("Verrai automaticamente reindirizzato alla homepage in 3 secondi...")])])]);
 }];
 render._withStripped = true;
 

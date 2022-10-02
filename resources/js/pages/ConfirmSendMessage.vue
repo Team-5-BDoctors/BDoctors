@@ -3,6 +3,7 @@
         <div class="container d-flex justify-content-center align-content-center py-5">
             <h1 class="text-center py-5">INVIATO CORRETTAMENTE
                 <i class="fa-solid fa-circle-check"></i></h1>
+                <h1 class="text-center py-5">Verrai automaticamente reindirizzato alla homepage in 3 secondi...</h1>
         </div>
     </div>
 </template>
