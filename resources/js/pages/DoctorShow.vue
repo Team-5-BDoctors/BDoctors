@@ -97,7 +97,7 @@
                 <h2 class="text-center py-2">Recensioni</h2>
                 <div>
                     <div class="my-row">
-                        <div class="col" v-for="review in doctor.reviews.slice(0,3)" :key="review.id">
+                        <div class="col" v-for="review, i in doctor.reviews.slice(doctor.reviews.length - 3, doctor.reviews.lenght)" :key="i">
                             <div class="my-card p-5">
                                 <div class="d-flex gap-4 pb-4">
                                     <div>
