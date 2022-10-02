@@ -100,7 +100,6 @@
                         <div class="col" v-for="review in doctor.reviews.slice(0,3)" :key="review.id">
                             <div class="my-card p-5">
                                 <div class="d-flex gap-4 pb-4">
-                                    <img class="card-img" :src="'/storage/'+doctor.image" alt="" />
                                     <div>
                                         <h4>{{ review.name }}</h4>
                                         <span class="subtitle">{{ review.title }}</span>

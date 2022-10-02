@@ -3481,13 +3481,7 @@ var render = function render() {
       staticClass: "my-card p-5"
     }, [_c("div", {
       staticClass: "d-flex gap-4 pb-4"
-    }, [_c("img", {
-      staticClass: "card-img",
-      attrs: {
-        src: "/storage/" + _vm.doctor.image,
-        alt: ""
-      }
-    }), _vm._v(" "), _c("div", [_c("h4", [_vm._v(_vm._s(review.name))]), _vm._v(" "), _c("span", {
+    }, [_c("div", [_c("h4", [_vm._v(_vm._s(review.name))]), _vm._v(" "), _c("span", {
       staticClass: "subtitle"
     }, [_vm._v(_vm._s(review.title))])])]), _vm._v(" "), _c("p", {
       staticClass: "p-style"
