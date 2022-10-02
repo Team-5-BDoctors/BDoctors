@@ -34,22 +34,19 @@
                 </div>
 
                 <div class="col-5 col-md-5 col-lg-3">
-                    <h2 class="footer-headings pb-4">Specializzazioni</h2>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
+                    <h2 class="footer-headings pb-4">Pagine</h2>
+                    <div class="footerlink"><a class="text-white" href="/login">Login</a></div>
+                    <div class="footerlink"><a class="text-white" href="/register">Register</a></div>
+                    <div class="footerlink"><a class="text-white" href="/doctors">Cerca</a></div>
                 </div>
 
                 <div class="col-5 col-md-5 col-lg-3">
-                    <h2 class="footer-headings pb-4">Pagine</h2>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
-                    <div class="footerlink">footerlink</div>
+                    <h2 class="footer-headings pb-4">Contatti</h2>
+                    <div class="footerlink"><a class="text-white" href="https://www.linkedin.com/in/edoardo-vanali-88486a250/">Edoardo Vanali</a></div>
+                    <div class="footerlink"><a class="text-white" href="https://www.linkedin.com/in/luca-francesconi/">Luca Francesconi</a></div>
+                    <div class="footerlink"><a class="text-white" href="https://www.linkedin.com/in/pasqualeloizzo-dev/">Pasquale Loizzo</a></div>
+                    <div class="footerlink"><a class="text-white" href="https://www.linkedin.com/in/giacomo-di-nardo-547946251/">Giacomo Di Nardo</a></div>
+                    <div class="footerlink"><a class="text-white" href="https://www.linkedin.com/in/simone-trunfio/">Simone Trunfio</a></div>
                 </div>
             </div>
         </div>
@@ -98,6 +95,10 @@ export default {
 .footerlink {
     color: #d8eeff;
     opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .footercontainer {
